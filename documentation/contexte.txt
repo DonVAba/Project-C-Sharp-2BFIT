@@ -1,0 +1,81 @@
+CONTEXTE :
+
+1 - Problématique
+
+	Une des tendances de ces dernières années est le sport. De plus en plus de gens veulent s'inscire en salle de musculation et adopter un mode
+de vie sain. Les Français n’ont jamais été si nombreux à pratiquer une activité physique issu du secteur du fitness. Mais au vu du contexte sanitaire
+actuel, la très grande majorité des pratiquants se démotivent ou essaye en vain de réaliser du sport à la maison. Certains font marcher leur imagination
+pour créer un programme efficace tandis que d'autres préfèrent faire confiance à des applications téléchargeables gratuitement. Le problème de ces
+applications sont qu'elles sont rarement développé par de vrais pratiquants de musculations, mais plutôt par des personnes attirées par l'argent
+généré par les publicités.
+
+2 - Définition du projet
+
+	Le présent travail s’inscrit dans le cadre de la mise en pratique des connaissances acquises lors de notre cursus.  Il ambitionne de parfaire 
+ces connaissances au regard des contraintes réelles du monde. En tant que pratiquant sportif, nous avons pour ambition de développer une application 
+présentant de véritables programmes sportifs réalisable sans matiériel permettant à des pratiquants de garder la motivation pour faire du sport ou à
+de nouvelles personnes touchées par cette mode de commencer le sport.
+
+3 - Objectif du projet
+
+	L’objectif de l’application sera de constituer un menu permettant d’effectuer des programmes spécifiques selon l'envie de l'utilisateur
+(Ex : Séance jambes,Séance pull,Séance push etc..) et à différents niveau de difficultés(Débutant,Intermédiaire,Expérimenté). A la création d'un compte, 
+l'utilisateur pourra rentrer ses données personnelles (taille,poids,âge) et bénéficiera d'un suivi de ces différents programmes effectués au niveau de difficultés 
+choisis. Il saura donc à tout moment, quel programme à quel niveau de difficulté il a réalisé. Tout sera fait ssans publicité mensongère indiquant des résultats
+garantis au bout d'un certains temps.
+
+4 - Applications similaires
+
+Sommaire.
+Down Dog.
+Fitbit Coach.
+Nike Training Club.
+
+Ces applications sont payantes mais proposent une véritable interface simple d'utilisation et moderne avec un véritable suivi des calories perdues etc..
+Nous n'avons pas pour ambition d'aller aussi loin pour le moment. Mais si nous sommes en avance le fait de calculer ,par rapport au poids rentré à
+l'inscription, le nombre de calories dépensées lors de l'exercice pourrait être une fonctionnalité que nous implémenterons.
+
+5 - Persona
+
+Profil : Jeanne Copou, 42 ans, Ingénieur Informaticienne chez CGI
+Situation : Mariée + 2 enfants
+Profil technique : Préfère utiliser une ceinture abdominale d'électrostimulation plutôt que de se dépenser.
+ + possède une maison avec son mari qui a un espace largement suffisant pour faire du sport
+"Je n'ai pas le temps de faire des séances de sport de 1 heure mais je veux perdre plus de poids"
+Jeanne n'aime pas se regarder dans un miroir en maillot de bain et veut retrouver une sangles abdominale fine.
+
+Profil : Ugo Artino, 19 ans, STAPS à Aubière
+Situation : Célibataire
+Profil technique : A besoin dans son mode de vie de faire de la musculation et n'a pas envie de retrouver son corps d'avant suite au contexte sanitaire
++ a un appartement où il peut faire du sport, mais est aussi à proximité d'un terrain de foot ou d'un parc de streetworkout puisqu'il habite en ville.
+"J'ai besoin de faire de la musculation pour développer encore plus ma masse musculaire et rattraper mon retard au niveau des pectoraux"
+Ugo a tous les jours envie de faire du sport, surtout des pompes, ce qui est contre-productif pour lui.
+
+6 - User Story
+
+Il est 18h et Jeanne vient de finir sa dernière réunion de la journée, puisqu'elle est en télé-travail. Cette journée l'a épuisé et elle hésite à se
+poser sur son canapé pour regarder son feuilleton favoris avant de faire à manger pour ses enfants. Son mari vient lui aussi juste de rentrer du travail
+avant le couvre-feu et lui rappelle que pour s'aérer l'esprit et pour transformer la frustration accumulée lors de la journée en énergie, elle se doit d'aller
+faire une séance de sport.
+Jeanne a la "flemme" mais elle repense à toutes ces fois où elle se regarde dans le miroir et se rapelle que regarder la Télévision assise ne lui fera
+pas perdre du ventre. ELle se met donc en tenue de sport et lance sur son smartphone son application préférée pour faire du sport. Elle n'a plus qu'à choisir
+le programme "Perte de graisse" et effectuer ce programme qui ne lui prendra que  25 minutes dans sa journée.
+
+Il est 14h et Ugo a fini sa journée de Cours. Il ne pense qu'à une chose depuis le début : sa séance de sport. Il a préparé dans un sac sa tenue, sa bouteille d'eau
+ses élastiques et son shaker de whey(protéine en poudre + eau). Il va donc au parc de streetworkout situé à coté de son établissement scolaire et décide de faire
+une séance PUSH ,c'est-à-dire triceps,épaules et pectoraux. Avant de partir s'entraîner, il en a profité pour se changer et boire son shaker. Il effectue donc sa séance
+avec entrain. Mais le programme doit lui rappeler qu'il doit prendre 2 jours de repos avant la prochaine séance du même type et qu'il doit bien s'étirer en lui proposant différents exercices.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
