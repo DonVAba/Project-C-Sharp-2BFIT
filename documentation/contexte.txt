@@ -1,12 +1,12 @@
-CONTEXTE :
+﻿CONTEXTE :
 
 1 - Problématique
 
-	Une des tendances de ces dernières années est le sport. De plus en plus de gens veulent s'inscire en salle de musculation et adopter un mode
-de vie sain. Les Français n’ont jamais été si nombreux à pratiquer une activité physique issu du secteur du fitness. Mais au vu du contexte sanitaire
+	Une des tendances de ces dernières années est le sport. De plus en plus de gens veulent s'inscrire en salle de musculation et adopter un mode
+de vie sain. Les Français n’ont jamais été si nombreux à pratiquer une activité physique issue du secteur du fitness. Mais au vu du contexte sanitaire
 actuel, la très grande majorité des pratiquants se démotivent ou essaye en vain de réaliser du sport à la maison. Certains font marcher leur imagination
 pour créer un programme efficace tandis que d'autres préfèrent faire confiance à des applications téléchargeables gratuitement. Le problème de ces
-applications sont qu'elles sont rarement développé par de vrais pratiquants de musculations, mais plutôt par des personnes attirées par l'argent
+applications sont qu'elles sont rarement développées par de vrais pratiquants de musculations, mais plutôt par des personnes attirées par l'argent
 généré par les publicités.
 
 2 - Définition du projet

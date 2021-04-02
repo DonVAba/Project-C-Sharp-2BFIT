@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnexionWindow"
         mc:Ignorable="d"
-        Title="Page de connexion" Height="450" Width="450">
+        Title="Page de connexion" Height="450" Width="450" MinHeight="450" MinWidth="450">
     <StackPanel Background="CornflowerBlue">
-        <Image></Image>
+        <!--J'ai mis un rectangle comme toi pour avoir un apercu mais on mettra une image quand on passera a la logique -->
+        <Rectangle Margin="0,20,0,30" Fill="LightGreen" Width="150" Height="150" Stroke="Black"></Rectangle>
         <!---Icon de profile-->
         <!---Une zone de texte pour mettre l'identifiant-->
-        <PasswordBox></PasswordBox>
-        <!---Une zone de texte pour mettre le mdp deja caché grace à l'outils passwordbox-->
-        <Button>Connexion</Button>
+        <WrapPanel HorizontalAlignment="Center" Margin="20"><!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+            <TextBlock Text="IDENTIFIANT :" Foreground="White" FontSize="15" ></TextBlock>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/> <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Center" Margin="20">
+            <TextBlock Text="MOT DE PASSE : " Foreground="White" FontSize="15"></TextBlock>
+            <PasswordBox  Width="280" Height="20" ></PasswordBox>
+            <!---Une zone de texte pour mettre le mdp deja caché grace à l'outils passwordbox-->
+        </WrapPanel>
+        <Button Margin="0,60,0,0" >Connexion</Button>
+        <!--J'ai comme une impression que c'est pas centré jsp pourquoi -->
         <!---Bouton Connexion-->
     </StackPanel>
 </Window>
