@@ -12,17 +12,17 @@
     <StackPanel Background="CornflowerBlue">
         <TextBlock Margin="15,15,0,0" FontSize="20" Foreground="White" Text="Taille"></TextBlock>
         <WrapPanel Margin="20">
-            <TextBox Width="200"></TextBox>
-            <TextBlock Foreground="White" FontSize="20" Text="cm"></TextBlock>
+            <TextBox Width="200" TextWrapping="NoWrap" FontSize="20"/>
+            <TextBlock Foreground="White" FontSize="20" Text="CM" Margin="10,0,0,0"></TextBlock>
         </WrapPanel>
-        <TextBlock Margin="15,0,0,0" FontSize="20" Foreground="White" Text="Poids"></TextBlock>
+        <TextBlock Margin="15,0,0,0" FontSize="20" Foreground="White" Text="Poids" ></TextBlock>
         <WrapPanel Margin="20">
-        <TextBox Width="200"></TextBox>
-            <TextBlock  Foreground="White" Text="kg" FontSize="20"></TextBlock>
+            <TextBox Width="200" TextWrapping="NoWrap" FontSize="20"></TextBox>
+            <TextBlock  Foreground="White" Text="KG" FontSize="20" Margin="10,0,0,0" ></TextBlock>
         </WrapPanel>
-        <WrapPanel Margin="20,60,0,0">
-            <Button Width="125">ANNULER</Button>
-            <Button Margin="100,0,15,0" Width="125">SAUVEGARDER</Button>
+        <WrapPanel >
+            <Button Width="140" FontSize="20" Margin="20,60,0,0" Background="White" BorderBrush="#FFF70606" Foreground="#FFFA0505">ANNULER</Button>
+            <Button Margin="60,60,20,0" Width="140" FontSize="20" Background="White" BorderBrush="#FFF70606" Foreground="#FFFA0505" >SAUVEGARDER</Button>
         </WrapPanel>
     </StackPanel>
 </Window>

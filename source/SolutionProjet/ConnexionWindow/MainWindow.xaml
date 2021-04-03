@@ -13,7 +13,7 @@
         <!---Une zone de texte pour mettre l'identifiant-->
         <WrapPanel HorizontalAlignment="Center" Margin="20"><!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="IDENTIFIANT :" Foreground="White" FontSize="15" ></TextBlock>
-            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/> <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0" TextChanged="TextBox_TextChanged"/> <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="20">
             <TextBlock Text="MOT DE PASSE : " Foreground="White" FontSize="15"></TextBlock>
