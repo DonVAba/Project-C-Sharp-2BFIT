@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ProfilWindow"
         mc:Ignorable="d"
         Title="ProfilWindow" Height="550" Width="800" MinWidth="800" MinHeight="450">
-    <DockPanel>
-        <WrapPanel Margin="30" Width="740" DockPanel.Dock="Top" HorizontalAlignment="Center">
+    <DockPanel Background="#FFF0F0F0">
+        <WrapPanel Margin="30" Width="740" DockPanel.Dock="Top" HorizontalAlignment="Center" Background="White">
             <Grid Width="740">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -16,21 +16,21 @@
                 </Grid.ColumnDefinitions>
                 <WrapPanel Grid.Column="0" Margin="20" HorizontalAlignment="Center">
                     <Rectangle Width="40" Height="30" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"></Rectangle>
-                    <TextBlock Text="Exercices" FontSize="30" Foreground="Black" Margin="15,0,0,0"></TextBlock>
+                    <TextBlock Text="Exercices" FontSize="30" Foreground="Black" Margin="15,0,0,0" FontWeight="Bold"></TextBlock>
                 </WrapPanel>
                 <WrapPanel Grid.Column="1" Margin="20" HorizontalAlignment="Center">
                     <Rectangle Width="40" Height="30" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"></Rectangle>
-                    <TextBlock Text="Kcal" FontSize="30" Foreground="Black" Margin="15,0,0,0">
+                    <TextBlock Text="Kcal" FontSize="30" Foreground="Black" Margin="15,0,0,0" FontWeight="Bold">
                     </TextBlock>
                 </WrapPanel>
                 <WrapPanel Grid.Column="2" Margin="20" HorizontalAlignment="Center">
                     <Rectangle  Width="40" Height="30" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black" ></Rectangle>
-                    <TextBlock  Text="Minutes" FontSize="30" Foreground="Black" Margin="15,0,30,0"></TextBlock>
+                    <TextBlock  Text="Minutes" FontSize="30" Foreground="Black" Margin="15,0,30,0" FontWeight="Bold"></TextBlock>
                 </WrapPanel>
             </Grid>
             <!--On remplacera les rectangles par les nombres d'exe, le nb de calorie et le nombre de minutes -->
         </WrapPanel>
-        <Grid DockPanel.Dock="Top" Margin="50,15,50,0" HorizontalAlignment="Center" Width="500" Height="200">
+        <Grid DockPanel.Dock="Top" Margin="50,15,50,0" HorizontalAlignment="Center" Width="500" Height="200" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -38,7 +38,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <WrapPanel Grid.Row="0" HorizontalAlignment="Left">
-                <TextBlock Text="POIDS :" FontSize="25" ></TextBlock>
+                <TextBlock Text="POIDS :" FontSize="25" Foreground="Blue" FontWeight="DemiBold" ></TextBlock>
                 <TextBlock Text=" - Actuel :" FontSize="25" Margin="73,0,0,0"></TextBlock>
                 <Rectangle Width="40" Height="30" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black" Margin="15,0,0,0" ></Rectangle>
                 <TextBlock Text="KG" FontSize="25" Margin="10,0,0,0" ></TextBlock>
@@ -54,7 +54,7 @@
                 <TextBlock Text="KG" FontSize="25" Margin="10,0,0,0" ></TextBlock>
             </WrapPanel>
             <WrapPanel Grid.Row="3" HorizontalAlignment="Left">
-                <TextBlock Text="TAILLE : " FontSize="25" ></TextBlock>
+                <TextBlock Text="TAILLE : " FontSize="25" Foreground="Blue" FontWeight="DemiBold" ></TextBlock>
                 <TextBlock Text="-  Actuelle :" FontSize="25" Margin="71,0,0,0"></TextBlock>
                 <Rectangle Width="40" Height="30" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black" Margin="15,0,0,0" ></Rectangle>
                 <TextBlock Text="CM" FontSize="25" Margin="10,0,0,0" ></TextBlock>
@@ -64,10 +64,10 @@
         <!--TODO-->
         <!--Je pense que j'ai pas choisi la meilleure structure ptet avec un grid et un stackpanel ca serait plus
         propre mais la comment c'est agencé je pense c'est pas trop mal -->
-        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="60">
+        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="60" Background="White">
             <TextBlock Text="IMC(kg/m²)  : " FontSize="25" ></TextBlock>
             <Rectangle Width="40" Height="30" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black" Margin="15,0,0,0" ></Rectangle>
-            <Button FontSize="25" Width="150" Margin="30,0,0,0">MODIFIER</Button>
+            <Button  Background="White" FontSize="25" Foreground="Blue" Width="150" Margin="30,0,0,0" FontWeight="DemiBold">MODIFIER</Button>
         </WrapPanel>
     </DockPanel>
 </Window>
