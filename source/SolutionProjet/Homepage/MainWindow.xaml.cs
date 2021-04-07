@@ -25,5 +25,10 @@ namespace Homepage
             InitializeComponent();
         }
 
+        private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
+        {
+            ModifierPoidsTaille m = new ModifierPoidsTaille();
+            m.Show();
+        }
     }
 }
