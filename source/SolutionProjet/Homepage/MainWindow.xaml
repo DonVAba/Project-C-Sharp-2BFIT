@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="450" MinWidth="800">
+        Title="Page d'accueil" MinHeight="450" MinWidth="800" Height="450" Width="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2"/>
@@ -51,7 +51,7 @@
             <TextBlock Text="PRENOM" FontWeight="Bold" Margin="40,0"/>
             <Rectangle Width="105" Height="22" Margin="50,0" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center">
+        
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -71,7 +71,7 @@
                     <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
                 </WrapPanel>
             </Grid>
-        </WrapPanel>
+        
         
         <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="535">
             <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>
