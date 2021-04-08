@@ -11,15 +11,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Compile Update="InscriptionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="InscriptionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WindowConnexion.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ModifierCorpulence.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Fenetre4.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
