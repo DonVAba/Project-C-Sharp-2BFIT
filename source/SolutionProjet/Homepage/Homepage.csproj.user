@@ -13,6 +13,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Update="Fenetre2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fenetre3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fenetre4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
