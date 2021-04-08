@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="450" MinWidth="800" Height="450" Width="800">
+        Title="Page d'accueil" MinHeight="470" MinWidth="800" Height="470" Width="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2"/>

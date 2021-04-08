@@ -7,17 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="img\**" />
-    <EmbeddedResource Remove="img\**" />
-    <None Remove="img\**" />
-    <Page Remove="img\**" />
+    <None Remove="img\icon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Fenetre2.xaml">
+    <Content Include="img\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="WindowConnexion.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Fenetre3.xaml">
+    <Page Update="ModifierCorpulence.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Fenetre4.xaml">

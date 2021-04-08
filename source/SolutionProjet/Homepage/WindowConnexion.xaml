@@ -1,0 +1,25 @@
+﻿<Window x:Class="Homepage.WindowConnexion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homepage"
+        mc:Ignorable="d"
+        Title="Connexion" Height="320" Width="450" MinHeight="320" MinWidth="450">
+    <StackPanel Background="CornflowerBlue">
+       
+        <Image Source="img/icon.png" Height="50" Margin="0,20,0,0"/>
+        
+        <WrapPanel HorizontalAlignment="Center" Margin="0,40,0,20">
+            <TextBlock Text="IDENTIFIANT :" Foreground="White" FontSize="15" ></TextBlock>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Center" Margin="0,40,0,20">
+            <TextBlock Text="MOT DE PASSE : " Foreground="White" FontSize="15"></TextBlock>
+            <PasswordBox  Width="280" Height="20" ></PasswordBox>
+           
+        </WrapPanel>
+        <Button HorizontalAlignment="Center" Name="ConnexionButton" Click="ConnexionButton_Click">Connexion</Button>
+        
+    </StackPanel>
+</Window>

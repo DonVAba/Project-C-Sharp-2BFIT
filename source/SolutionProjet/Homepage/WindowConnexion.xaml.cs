@@ -18,17 +18,16 @@ namespace Homepage
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WindowConnexion : Window
     {
-        public MainWindow()
+        public WindowConnexion()
         {
             InitializeComponent();
         }
 
-        private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
+        private void ConnexionButton_Click(object sender, RoutedEventArgs e)
         {
-            ModifierCorpulence m = new ModifierCorpulence();
-            m.Show();
+            
         }
     }
 }
