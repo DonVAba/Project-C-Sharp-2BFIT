@@ -1,0 +1,115 @@
+﻿<Window x:Class="Homepage.AjouterProgramme"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homepage"
+        mc:Ignorable="d"
+         Title="Ajouter un programme" Height="450" Width="450">
+    <StackPanel Background="CornflowerBlue">
+
+        <WrapPanel HorizontalAlignment="Center" Margin="10">
+            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+            <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/>
+            <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Center" Margin="10">
+            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+            <TextBlock Text="DÉFINITION :" Foreground="White" FontSize="15" ></TextBlock>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/>
+            <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+        </WrapPanel>
+
+        <WrapPanel Margin="0,10,0,0"/>
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Margin="10"  HorizontalAlignment="Center">
+                    <TextBlock Text="NOMBRE D'EXERCICES :" Foreground="CornflowerBlue"/>
+                    <TextBox TextWrapping="NoWrap" MinWidth="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                
+            </Grid>
+        </WrapPanel>
+        <WrapPanel Height="20"></WrapPanel>
+        <Border BorderThickness="5" BorderBrush="White">
+            <Grid HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                 <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Height="20" Width="40" Click="ImportImageButton_Click">
+                    <Image Source="img/icon/icon_import_image.png"/>
+                </Button>
+                <TextBlock Grid.Column="1" TextWrapping="NoWrap" Background="Beige" Width="90" HorizontalAlignment="Center" x:Name="CheminFichierExo"/>
+
+
+                <WrapPanel Grid.Column="2">
+                    <TextBlock Text="NOM :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="100" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                
+                <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="10">DÉBUTANT</TextBlock>
+                <WrapPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="NB SÉRIES :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="NB REPS :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="TEMPS REPOS :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                
+                <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="10">INTERMÉDIAIRE</TextBlock>
+                <WrapPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="NB SÉRIES :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="NB REPS :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="TEMPS REPOS :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+
+                <TextBlock Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Margin="10">EXPERT</TextBlock>
+                <WrapPanel Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="NB SÉRIES :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="NB REPS :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="TEMPS REPOS :" Foreground="White"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                </WrapPanel>
+                
+            </Grid>
+        </Border>
+        <WrapPanel Height="20"></WrapPanel>
+        <WrapPanel HorizontalAlignment="Center">
+            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120">ANNULER</Button>
+            <Button VerticalAlignment="Bottom" Margin="20,0,0,0" Width="120">ENTRER</Button>
+        </WrapPanel>
+    </StackPanel>
+</Window>

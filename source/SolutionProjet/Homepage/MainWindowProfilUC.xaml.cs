@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,23 +14,18 @@ using System.Windows.Shapes;
 namespace Homepage
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour MainWindowProfilUC.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowProfilUC : UserControl
     {
-        public MainWindow()
+        public MainWindowProfilUC()
         {
             InitializeComponent();
         }
-
-        private void MWButtonProfile_Click(object sender, RoutedEventArgs e)
+        private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowContentControl = new MainWindowProfilUC();
-        }
-
-        private void MWProgramButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindowContentControl = new MainWindowProgrammeUC();
+            ModifierCorpulence m = new ModifierCorpulence();
+            m.Show();
         }
     }
 }

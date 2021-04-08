@@ -12,12 +12,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AjouterProgramme.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="InscriptionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainWindowProfilUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainWindowProgrammeUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowMainAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AjouterProgramme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="InscriptionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindowProfilUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindowProgrammeUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowConnexion.xaml">
@@ -27,6 +48,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowMainAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

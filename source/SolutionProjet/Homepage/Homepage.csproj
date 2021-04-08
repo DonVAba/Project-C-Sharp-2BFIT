@@ -8,12 +8,17 @@
 
   <ItemGroup>
     <None Remove="img\icon.png" />
+    <None Remove="img\icon\icon_import_image.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="img\icon.png">
+    <Content Include="img\icon\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\icon\icon_import_image.png" />
   </ItemGroup>
 
   <ItemGroup>
