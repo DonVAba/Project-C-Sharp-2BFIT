@@ -27,8 +27,8 @@ namespace Homepage
 
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
-            ModifierPoidsTaille m = new ModifierPoidsTaille();
-            m.Show();
+            //ModifierPoidsTaille m = new ModifierPoidsTaille();
+            //m.Show();
         }
     }
 }

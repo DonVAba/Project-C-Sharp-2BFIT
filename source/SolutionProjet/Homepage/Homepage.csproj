@@ -7,13 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="img\icon_profile.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="img\icon_profile.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Compile Remove="img\**" />
+    <EmbeddedResource Remove="img\**" />
+    <None Remove="img\**" />
+    <Page Remove="img\**" />
   </ItemGroup>
 
 </Project>
