@@ -6,41 +6,41 @@
         xmlns:local="clr-namespace:Homepage"
         xmlns:local1="clr-namespace:Homepage.ucadmin"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="500" MinWidth="800" Height="500" Width="800">
+        Title="Page d'accueil" MinHeight="520" MinWidth="800" Height="520" Width="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="Profil" Click="Profil_Click"/>
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" SelectionChanged="ListBox_SelectionChanged">
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 1</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 2</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 3</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 4</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 5</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 6</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 7</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 8</TextBlock>
-                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
+                <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
 
             </ListBox>
-            <Button x:Name="ApercuButton" Content="+ AJOUTER" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="ApercuButton_Click" Margin="0,10,0,0" Style="{StaticResource BoutonProg}"/>
+            <Button x:Name="AjouterButton" Content="+ AJOUTER" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="AjouterButton_Click" Margin="0,10,0,0" Style="{StaticResource BoutonProg}"/>
         </StackPanel>
         <ContentControl x:Name="AdminContentControl">
-            <!--<local1:AdminProfilUC/> Erreur de chemin il trouve pas le fichier j'ai pas trouvé comment résoudre -->
+            <local1:AdminProfilUC/>
         </ContentControl>
     </DockPanel>
 </Window>

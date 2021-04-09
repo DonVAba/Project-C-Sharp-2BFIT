@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage"
         mc:Ignorable="d"
-         Title="Ajouter un programme" Height="450" Width="450">
+         Title="Ajouter un programme" Height="450" Width="470" MinHeight="450" MinWidth="470">
     <StackPanel Background="CornflowerBlue">
 
         <WrapPanel HorizontalAlignment="Center" Margin="10">
@@ -108,7 +108,7 @@
         </Border>
         <WrapPanel Height="20"></WrapPanel>
         <WrapPanel HorizontalAlignment="Center">
-            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120" Style="{StaticResource BoutonProg}">ANNULER</Button>
+            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120" Style="{StaticResource BoutonProg}" x:Name="Cancel" Click="Cancel_Click">ANNULER</Button>
             <Button VerticalAlignment="Bottom" Margin="20,0,0,0" Width="120" Style="{StaticResource BoutonProg}">ENTRER</Button>
         </WrapPanel>
     </StackPanel>

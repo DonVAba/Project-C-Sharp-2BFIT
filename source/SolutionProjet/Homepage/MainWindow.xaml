@@ -41,7 +41,7 @@
             </ListBox>
         </StackPanel>
         <ContentControl x:Name="MainWindowContentControl">
-            <!--<local:UserProfilUC/>-->
+            <local:UserProfilUC/>
         </ContentControl>
         
     </DockPanel>

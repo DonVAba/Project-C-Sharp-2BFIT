@@ -37,5 +37,10 @@ namespace Homepage
                 CheminFichierExo.Text = filename;
             }
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
