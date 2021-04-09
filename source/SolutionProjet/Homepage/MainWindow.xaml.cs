@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Homepage.ucuser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,12 +28,12 @@ namespace Homepage
 
         private void MWButtonProfile_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowContentControl = new MainWindowProfilUC();
+            MainWindowContentControl.Content = new UserProfilUC();
         }
 
         private void MWProgramButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowContentControl = new MainWindowProgrammeUC();
+            MainWindowContentControl.Content = new UserProgrammeUC();
         }
     }
 }

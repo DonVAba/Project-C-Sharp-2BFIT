@@ -11,21 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Homepage
+namespace Homepage.ucadmin
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindowProfilUC.xaml
+    /// Logique d'interaction pour ExercicePageUCAdmin.xaml
     /// </summary>
-    public partial class MainWindowProfilUC : UserControl
+    public partial class ExercicePageUCAdmin : UserControl
     {
-        public MainWindowProfilUC()
+        public ExercicePageUCAdmin()
         {
             InitializeComponent();
-        }
-        private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
-        {
-            ModifierCorpulence m = new ModifierCorpulence();
-            m.Show();
         }
     }
 }

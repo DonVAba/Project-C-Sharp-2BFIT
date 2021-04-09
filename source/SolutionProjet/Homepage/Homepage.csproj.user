@@ -18,10 +18,22 @@
     <Compile Update="InscriptionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MainWindowProfilUC.xaml.cs">
+    <Compile Update="ucuser\MainWindowProfilUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MainWindowProgrammeUC.xaml.cs">
+    <Compile Update="ucuser\MainWindowProgrammeUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucadmin\AdminProfilUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucadmin\ExercicePageUCAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucuser\UserProfilUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucuser\UserProgrammeUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WindowMainAdmin.xaml.cs">
@@ -35,10 +47,22 @@
     <Page Update="InscriptionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindowProfilUC.xaml">
+    <Page Update="ucuser\MainWindowProfilUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindowProgrammeUC.xaml">
+    <Page Update="ucuser\MainWindowProgrammeUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucadmin\AdminProfilUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucadmin\ExercicePageUCAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucuser\UserProfilUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucuser\UserProgrammeUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowConnexion.xaml">

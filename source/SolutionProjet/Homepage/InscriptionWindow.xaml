@@ -57,7 +57,7 @@
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
         <WrapPanel HorizontalAlignment="Center">
-            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120">ANNULER</Button>
+            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120" Click="CancelButton_Click">ANNULER</Button>
             <Button VerticalAlignment="Bottom" Margin="20,0,0,0" Width="120">ENTRER</Button>
         </WrapPanel>
     </StackPanel>

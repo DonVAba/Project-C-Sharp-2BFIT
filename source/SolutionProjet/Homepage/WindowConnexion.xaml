@@ -6,10 +6,18 @@
         xmlns:local="clr-namespace:Homepage"
         mc:Ignorable="d"
         Title="Connexion" Height="450" Width="450" MinHeight="320" MinWidth="450">
-    <StackPanel Background="CornflowerBlue">
-       
-        <Image Source="img/icon/icon.png" Height="50" Margin="0,20,0,0"/>
-        
+    <Window.Background>
+        <ImageBrush/>
+    </Window.Background>
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="img/imgfond/backgroundConnexion.jpg" Opacity="0.2"/>
+        </StackPanel.Background>
+
+        <Image Source="img/icon/icon.png" Height="50" Margin="0,20,0,0">
+
+        </Image>
+
         <WrapPanel HorizontalAlignment="Center" Margin="0,40,0,20">
             <TextBlock Text="IDENTIFIANT :" Foreground="White" FontSize="15" ></TextBlock>
             <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/>
@@ -17,11 +25,11 @@
         <WrapPanel HorizontalAlignment="Center" Margin="0,40,0,20">
             <TextBlock Text="MOT DE PASSE : " Foreground="White" FontSize="15"></TextBlock>
             <PasswordBox  Width="280" Height="20" ></PasswordBox>
-           
+
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,60,0,0">
             <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="Connexion" Margin="0,0,20,0"/>
-            <Button x:Name="InscirptionButton" Content="S'inscrire" Margin="20,0,0,0"/>
+            <Button x:Name="InscriptionButton" Content="S'inscrire" Margin="20,0,0,0" Click="InscriptionButton_Click"/>
         </WrapPanel>
 
     </StackPanel>

@@ -27,7 +27,14 @@ namespace Homepage
 
         private void ConnexionButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow mw = new MainWindow();
+            mw.Show();
+        }
+
+        private void InscriptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            InscriptionWindow iw = new InscriptionWindow();
+            iw.Show();
         }
     }
 }

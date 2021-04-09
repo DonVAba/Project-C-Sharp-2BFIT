@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Homepage"
+        xmlns:local="clr-namespace:Homepage.ucuser"
         mc:Ignorable="d"
         Title="Page d'accueil" MinHeight="470" MinWidth="800" Height="470" Width="800">
     <DockPanel>
@@ -12,9 +12,6 @@
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412">
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 1</TextBlock>
                 <Button Content="APERCU" Click="MWProgramButton_Click"/>
-                <!-- J'ai laissé les boutons comme ça mais ça sert à rien d'y toucher, c'est dans la partie csharp qu'on remplira ce qu'il y a dans la listview -->
-                <!-- C'est juste pour avoir une idée de ce que ça donne -->
-                <!-- Mais en gros, la première étape c'était juste de savoir quoi mettre(ListBox,ListViewer..), ensuite avec la logique de l'application on remplira les données(prog1,prog2..) et ensuite c'est à la fin  qu'on fera le design avec icon/image etc -->
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 2</TextBlock>
                 <Button Content="APERCU" Click="MWProgramButton_Click"/>
@@ -41,7 +38,7 @@
             </ListBox>
         </StackPanel>
         <ContentControl x:Name="MainWindowContentControl">
-            <local:MainWindowProgrammeUC/>
+            <local:UserProfilUC/>
         </ContentControl>
         
     </DockPanel>

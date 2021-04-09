@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Homepage.ucadmin;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -27,6 +28,15 @@ namespace Homepage
 
         }
 
-       
+        private void ApercuButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            AdminContentControl.Content = new ExercicePageUCAdmin();
+        }
+
+        private void Profil_Click(object sender, RoutedEventArgs e)
+        {
+            AdminContentControl.Content = new AdminProfilUC();
+        }
     }
 }

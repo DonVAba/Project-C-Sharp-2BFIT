@@ -4,17 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage"
+        xmlns:local1="clr-namespace:Homepage.ucadmin"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="470" MinWidth="800" Height="470" Width="800">
+        Title="Page d'accueil" MinHeight="500" MinWidth="800" Height="500" Width="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
-            <Button Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+            <Button Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="Profil" Click="Profil_Click"/>
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" SelectionChanged="ListBox_SelectionChanged">
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 1</TextBlock>
                 <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
-                <!-- J'ai laissé les boutons comme ça mais ça sert à rien d'y toucher, c'est dans la partie csharp qu'on remplira ce qu'il y a dans la listview -->
-                <!-- C'est juste pour avoir une idée de ce que ça donne -->
-                <!-- Mais en gros, la première étape c'était juste de savoir quoi mettre(ListBox,ListViewer..), ensuite avec la logique de l'application on remplira les données(prog1,prog2..) et ensuite c'est à la fin  qu'on fera le design avec icon/image etc -->
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 2</TextBlock>
                 <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
@@ -39,59 +37,10 @@
                 <Separator Background="White"/>
 
             </ListBox>
-            <Button Content="AJOUTER" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+            <Button x:Name="ApercuButton" Content="APERCU" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="ApercuButton_Click"/>
         </StackPanel>
-        <StackPanel Background="White">
-            <TextBlock HorizontalAlignment="Center" Foreground="Red">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
-            <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15">
-                <TextBlock Padding="10" Text="NOM" FontWeight="Bold" Margin="50,0"/>
-                <Rectangle Width="105" Height="22" Margin="50,0" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
-                <!-- On mettra les données récupérer dans tous les rectangles de la sorte et normalement en csharp on pourra faire adapter sa largeur en fonction du texte rentré -->
-                <!-- Mais comme pour la list déroulable, ça va sauter c'était juste pour un aperçu -->
-            </WrapPanel>
-            <WrapPanel MinHeight="50" HorizontalAlignment="Center">
-                <TextBlock Text="PRENOM" FontWeight="Bold" Margin="40,0"/>
-                <Rectangle Width="105" Height="22" Margin="50,0" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
-            </WrapPanel>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <WrapPanel Grid.Column="0" Margin="20">
-                    <TextBlock Text="AGE" FontWeight="Bold" Margin="0,0,20,0"/>
-                    <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
-                </WrapPanel>
-                <WrapPanel Grid.Column="1" Margin="20">
-                    <TextBlock Text="POIDS" FontWeight="Bold" Margin="0,0,20,0"/>
-                    <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
-                </WrapPanel>
-                <WrapPanel Grid.Column="2" Margin="20">
-                    <TextBlock Text="TAILLE" FontWeight="Bold" Margin="0,0,20,0"/>
-                    <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
-                </WrapPanel>
-            </Grid>
-
-            <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
-                <Button>MODIFIER</Button>
-            </WrapPanel>
-            <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="565">
-                <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>
-            </WrapPanel>
-
-
-            <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-                <Rectangle Width="250" Height="117" Fill="LightGreen"/>
-                <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
-                <TextBlock Text="DIFFICULTÉ" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
-                <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
-                    <TextBlock>DÉBUTANT</TextBlock>
-                    <TextBlock>INTERMÉDIAIRE</TextBlock>
-                    <TextBlock>EXPÉRIMENTÉ</TextBlock>
-                </ComboBox>
-            </WrapPanel>
-        </StackPanel>
+        <ContentControl x:Name="AdminContentControl">
+            <local1:AdminProfilUC/>
+        </ContentControl>
     </DockPanel>
 </Window>
