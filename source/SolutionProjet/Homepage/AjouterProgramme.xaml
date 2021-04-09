@@ -11,7 +11,7 @@
         <WrapPanel HorizontalAlignment="Center" Margin="10">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
-            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="10">
@@ -108,8 +108,8 @@
         </Border>
         <WrapPanel Height="20"></WrapPanel>
         <WrapPanel HorizontalAlignment="Center">
-            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120">ANNULER</Button>
-            <Button VerticalAlignment="Bottom" Margin="20,0,0,0" Width="120">ENTRER</Button>
+            <Button VerticalAlignment="Bottom" Margin="0,0,20,0" Width="120" Style="{StaticResource BoutonProg}">ANNULER</Button>
+            <Button VerticalAlignment="Bottom" Margin="20,0,0,0" Width="120" Style="{StaticResource BoutonProg}">ENTRER</Button>
         </WrapPanel>
     </StackPanel>
 </Window>

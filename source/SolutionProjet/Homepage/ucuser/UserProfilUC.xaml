@@ -7,14 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="470" d:DesignWidth="654">
     <StackPanel Background="White">
-        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15">
-            <TextBlock Padding="10" Text="NOM" FontWeight="Bold" Margin="50,0"/>
+        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
+            <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
             <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
             <!-- On mettra les données récupérer dans tous les rectangles de la sorte et normalement en csharp on pourra faire adapter sa largeur en fonction du texte rentré -->
             <!-- Mais comme pour la list déroulable, ça va sauter c'était juste pour un aperçu -->
         </WrapPanel>
-        <WrapPanel MinHeight="50" HorizontalAlignment="Center">
-            <TextBlock Text="PRENOM" FontWeight="Bold" Margin="40,0"/>
+        <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="Auto">
+            <TextBlock Text="PRENOM" FontWeight="Bold"  FontSize="15" Margin="40,0"/>
             <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
 
@@ -25,21 +25,21 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <WrapPanel Grid.Column="0" Margin="20">
-                <TextBlock Text="AGE" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="AGE"  FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
                 <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
             </WrapPanel>
             <WrapPanel Grid.Column="1" Margin="20">
-                <TextBlock Text="POIDS" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="POIDS" FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
                 <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
             </WrapPanel>
             <WrapPanel Grid.Column="2" Margin="20">
-                <TextBlock Text="TAILLE" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="TAILLE" FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
                 <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
             </WrapPanel>
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
-            <Button x:Name="ButtonModifierCorpulence" Click="ButtonModifierCorpulence_Click">MODIFIER</Button>
+            <Button x:Name="ButtonModifierCorpulence" Click="ButtonModifierCorpulence_Click" FontSize="15" Background="White" BorderBrush="Black" Style="{StaticResource BoutonProg}">MODIFIER</Button>
         </WrapPanel>
         <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="565">
             <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>
@@ -49,7 +49,7 @@
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Rectangle Width="250" Height="117" Fill="LightGreen"/>
             <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
-            <TextBlock Text="DIFFICULTÉ" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
+            <TextBlock Text="DIFFICULTÉ" FontSize="15" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
             <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
     </StackPanel>

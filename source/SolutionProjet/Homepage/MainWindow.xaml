@@ -6,39 +6,42 @@
         xmlns:local="clr-namespace:Homepage.ucuser"
         mc:Ignorable="d"
         Title="Page d'accueil" MinHeight="470" MinWidth="800" Height="470" Width="800">
+    <Window.Resources>
+        
+    </Window.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Click="MWButtonProfile_Click" Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2"/>
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412">
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 1</TextBlock>
-                <Button Content="APERCU" Click="MWProgramButton_Click"/>
+                <Button Content="APERCU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/> 
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 2</TextBlock>
-                <Button Content="APERCU" Click="MWProgramButton_Click"/>
+                <Button Content="APERCU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 3</TextBlock>
-                <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
+                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 4</TextBlock>
-                <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
+                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 5</TextBlock>
-                <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
+                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 6</TextBlock>
-                <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
+                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 7</TextBlock>
-                <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
+                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 8</TextBlock>
-                <TextBlock Height="15" FontStyle="Italic">bouton</TextBlock>
+                <Button Content="APERÇU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
 
             </ListBox>
         </StackPanel>
         <ContentControl x:Name="MainWindowContentControl">
-            <local:UserProfilUC/>
+            <!--<local:UserProfilUC/>-->
         </ContentControl>
         
     </DockPanel>

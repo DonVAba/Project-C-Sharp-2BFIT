@@ -7,16 +7,16 @@
              mc:Ignorable="d" 
             d:DesignHeight="470" d:DesignWidth="654">
     <StackPanel Background="White">
-        <TextBlock HorizontalAlignment="Center" Foreground="Red">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
-        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15">
-            <TextBlock Padding="10" Text="NOM" FontWeight="Bold" Margin="50,0"/>
+        <TextBlock HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" FontSize="18">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
+        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="20" Width="400">
+            <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="50,0"/>
             <Rectangle Width="105" Height="22" Margin="50,0" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
             <!-- On mettra les données récupérer dans tous les rectangles de la sorte et normalement en csharp on pourra faire adapter sa largeur en fonction du texte rentré -->
             <!-- Mais comme pour la list déroulable, ça va sauter c'était juste pour un aperçu -->
         </WrapPanel>
-        <WrapPanel MinHeight="50" HorizontalAlignment="Center">
-            <TextBlock Text="PRENOM" FontWeight="Bold" Margin="40,0"/>
-            <Rectangle Width="105" Height="22" Margin="50,0" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
+        <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="400">
+            <TextBlock Text="PRENOM" FontWeight="Bold" FontSize="15" Margin="50,0"/>
+            <Rectangle Width="105" Height="22" Margin="43,0" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
         </WrapPanel>
 
         <Grid>
@@ -26,21 +26,21 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <WrapPanel Grid.Column="0" Margin="20">
-                <TextBlock Text="AGE" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="AGE" FontWeight="Bold" FontSize="15" Margin="0,0,20,0"/>
                 <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
             </WrapPanel>
             <WrapPanel Grid.Column="1" Margin="20">
-                <TextBlock Text="POIDS" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="POIDS" FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
                 <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
             </WrapPanel>
             <WrapPanel Grid.Column="2" Margin="20">
-                <TextBlock Text="TAILLE" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Text="TAILLE" FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
                 <Rectangle Width="105" Height="22" Fill="Beige" RadiusX="20" RadiusY="20" Stroke="Black"/>
             </WrapPanel>
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
-            <Button Click="ModifierButton_Click">MODIFIER</Button>
+            <Button Click="ModifierButton_Click" FontSize="15" BorderBrush="Black" Background="White" Style="{StaticResource BoutonProg}">MODIFIER</Button> <!-- Ajouter une bordure noire -->
         </WrapPanel>
         <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="565">
             <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>
@@ -50,8 +50,8 @@
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Rectangle Width="250" Height="117" Fill="LightGreen"/>
             <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
-            <TextBlock Text="DIFFICULTÉ" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
-            <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
+            <TextBlock Text="DIFFICULTÉ" FontWeight="Bold" FontSize="15" Margin="50,0" VerticalAlignment="Center"/>
+            <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox"> <!--TODO Stylisé le comboBox dans un style rapproché des boutons-->
                 <TextBlock>DÉBUTANT</TextBlock>
                 <TextBlock>INTERMÉDIAIRE</TextBlock>
                 <TextBlock>EXPÉRIMENTÉ</TextBlock>

@@ -27,15 +27,15 @@
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Rectangle Width="250" Height="117" Fill="LightGreen"/>
             <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
-            <TextBlock Text="DIFFICULTÉ" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
+            <TextBlock Text="DIFFICULTÉ" FontWeight="Bold" FontSize="15"  Margin="50,0" VerticalAlignment="Center"/>
             <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
                 <TextBlock>DÉBUTANT</TextBlock>
                 <TextBlock>INTERMÉDIAIRE</TextBlock>
                 <TextBlock>EXPÉRIMENTÉ</TextBlock>
             </ComboBox>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center">
-            <Button Content="COMMENCER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="LightGreen"/>
+        <WrapPanel HorizontalAlignment="Center" Margin="0,10">
+            <Button Content="COMMENCER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="#FF7EBCF0"/>
             <Button Content="SUPPRIMER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="Red" Foreground="White"/>
         </WrapPanel>
     </StackPanel>

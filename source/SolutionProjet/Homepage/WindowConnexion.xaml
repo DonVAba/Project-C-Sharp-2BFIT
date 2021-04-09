@@ -28,8 +28,8 @@
 
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,60,0,0">
-            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="Connexion" Margin="0,0,20,0"/>
-            <Button x:Name="InscriptionButton" Content="S'inscrire" Margin="20,0,0,0" Click="InscriptionButton_Click"/>
+            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="Connexion" Margin="0,0,20,0" FontSize="15" Style="{StaticResource BoutonProg}"/>
+            <Button x:Name="InscriptionButton" Content="S'inscrire" Margin="20,0,0,0" Click="InscriptionButton_Click" FontSize="15" Style="{StaticResource BoutonProg}"/>
         </WrapPanel>
 
     </StackPanel>
