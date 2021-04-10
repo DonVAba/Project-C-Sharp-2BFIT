@@ -9,13 +9,11 @@
     <StackPanel Background="White">
         <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
             <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
-            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
-            <!-- On mettra les données récupérer dans tous les rectangles de la sorte et normalement en csharp on pourra faire adapter sa largeur en fonction du texte rentré -->
-            <!-- Mais comme pour la list déroulable, ça va sauter c'était juste pour un aperçu -->
+            <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
         <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="Auto">
             <TextBlock Text="PRENOM" FontWeight="Bold"  FontSize="15" Margin="40,0"/>
-            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+            <TextBlock Background="LightSkyBlue" Width="120" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
 
         <Grid Margin="20">

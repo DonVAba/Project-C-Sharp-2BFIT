@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="textblockusercontrol\**" />
+    <EmbeddedResource Remove="textblockusercontrol\**" />
+    <None Remove="textblockusercontrol\**" />
+    <Page Remove="textblockusercontrol\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="img\icon.png" />
     <None Remove="img\icon\icon_import_image.png" />
     <None Remove="img\imgfond\backgroundConnexion.jpg" />
@@ -39,7 +46,6 @@
 
   <ItemGroup>
     <Folder Include="buttonusercontrol\" />
-    <Folder Include="textblockusercontrol\" />
   </ItemGroup>
 
 </Project>

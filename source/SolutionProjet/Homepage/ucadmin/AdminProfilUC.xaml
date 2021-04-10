@@ -8,13 +8,13 @@
             d:DesignHeight="470" d:DesignWidth="654">
     <StackPanel Background="White">
         <TextBlock HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" FontSize="18">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
-        <WrapPanel  MinHeight="50" Margin="20" Width="400" HorizontalAlignment="Center">
-            <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Margin="50,0,75,0"/>
-            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20" HorizontalAlignment="Center"/>
+        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
+            <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
+            <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
-        <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="400">
-            <TextBlock Padding="10" Text="PRENOM" FontSize="15" FontWeight="Bold" Margin="50,0"/>
-            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
+            <TextBlock Padding="10" Text="PRENOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
+            <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
 
         <Grid Margin="20">
