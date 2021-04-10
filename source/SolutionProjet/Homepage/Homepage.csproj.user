@@ -24,6 +24,12 @@
     <Compile Update="ucadmin\ExercicePageUCAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="uctextblock\defaulttextblockuc.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="uctextblock\textblocajoutprogramme.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ucuser\UserProfilUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -45,6 +51,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ucadmin\ExercicePageUCAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="uctextblock\defaulttextblockuc.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="uctextblock\textblocajoutprogramme.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ucuser\UserProfilUC.xaml">

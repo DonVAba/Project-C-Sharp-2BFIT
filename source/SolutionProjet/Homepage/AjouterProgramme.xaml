@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Homepage"
+        xmlns:local="clr-namespace:Homepage.uctextblock"
         mc:Ignorable="d"
          Title="Ajouter un programme" Height="450" Width="470" MinHeight="450" MinWidth="470">
     <StackPanel Background="CornflowerBlue">
@@ -63,46 +63,19 @@
                 </WrapPanel>
                 
                 <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="10">DÉBUTANT</TextBlock>
-                <WrapPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
-                    <TextBlock Text="NB SÉRIES :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
-                <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
-                    <TextBlock Text="NB REPS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
-                <WrapPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">
-                    <TextBlock Text="TEMPS REPOS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
+                <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="2"/>
+                <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="2" Grid.Column="1"/>
+                <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="2" Grid.Column="2"/>
                 
                 <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="10">INTERMÉDIAIRE</TextBlock>
-                <WrapPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">
-                    <TextBlock Text="NB SÉRIES :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
-                <WrapPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
-                    <TextBlock Text="NB REPS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
-                <WrapPanel Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center">
-                    <TextBlock Text="TEMPS REPOS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
+                <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="4"/>
+                <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="4" Grid.Column="1"/>
+                <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="4" Grid.Column="2"/>
 
                 <TextBlock Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Margin="10">EXPERT</TextBlock>
-                <WrapPanel Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center">
-                    <TextBlock Text="NB SÉRIES :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
-                <WrapPanel Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center">
-                    <TextBlock Text="NB REPS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
-                <WrapPanel Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">
-                    <TextBlock Text="TEMPS REPOS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
-                </WrapPanel>
+                <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="6"/>
+                <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="6" Grid.Column="1"/>
+                <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="6" Grid.Column="2"/>
                 
             </Grid>
         </Border>

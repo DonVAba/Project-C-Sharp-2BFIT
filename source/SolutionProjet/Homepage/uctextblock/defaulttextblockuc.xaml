@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Homepage.uctextblock.defaulttextblockuc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Homepage.uctextblock"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="230">
+    <DockPanel>
+        <TextBlock x:Name="textblock" FontSize="15" FontWeight="Bold" Margin="20,0,20,0" VerticalAlignment="Center"/>
+        <TextBlock Background="DarkSalmon" Width="120" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+    </DockPanel>
+</UserControl>

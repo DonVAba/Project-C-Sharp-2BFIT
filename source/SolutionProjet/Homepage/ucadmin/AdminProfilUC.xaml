@@ -3,38 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Homepage.ucadmin"
+             xmlns:local="clr-namespace:Homepage.uctextblock"
              mc:Ignorable="d" 
             d:DesignHeight="470" d:DesignWidth="654">
     <StackPanel Background="White">
         <TextBlock HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" FontSize="18">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
-        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="20" Width="400">
-            <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="50,0"/>
-            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+        <WrapPanel  MinHeight="50" Margin="20" Width="400" HorizontalAlignment="Center">
+            <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Margin="50,0,75,0"/>
+            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20" HorizontalAlignment="Center"/>
         </WrapPanel>
         <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="400">
-            <TextBlock Text="PRENOM" FontWeight="Bold" FontSize="15" Margin="50,0"/>
+            <TextBlock Padding="10" Text="PRENOM" FontSize="15" FontWeight="Bold" Margin="50,0"/>
             <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
 
-        <Grid>
+        <Grid Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <WrapPanel Grid.Column="0" Margin="20">
-                <TextBlock Text="AGE" FontWeight="Bold" FontSize="15" Margin="0,0,20,0"/>
-                <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
-            </WrapPanel>
-            <WrapPanel Grid.Column="1" Margin="20">
-                <TextBlock Text="POIDS" FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
-                <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
-            </WrapPanel>
-            <WrapPanel Grid.Column="2" Margin="20">
-                <TextBlock Text="TAILLE" FontSize="15" FontWeight="Bold" Margin="0,0,20,0"/>
-                <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
-            </WrapPanel>
+            <local:defaulttextblockuc Message="AGE"/>
+            <local:defaulttextblockuc Grid.Column="1" Message="POIDS"/>
+            <local:defaulttextblockuc Grid.Column="2" Message="TAILLE"/>
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
@@ -48,8 +39,7 @@
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Rectangle Width="250" Height="117" Fill="LightGreen"/>
             <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
-            <TextBlock Text="DIFFICULTÉ" FontWeight="Bold" FontSize="15" Margin="50,0" VerticalAlignment="Center"/>
-            <TextBlock Background="DarkSalmon" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+            <local:defaulttextblockuc Message="DFFICULTÉ" Margin="35"/>
         </WrapPanel>
     </StackPanel>
 </UserControl>
