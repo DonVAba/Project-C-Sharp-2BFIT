@@ -15,9 +15,6 @@
     <Compile Update="AjouterProgramme.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ExerciceWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="InscriptionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -39,9 +36,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="AjouterProgramme.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ExerciceWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="InscriptionWindow.xaml">

@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="img\icon.png" />
     <None Remove="img\icon\icon_import_image.png" />
+    <None Remove="img\imgfond\backgroundConnexion.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,9 @@
 
   <ItemGroup>
     <Resource Include="img\icon\icon_import_image.png" />
+    <Content Include="img\imgfond\backgroundConnexion.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +35,11 @@
     <Page Update="Fenetre4.xaml">
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="buttonusercontrol\" />
+    <Folder Include="textblockusercontrol\" />
   </ItemGroup>
 
 </Project>
