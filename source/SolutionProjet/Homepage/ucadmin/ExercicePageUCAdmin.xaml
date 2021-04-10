@@ -35,7 +35,7 @@
             </ComboBox>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,10">
-            <Button Content="COMMENCER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="#FF7EBCF0"/>
+            <Button Content="COMMENCER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="#FF7EBCF0" x:Name="start" Click="start_Click"/>
             <Button Content="SUPPRIMER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="Red" Foreground="White"/>
         </WrapPanel>
     </StackPanel>

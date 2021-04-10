@@ -22,5 +22,11 @@ namespace Homepage.ucadmin
         {
             InitializeComponent();
         }
+
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            ExerciceWindow e = new ExerciceWindow();
+            e.Show();
+        }
     }
 }
