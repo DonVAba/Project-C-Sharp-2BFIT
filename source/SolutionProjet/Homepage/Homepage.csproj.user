@@ -18,13 +18,16 @@
     <Compile Update="ExerciceWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="InscriptionWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="ucadmin\AdminProfilUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ucadmin\ExercicePageUCAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucconnexion\ucConnexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucconnexion\ucInscription.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="uctextblock\defaulttextblockuc.xaml.cs">
@@ -50,13 +53,16 @@
     <Page Update="ExerciceWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="InscriptionWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="ucadmin\AdminProfilUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ucadmin\ExercicePageUCAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucconnexion\ucConnexion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucconnexion\ucInscription.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="uctextblock\defaulttextblockuc.xaml">

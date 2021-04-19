@@ -11,7 +11,9 @@
     </Window.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
-            <Button Click="MWButtonProfile_Click" Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+            <Button Click="MWButtonProfile_Click" Background="SkyBlue" BorderBrush="CornflowerBlue" BorderThickness="2">
+                <Image Source="img/icon/icon.png" Width="20" Height="35"/>
+            </Button>
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412">
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 1</TextBlock>
                 <Button Content="APERCU" Click="MWProgramButton_Click" Style="{StaticResource BoutonProg}"/> 

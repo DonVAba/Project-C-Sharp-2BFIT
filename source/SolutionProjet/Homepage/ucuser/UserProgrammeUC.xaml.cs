@@ -25,8 +25,8 @@ namespace Homepage.ucuser
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            ExerciceWindow e = new ExerciceWindow();
-            e.Show();
+            ExerciceWindow ew = new ExerciceWindow();
+            ew.Show();
         }
     }
 }
