@@ -6,15 +6,7 @@
         xmlns:local="clr-namespace:Homepage.ucconnexion"
         mc:Ignorable="d"
         Title="Connexion" Height="450" Width="450" MinHeight="450" MinWidth="450">
-    <Window.Resources>
-        <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="Padding" Value="0,4" />
-            <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="20"/>
-        </Style>
-    </Window.Resources>
-    
+
     <StackPanel>
         <StackPanel.Background>
             <ImageBrush ImageSource="img/imgfond/background_ciel.jpg" Opacity="0.5"/>
@@ -23,5 +15,6 @@
         <ContentControl x:Name="ConnexionCC" Margin="20" HorizontalAlignment="Center" Height="369" Width="407">
             <local:ucConnexion/>
         </ContentControl>
+        
     </StackPanel>
 </Window>

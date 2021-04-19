@@ -45,16 +45,5 @@ namespace Homepage.ucconnexion
         }
 
 
-        public event RoutedEventHandler PremièreConnexionClick
-        {
-            add
-            {
-                CoFlatButton.Click += value;
-            }
-            remove
-            {
-                CoFlatButton.Click -= value;
-            }
-        }
     }
 }

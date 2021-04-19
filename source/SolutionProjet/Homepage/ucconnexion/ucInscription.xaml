@@ -14,11 +14,9 @@
                 <Trigger Property="Control.IsMouseOver" Value="True">
                     <Setter Property="Control.Background" Value="{x:Null}" />
                     <Setter Property="Control.BorderBrush" Value="{x:Null}" />
-                    <Setter Property="Control.FontWeight" Value="Bold" />
+                    <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
                 </Trigger>
-                <Trigger Property="Control.IsFocused" Value="True">
-                    <Setter Property="Control.FontWeight" Value="Bold" />
-                </Trigger>
+                
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
@@ -27,20 +25,20 @@
         <WrapPanel HorizontalAlignment="Center" Margin="20">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="NOM :" Foreground="CornflowerBlue" FontSize="15" Width="84" ></TextBlock>
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="1"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="20">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
 
             <TextBlock Text="PRENOM :" Foreground="CornflowerBlue" FontSize="15" Width="89" />
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="1"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="20">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" ></TextBlock>
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="1"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
@@ -68,13 +66,13 @@
         <WrapPanel Height="20"></WrapPanel>
 
         <WrapPanel HorizontalAlignment="Center" Margin="20" VerticalAlignment="Bottom">
-            <TextBlock Text="MOT DE PASSE : " Foreground="CornflowerBlue" FontSize="15"></TextBlock>
-            <PasswordBox  Width="200" Height="20" BorderBrush="CornflowerBlue" BorderThickness="1"></PasswordBox>
-            <!---Une zone de texte pour mettre le mdp deja caché grace à l'outils passwordbox-->
+            <TextBlock Text="MOT DE PASSE : " Foreground="CornflowerBlue" FontSize="13.5" VerticalAlignment="Center"></TextBlock>
+            <PasswordBox  Width="180" Height="20" Style="{StaticResource PassBoxAnimated}"></PasswordBox>
+            
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
         <WrapPanel HorizontalAlignment="Center">
-            <Button VerticalAlignment="Bottom" Width="120" Style="{StaticResource BoutonProg}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="InsButton_MouseEnter" MouseLeave="InsButton_MouseLeave">S'inscrire</Button>
+            <Button VerticalAlignment="Bottom" Width="120" Style="{StaticResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="InsButton_MouseEnter" MouseLeave="InsButton_MouseLeave">S'INSCRIRE</Button>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
             <Button  x:Name="CoFlatButton" Content="Déjà un compte ?" FontSize="11" FontStyle="Italic" Foreground="DarkGray"  Style="{StaticResource Flat}"/>

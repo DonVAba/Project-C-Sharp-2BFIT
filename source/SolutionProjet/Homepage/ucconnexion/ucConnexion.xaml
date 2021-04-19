@@ -14,29 +14,24 @@
                 <Trigger Property="Control.IsMouseOver" Value="True">
                     <Setter Property="Control.Background" Value="{x:Null}" />
                     <Setter Property="Control.BorderBrush" Value="{x:Null}" />
-                    <Setter Property="Control.FontWeight" Value="Bold" />
+                    <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
                 </Trigger>
-                <Trigger Property="Control.IsFocused" Value="True">
-                    <Setter Property="Control.FontWeight" Value="Bold" />
-                </Trigger>
+                
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
     <StackPanel Background="White">
-            
-            
-
-            <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,20">
-                <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" />
-                <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="1"/>
+        <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,20">
+                <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" VerticalAlignment="Center"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"  Foreground="CornflowerBlue"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,20">
-                <TextBlock Text="MOT DE PASSE : " Foreground="CornflowerBlue" FontSize="15"/>
-                <PasswordBox  Width="250" Height="20" BorderBrush="CornflowerBlue" BorderThickness="1"/>
+                <TextBlock Text="MOT DE PASSE : " Foreground="CornflowerBlue" FontSize="15" VerticalAlignment="Center"/>
+            <PasswordBox  Width="250" Height="20" Style="{StaticResource PassBoxAnimated}" Foreground="CornflowerBlue"/>
 
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,0">
-                <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="Connexion" FontSize="15" Style="{StaticResource BoutonProg}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="ConnexionButton_MouseEnter"/>
+            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="CONNEXION" FontSize="15" Style="{StaticResource test}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="ConnexionButton_MouseEnter"/>
  
             </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,0">
