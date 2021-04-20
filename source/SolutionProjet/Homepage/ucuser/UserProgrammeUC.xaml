@@ -28,7 +28,7 @@
             <Rectangle Width="250" Height="117" Fill="LightGreen"/>
             <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
             <TextBlock Text="DIFFICULTÉ"  FontSize="15" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
-            <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox" Style="{StaticResource Combobox}">
+            <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
                 <TextBlock>DÉBUTANT</TextBlock>
                 <TextBlock>INTERMÉDIAIRE</TextBlock>
                 <TextBlock>EXPÉRIMENTÉ</TextBlock>
