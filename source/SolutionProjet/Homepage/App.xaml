@@ -125,7 +125,19 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
+        <Style TargetType="{x:Type Border}" x:Key="BorderStyle1">
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="RoyalBlue" Offset="0.5"/>
+                        <GradientStop Color="DarkBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
         
         <Style TargetType="TextBox" x:Key="TextBoxAnimated">
             <Setter Property="VerticalAlignment" Value="Bottom"/>
@@ -252,6 +264,6 @@
         </Style>
 
         
-
+        
     </Application.Resources>
 </Application>

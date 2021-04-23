@@ -37,7 +37,7 @@
             </Grid>
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
-        <Border BorderThickness="5" BorderBrush="White">
+        <Border BorderThickness="5" BorderBrush="White" Style="{StaticResource BorderStyle1}">
             <Grid HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition/>
