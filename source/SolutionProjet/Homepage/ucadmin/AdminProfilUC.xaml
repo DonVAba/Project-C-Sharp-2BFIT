@@ -7,17 +7,17 @@
              mc:Ignorable="d" 
             d:DesignHeight="470" d:DesignWidth="654">
     <StackPanel Background="White">
-        <TextBlock HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" FontSize="18">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
-        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
+        <TextBlock HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" FontSize="14">CONNECTÉ EN TANT QUE ADMIN</TextBlock>
+        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,10" Width="auto">
             <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
             <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
-        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
+        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,10" Width="auto">
             <TextBlock Padding="10" Text="PRENOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
             <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
         </WrapPanel>
 
-        <Grid Margin="20">
+        <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -29,7 +29,11 @@
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
-            <Button Click="ModifierButton_Click" FontSize="15" BorderBrush="Black" Background="White" Style="{StaticResource BoutonProg}">MODIFIER</Button> <!-- Ajouter une bordure noire -->
+            <Border CornerRadius="5" BorderBrush="SkyBlue" BorderThickness="1">
+                <Button x:Name="ButtonModifierCorpulence" Click="ModifierButton_Click" Background="White">
+                    <Image Source="../img/icon/editicon2.png" Width="40"/>
+                </Button>
+            </Border>
         </WrapPanel>
         <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="565">
             <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>

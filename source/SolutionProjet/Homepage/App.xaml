@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Homepage"
-             StartupUri="MainWindow.xaml">
+             StartupUri="WindowConnexion.xaml">
     <Application.Resources>
         <Style TargetType="Button" x:Key="BoutonProg">
             <Setter Property="Background" Value="Azure"/>
@@ -125,7 +125,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
+        
+        
         <Style TargetType="TextBox" x:Key="TextBoxAnimated">
             <Setter Property="VerticalAlignment" Value="Bottom"/>
             <Setter Property="Template" >
@@ -157,6 +158,49 @@
                             </EventTrigger>
                             <Trigger Property="IsFocused" Value="true">
                                 <Setter TargetName="rect" Property="Fill" Value="CornflowerBlue"></Setter>
+                            </Trigger>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="watermark" Property="Visibility" Value="Visible"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxAnimated2">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" CornerRadius="5" Background="CornflowerBlue" BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid Margin="10,0">
+                                <TextBlock x:Name="watermark" VerticalAlignment="Center" Visibility="Collapsed" FontSize="{TemplateBinding FontSize}" Opacity="0.4" Text="{TemplateBinding Tag}"></TextBlock>
+                                <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center"></ScrollViewer>
+                                <Rectangle x:Name="rect" Fill="LightGray" Height="2" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,3"></Rectangle>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="GotFocus">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Width" AutoReverse="True" From="250" To="252" Duration="0:0:0.30" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase ></CubicEase>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetProperty="Height" AutoReverse="True" From="40" To="42" Duration="0:0:0.30" >
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase ></CubicEase>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter TargetName="rect" Property="Fill" Value="White"></Setter>
+                                <Setter TargetName="rect" Property="Height" Value="2"></Setter>
+                                <Setter TargetName="watermark" Property="Foreground" Value="White"></Setter>
                             </Trigger>
                             <Trigger Property="Text" Value="">
                                 <Setter TargetName="watermark" Property="Visibility" Value="Visible"></Setter>
@@ -207,35 +251,6 @@
             </Setter>
         </Style>
 
-        <Style TargetType="{x:Type Button}" x:Key="test">
-            <Setter Property="Background" Value="CornflowerBlue" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="12" />
-            <Setter Property="RenderTransformOrigin" Value="0.5 0.5" />
-            <Setter Property="RenderTransform">
-                <Setter.Value>
-                    <RotateTransform />
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                
-                <EventTrigger RoutedEvent="Button.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard TargetProperty="RenderTransform.Angle">
-                            <DoubleAnimation   
-                        From="0" To="20" Duration="0:0:1.45"   
-                        AutoReverse="True"  
-                        FillBehavior="Stop" />
-                            
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Style.Triggers>
-        </Style>
         
 
     </Application.Resources>

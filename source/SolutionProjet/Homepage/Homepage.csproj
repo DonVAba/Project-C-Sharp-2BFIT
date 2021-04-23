@@ -15,12 +15,24 @@
 
   <ItemGroup>
     <None Remove="img\icon.png" />
+    <None Remove="img\icon\addicon.png" />
+    <None Remove="img\icon\edit-icon.png" />
+    <None Remove="img\icon\editicon2.png" />
     <None Remove="img\icon\icon_import_image.png" />
     <None Remove="img\imgfond\backgroundConnexion.jpg" />
     <None Remove="img\imgfond\background_ciel.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="img\icon\addicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\icon\edit-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\icon\editicon2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\icon\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -46,10 +58,6 @@
     <Page Update="Fenetre4.xaml">
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="buttonusercontrol\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -28,7 +28,11 @@
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
-            <Button x:Name="ButtonModifierCorpulence" Click="ButtonModifierCorpulence_Click" FontSize="15" Background="White" BorderBrush="Black" Style="{StaticResource BoutonProg}">MODIFIER</Button>
+            <Border CornerRadius="5" BorderBrush="SkyBlue" BorderThickness="1">
+                <Button x:Name="ButtonModifierCorpulence" Click="ButtonModifierCorpulence_Click" Background="White">
+                    <Image Source="../img/icon/editicon2.png" Width="40"/>
+                </Button>
+            </Border>
         </WrapPanel>
         <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="565">
             <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>

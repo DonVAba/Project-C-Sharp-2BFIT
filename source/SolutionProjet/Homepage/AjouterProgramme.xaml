@@ -9,26 +9,28 @@
     <StackPanel Background="CornflowerBlue">
 
         <WrapPanel HorizontalAlignment="Center" Margin="10">
-            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
             <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="10">
-            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+            
             <TextBlock Text="DÉFINITION :" Foreground="White" FontSize="15" ></TextBlock>
             <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="17,0,0,0"/>
-            <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+            
         </WrapPanel>
 
         <WrapPanel Margin="0,10,0,0"/>
         <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Grid Background="White">
+            <Grid Background="White" Width="400">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <WrapPanel Margin="10"  HorizontalAlignment="Center">
-                    <TextBlock Text="NOMBRE D'EXERCICES :" Foreground="CornflowerBlue"/>
+                <WrapPanel Margin="10"  HorizontalAlignment="Center" Background="White">
+                    <Button Height="20" Width="40" Click="ImportImageButton_Click" Margin="10" Background="White">
+                        <Image Source="img/icon/icon_import_image.png"/>
+                    </Button>
+                    <TextBlock Text="NOMBRE D'EXERCICES :" Foreground="CornflowerBlue" Margin="10"/>
                     <TextBox TextWrapping="NoWrap" MinWidth="50" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
                 </WrapPanel>
                 

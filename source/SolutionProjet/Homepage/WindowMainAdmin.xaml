@@ -10,7 +10,7 @@
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Content="PROFIL" Background="Azure" Foreground="CornflowerBlue" FontWeight="Bold" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="Profil" Click="Profil_Click"/>
-            <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" SelectionChanged="ListBox_SelectionChanged" x:Name="ProgramListBox">
                 <TextBlock Height="30" Foreground="White" FontWeight="Bold">prog 1</TextBlock>
                 <Button Content="APERÇU" Click="ApercuButton_Click" Style="{StaticResource BoutonProg}"/>
                 <Separator Background="White"/>
@@ -37,7 +37,13 @@
                 <Separator Background="White"/>
 
             </ListBox>
-            <Button x:Name="AjouterButton" Content="+ AJOUTER" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="AjouterButton_Click" Margin="0,10,0,0" Style="{StaticResource BoutonProg}"/>
+            
+            <Button x:Name="AjouterButton"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="AjouterButton_Click" Margin="0,10,0,0" Background="White" BorderBrush="White">
+                <WrapPanel>
+                    <Image Source="img/icon/addicon.png" Width="20" VerticalAlignment="Top"/>
+                    <Label FontFamily="Arial" FontWeight="Bold" Foreground="RoyalBlue" VerticalAlignment="Center">AJOUTER</Label>
+                </WrapPanel>
+            </Button>
         </StackPanel>
         <ContentControl x:Name="AdminContentControl">
             <local1:AdminProfilUC/>

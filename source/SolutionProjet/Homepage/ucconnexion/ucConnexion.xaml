@@ -31,7 +31,7 @@
 
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,0">
-            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="CONNEXION" FontSize="15" Style="{StaticResource test}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="ConnexionButton_MouseEnter"/>
+            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="CONNEXION" FontSize="15" Style="{StaticResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="ConnexionButton_MouseEnter"/>
  
             </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,0">
