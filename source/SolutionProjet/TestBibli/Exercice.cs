@@ -6,16 +6,26 @@ namespace Application
 {
     public class Exercice : Nommable
     {
+        /// <summary>
+        /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "DEBUTANT"
+        /// </summary>
         private Valeur valeurDeb;
-        private Valeur valeurInter;
-        private Valeur valeurExpert;
+        public Valeur ValeurDeb { get; set; }
 
-        private string cheminImage;
-        public string CheminImage
-        {
-            get => cheminImage;
-            set => cheminImage = value;
-        }
+        /// <summary>
+        /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "INTERMEDIAIRE"
+        /// </summary>
+        private Valeur valeurInter;
+        public Valeur ValeurInter { get; set; }
+
+        /// <summary>
+        /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "INTERMEDIAIRE"
+        /// </summary>
+        private Valeur valeurExpert;
+        public Valeur ValeurExpert { get; set; }
+
+
+        public string CheminImage { get; set; }
 
         public Exercice(string Nom, string cheminImage, Valeur valeurDeb, Valeur valeurInter, Valeur valeurExpert):base(Nom)
         {

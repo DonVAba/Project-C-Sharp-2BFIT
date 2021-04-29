@@ -6,6 +6,10 @@ namespace Application
 {
     public class Nommable
     {
+
+        /// <summary>
+        /// Nom associé à un utilisateur, programme ou exercice
+        /// </summary>
         private string nom;
         public string Nom
         {
