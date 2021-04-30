@@ -2,7 +2,8 @@
 
 namespace Application
 {
-    public class Utilisateur : Nommable
+
+    public class Utilisateur : Nommable, IComparable, IComparable<Utilisateur>, IEquatable<Utilisateur>
     {
         private Programme dernierProgramme;
         /// <summary>
@@ -114,6 +115,49 @@ namespace Application
         public override string ToString()
         {
             return $"Prenom : {Prenom} Nom : {Nom} Age : {Age} Taille : {Taille} Poids : {Poids} Identifiant {Identifiant} Mdp : {Mdp}";
+        }
+
+        int IComparable.CompareTo(object obj)
+        {
+            if(!(obj is Utilisateur))
+            {
+                throw new ArgumentException("Error : l'objet à comparer n'est pas un Utilisateur");
+            }
+            Utilisateur user = obj as Utilisateur;
+            return this.CompareTo(user);
+        }
+
+        public int CompareTo(Utilisateur user)
+        {
+            return Identifiant.CompareTo(user.Identifiant);
+        }
+
+        public override bool Equals(object other)
+        {
+            if(!(other is Utilisateur))
+            {
+                return false;
+            }
+            return Equals(other as Utilisateur);
+        }
+
+        public bool Equals(Utilisateur user)
+        {
+            return Identifiant.Equals(user.Identifiant);
+        }
+
+        public override int GetHashCode()
+        {
+            return Identifiant.GetHashCode();
+        }
+
+        public static bool operator ==(Utilisateur u1,Utilisateur u2)
+        {
+            return Equals(u1, u2);
+        }
+        public static bool operator !=(Utilisateur u1, Utilisateur u2)
+        {
+            return !Equals(u1, u2);
         }
 
     }

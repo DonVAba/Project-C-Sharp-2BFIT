@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application
 {
-    public class Nommable
+    public abstract class Nommable
     {
 
         /// <summary>

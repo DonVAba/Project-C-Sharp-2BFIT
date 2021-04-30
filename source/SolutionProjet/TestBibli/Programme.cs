@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Application
 {
-    public class Programme : Nommable
+    public class Programme : Nommable, IEquatable<Programme>
     {
         /// <summary>
         /// Difficulté par défaut
         /// </summary>
-        private const string Diff_Par_Defaut = "DEBUTANT";
+        public const string Diff_Par_Defaut = "DEBUTANT";
 
         /// <summary>
         /// Liste des exercices contenus dans le programme
@@ -89,10 +89,46 @@ namespace Application
             
         }
 
+        /// <summary>
+        /// Méthode de paramérage de la chaine de caractère renvoyé si une instance de cette classe veut être écrite sur une COnsole ou Debug
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return  $"Description : {Description} nbExercices : {NbExercices} chemin Image : {CheminImage}";
         }
 
+        /// <summary>
+        /// Méthode qui compare 2 programmes entre eux
+        /// </summary>
+        /// <param name="other">Programme à comparer</param>
+        /// <returns></returns>
+        public bool Equals(Programme other)
+        {
+            return this.Equals(other.Nom);
+        }
+
+        /// <summary>
+        /// Méthode qui vérifie que l'objet passé en paramètre est un programme et qui appelle la méthode Equals avec un Programme passé en paramètres
+        /// </summary>
+        /// <param name="value">Objet à comparer</param>
+        /// <returns></returns>
+        public override bool Equals(Object value)
+        {
+            if(!(value is Programme))
+            {
+                throw new ArgumentException("Error : l'objet passé en paramètre n'est pas un programme");
+            }
+            return Equals(value as Programme);
+        }
+
+        /// <summary>
+        /// Méthode renvoyant le HashCode du programme instancié
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return Nom.GetHashCode();
+        }
     }
 }

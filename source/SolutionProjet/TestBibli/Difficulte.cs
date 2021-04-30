@@ -7,7 +7,7 @@ namespace Application
     /// <summary>
     /// Enumération des 3 difficultés possibles pour un programme
     /// </summary>
-    enum Difficulte
+    public enum Difficulte
     {
         DEBUTANT,
         INTERMEDIAIRE,
