@@ -23,6 +23,51 @@ namespace Management
         /// </summary>
         public IList<Programme> listProgrammes;
 
+        /// <summary>
+        /// Methode qui ajoute un programme
+        /// </summary>
+        /// <param name="programme"></param>
+        public void AjouterProgramme(Programme programme)
+        {
+            if (CreationObjectValidator.ValidationAjoutProgramme(programme))
+            {
+                listProgrammes.Add(programme);
+            }
+            else
+            {
+                throw new Exception("Non valid program");
+            }
+        }
+        /// <summary>
+        /// Methode pour suppr un programme en parcourant toute la liste de programme 
+        /// </summary>
+        /// <param name="programme"></param>
+        public void SupprimerProgramme(Programme programme)
+        {
+            foreach(var prog in listProgrammes)
+            {
+                if (programme.Equals(prog))
+                {
+                    listProgrammes.Remove(programme);
+                }
+                else
+                {
+                    throw new Exception("Programm not found");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Méthode de vérification des programmes si supprimé ou non
+        /// </summary>
+        public void AfficherProgramme()
+        {
+            foreach(var programme in listProgrammes)
+            {
+                Console.WriteLine(programme);
+            }
+        }
+
         public Utilisateur UtilisateurCourant { get; set; }
 
         /// <summary>
@@ -76,5 +121,15 @@ namespace Management
             return null;
         }
         */
+
+        /*public bool ValidationExercice(Exercice e) /// Je suis pas sur de ce que fait la méthode, elle vérifie si l'exercice est valide dans un programme ? 
+        {
+
+        }
+
+        public bool ValidationProgramme(Programme prog)///Même chose pour cette méthode 
+        {
+
+        }*/
     }
 }

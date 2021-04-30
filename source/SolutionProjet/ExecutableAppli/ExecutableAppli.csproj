@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Management\Management.csproj" />
     <ProjectReference Include="..\TestBibli\Application.csproj" />
   </ItemGroup>
 

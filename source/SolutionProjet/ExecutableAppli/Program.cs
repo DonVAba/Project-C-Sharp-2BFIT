@@ -18,6 +18,8 @@ namespace ExecutableAppli
             Valeur v = new Valeur(10,20,30);
             //Console.WriteLine(v);
             Debug.WriteLine(v);
+            
+
         }
     }
 }
