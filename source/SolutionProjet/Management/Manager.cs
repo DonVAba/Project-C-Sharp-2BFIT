@@ -12,10 +12,19 @@ namespace Management
         /// </summary>
         private Utilisateur utilisateurCourant;
 
+        public Utilisateur UtilisateurCourant { get; set; }
+
         /// <summary>
         /// Dictionnaire contenant en clé les identifiants des utilisateurs et en valeur, leur mot de passe
         /// </summary>
         public Dictionary<string, Utilisateur> listComptes;
+
+
+        /// <summary>
+        /// Programme choisi par un utilisateur avant de le lancer
+        /// </summary>
+        private Programme programmeChoisi;
+        public Programme ProgrammeChoisi { get; set; }
 
 
         /// <summary>
@@ -57,18 +66,9 @@ namespace Management
             }
         }
 
-        /// <summary>
-        /// Méthode de vérification des programmes si supprimé ou non
-        /// </summary>
-        public void AfficherProgramme()
-        {
-            foreach(var programme in listProgrammes)
-            {
-                Console.WriteLine(programme);
-            }
-        }
+       
 
-        public Utilisateur UtilisateurCourant { get; set; }
+        
 
         /// <summary>
         /// Méthode d'ajout d'un utilisateur dans la list d'utilisateur, et dans la liste de compte
@@ -76,9 +76,9 @@ namespace Management
         /// <param name="user"></param>
         public void AjouterUtilisateurInscription(Utilisateur user, string id)
         {
-            if (user == null)
+            if (user == null || !CreationObjectValidator.ValidationAjoutUser(user))
             {
-                throw new Exception("Error : null user");
+                throw new Exception("Error : null user ou null attribut");
             }
             else
             {
@@ -86,8 +86,12 @@ namespace Management
                 {
                     throw new Exception("Error : login already used");
                 }
-                else
+                else 
+                {
                     listComptes.Add(id, user);
+                    utilisateurCourant = user;
+                }
+                    
 
             }
         }
@@ -100,36 +104,43 @@ namespace Management
         /// <returns></returns>
         public bool VerifierConnexion(String login, String mdp)
         {
-            if (listComptes.ContainsKey(login))
+            Utilisateur user = RechercherUtilisateur(login);
+            if (user == null)
             {
-                if (listComptes.TryGetValue(login, out Utilisateur value))
-                {
-                    return value.Mdp.Equals(mdp);
-                }
-
+                throw new ArgumentException("Error : ce login n'appartient à aucun utilisateur");
             }
-            return false;
+            if (mdp.Equals(user.Mdp))
+            {
+                return true;
+            }
+            return false;   
+            
 
         }
 
-        /*public Utilisateur RechercherUtilisateur(string login) // pas sur qu'elle soit utile
+        /// <summary>
+        /// Méthode qui recherche un utilisateur dans la liste de compte en fonction du login rentré
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        public Utilisateur RechercherUtilisateur(string login) // pas sur qu'elle soit utile
         {
             if (listComptes.ContainsKey(login))
             {
-                
+                listComptes.TryGetValue(login, out Utilisateur value);
+                return value;
             }
             return null;
         }
-        */
 
-        /*public bool ValidationExercice(Exercice e) /// Je suis pas sur de ce que fait la méthode, elle vérifie si l'exercice est valide dans un programme ? 
+        public void LancementProgramme(Programme prog,String diff)
         {
-
+            Enum.TryParse(diff, out Difficulte value);
+            utilisateurCourant.LancerProgramme(prog, value);
+            ProgrammeChoisi = prog;
+            utilisateurCourant.DernierProgramme = prog;
+            utilisateurCourant.DiffDernierProg = value;
         }
-
-        public bool ValidationProgramme(Programme prog)///Même chose pour cette méthode 
-        {
-
-        }*/
+        
     }
 }

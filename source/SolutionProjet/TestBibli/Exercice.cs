@@ -43,25 +43,18 @@ namespace Application
         /// <param name="valeurDeb"> Valeur choisie si la difficulté du programme dans lequel il est contenu est "DEBUTANT"</param>
         /// <param name="valeurInter">Valeur choisie si la difficulté du programme dans lequel il est contenu est "INTERMEDIAIRE"</param>
         /// <param name="valeurExpert">Valeur choisie si la difficulté du programme dans lequel il est contenu est "EXPERT"</param>
-        public Exercice(string Nom, string cheminImage, Valeur valeurDeb, Valeur valeurInter, Valeur valeurExpert, Difficulte diff) : base(Nom)
+        public Exercice(string Nom, string cheminImage, Valeur valeurDeb, Valeur valeurInter, Valeur valeurExpert) : base(Nom)
         {
             CheminImage = cheminImage;
             this.valeurDeb = valeurDeb;
             this.valeurInter = valeurInter;
             this.valeurExpert = valeurExpert;
 
-            if (diff.ToString().Equals("DEBUTANT"))
-            {
-                ValeurCourante = ValeurDeb;
-            }
-            if (diff.ToString().Equals("INTERMEDIAIRE"))
-            {
-                ValeurCourante = ValeurInter;
-            }
-            if (diff.ToString().Equals("EXPERT"))
-            {
-                ValeurCourante = ValeurExpert;
-            }
+        }
+
+        public override string ToString()
+        {
+            return $"Nom : {Nom} ;\nDebutant : {valeurDeb}\nIntermédiaire : {valeurInter}\n Expert : {ValeurExpert} ";
         }
 
     }

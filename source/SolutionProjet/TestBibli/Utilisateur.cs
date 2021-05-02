@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace Application
 {
 
     public class Utilisateur : Nommable, IComparable, IComparable<Utilisateur>, IEquatable<Utilisateur>
     {
+        /// <summary>
+        /// Dernier programme lancé par l'utilisateur
+        /// </summary>
         private Programme dernierProgramme;
+
+        public Programme DernierProgramme { get; set; }
         /// <summary>
         /// Prenom de l'utilisateur
         /// </summary>
+        
         public string Prenom
         {
             get;
@@ -93,6 +101,13 @@ namespace Application
         }
 
         /// <summary>
+        /// Difficulté du dernier programme effectué
+        /// </summary>
+        private Difficulte diffDernierProg;
+
+        public Difficulte DiffDernierProg { get; set; }
+
+        /// <summary>
         /// Constructeur de la classe utilisateur
         /// </summary>
         /// <param name="Nom">Nom de l'utilisateur</param>
@@ -110,6 +125,28 @@ namespace Application
             Poids = poids;
             Identifiant = identifiant;
             Mdp = mdp;
+        }
+
+        public void LancerProgramme(Programme prog, Difficulte diff)
+        {
+            IList<Exercice> list = prog.LesExercices;
+            for (int i = 0; i < list.Count; i++)
+            {
+                Exercice ex = list[i];
+                if (diff.ToString().Equals("DEBUTANT"))
+                {
+                    ex.ValeurCourante = ex.ValeurDeb;
+                }
+                if (diff.ToString().Equals("INTERMEDIAIRE"))
+                {
+                    ex.ValeurCourante = ex.ValeurInter;
+                }
+                if (diff.ToString().Equals("EXPERT"))
+                {
+                    ex.ValeurCourante = ex.ValeurExpert;
+                }
+            }
+            
         }
 
         public override string ToString()

@@ -15,6 +15,9 @@ namespace Application
         /// Liste des exercices contenus dans le programme. 
         /// </summary>
         private IList<Exercice> lesExercices;
+
+        public IList<Exercice> LesExercices { get; set; }
+
         /// <summary>
         /// Methode pour ajouter un exercice après avoir vérifier si l'exercice rentré en paramètre était correcte
         /// </summary>
@@ -104,10 +107,6 @@ namespace Application
             set => cheminImage = value;
         }
 
-        /// <summary>
-        /// Niveau de difficulté du programme
-        /// </summary>
-        private Difficulte nvDifficulte;
 
         /// <summary>
         /// COnstructeur de la classe Programme
@@ -117,26 +116,15 @@ namespace Application
         /// <param name="cheminImage"></param>
         /// <param name="nom"></param>
         /// <param name="diff">Difficulté du programme qui va être converti en énum Difficulté</param>
-        public Programme(string description, int nbExercices, string cheminImage, string nom, string diff) : base(nom)
+        public Programme(string description, int nbExercices, string cheminImage, string nom) : base(nom)
         {
             Description = description;
             NbExercices = nbExercices;
             CheminImage = cheminImage;
-            Enum.TryParse(diff.ToUpper(), out Difficulte nvDifficulte);
             lesExercices = new List<Exercice>();
         }
 
-        /// <summary>
-        /// Deuxième constructeur si aucune difficulté n'est rentrée en paramaètres
-        /// </summary>
-        /// <param name="description"></param>
-        /// <param name="nbExercices"></param>
-        /// <param name="cheminImage"></param>
-        /// <param name="nom"></param>
-        public Programme(string description, int nbExercices, string cheminImage, string nom) : this(description, nbExercices, cheminImage, nom, Diff_Par_Defaut)
-        {
-            
-        }
+        
 
         /// <summary>
         /// Méthode de paramérage de la chaine de caractère renvoyé si une instance de cette classe veut être écrite sur une COnsole ou Debug
