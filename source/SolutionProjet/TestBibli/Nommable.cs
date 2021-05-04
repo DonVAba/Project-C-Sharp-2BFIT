@@ -21,6 +21,10 @@ namespace Application
             return $" Nom : {Nom}";
         }
 
+        /// <summary>
+        /// Constructeur de classe nommable
+        /// </summary>
+        /// <param name="nom"></param>
         public Nommable(string nom)
         {
             Nom = nom;

@@ -76,6 +76,10 @@ namespace Application
             TpsRepos = tpsRepos;
         }
 
+        /// <summary>
+        /// Méthode renvoyant une forme écrite d'une Valeur
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"NbSeries : {NbSeries} ; NbReps : {NbReps} ; Temps Repos : {TpsRepos}";

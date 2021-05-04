@@ -27,6 +27,7 @@ namespace Application
         /// <summary>
         /// Valeur qui varie en fonction du niveau de difficulté choisi du programme
         /// </summary>
+        private Valeur valeurCourante;
         public Valeur ValeurCourante { get; set; }
 
 
@@ -52,6 +53,10 @@ namespace Application
 
         }
 
+        /// <summary>
+        /// Méthode renvoyant une forme écrite d'un exercice
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"Nom : {Nom} ;\nDebutant : {valeurDeb}\nIntermédiaire : {valeurInter}\n Expert : {ValeurExpert} ";

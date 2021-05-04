@@ -109,6 +109,7 @@ namespace Application
 
         public Difficulte DiffDernierProg { get; set; }
 
+
         /// <summary>
         /// Constructeur de la classe utilisateur
         /// </summary>
@@ -129,12 +130,16 @@ namespace Application
             Mdp = mdp;
         }
 
+        /// <summary>
+        /// Méthode qui permet le lancement d'un programme en définissant les valeurs courantes des exercices du programme choisi enfonction de la difficulté choisie
+        /// </summary>
+        /// <param name="prog">Programme choisi</param>
+        /// <param name="diff">Difficulté choisie</param>
         public void LancerProgramme(Programme prog, Difficulte diff)
         {
-            IList<Exercice> list = prog.LesExercices;
-            for (int i = 0; i < list.Count; i++)
+            LinkedList<Exercice> list = prog.LesExercices;
+            foreach(var ex in list)
             {
-                Exercice ex = list[i];
                 if (diff.ToString().Equals("DEBUTANT"))
                 {
                     ex.ValeurCourante = ex.ValeurDeb;
@@ -151,6 +156,10 @@ namespace Application
             
         }
 
+        /// <summary>
+        /// Méthode renvoyant une forme écrite d'un utilisateur
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"Prenom : {Prenom} Nom : {Nom} Age : {Age} Taille : {Taille} Poids : {Poids} Identifiant {Identifiant} Mdp : {Mdp}";

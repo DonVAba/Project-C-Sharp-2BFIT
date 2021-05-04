@@ -9,16 +9,6 @@ namespace Application
         
 
         /// <summary>
-        /// Liste des exercices contenus dans le programme. 
-        /// </summary>
-        private IList<Exercice> lesExercices;
-
-        public IList<Exercice> LesExercices { get; set; }
-
-       
-        
-
-        /// <summary>
         /// Description du programme
         /// </summary>
         public string Description
@@ -56,9 +46,16 @@ namespace Application
             set => cheminImage = value;
         }
 
+        /// <summary>
+        /// Liste des exercices contenus dans le programme. 
+        /// </summary>
+        private LinkedList<Exercice> lesExercices;
+
+        public LinkedList<Exercice> LesExercices { get; set; }
+
 
         /// <summary>
-        /// COnstructeur de la classe Programme
+        /// Constructeur de la classe Programme
         /// </summary>
         /// <param name="description"></param>
         /// <param name="nbExercices"></param>
@@ -70,7 +67,7 @@ namespace Application
             Description = description;
             NbExercices = nbExercices;
             CheminImage = cheminImage;
-            lesExercices = new List<Exercice>();
+            lesExercices = new LinkedList<Exercice>();
         }
 
         
@@ -118,40 +115,18 @@ namespace Application
         }
 
         /// <summary>
-        /// Methode pour ajouter un exercice après avoir vérifier si l'exercice rentré en paramètre était correcte
-        /// </summary>
-        /// <param name="e"> Exercice rentré en paramètre </param>
-        /// <returns></returns>
-        public bool AjouterExercices(Exercice e)
-        {
-            if (string.IsNullOrWhiteSpace(e.Nom))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(e.CheminImage))
-            {
-                return false;
-            }
-            if (e.ValeurCourante is null)
-            {
-                return false;
-            }
-            lesExercices.Add(e);
-            return true;
-        }
-        /// <summary>
         /// Méthode qui supprime un exercice, je l'ai ajouté je me suis dit si on ajoute un exo ca serait plus logique si on peut les supprimer aussi
         /// </summary>
         /// <param name="e"></param>
         /// <returns></returns>
-        public bool SupprimerExercices(Exercice e)
+        public void SupprimerExercices(Exercice e)
         {
             foreach (var exo in lesExercices)
             {
                 if (e.Equals(exo))
                 {
                     lesExercices.Remove(e);
-                    return true;
+                    return;
                 }
             }
             throw new Exception("Exercice rentré non trouvé ");

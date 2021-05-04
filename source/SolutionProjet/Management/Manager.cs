@@ -30,7 +30,7 @@ namespace Management
         /// <summary>
         /// Liste de tous les programmes
         /// </summary>
-        public IList<Programme> listProgrammes;
+        public LinkedList<Programme> listProgrammes;
 
         /// <summary>
         /// Methode qui ajoute un programme
@@ -40,7 +40,7 @@ namespace Management
         {
             if (CreationObjectValidator.ValidationAjoutProgramme(programme))
             {
-                listProgrammes.Add(programme);
+                listProgrammes.AddFirst(programme);
             }
             else
             {
@@ -97,7 +97,7 @@ namespace Management
         }
 
         /// <summary>
-        /// Méthode quo vérifie si le login correspond au mdp rentré lors de la connexion
+        /// Méthode qui vérifie si le login correspond au mdp rentré lors de la connexion
         /// </summary>
         /// <param name="login"> Login rentré</param>
         /// <param name="mdp"> Mot de passe rentré </param>
@@ -133,13 +133,60 @@ namespace Management
             return null;
         }
 
+        /// <summary>
+        /// Méthode qui permet le lancement d'un programme dans la classe utilisateur à partir d'un programme et d'une difficulté
+        /// et qui met à jour les valeurs du dernier programme effectué et de la difficulté de celui ci
+        /// </summary>
+        /// <param name="prog"></param>
+        /// <param name="diff"></param>
         public void LancementProgramme(Programme prog,String diff)
         {
             Enum.TryParse(diff, out Difficulte value);
-            utilisateurCourant.LancerProgramme(prog, value);
             ProgrammeChoisi = prog;
+            utilisateurCourant.LancerProgramme(ProgrammeChoisi, value);
             utilisateurCourant.DernierProgramme = prog;
             utilisateurCourant.DiffDernierProg = value;
+        }
+
+        /// <summary>
+        /// Méthode qui permet d'ajouter les exercices rentrés à la liste d'exercice d'un programme qui vient d'être instancié
+        /// en les vérifiant et ajoutant un par un
+        /// </summary>
+        /// <param name="prog">programme choisi</param>
+        /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
+        public void AjouterListExerciceALaCreationDunProgramme(Programme prog,LinkedList<Exercice> listEx)
+        {
+            if (CreationObjectValidator.ValidationAjoutProgramme(prog))
+            {
+                AjouterProgramme(prog);
+                ProgrammeChoisi = prog;
+                foreach (var exo in listEx)
+                {
+                    if (CreationObjectValidator.ValidationAjoutExercice(exo))
+                    {
+                        ProgrammeChoisi.LesExercices.AddLast(exo);
+                    }
+                    else throw new ArgumentException("Error : exercice incorrect");
+                }
+                return;
+
+            }
+            else throw new ArgumentException("Error : programme incorrect");
+        }
+
+        /// <summary>
+        /// Méthode qui permet d'ajouter un exercice à un programme déjà instancié
+        /// </summary>
+        /// <param name="prog"></param>
+        /// <param name="ex"></param>
+        public void AjouterUnExercice(Programme prog,Exercice ex)
+        {
+            ProgrammeChoisi = prog;
+            if (CreationObjectValidator.ValidationAjoutExercice(ex))
+            {
+                ProgrammeChoisi.LesExercices.AddLast(ex);
+            }
+            else throw new ArgumentException("Error : exercice rentré incomplet");
         }
         
     }
