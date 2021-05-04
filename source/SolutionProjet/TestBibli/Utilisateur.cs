@@ -7,12 +7,7 @@ namespace Application
 
     public class Utilisateur : Nommable, IComparable, IComparable<Utilisateur>, IEquatable<Utilisateur>
     {
-        /// <summary>
-        /// Dernier programme lancé par l'utilisateur
-        /// </summary>
-        private Programme dernierProgramme;
-
-        public Programme DernierProgramme { get; set; }
+       
         /// <summary>
         /// Prenom de l'utilisateur
         /// </summary>
@@ -99,6 +94,13 @@ namespace Application
             get;
             private set;
         }
+
+        /// <summary>
+        /// Dernier programme lancé par l'utilisateur
+        /// </summary>
+        private Programme dernierProgramme;
+
+        public Programme DernierProgramme { get; set; }
 
         /// <summary>
         /// Difficulté du dernier programme effectué

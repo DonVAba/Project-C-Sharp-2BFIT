@@ -6,10 +6,7 @@ namespace Application
 {
     public class Programme : Nommable, IEquatable<Programme>
     {
-        /// <summary>
-        /// Difficulté par défaut
-        /// </summary>
-        public const string Diff_Par_Defaut = "DEBUTANT";
+        
 
         /// <summary>
         /// Liste des exercices contenus dans le programme. 
@@ -18,56 +15,8 @@ namespace Application
 
         public IList<Exercice> LesExercices { get; set; }
 
-        /// <summary>
-        /// Methode pour ajouter un exercice après avoir vérifier si l'exercice rentré en paramètre était correcte
-        /// </summary>
-        /// <param name="e"> Exercice rentré en paramètre </param>
-        /// <returns></returns>
-        public bool AjouterExercices(Exercice e) 
-        {
-            if (string.IsNullOrWhiteSpace(e.Nom))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(e.CheminImage))
-            {
-                return false;
-            }
-            if (e.ValeurCourante is null)
-            {
-                return false;
-            }
-            lesExercices.Add(e);
-            return true;
-        }
-        /// <summary>
-        /// Méthode qui supprime un exercice, je l'ai ajouté je me suis dit si on ajoute un exo ca serait plus logique si on peut les supprimer aussi
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns></returns>
-        public bool SupprimerExercices(Exercice e)
-        {
-            foreach(var exo in lesExercices)
-            {
-                if (e.Equals(exo))
-                {
-                    lesExercices.Remove(e);
-                    return true;
-                }
-            }
-            throw new Exception("Exercice rentré non trouvé ");
-            
-        }
-        /// <summary>
-        /// Méthode qui permet de verifier si des exos ont bien été supprimé/ajouté
-        /// </summary>
-        public void AffichageExercices()
-        {
-            foreach(var exercice in lesExercices)
-            {
-                Console.WriteLine(exercice);
-            }
-        }
+       
+        
 
         /// <summary>
         /// Description du programme
@@ -166,6 +115,47 @@ namespace Application
         public override int GetHashCode()
         {
             return Nom.GetHashCode();
+        }
+
+        /// <summary>
+        /// Methode pour ajouter un exercice après avoir vérifier si l'exercice rentré en paramètre était correcte
+        /// </summary>
+        /// <param name="e"> Exercice rentré en paramètre </param>
+        /// <returns></returns>
+        public bool AjouterExercices(Exercice e)
+        {
+            if (string.IsNullOrWhiteSpace(e.Nom))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(e.CheminImage))
+            {
+                return false;
+            }
+            if (e.ValeurCourante is null)
+            {
+                return false;
+            }
+            lesExercices.Add(e);
+            return true;
+        }
+        /// <summary>
+        /// Méthode qui supprime un exercice, je l'ai ajouté je me suis dit si on ajoute un exo ca serait plus logique si on peut les supprimer aussi
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public bool SupprimerExercices(Exercice e)
+        {
+            foreach (var exo in lesExercices)
+            {
+                if (e.Equals(exo))
+                {
+                    lesExercices.Remove(e);
+                    return true;
+                }
+            }
+            throw new Exception("Exercice rentré non trouvé ");
+
         }
     }
 }
