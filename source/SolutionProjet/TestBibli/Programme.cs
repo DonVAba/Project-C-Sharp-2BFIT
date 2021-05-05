@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Application
@@ -27,10 +28,7 @@ namespace Application
             get => nbExercices;
             set
             {
-                if (value > 0)
-                {
-                    nbExercices = value;
-                }
+                value = lesExercices.Count();
             }
             
         }
@@ -62,10 +60,9 @@ namespace Application
         /// <param name="cheminImage"></param>
         /// <param name="nom"></param>
         /// <param name="diff">Difficulté du programme qui va être converti en énum Difficulté</param>
-        public Programme(string description, int nbExercices, string cheminImage, string nom) : base(nom)
+        public Programme(string description, string cheminImage, string nom) : base(nom)
         {
             Description = description;
-            NbExercices = nbExercices;
             CheminImage = cheminImage;
             lesExercices = new LinkedList<Exercice>();
         }

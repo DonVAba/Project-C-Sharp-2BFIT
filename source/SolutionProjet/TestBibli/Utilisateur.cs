@@ -18,24 +18,12 @@ namespace Application
             private set;
         }
 
+        public DateTime DateNaissance { get; set; }
         /// <summary>
         /// Age de l'utilisateur
         /// </summary>
         private int age;
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-            private set
-            {
-                if (value > 0 && value < 120)
-                {
-                    age = value;
-                }
-            }
-        }
+        public int Age => CalculAge(DateNaissance);
 
         /// <summary>
         /// Taille de l'utilisateur
@@ -120,14 +108,28 @@ namespace Application
         /// <param name="poids">Poids de l'utilisateur</param>
         /// <param name="identifiant">Identifiant de l'utilisateur</param>
         /// <param name="mdp">Mot de passe de l'utilisateur</param>
-        public Utilisateur(string Nom, string prenom, int age, int taille, int poids, string identifiant, string mdp):base(Nom)
+        public Utilisateur(string Nom, string prenom, DateTime dateNaissance, int taille, float poids, string identifiant, string mdp):base(Nom)
         {
             Prenom = prenom;
-            Age = age;
+            DateNaissance = dateNaissance;
             Taille = taille;
             Poids = poids;
             Identifiant = identifiant;
             Mdp = mdp;
+        }
+
+        /// <summary>
+        /// Méthode qui calcul l'âge de l'utilisateur à partir de sa date de naissance
+        /// </summary>
+        /// <param name="dateNaissance">Date de naissance de l'utilisateur</param>
+        /// <returns>Age de l'utilisateur</returns>
+        public int CalculAge(DateTime dateNaissance)
+        {
+            DateTime now = DateTime.Today;
+            int age = now.Year - dateNaissance.Year;
+            if (dateNaissance > now.AddYears(-age))
+                age--;
+            return age;
         }
 
         /// <summary>

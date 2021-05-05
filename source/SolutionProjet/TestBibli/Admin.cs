@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Application
 {
-    class Admin : Utilisateur
+    public class Admin : Utilisateur
     {
         /// <summary>
         /// Constructeur de la classe Admin qui dérive de la classe Utilisateur, les paramètres sont donc les mêmes
@@ -16,7 +16,7 @@ namespace Application
         /// <param name="poids"></param>
         /// <param name="identifiant"></param>
         /// <param name="mdp"></param>
-        public Admin(string Nom, string prenom, int age, int taille, int poids, string identifiant, string mdp) : base(Nom,prenom,age,taille,poids,identifiant,mdp)
+        public Admin(string Nom, string prenom, DateTime dateNaissance, int taille, int poids, string identifiant, string mdp) : base(Nom,prenom,dateNaissance,taille,poids,identifiant,mdp)
         {
 
         }
