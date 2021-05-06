@@ -155,6 +155,8 @@ namespace Application
                     ex.ValeurCourante = ex.ValeurExpert;
                 }
             }
+            //DernierProgramme = prog;
+            //DiffDernierProg = diff;
             
         }
 

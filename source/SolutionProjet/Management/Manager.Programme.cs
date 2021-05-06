@@ -5,15 +5,11 @@ using Application;
 
 namespace Management
 {
+    /// <summary>
+    /// Classe sérializable avec la liste des programme
+    /// </summary>
     public partial class Manager
     {
-
-
-        /// <summary>
-        /// Programme choisi par un utilisateur avant de le lancer
-        /// </summary>
-        private Programme programmeChoisi;
-        public Programme ProgrammeChoisi { get; set; }
 
 
         /// <summary>
@@ -56,24 +52,6 @@ namespace Management
         }
 
 
-
-
-
-
-        /// <summary>
-        /// Méthode qui permet le lancement d'un programme dans la classe utilisateur à partir d'un programme et d'une difficulté
-        /// et qui met à jour les valeurs du dernier programme effectué et de la difficulté de celui ci
-        /// </summary>
-        /// <param name="prog"></param>
-        /// <param name="diff"></param>
-        public void LancementProgramme(Programme prog, String diff)
-        {
-            Enum.TryParse(diff, out Difficulte value);
-            ProgrammeChoisi = prog;
-            utilisateurCourant.LancerProgramme(ProgrammeChoisi, value);
-            utilisateurCourant.DernierProgramme = prog;
-            utilisateurCourant.DiffDernierProg = value;
-        }
 
         /// <summary>
         /// Méthode qui permet d'ajouter les exercices rentrés à la liste d'exercice d'un programme qui vient d'être instancié

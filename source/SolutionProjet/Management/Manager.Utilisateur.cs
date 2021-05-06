@@ -5,14 +5,11 @@ using Application;
 
 namespace Management
 {
+    /// <summary>
+    /// Classe sérializable avec la list des comptes, donc la liste des utilisateurs
+    /// </summary>
     public partial class Manager
     {
-        /// <summary>
-        /// Utilisateur Connecté
-        /// </summary>
-        private Utilisateur utilisateurCourant;
-
-        public Utilisateur UtilisateurCourant { get; set; }
 
         /// <summary>
         /// Dictionnaire contenant en clé les identifiants des utilisateurs et en valeur, leur mot de passe
