@@ -133,7 +133,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Méthode qui permet le lancement d'un programme en définissant les valeurs courantes des exercices du programme choisi enfonction de la difficulté choisie
+        /// Méthode qui permet le lancement d'un programme en définissant les valeurs courantes des exercices du programme choisi en fonction de la difficulté choisie
         /// </summary>
         /// <param name="prog">Programme choisi</param>
         /// <param name="diff">Difficulté choisie</param>

@@ -15,13 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUnitaire", "TestUnitair
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AE3E0EF-35A0-411E-B971-62E3552669FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Utilisateur", "Test_Utilisateur\Test_Utilisateur.csproj", "{390B600D-4F52-4AE4-A925-8ACE280B6822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Utilisateur", "Test_Utilisateur\Test_Utilisateur.csproj", "{390B600D-4F52-4AE4-A925-8ACE280B6822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance", "Persistance\Persistance.csproj", "{B9EDBDA6-EE43-4F50-A301-911C1CED4CAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "Persistance\Persistance.csproj", "{B9EDBDA6-EE43-4F50-A301-911C1CED4CAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Programme", "Test_Programme\Test_Programme.csproj", "{DF281B1B-88D8-4986-93BD-E1095153D10E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Programme", "Test_Programme\Test_Programme.csproj", "{DF281B1B-88D8-4986-93BD-E1095153D10E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_Manager", "test_Manager\test_Manager.csproj", "{2C04F365-D2C7-4518-A45F-CDB00A81BC4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test_Manager", "test_Manager\test_Manager.csproj", "{2C04F365-D2C7-4518-A45F-CDB00A81BC4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +70,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{5411DA8B-E41D-4EAC-BE59-9A584394DF9D} = {8AE3E0EF-35A0-411E-B971-62E3552669FA}
 		{390B600D-4F52-4AE4-A925-8ACE280B6822} = {8AE3E0EF-35A0-411E-B971-62E3552669FA}
 		{DF281B1B-88D8-4986-93BD-E1095153D10E} = {8AE3E0EF-35A0-411E-B971-62E3552669FA}
 		{2C04F365-D2C7-4518-A45F-CDB00A81BC4B} = {8AE3E0EF-35A0-411E-B971-62E3552669FA}

@@ -19,13 +19,13 @@ namespace Persistance
             return (programmeStub, listCompte);
         }
 
-        private List<Utilisateur> ChargeListUsers()
+        public List<Utilisateur> ChargeListUsers()
         {
             List<Utilisateur> listUser = new List<Utilisateur>() {
-                new Utilisateur("Martel","Baptiste",new DateTime(2003, 30, 01),190,190,"bamartel","mdpDeBamartel"),
-                new Utilisateur("Maela","Bastien",new DateTime(2002, 11, 18),190,190,"bamalea","mdpDeBamalea"),
-                new Utilisateur("Dallet","Simon",new DateTime(2002, 12, 06),190,190,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
-                new Admin("Bouhours","Cecric",new DateTime(2002, 12, 06),190,190,"admin","mdpAdmin")
+                new Utilisateur("Martel","Baptiste",new DateTime(2003, 1, 30),190,190,"bamartel","mdpDeBamartel"),
+                new Utilisateur("Malea","Bastien",new DateTime(2002, 8, 11),190,190,"bamalea","mdpDeBamalea"),
+                new Utilisateur("Dallet","Simon",new DateTime(2002, 6, 12),190,190,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
+                new Admin("Bouhours","Cecric",new DateTime(1950, 10, 1),190,190,"admin","mdpAdmin")
             };
             return listUser;
 
