@@ -40,7 +40,7 @@ namespace Persistance
 
         }
 
-        private LinkedList<Programme> ChargeListprogramme()
+        public LinkedList<Programme> ChargeListprogramme()
         {
             
             (LinkedList<Exercice> listExercicePull, LinkedList<Exercice> listExercicePush, LinkedList<Exercice> listExerciceJambes) = ChargeListExercice();

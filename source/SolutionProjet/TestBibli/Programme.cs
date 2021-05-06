@@ -75,7 +75,7 @@ namespace Application
         /// <returns></returns>
         public override string ToString()
         {
-            return  $"Description : {Description} nbExercices : {NbExercices} chemin Image : {CheminImage}";
+            return  $"Description : {Description} | nbExercices : {NbExercices} | chemin Image : {CheminImage}";
         }
 
         /// <summary>
