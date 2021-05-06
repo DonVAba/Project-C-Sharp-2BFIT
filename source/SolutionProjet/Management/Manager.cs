@@ -19,7 +19,6 @@ namespace Management
         /// <summary>
         /// Programme choisi par un utilisateur avant de le lancer
         /// </summary>
-        private Programme programmeChoisi;
         public Programme ProgrammeChoisi { get; set; }
 
         /// <summary>

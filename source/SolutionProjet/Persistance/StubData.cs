@@ -7,14 +7,23 @@ namespace Persistance
     public class StubData : IDataLoad
     {
 
-        public override (IEnumerable<Programme>, Dictionary<String, Utilisateur>) ChargeDonnees()
+        public override (LinkedList<Programme>, Dictionary<String, Utilisateur>) ChargeDonnees()
         {
-            List<Programme> programmeStub = ChargeListprogramme();
+            LinkedList<Programme> programmeStub = ChargeListprogramme();
             List<Utilisateur> listUsers = ChargeListUsers();
             Dictionary<String, Utilisateur> listCompte = new Dictionary<String, Utilisateur>();
             foreach(Utilisateur user in listUsers)
             {
-                listCompte.Add(user.Identifiant, user);
+                try
+                {
+                    listCompte.Add(user.Identifiant, user);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+
             }
             return (programmeStub, listCompte);
         }
@@ -31,18 +40,17 @@ namespace Persistance
 
         }
 
-        private List<Programme> ChargeListprogramme()
+        private LinkedList<Programme> ChargeListprogramme()
         {
             
             (LinkedList<Exercice> listExercicePull, LinkedList<Exercice> listExercicePush, LinkedList<Exercice> listExerciceJambes) = ChargeListExercice();
             Programme push = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules", "chemin image programme PUSH");
             Programme pull = new Programme("PULL", "Programme qui fait travailler le dos et les biceps", "chemin image programme PULL");
             Programme jambes = new Programme("JAMBES", "Programme qui fait travailler les quadriceps et ischios", "chemin image programme JAMBES");
-            List<Programme> programmeStub = new List<Programme>()
-            {
-                push,pull,jambes
-
-            };
+            LinkedList<Programme> programmeStub = new LinkedList<Programme>();
+            programmeStub.AddLast(pull);
+            programmeStub.AddLast(push);
+            programmeStub.AddLast(jambes);
             push.LesExercices = listExercicePush;
             pull.LesExercices = listExercicePull;
             jambes.LesExercices = listExerciceJambes;

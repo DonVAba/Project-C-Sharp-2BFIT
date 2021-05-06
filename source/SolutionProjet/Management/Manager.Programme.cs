@@ -15,7 +15,7 @@ namespace Management
         /// <summary>
         /// Liste de tous les programmes
         /// </summary>
-        public LinkedList<Programme> listProgrammes;
+        public LinkedList<Programme> listProgrammes = new LinkedList<Programme>();
 
         /// <summary>
         /// Methode qui ajoute un programme
@@ -46,37 +46,9 @@ namespace Management
                 }
                 else
                 {
-                    throw new Exception("Programm not found");
+                    throw new ArgumentException("Programm not found");
                 }
             }
-        }
-
-
-
-        /// <summary>
-        /// Méthode qui permet d'ajouter les exercices rentrés à la liste d'exercice d'un programme qui vient d'être instancié
-        /// en les vérifiant et ajoutant un par un
-        /// </summary>
-        /// <param name="prog">programme choisi</param>
-        /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
-        public void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx)
-        {
-            if (CreationObjectValidator.ValidationAjoutProgramme(prog))
-            {
-                AjouterProgramme(prog);
-                ProgrammeChoisi = prog;
-                foreach (var exo in listEx)
-                {
-                    if (CreationObjectValidator.ValidationAjoutExercice(exo))
-                    {
-                        ProgrammeChoisi.LesExercices.AddLast(exo);
-                    }
-                    else throw new ArgumentException("Error : exercice incorrect");
-                }
-                return;
-
-            }
-            else throw new ArgumentException("Error : programme incorrect");
         }
 
         /// <summary>
@@ -93,5 +65,30 @@ namespace Management
             }
             else throw new ArgumentException("Error : exercice rentré incomplet");
         }
+
+
+        /// <summary>
+        /// Méthode qui permet d'ajouter les exercices rentrés à la liste d'exercice d'un programme qui vient d'être instancié
+        /// en les vérifiant et ajoutant un par un
+        /// </summary>
+        /// <param name="prog">programme choisi</param>
+        /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
+        public void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx)
+        {
+            if (CreationObjectValidator.ValidationAjoutProgramme(prog))
+            {
+                AjouterProgramme(prog);
+                ProgrammeChoisi = prog;
+                foreach (var exo in listEx)
+                {
+                        AjouterUnExercice(ProgrammeChoisi, exo);  
+                }
+                return;
+
+            }
+            else throw new ArgumentException("Error : programme incorrect");
+        }
+
+        
     }
 }

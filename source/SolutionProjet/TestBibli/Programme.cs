@@ -60,7 +60,7 @@ namespace Application
         /// <param name="cheminImage"></param>
         /// <param name="nom"></param>
         /// <param name="diff">Difficulté du programme qui va être converti en énum Difficulté</param>
-        public Programme(string description, string cheminImage, string nom) : base(nom)
+        public Programme(string nom,string description, string cheminImage) : base(nom)
         {
             Description = description;
             CheminImage = cheminImage;
@@ -85,7 +85,7 @@ namespace Application
         /// <returns></returns>
         public bool Equals(Programme other)
         {
-            return this.Equals(other.Nom);
+            return this.Nom.Equals(other.Nom);
         }
 
         /// <summary>
@@ -95,10 +95,10 @@ namespace Application
         /// <returns></returns>
         public override bool Equals(Object value)
         {
-            if(!(value is Programme))
+            /*if(!(value is Programme))
             {
                 throw new ArgumentException("Error : l'objet passé en paramètre n'est pas un programme");
-            }
+            }*/
             return Equals(value as Programme);
         }
 

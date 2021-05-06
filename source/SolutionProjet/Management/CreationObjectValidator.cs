@@ -110,10 +110,7 @@ namespace Management
             {
                 return false;
             }
-            if (ex.ValeurDeb is null || ex.ValeurExpert is null || ex.ValeurInter is null)
-            {
-                return false;
-            }
+            
 
             return true;
         }
