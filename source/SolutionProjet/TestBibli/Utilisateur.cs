@@ -19,10 +19,10 @@ namespace Application
         }
 
         public DateTime DateNaissance { get; set; }
+
         /// <summary>
         /// Age de l'utilisateur
         /// </summary>
-        private int age;
         public int Age => CalculAge(DateNaissance);
 
         /// <summary>
@@ -85,15 +85,12 @@ namespace Application
 
         /// <summary>
         /// Dernier programme lancé par l'utilisateur
-        /// </summary>
-        private Programme dernierProgramme;
-
+        /// </summary/
         public Programme DernierProgramme { get; set; }
 
         /// <summary>
         /// Difficulté du dernier programme effectué
         /// </summary>
-        private Difficulte diffDernierProg;
 
         public Difficulte DiffDernierProg { get; set; }
 
@@ -155,8 +152,7 @@ namespace Application
                     ex.ValeurCourante = ex.ValeurExpert;
                 }
             }
-            DernierProgramme = prog;
-            DiffDernierProg = diff;
+            
             
         }
 

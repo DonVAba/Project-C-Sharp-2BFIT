@@ -27,7 +27,6 @@ namespace Application
         /// <summary>
         /// Valeur qui varie en fonction du niveau de difficulté choisi du programme
         /// </summary>
-        private Valeur valeurCourante;
         public Valeur ValeurCourante { get; set; }
 
 

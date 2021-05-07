@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExecutableAppli", "ExecutableAppli\ExecutableAppli.csproj", "{2BB4B84C-3DA4-41AA-839A-97132DB49068}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Management", "Management\Management.csproj", "{149F3CED-E4ED-4209-86C3-A3B725B6E921}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B9EDBDA6-EE43-4F50-A301-911C1CED4CAD} = {B9EDBDA6-EE43-4F50-A301-911C1CED4CAD}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUnitaire", "TestUnitaire\TestUnitaire.csproj", "{5411DA8B-E41D-4EAC-BE59-9A584394DF9D}"
 EndProject

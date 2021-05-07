@@ -5,9 +5,9 @@ using Application;
 
 namespace Management
 {
-    /// <summary>
-    /// Classe sérializable avec la liste des programme
-    /// </summary>
+
+    /// CLASSE A MODIFIER : il ne faut pas avoir de données dans une classe manager, elle sert uniquement à délguer les "taches"
+    /// donc en gros à vérifier les objets avec CreatorValidationObject et à appeller les méthodes de la classe Liste
     public partial class Manager
     {
 
@@ -59,6 +59,10 @@ namespace Management
         public void AjouterUnExercice(Programme prog, Exercice ex)
         {
             ProgrammeChoisi = prog;
+            if(ProgrammeChoisi.LesExercices is null)
+            {
+                ProgrammeChoisi.LesExercices = new LinkedList<Exercice>();
+            }
             if (CreationObjectValidator.ValidationAjoutExercice(ex))
             {
                 ProgrammeChoisi.LesExercices.AddLast(ex);
@@ -69,7 +73,7 @@ namespace Management
 
         /// <summary>
         /// Méthode qui permet d'ajouter les exercices rentrés à la liste d'exercice d'un programme qui vient d'être instancié
-        /// en les vérifiant et ajoutant un par un
+        /// en les vérifiant et ajoutant un par un (vérification dans la méthode AjouterUnExercice()
         /// </summary>
         /// <param name="prog">programme choisi</param>
         /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
@@ -81,7 +85,7 @@ namespace Management
                 ProgrammeChoisi = prog;
                 foreach (var exo in listEx)
                 {
-                        AjouterUnExercice(ProgrammeChoisi, exo);  
+                   AjouterUnExercice(ProgrammeChoisi, exo);  
                 }
                 return;
 

@@ -6,8 +6,12 @@ namespace Persistance
 {
     public class StubData : IDataLoad
     {
-
-        public override (LinkedList<Programme>, Dictionary<String, Utilisateur>) ChargeDonnees()
+        /// <summary>
+        /// Méthode de chargement de données qui appelle les autres méthodes de chargement pour retourner les données nécessaires
+        /// au bon déroulement de l'application
+        /// </summary>
+        /// <returns></returns>
+        public override Listes ChargeDonnees()
         {
             LinkedList<Programme> programmeStub = ChargeListprogramme();
             List<Utilisateur> listUsers = ChargeListUsers();
@@ -25,9 +29,13 @@ namespace Persistance
 
 
             }
-            return (programmeStub, listCompte);
+            return new Listes(listCompte, programmeStub);
         }
 
+        /// <summary>
+        /// Méthode qui instancie 3 utilisateurs et 1 admin et qui retourne une liste contenant ces utilisateurs 
+        /// </summary>
+        /// <returns></returns>
         public List<Utilisateur> ChargeListUsers()
         {
             List<Utilisateur> listUser = new List<Utilisateur>() {
@@ -40,6 +48,10 @@ namespace Persistance
 
         }
 
+        /// <summary>
+        /// Méthode qui instancie 3 programmes, les insere dans une liste et retourne cette liste
+        /// </summary>
+        /// <returns></returns>
         public LinkedList<Programme> ChargeListprogramme()
         {
             
@@ -58,6 +70,10 @@ namespace Persistance
             
         }
 
+        /// <summary>
+        /// Méthode qui instancie 3 exercices pour chaque programme instancié, les insère dans 3 listes différentes et retourne ces listes
+        /// </summary>
+        /// <returns></returns>
         public (LinkedList<Exercice>, LinkedList<Exercice>, LinkedList<Exercice>) ChargeListExercice()
         {
             Valeur valDeb = new Valeur(8,4,80);

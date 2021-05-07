@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Application;
 
-namespace Management
+namespace Application
 {
-    /// CLASSE A MODIFIER : il ne faut pas avoir de données dans une classe manager, elle sert uniquement à délguer les "taches"
-    /// donc en gros à vérifier les objets avec CreatorValidationObject et à appeller les méthodes de la classe Liste
-    public partial class Manager
+    public partial class Listes
     {
-
-
         /// <summary>
         /// Utilisateur Connecté
         /// </summary>
@@ -33,10 +28,10 @@ namespace Management
         {
             Enum.TryParse(diff, out Difficulte value);
             ProgrammeChoisi = prog;
-            utilisateurCourant.LancerProgramme(ProgrammeChoisi, value);
-            utilisateurCourant.DernierProgramme = prog;
-            utilisateurCourant.DiffDernierProg = value;
+            Console.WriteLine("3");
+            UtilisateurCourant.LancerProgramme(ProgrammeChoisi, value); // ICI
+            UtilisateurCourant.DernierProgramme = prog;
+            UtilisateurCourant.DiffDernierProg = value;
         }
-
     }
 }

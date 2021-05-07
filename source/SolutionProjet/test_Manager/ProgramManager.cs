@@ -13,13 +13,12 @@ namespace test_Manager
         {
             Manager manager = new Manager();
             StubData stub = new StubData();
-            (LinkedList<Programme> stubProg, Dictionary<String, Utilisateur> stubCompte) = stub.ChargeDonnees();
-            manager.listProgrammes = stubProg;
-            manager.listComptes = stubCompte;
+            Listes list = stub.ChargeDonnees();
+            
 
             Console.WriteLine("\n-------------- PARTIE MANAGEMENT PROGRAMME ---------------");
             Console.WriteLine("Affichage de la liste des programmes");
-            foreach(Programme prog in manager.listProgrammes)
+            foreach(Programme prog in list.listProgrammes)
             {
                 Console.WriteLine(prog);
                 foreach(Exercice ex in prog.LesExercices)
@@ -31,12 +30,12 @@ namespace test_Manager
             Console.WriteLine("\n--------------------");
             Console.WriteLine("Test ajout programme + equals");
             Programme p1 = new Programme("PUSH", "description d'un programmerandom", "chemin image random");
-            foreach(Programme prog in manager.listProgrammes)
+            foreach(Programme prog in list.listProgrammes)
             {
                 Console.WriteLine($"{prog}  " + p1.Equals(prog));
             }
-            manager.AjouterProgramme(p1);
-            foreach (Programme prog in manager.listProgrammes)
+            list.AjouterProgramme(p1);
+            foreach (Programme prog in list.listProgrammes)
             {
                 Console.WriteLine($"{prog}");
             }
@@ -45,13 +44,13 @@ namespace test_Manager
             Console.WriteLine("Test suppression programme");
             try
             {
-                manager.SupprimerProgramme(p1);
+                list.SupprimerProgramme(p1);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-            foreach (Programme prog in manager.listProgrammes)
+            foreach (Programme prog in list.listProgrammes)
             {
                 Console.WriteLine($"{prog}");
             }
@@ -64,9 +63,9 @@ namespace test_Manager
             
             try
             {
-                manager.AjouterListExerciceALaCreationDunProgramme(p1, listExercice);
+                list.AjouterListExerciceALaCreationDunProgramme(p1, listExercice);
                 Console.WriteLine("True si ProgrammeChoisi a été mis à jour");
-                Console.WriteLine(manager.ProgrammeChoisi.Equals(p1)); 
+                Console.WriteLine(list.ProgrammeChoisi.Equals(p1)); 
                 foreach(Exercice ex in p1.LesExercices)
                 {
                     Console.WriteLine(ex);
@@ -81,7 +80,7 @@ namespace test_Manager
 
             Console.WriteLine("\n------- PARTIE MANEGEMENT USER------");
             Console.WriteLine("Affichage dictionnaire compte");
-            foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+            foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
             {
                 Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
             }
@@ -96,8 +95,8 @@ namespace test_Manager
             //Test avec un utilisateur correct
             try
             {
-                manager.AjouterUtilisateurInscription(u1, "Marc");
-                foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+                list.AjouterUtilisateurInscription(u1, "Marc");
+                foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
                 }
@@ -111,8 +110,8 @@ namespace test_Manager
             //Test avec un utilisateur null
             try
             {
-                manager.AjouterUtilisateurInscription(null, "");
-                foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+                list.AjouterUtilisateurInscription(null, "");
+                foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
                 }
@@ -126,8 +125,8 @@ namespace test_Manager
             //Test quand l'utilisateur existe déjà
             try
             {
-                manager.AjouterUtilisateurInscription(u1, "Marc");
-                foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+                list.AjouterUtilisateurInscription(u1, "Marc");
+                foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
                 }
@@ -144,7 +143,7 @@ namespace test_Manager
             Console.WriteLine("Test avec login et mdp correcte");
             try
             {
-                Console.WriteLine(manager.VerifierConnexion("Marc", "mdpDeMrChevaldonne"));
+                Console.WriteLine(list.VerifierConnexion("Marc", "mdpDeMrChevaldonne"));
             }
             catch(Exception e)
             {
@@ -155,7 +154,7 @@ namespace test_Manager
 
             try
             {
-                Console.WriteLine(manager.VerifierConnexion("Marc", "mauvaismdp"));
+                Console.WriteLine(list.VerifierConnexion("Marc", "mauvaismdp"));
             }
             catch (Exception e)
             {
@@ -166,7 +165,7 @@ namespace test_Manager
 
             try
             {
-                Console.WriteLine(manager.VerifierConnexion("MauvaisLogin", "mdpDeMrChevaldonne"));
+                Console.WriteLine(list.VerifierConnexion("MauvaisLogin", "mdpDeMrChevaldonne"));
             }
             catch (Exception e)
             {
@@ -174,6 +173,21 @@ namespace test_Manager
             }
 
 
+            Console.WriteLine("-------- TEST DE LA METHODE DE LANCEMENT DE PROGRAMME ----------");
+
+            list.UtilisateurCourant = u1;
+            Console.WriteLine(list.UtilisateurCourant);
+            try
+            {
+                Console.WriteLine("1");
+                list.LancementProgramme(p1, "DEBUTANT"); //ICI
+                Console.WriteLine(list.ProgrammeChoisi);
+                Console.WriteLine("\n" + list.UtilisateurCourant.DernierProgramme + "\n" + list.UtilisateurCourant.DiffDernierProg);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
     }

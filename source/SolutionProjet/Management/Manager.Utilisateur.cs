@@ -6,7 +6,8 @@ using Application;
 namespace Management
 {
     /// <summary>
-    /// Classe sérializable avec la list des comptes, donc la liste des utilisateurs
+    /// CLASSE A MODIFIER : il ne faut pas avoir de données dans une classe manager, elle sert uniquement à délguer les "taches"
+    /// donc en gros à vérifier les objets avec CreatorValidationObject et à appeller les méthodes de la classe Liste
     /// </summary>
     public partial class Manager
     {

@@ -7,6 +7,6 @@ namespace Persistance
 {
     public abstract class IDataSave
     {
-        public abstract void SauvegardeDonnees(IEnumerable<Programme> listProgramme,IEnumerable<Utilisateur> listUsers);
+        public abstract void SauvegardeDonnees(LinkedList<Programme> listProgramme,List<Utilisateur> listUsers);
     }
 }

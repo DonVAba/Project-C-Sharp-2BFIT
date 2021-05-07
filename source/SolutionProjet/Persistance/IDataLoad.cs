@@ -7,6 +7,6 @@ namespace Persistance
 {
     public abstract class IDataLoad
     {
-        public abstract (LinkedList<Programme>, Dictionary<String, Utilisateur>) ChargeDonnees();
+        public abstract Listes ChargeDonnees();
     }
 }
