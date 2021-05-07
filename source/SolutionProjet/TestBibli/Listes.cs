@@ -90,7 +90,7 @@ namespace Application
         {  
             if (listComptes.ContainsKey(id))
             {
-                throw new Exception("Error : login already used");
+                throw new ArgumentException("Error : login already used");
             }
             else
             {

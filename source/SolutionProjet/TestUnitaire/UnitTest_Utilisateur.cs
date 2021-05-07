@@ -1,26 +1,49 @@
 using Application;
+using Management;
 using System;
 using System.Diagnostics;
 using Xunit;
+using System.Collections.Generic;
 
 namespace TestUnitaire
-{   /// <summary>
-/// Classe test unitaire pour l'utilisateur 
-/// </summary>
-    public class UnitTest_Utilisateur
+{ 
+    public class UniTest_Utilisateur
     {
+        public Dictionary<string, Utilisateur> listComptes = new Dictionary<string, Utilisateur>();
+        Listes listeTest = new Listes();
+        
         [Fact]
-        public void TestProgrammeSansNom()
+        public void testUtilisateurDejaInscrit()
         {
-            Programme p1 = new Programme("a", "chemin image A", "Programme PUSH");
-            Debug.WriteLine(p1);
-            p1.LesExercices.AddLast(new Exercice("Exercice 1", "chemin image ", new Valeur(1, 2, 3), new Valeur(4, 5, 6), new Valeur(7, 8, 9)));
-            p1.LesExercices.AddLast(new Exercice("Exercice 2", "chemin image ", new Valeur(1, 2, 3), new Valeur(4, 5, 6), new Valeur(7, 8, 9)));
-            p1.LesExercices.AddLast(new Exercice("Exercice 3", "chemin image ", new Valeur(1, 2, 3), new Valeur(4, 5, 6), new Valeur(7, 8, 9)));
+            //Initialisation 
+            Utilisateur u1 = new Utilisateur("bamartel", "bamartel", new DateTime(2003, 1, 30), 190, 190, "bamartel", "mdpDeBamartel");
+            listeTest.AjouterUtilisateurInscription(u1, "bamartel");
+            Utilisateur u2 = new Utilisateur("Malea", "Bastien", new DateTime(2003, 1, 30), 180, 180, "bamartel", "mdpDeBastien");
 
-            Assert.True(Management.CreationObjectValidator.ValidationAjoutProgramme(p1));
-
-            
+            //Ce qu'on attend 
+            Assert.Throws<ArgumentException>(() => listeTest.AjouterUtilisateurInscription(u2, "bamartel"));
         }
+
+        [Fact]
+        public void ConnexionMauvaisLogs()
+        {
+            //Vérifie la connexion, renvoie une ArgumentException car mauvais login et mot de passe
+            Utilisateur u1 = new Utilisateur("bamartel", "bamartel", new DateTime(2003, 1, 30), 190, 190, "bamartel", "mdpDeBamartel");
+            listeTest.AjouterUtilisateurInscription(u1, "bamartel");
+            Assert.Throws<ArgumentException>(() =>listeTest.VerifierConnexion("mauvaisLogin", "Mauvaismdp"));
+        }
+
+        
     }
+
+
+
+
+
+
+
+
 }
+    
+
+
