@@ -8,24 +8,68 @@ namespace Test_Programme
     class ProgramProgramme
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Programme de test programme");
+        { 
             StubData stub = new StubData();
             LinkedList<Programme> listProg = stub.ChargeListprogramme();
 
 
+            //A ameliorer l'affichage est pas super propre
+            Console.WriteLine("Affichage des programmes");
+            foreach (Programme p in listProg)
+            {
+                Console.WriteLine(p);
+                foreach (Exercice ex in p.LesExercices)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            Console.WriteLine("-----------------------");
+
             //Test du ToString
-            Console.WriteLine("Test ToString");
-            foreach (Programme programme in listProg)
+            Console.WriteLine("Test du ToString");
+            foreach(Programme programme in listProg)
             {
                 Console.WriteLine(programme);
             }
 
-            //Test Equals 
-            Console.WriteLine("Test Equals :");
-            Console.WriteLine("Avec deux programme differents : " + listProg.First.Equals(listProg.Last));
+           
+            Console.WriteLine("-----------------------");
+
+            //Test Equals
             Programme prog = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules", "chemin image programme PUSH");
-            Console.WriteLine("Avec deux programme égaux : " + listProg.Contains(prog));
+            Console.WriteLine($"Test Equals avec le programme : {prog.Nom}");
+            //La methode ChargeListProgramme ajoute le programme ci dessus en 2eme position, le TRUE du Equals doit donc être après un tour dans la boucle
+            foreach(Programme programme in listProg)
+            {
+                Console.WriteLine($"Test du Equals : {programme.Equals(prog)}");
+            }
+            Console.WriteLine("-----------------------");
+
+            //Test Hashcode
+            Console.WriteLine("Test HashCode :");
+            foreach (Programme programme in listProg)
+            {
+                Console.WriteLine($"HashCode de chaque programme : {programme.GetHashCode()}");
+            }
+            Console.WriteLine("-----------------------");
+
+            //Test supprimer exercice, faut pas le mettre dans le test Unitaire plutot ? Vu que c'est une méthode 
+            Console.WriteLine("Supprimer exercice");
+            //Création d'un nouveau programme avec deux exercices
+            LinkedList<Exercice> listExo = new LinkedList<Exercice>();
+            listExo.AddLast(new Exercice("Traction", "chemin img traction", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60)));
+            Exercice e = new Exercice("Test", "chemin test", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60));
+            listExo.AddLast(e);
+            prog.LesExercices = listExo;
+            foreach(Exercice exercice in prog.LesExercices)
+            {
+                Console.WriteLine(exercice);
+            }
+            // Je n'arrive pas à accéder à un exercice 
+            // prog.SupprimerExercices(e);
+            
+
         }
     }
 }

@@ -118,7 +118,7 @@ namespace Application
         /// <returns></returns>
         public void SupprimerExercices(Exercice e)
         {
-            foreach (var exo in lesExercices)
+            foreach (Exercice exo in lesExercices)
             {
                 if (e.Equals(exo))
                 {

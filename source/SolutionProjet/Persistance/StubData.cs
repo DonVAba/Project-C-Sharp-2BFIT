@@ -58,7 +58,7 @@ namespace Persistance
             
         }
 
-        private (LinkedList<Exercice>, LinkedList<Exercice>, LinkedList<Exercice>) ChargeListExercice()
+        public (LinkedList<Exercice>, LinkedList<Exercice>, LinkedList<Exercice>) ChargeListExercice()
         {
             Valeur valDeb = new Valeur(8,4,80);
             Valeur valInter = new Valeur(10, 4,70);

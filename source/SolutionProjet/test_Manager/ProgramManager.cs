@@ -89,6 +89,92 @@ namespace test_Manager
             Console.WriteLine("\n-----------------");
             Console.WriteLine("Test ajout d'utilisateur");
 
+            //Création d'un nouvel utilisateur qu'on ajoute ensuite dans le dictionnaire compte
+
+            Utilisateur u1 = new Utilisateur("Chevaldonne", "Marc", new DateTime(1950, 1, 30), 190, 190, "Marc", "mdpDeMrChevaldonne");
+
+            //Test avec un utilisateur correct
+            try
+            {
+                manager.AjouterUtilisateurInscription(u1, "Marc");
+                foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+                {
+                    Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+
+            //Test avec un utilisateur null
+            try
+            {
+                manager.AjouterUtilisateurInscription(null, "");
+                foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+                {
+                    Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
+            //Test quand l'utilisateur existe déjà
+            try
+            {
+                manager.AjouterUtilisateurInscription(u1, "Marc");
+                foreach (KeyValuePair<String, Utilisateur> compte in manager.listComptes)
+                {
+                    Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            Console.WriteLine("\n-----------------");
+            Console.WriteLine("Test Verifier Connexion");
+
+            //Test avec login et mdp correcte
+            Console.WriteLine("Test avec login et mdp correcte");
+            try
+            {
+                Console.WriteLine(manager.VerifierConnexion("Marc", "mdpDeMrChevaldonne"));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            //Test avec un mauvais mdp
+
+            try
+            {
+                Console.WriteLine(manager.VerifierConnexion("Marc", "mauvaismdp"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            //Test avec un mauvais login
+
+            try
+            {
+                Console.WriteLine(manager.VerifierConnexion("MauvaisLogin", "mdpDeMrChevaldonne"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
+
         }
     }
 }
