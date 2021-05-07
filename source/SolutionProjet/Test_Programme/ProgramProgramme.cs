@@ -9,7 +9,7 @@ namespace Test_Programme
     {
         static void Main(string[] args)
         { 
-            StubData stub = new StubData();
+            StubData stub = new StubData("");
             LinkedList<Programme> listProg = stub.ChargeListprogramme();
 
 
@@ -54,9 +54,10 @@ namespace Test_Programme
             }
             Console.WriteLine("-----------------------");
 
-            //Test supprimer exercice, faut pas le mettre dans le test Unitaire plutot ? Vu que c'est une méthode 
+           
             Console.WriteLine("Supprimer exercice");
-            //Création d'un nouveau programme avec deux exercices
+
+            //Création d'un nouveau programme avec deux exercice
             LinkedList<Exercice> listExo = new LinkedList<Exercice>();
             listExo.AddLast(new Exercice("Traction", "chemin img traction", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60)));
             Exercice e = new Exercice("Test", "chemin test", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60));
@@ -66,9 +67,15 @@ namespace Test_Programme
             {
                 Console.WriteLine(exercice);
             }
-            // Je n'arrive pas à accéder à un exercice 
-            // prog.SupprimerExercices(e);
-            
+
+            // Test suppressione exercice
+            Console.WriteLine("---- Suppression de l'exercice -------");
+            prog.SupprimerExercices(e);
+            foreach (Exercice exercice in prog.LesExercices)
+            {
+                Console.WriteLine(exercice);
+            }
+
 
         }
     }

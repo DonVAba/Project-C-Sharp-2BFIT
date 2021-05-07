@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Application
 {
+    // pas à sérialiser
     public partial class Listes
     {
         /// <summary>
@@ -28,8 +29,7 @@ namespace Application
         {
             Enum.TryParse(diff, out Difficulte value);
             ProgrammeChoisi = prog;
-            Console.WriteLine("3");
-            UtilisateurCourant.LancerProgramme(ProgrammeChoisi, value); // ICI
+            UtilisateurCourant.LancerProgramme(ProgrammeChoisi, value);
             UtilisateurCourant.DernierProgramme = prog;
             UtilisateurCourant.DiffDernierProg = value;
         }

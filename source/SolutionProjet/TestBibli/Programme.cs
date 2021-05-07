@@ -47,7 +47,7 @@ namespace Application
         /// <summary>
         /// Liste des exercices contenus dans le programme. 
         /// </summary>
-        private LinkedList<Exercice> lesExercices;
+        public LinkedList<Exercice> lesExercices;
 
         public LinkedList<Exercice> LesExercices { get; set; }
 
@@ -128,6 +128,15 @@ namespace Application
             }
             throw new Exception("Exercice rentré non trouvé ");
 
+        }
+
+        /// <summary>
+        /// Ajoute un exercice à la liste d'exercice lesExercices
+        /// </summary>
+        /// <param name="ex"></param>
+        public void AjouterExercice(Exercice ex)
+        {
+            LesExercices.AddLast(ex);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Application
         /// <returns></returns>
         public override string ToString()
         {
-            return $"Nom : {Nom} ;\nDebutant : {valeurDeb}\nIntermédiaire : {valeurInter}\n Expert : {ValeurExpert} ";
+            return $"Nom : {Nom} ;\nDebutant : {valeurDeb}\nIntermédiaire : {valeurInter}\n Expert : {valeurExpert} ";
         }
 
     }

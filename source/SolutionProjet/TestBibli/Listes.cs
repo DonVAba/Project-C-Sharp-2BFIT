@@ -32,6 +32,24 @@ namespace Application
         }
 
         /// <summary>
+        /// Constructeur de Listes avec uniquement un ditcionnaire de compte en paramètres
+        /// </summary>
+        public Listes(Dictionary<string, Utilisateur> comptes)
+        {
+            listComptes = new Dictionary<string, Utilisateur>(comptes);
+            listProgrammes = new LinkedList<Programme>();
+        }
+
+        /// <summary>
+        /// Constructeur de Listes avec uniquement une liste de programme en paramètre
+        /// </summary>
+        public Listes(LinkedList<Programme> programmes)
+        {
+            listComptes = new Dictionary<string, Utilisateur>();
+            listProgrammes = new LinkedList<Programme>(programmes);
+        }
+
+        /// <summary>
         /// Constructeur de Listes sans aucun paramètres qui instancie les listes comptes et programmes
         /// </summary>
         public Listes()
@@ -145,8 +163,8 @@ namespace Application
             {
                 ProgrammeChoisi.LesExercices = new LinkedList<Exercice>();
             }
-            
-            ProgrammeChoisi.LesExercices.AddLast(ex);
+
+            ProgrammeChoisi.AjouterExercice(ex);
             
         }
 

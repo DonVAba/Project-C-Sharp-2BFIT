@@ -5,24 +5,17 @@ using Application;
 
 namespace Management
 {
-    /// <summary>
-    /// CLASSE A MODIFIER : il ne faut pas avoir de données dans une classe manager, elle sert uniquement à délguer les "taches"
-    /// donc en gros à vérifier les objets avec CreatorValidationObject et à appeller les méthodes de la classe Liste
-    /// </summary>
+    
     public partial class Manager
     {
 
-        /// <summary>
-        /// Dictionnaire contenant en clé les identifiants des utilisateurs et en valeur, leur mot de passe
-        /// </summary>
-        public Dictionary<string, Utilisateur> listComptes;
 
 
         /// <summary>
         /// Méthode d'ajout d'un utilisateur dans la list d'utilisateur, et dans la liste de compte
         /// </summary>
         /// <param name="user"></param>
-        public void AjouterUtilisateurInscription(Utilisateur user, string id)
+        public static void AjouterUtilisateurInscription(Utilisateur user, string id,Listes l)
         {
             if (user == null || !CreationObjectValidator.ValidationAjoutUser(user))
             {
@@ -30,15 +23,7 @@ namespace Management
             }
             else
             {
-                if (listComptes.ContainsKey(id))
-                {
-                    throw new Exception("Error : login already used");
-                }
-                else
-                {
-                    listComptes.Add(id, user);
-                    utilisateurCourant = user;
-                }
+                l.AjouterUtilisateurInscription(user,id);
 
 
             }
@@ -50,9 +35,9 @@ namespace Management
         /// <param name="login"> Login rentré</param>
         /// <param name="mdp"> Mot de passe rentré </param>
         /// <returns></returns>
-        public bool VerifierConnexion(String login, String mdp)
+        public static bool VerifierConnexion(String login, String mdp,Listes l)
         {
-            Utilisateur user = RechercherUtilisateur(login);
+            Utilisateur user = l.RechercherUtilisateur(login);
             if (user == null)
             {
                 throw new ArgumentException("Error : ce login n'appartient à aucun utilisateur");
@@ -66,19 +51,5 @@ namespace Management
 
         }
 
-        /// <summary>
-        /// Méthode qui recherche un utilisateur dans la liste de compte en fonction du login rentré
-        /// </summary>
-        /// <param name="login"></param>
-        /// <returns></returns>
-        public Utilisateur RechercherUtilisateur(string login) // pas sur qu'elle soit utile
-        {
-            if (listComptes.ContainsKey(login))
-            {
-                listComptes.TryGetValue(login, out Utilisateur value);
-                return value;
-            }
-            return null;
-        }
     }
 }

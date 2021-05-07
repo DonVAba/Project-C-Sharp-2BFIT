@@ -55,17 +55,14 @@ namespace Management
                 {
                     return false;
                 }
-                if (string.IsNullOrWhiteSpace(Convert.ToString(user.Age)))
+                if (user.DateNaissance > DateTime.Now)
                 {
                     return false;
                 }
-                if (string.IsNullOrWhiteSpace(Convert.ToString(user.Taille)))
+                    
+                if (user.Poids <= 0 || user.Taille <= 0 || user.Poids >= 300 || user.Taille >= 260)
                 {
-                    return false;
-                }
-                if (string.IsNullOrWhiteSpace(Convert.ToString(user.Poids)))
-                {
-                    return false;
+                return false;
                 }
 
             return true;
@@ -122,19 +119,10 @@ namespace Management
         /// <returns></returns>
         public static bool ValidationAjoutValeur(Valeur val)
         {
-            if (string.IsNullOrWhiteSpace(Convert.ToString(val.NbReps)))
+            if (val.NbReps <= 0 || val.TpsRepos <= 0 || val.NbSeries <= 0)
             {
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(Convert.ToString(val.NbSeries)))
-            {
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(Convert.ToString(val.TpsRepos)))
-            {
-                return false;
-            }
-
             return true;
         }
     }

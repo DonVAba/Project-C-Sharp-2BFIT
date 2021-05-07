@@ -4,13 +4,18 @@ using Application;
 
 namespace Persistance
 {
-    public class StubData : IDataLoad
+    public class StubData : DataLoad
     {
         /// <summary>
         /// Méthode de chargement de données qui appelle les autres méthodes de chargement pour retourner les données nécessaires
         /// au bon déroulement de l'application
         /// </summary>
         /// <returns></returns>
+        /// 
+        public StubData(string chemin) : base(chemin)
+        {
+
+        }
         public override Listes ChargeDonnees()
         {
             LinkedList<Programme> programmeStub = ChargeListprogramme();

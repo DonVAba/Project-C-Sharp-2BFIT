@@ -16,7 +16,7 @@ namespace Test_Utilisateur
             Console.WriteLine("Programme de test Utilisateur");
 
             ///Initialisation d'une nouvelle liste d'utilisateur en appellant la methode ChargeListUsers
-            Persistance.StubData stub1 = new StubData();
+            Persistance.StubData stub1 = new StubData("");
             Valeur valDeb = new Valeur(8, 4, 80);
             Valeur valInter = new Valeur(10, 4, 70);
             Valeur valExpert = new Valeur(12, 4, 60);

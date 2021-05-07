@@ -8,24 +8,19 @@ namespace Management
 
     /// CLASSE A MODIFIER : il ne faut pas avoir de données dans une classe manager, elle sert uniquement à délguer les "taches"
     /// donc en gros à vérifier les objets avec CreatorValidationObject et à appeller les méthodes de la classe Liste
-    public partial class Manager
+    public static partial class Manager
     {
 
-
-        /// <summary>
-        /// Liste de tous les programmes
-        /// </summary>
-        public LinkedList<Programme> listProgrammes = new LinkedList<Programme>();
 
         /// <summary>
         /// Methode qui ajoute un programme
         /// </summary>
         /// <param name="programme"></param>
-        public void AjouterProgramme(Programme programme)
+        public static void AjouterProgramme(Programme programme,Listes l)
         {
             if (CreationObjectValidator.ValidationAjoutProgramme(programme))
             {
-                listProgrammes.AddFirst(programme);
+                l.AjouterProgramme(programme);
             }
             else
             {
@@ -36,19 +31,14 @@ namespace Management
         /// Methode pour suppr un programme en parcourant toute la liste de programme 
         /// </summary>
         /// <param name="programme"></param>
-        public void SupprimerProgramme(Programme programme)
+        public static void SupprimerProgramme(Programme programme,Listes l)
         {
-            foreach (var prog in listProgrammes)
+            if (l.listProgrammes.Contains(programme))
             {
-                if (programme.Equals(prog))
-                {
-                    listProgrammes.Remove(programme);
-                }
-                else
-                {
-                    throw new ArgumentException("Programm not found");
-                }
+                l.SupprimerProgramme(programme);
             }
+            else
+                throw new ArgumentException("Error : program you want delete not found");
         }
 
         /// <summary>
@@ -56,18 +46,15 @@ namespace Management
         /// </summary>
         /// <param name="prog"></param>
         /// <param name="ex"></param>
-        public void AjouterUnExercice(Programme prog, Exercice ex)
+        public static void AjouterUnExercice(Programme prog, Exercice ex,Listes l)
         {
-            ProgrammeChoisi = prog;
-            if(ProgrammeChoisi.LesExercices is null)
-            {
-                ProgrammeChoisi.LesExercices = new LinkedList<Exercice>();
-            }
             if (CreationObjectValidator.ValidationAjoutExercice(ex))
             {
-                ProgrammeChoisi.LesExercices.AddLast(ex);
+                l.AjouterUnExercice(prog, ex);
             }
-            else throw new ArgumentException("Error : exercice rentré incomplet");
+            else
+                throw new ArgumentException("Error : exercice you want add to prog.lesExercices is non-valid");
+            
         }
 
 
@@ -77,17 +64,11 @@ namespace Management
         /// </summary>
         /// <param name="prog">programme choisi</param>
         /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
-        public void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx)
+        public static void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx,Listes l)
         {
             if (CreationObjectValidator.ValidationAjoutProgramme(prog))
             {
-                AjouterProgramme(prog);
-                ProgrammeChoisi = prog;
-                foreach (var exo in listEx)
-                {
-                   AjouterUnExercice(ProgrammeChoisi, exo);  
-                }
-                return;
+                l.AjouterListExerciceALaCreationDunProgramme(prog, listEx);
 
             }
             else throw new ArgumentException("Error : programme incorrect");
