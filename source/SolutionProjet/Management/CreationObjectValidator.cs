@@ -88,6 +88,13 @@ namespace Management
             {
                 return false;
             }
+            foreach(Exercice ex in prog.LesExercices)
+            {
+                if (!ValidationAjoutExercice(ex))
+                {
+                    return false;
+                }
+            }
 
             return true;
         }
@@ -107,7 +114,10 @@ namespace Management
             {
                 return false;
             }
-            
+            if(!ValidationAjoutValeur(ex.ValeurDeb) || !ValidationAjoutValeur(ex.ValeurInter) || !ValidationAjoutValeur(ex.ValeurExpert))
+            {
+                return false;
+            }
 
             return true;
         }
