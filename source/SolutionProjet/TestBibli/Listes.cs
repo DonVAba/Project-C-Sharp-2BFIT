@@ -104,15 +104,15 @@ namespace Application
         /// Méthode d'ajout d'un utilisateur dans la list d'utilisateur, et dans la liste de compte
         /// </summary>
         /// <param name="user"></param>
-        public void AjouterUtilisateurInscription(Utilisateur user, string id)
+        public void AjouterUtilisateurInscription(Utilisateur user)
         {  
-            if (listComptes.ContainsKey(id))
+            if (listComptes.ContainsKey(user.Identifiant))
             {
                 throw new ArgumentException("Error : login already used");
             }
             else
             {
-                listComptes.Add(id, user);
+                listComptes.Add(user.Identifiant, user);
                 UtilisateurCourant = user;
             }
         }

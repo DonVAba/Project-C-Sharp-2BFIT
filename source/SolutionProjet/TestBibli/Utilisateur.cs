@@ -136,25 +136,10 @@ namespace Application
         /// <param name="diff">Difficulté choisie</param>
         public void LancerProgramme(Programme prog, Difficulte diff)
         {
-            LinkedList<Exercice> list = prog.LesExercices;
-            foreach(var ex in list)
-            {
-                if (diff.ToString().Equals("DEBUTANT"))
-                {
-                    ex.ValeurCourante = ex.ValeurDeb;
-                }
-                if (diff.ToString().Equals("INTERMEDIAIRE"))
-                {
-                    ex.ValeurCourante = ex.ValeurInter;
-                }
-                if (diff.ToString().Equals("EXPERT"))
-                {
-                    ex.ValeurCourante = ex.ValeurExpert;
-                }
-            }
-            
-            
-            
+            this.DernierProgramme = prog;
+            this.DiffDernierProg = diff;
+
+
         }
 
         /// <summary>

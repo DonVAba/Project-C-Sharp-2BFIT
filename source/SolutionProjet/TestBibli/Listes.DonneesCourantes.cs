@@ -29,9 +29,24 @@ namespace Application
         {
             Enum.TryParse(diff, out Difficulte value);
             ProgrammeChoisi = prog;
+            LinkedList<Exercice> list = prog.LesExercices;
+            foreach (var ex in list)
+            {
+                if (diff.ToString().Equals("DEBUTANT"))
+                {
+                    ex.ValeurCourante = ex.ValeurDeb;
+                }
+                if (diff.ToString().Equals("INTERMEDIAIRE"))
+                {
+                    ex.ValeurCourante = ex.ValeurInter;
+                }
+                if (diff.ToString().Equals("EXPERT"))
+                {
+                    ex.ValeurCourante = ex.ValeurExpert;
+                }
+            }
+
             UtilisateurCourant.LancerProgramme(ProgrammeChoisi, value);
-            UtilisateurCourant.DernierProgramme = prog;
-            UtilisateurCourant.DiffDernierProg = value;
         }
     }
 }

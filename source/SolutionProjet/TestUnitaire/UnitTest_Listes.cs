@@ -19,10 +19,10 @@ namespace TestUnitaire
         public void testUtilisateurDejaInscrit()
         {
             Utilisateur u1 = new Utilisateur("bamartel", "bamartel", new DateTime(2003, 1, 30), 190, 190, "bamartel", "mdpDeBamartel");
-            l.AjouterUtilisateurInscription(u1, "bamartel");
+            l.AjouterUtilisateurInscription(u1);
 
             Utilisateur u2 = new Utilisateur("Malea", "Bastien", new DateTime(2003, 1, 30), 180, 180, "bamartel", "mdpDeBastien");
-            Assert.Throws<ArgumentException>(() => l.AjouterUtilisateurInscription(u2, "bamartel"));
+            Assert.Throws<ArgumentException>(() => l.AjouterUtilisateurInscription(u2));
         }
 
         [Fact]

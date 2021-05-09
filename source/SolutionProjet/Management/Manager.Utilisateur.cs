@@ -15,7 +15,7 @@ namespace Management
         /// Méthode d'ajout d'un utilisateur dans la list d'utilisateur, et dans la liste de compte
         /// </summary>
         /// <param name="user"></param>
-        public static void AjouterUtilisateurInscription(Utilisateur user, string id,Listes l)
+        public static void AjouterUtilisateurInscription(Utilisateur user,Listes l)
         {
             if (user == null || !CreationObjectValidator.ValidationAjoutUser(user))
             {
@@ -23,7 +23,7 @@ namespace Management
             }
             else
             {
-                l.AjouterUtilisateurInscription(user,id);
+                l.AjouterUtilisateurInscription(user);
 
 
             }
