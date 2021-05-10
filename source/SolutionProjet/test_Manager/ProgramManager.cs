@@ -94,7 +94,7 @@ namespace test_Manager
             //Test avec un utilisateur correct
             try
             {
-                Manager.AjouterUtilisateurInscription(u1, "Marc",list);
+                Manager.AjouterUtilisateurInscription(u1,list);
                 foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
@@ -109,7 +109,7 @@ namespace test_Manager
             //Test avec un utilisateur null
             try
             {
-                Manager.AjouterUtilisateurInscription(null, "",list);
+                Manager.AjouterUtilisateurInscription(null,list);
                 foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
@@ -124,7 +124,7 @@ namespace test_Manager
             //Test quand l'utilisateur existe déjà
             try
             {
-                Manager.AjouterUtilisateurInscription(u1, "Marc",list);
+                Manager.AjouterUtilisateurInscription(u1,list);
                 foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
