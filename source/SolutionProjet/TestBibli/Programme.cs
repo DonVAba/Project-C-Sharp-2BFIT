@@ -134,9 +134,18 @@ namespace Application
         /// Ajoute un exercice à la liste d'exercice lesExercices
         /// </summary>
         /// <param name="ex"></param>
-        public void AjouterExercice(Exercice ex)
+        public bool AjouterExercice(Exercice ex)
         {
-            LesExercices.AddLast(ex);
+            if (LesExercices.Contains(ex))
+            {
+                throw new Exception("Exercice rentré déjà existant");
+            }
+            else
+            {
+                LesExercices.AddLast(ex);
+                return true;
+            }
+            
         }
     }
 }

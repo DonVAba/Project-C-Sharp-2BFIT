@@ -123,13 +123,20 @@ namespace Application
         */
 
         /// <summary>
-        /// Methode qui ajoute un programme
+        /// Methode qui ajoute un programme en vérifiant qu'il n'existe pas déjà dans la liste
         /// </summary>
         /// <param name="programme"></param>
-        public void AjouterProgramme(Programme programme)
+        public bool AjouterProgramme(Programme programme)
         {
-             listProgrammes.AddFirst(programme);
-            
+            if (listProgrammes.Contains(programme))
+            {
+                return false;
+            }
+            else
+            {
+                listProgrammes.AddFirst(programme);
+                return true;
+            }
         }
 
         /// <summary>
