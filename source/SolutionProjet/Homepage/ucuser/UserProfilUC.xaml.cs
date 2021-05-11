@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Application;
+using Persistance;
 
 namespace Homepage.ucuser
 {
@@ -18,9 +20,13 @@ namespace Homepage.ucuser
     /// </summary>
     public partial class UserProfilUC : UserControl
     {
+        public Listes List => (App.Current as App).List;
+        
         public UserProfilUC()
         {
             InitializeComponent();
+            DataContext = List;
+
         }
 
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)

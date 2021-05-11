@@ -5,15 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Homepage.uctextblock"
              mc:Ignorable="d" 
-             d:DesignHeight="470" d:DesignWidth="654">
+             d:DesignHeight="500" d:DesignWidth="658">
     <StackPanel Background="White">
+        
         <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
             <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
-            <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+            <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20" Text="{Binding UtilisateurCourant.Nom}" Foreground="White" TextAlignment="Center"></TextBlock>
         </WrapPanel>
         <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="Auto">
             <TextBlock Text="PRENOM" FontWeight="Bold"  FontSize="15" Margin="40,0"/>
-            <TextBlock Background="LightSkyBlue" Width="120" TextWrapping="WrapWithOverflow" Height="20"></TextBlock>
+            <TextBlock Background="LightSkyBlue" Width="120" TextWrapping="WrapWithOverflow" Height="20" Text="{Binding UtilisateurCourant.Prenom}" Foreground="White" TextAlignment="Center"></TextBlock>
         </WrapPanel>
 
         <Grid Margin="20">
@@ -23,8 +24,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <local:defaulttextblockuc Message="AGE"/>
-            <local:defaulttextblockuc Grid.Column="1" Message="POIDS"/>
-            <local:defaulttextblockuc Grid.Column="2" Message="TAILLE"/>
+            <local:defaulttextblockuc Grid.Column="1" Message="POIDS" />
+            <local:defaulttextblockuc Grid.Column="2" Message="TAILLE" />
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
@@ -41,8 +42,7 @@
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Rectangle Width="250" Height="117" Fill="LightGreen"/>
-            <!-- On mettra l'image de l'exercice effectué dedans mais ça viendra avec la logique du projet -->
-            <local:defaulttextblockuc Message="DFFICULTÉ" Margin="35"/>
+            <local:defaulttextblockuc Message="DIFFICULTÉ" Margin="35"/>
         </WrapPanel>
     </StackPanel>
 </UserControl>

@@ -94,7 +94,15 @@ namespace Application
 
         public Difficulte DiffDernierProg { get; set; }
 
+        private string stringDiff;
+        public string StringDiff {
+            get => stringDiff;
 
+            set
+            {
+                stringDiff = DiffDernierProg.ToString();
+            }
+        }
         /// <summary>
         /// Constructeur de la classe utilisateur
         /// </summary>

@@ -34,8 +34,13 @@ namespace Persistance
 
 
             }
-            return new Listes(listCompte, programmeStub);
-        }
+            
+            Listes list = new Listes(listCompte, programmeStub);
+            list.listComptes.TryGetValue("bamartel", out Utilisateur u);
+            list.UtilisateurCourant = u;
+            return list;
+        
+    }
 
         /// <summary>
         /// Méthode qui instancie 3 utilisateurs et 1 admin et qui retourne une liste contenant ces utilisateurs 

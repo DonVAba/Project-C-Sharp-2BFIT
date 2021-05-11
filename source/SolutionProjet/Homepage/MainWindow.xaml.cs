@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Application;
+using Persistance;
 
 namespace Homepage
 {
@@ -21,9 +23,12 @@ namespace Homepage
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public Listes List => (App.Current as App).List;
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = List;
         }
 
         private void MWButtonProfile_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@ namespace Application
         }
         public override string ToString()
         {
-            return $" Nom : {Nom}";
+            return $" {Nom}";
         }
 
         /// <summary>
