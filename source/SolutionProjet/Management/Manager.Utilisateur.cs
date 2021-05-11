@@ -9,7 +9,8 @@ namespace Management
     public partial class Manager
     {
 
-
+        ///Paramètre passé à toutes les méthodes 
+        ///<param name="list"> Listes instancié contenant la liste des comptes et des programmes </param>
 
         /// <summary>
         /// Méthode d'ajout d'un utilisateur dans la list d'utilisateur, et dans la liste de compte

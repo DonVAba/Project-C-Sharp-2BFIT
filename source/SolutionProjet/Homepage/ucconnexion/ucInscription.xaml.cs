@@ -10,7 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Homepage.ucconnexion;
+using Application;
+using Persistance;
+using Management;
 
 namespace Homepage.ucconnexion
 {
@@ -19,6 +21,39 @@ namespace Homepage.ucconnexion
     /// </summary>
     public partial class ucInscription : UserControl
     {
+        public Listes List => (App.Current as App).List;
+
+        public static Navigator Navigator => Navigator.GetInstance();
+
+        /// <summary>
+        /// nouveauUtilisateur
+        /// </summary>
+        private Utilisateur nouveauUtilisateurCourant;
+
+        public Utilisateur NouveauUtilisateurCourant
+        {
+            get { return nouveauUtilisateurCourant; }
+            set
+            {
+                nouveauUtilisateurCourant = value;
+                //OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// message est connecté qui sert à la méthode ToAffichUtilisateurCourant
+        /// </summary>
+        private string messageEstInscrit;
+
+        public string MessageEstInscrit
+        {
+            get { return messageEstInscrit; }
+            set
+            {
+                messageEstInscrit = value;
+                // OnPropertyChanged();
+            }
+        }
         public ucInscription()
         {
             InitializeComponent();
@@ -44,6 +79,21 @@ namespace Homepage.ucconnexion
             b.Background = brush;
         }
 
+        public void ConnexionButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.NavigateTo("UC_Connexion");
+        }
 
+        public event RoutedEventHandler DejàCrééClick
+        {
+            add
+            {
+                insButton.Click += value;
+            }
+            remove
+            {
+                insButton.Click -= value;
+            }
+        }
     }
 }

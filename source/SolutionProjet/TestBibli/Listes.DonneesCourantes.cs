@@ -27,26 +27,26 @@ namespace Application
         /// <param name="diff"></param>
         public void LancementProgramme(Programme prog, String diff)
         {
-            Enum.TryParse(diff, out Difficulte value);
-            ProgrammeChoisi = prog;
-            LinkedList<Exercice> list = prog.LesExercices;
-            foreach (var ex in list)
+            Enum.TryParse(diff, out Difficulte value); // Nouvelle varibale value, qui devient une difficulté au lieu d'une string
+            ProgrammeChoisi = prog; // programmeChoisi prend la valeur de prog
+            LinkedList<Exercice> list = prog.LesExercices; // Instanciation d'une nouvelle LinkedList d'exercice, qui prend la valeur de celle de prog
+            foreach (Exercice ex in list) // pour chaque exercice dans list
             {
-                if (diff.ToString().Equals("DEBUTANT"))
+                if (diff.ToString().Equals("DEBUTANT")) //Si la difficulté est "DEBUTANT"
                 {
-                    ex.ValeurCourante = ex.ValeurDeb;
+                    ex.ValeurCourante = ex.ValeurDeb; // la valeur courante de chaque exercice sera ValeurDeb
                 }
-                if (diff.ToString().Equals("INTERMEDIAIRE"))
+                if (diff.ToString().Equals("INTERMEDIAIRE")) //Si la difficulté est "INTERMEDIAIRE"
                 {
-                    ex.ValeurCourante = ex.ValeurInter;
+                    ex.ValeurCourante = ex.ValeurInter; // la valeur courante de chaque exercice sera ValeurInter
                 }
-                if (diff.ToString().Equals("EXPERT"))
+                if (diff.ToString().Equals("EXPERT")) //Si la difficulté est "EXPERT"
                 {
-                    ex.ValeurCourante = ex.ValeurExpert;
+                    ex.ValeurCourante = ex.ValeurExpert; // la valeur courante de chaque exercice sera ValeurExpert
                 }
             }
 
-            UtilisateurCourant.LancerProgramme(ProgrammeChoisi, value);
+            UtilisateurCourant.LancerProgramme(ProgrammeChoisi, value); // Appelle de la méthode LancerProgramme dans la classe utilisateur
         }
     }
 }

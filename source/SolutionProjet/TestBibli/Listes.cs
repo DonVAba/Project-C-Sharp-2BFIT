@@ -70,10 +70,10 @@ namespace Application
         /// <returns>Null si le login ne correspond à aucun utilisateur sinon l'utilisateur</returns>
         public Utilisateur RechercherUtilisateur(string login)
         {
-            if (listComptes.ContainsKey(login))
+            if (listComptes.ContainsKey(login)) // regarde si la liste de compte contient le login
             {
-                listComptes.TryGetValue(login, out Utilisateur value);
-                return value;
+                listComptes.TryGetValue(login, out Utilisateur value); // si le login est effectivement présent, on récupère l'utilisateur associé dans l'attribut value
+                return value; // retourne cette utilisateur
             }
             return null;
         }
@@ -86,16 +86,16 @@ namespace Application
         /// <returns></returns>
         public bool VerifierConnexion(String login, String mdp)
         {
-            Utilisateur user = RechercherUtilisateur(login);
-            if (user == null)
+            Utilisateur user = RechercherUtilisateur(login); // Instancie un nouvel utilisateur avec l'appelle de la méthode Rechercherutilisateur qui peut renvoyer soit null, soit un utilisateur
+            if (user == null) // si l'utilisateur renvoyé est null
             {
-                throw new ArgumentException("Error : ce login n'appartient à aucun utilisateur");
+                throw new ArgumentException("Error : ce login n'appartient à aucun utilisateur"); // On envoie une ArgumentException
             }
-            if (mdp.Equals(user.Mdp))
+            if (mdp.Equals(user.Mdp)) // si user n'est pas null, on regarde la correspondace du mdp
             {
-                return true;
+                return true; // renvoie true si le mdp correspond
             }
-            return false;
+            return false; // sinon false
 
 
         }
@@ -106,14 +106,14 @@ namespace Application
         /// <param name="user"></param>
         public void AjouterUtilisateurInscription(Utilisateur user)
         {  
-            if (listComptes.ContainsKey(user.Identifiant))
+            if (listComptes.ContainsKey(user.Identifiant)) // regarde si la liste de compte contient l'identifiant
             {
-                throw new ArgumentException("Error : login already used");
+                throw new ArgumentException("Error : login already used"); // Si oui, envoie une exception
             }
             else
             {
-                listComptes.Add(user.Identifiant, user);
-                UtilisateurCourant = user;
+                listComptes.Add(user.Identifiant, user); //SInon ajoute l'utilisateur user à la liste de compte
+                UtilisateurCourant = user; //L'utilisateur courant devient user
             }
         }
 
@@ -128,14 +128,14 @@ namespace Application
         /// <param name="programme"></param>
         public bool AjouterProgramme(Programme programme)
         {
-            if (listProgrammes.Contains(programme))
-            {
-                return false;
+            if (listProgrammes.Contains(programme)) // regarde si la liste de compte contient déjà un programme équivalent (avec le même nom)
+            { 
+                return false; // retourne false si un programme a déjà le même nom
             }
             else
             {
-                listProgrammes.AddFirst(programme);
-                return true;
+                listProgrammes.AddFirst(programme); //sinon ajoute ce programme à la liste de programme
+                return true; // et retourne true
             }
         }
 
@@ -145,15 +145,15 @@ namespace Application
         /// <param name="programme"></param>
         public void SupprimerProgramme(Programme programme)
         {
-            foreach (var prog in listProgrammes)
+            foreach (Programme prog in listProgrammes) // pour chaque programme prog dans la liste des programmes
             {
-                if (programme.Equals(prog))
+                if (programme.Equals(prog)) // si le programme passé en paramètre a le même nom
                 {
-                    listProgrammes.Remove(programme);
+                    listProgrammes.Remove(programme); // suppression du programme
                 }
                 else
                 {
-                    throw new ArgumentException("Programm not found");
+                    throw new ArgumentException("Programm not found"); // sinon on envoie une nouvelle Exception qui dit que le prorgramme n'a pas été trouvé
                 }
             }
         }
@@ -165,13 +165,13 @@ namespace Application
         /// <param name="ex"></param>
         public void AjouterUnExercice(Programme prog, Exercice ex)
         {
-            ProgrammeChoisi = prog;
-            if (ProgrammeChoisi.LesExercices is null)
+            ProgrammeChoisi = prog; // ProgrammeChoisi prend la valeur de prog
+            if (ProgrammeChoisi.LesExercices is null) // Si sa liste d'exercice est nulle (ce qui n'est normalement pas censé arriver)
             {
-                ProgrammeChoisi.LesExercices = new LinkedList<Exercice>();
+                ProgrammeChoisi.LesExercices = new LinkedList<Exercice>(); // on instancie sa liste d'exercice
             }
 
-            ProgrammeChoisi.AjouterExercice(ex);
+            ProgrammeChoisi.AjouterExercice(ex); // on ajoute l'exercice à la liste lesExercices de ProgrammeChoisi en appelant la méthode AjouterExercice de la classe programme
             
         }
 
@@ -184,13 +184,13 @@ namespace Application
         /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
         public void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx)
         {
-                AjouterProgramme(prog);
-                ProgrammeChoisi = prog;
-                foreach (var exo in listEx)
+                AjouterProgramme(prog); // Appelle de la méthode AjouterProgramme pour ajouter prog à la list des programmes
+                ProgrammeChoisi = prog; // ProgrammeChoisi prend la valeur de prog
+                foreach (Exercice exo in listEx) // Pour chaque exercice dans la listEx(passée en paramètre)
                 {
-                    AjouterUnExercice(ProgrammeChoisi, exo);
+                    AjouterUnExercice(ProgrammeChoisi, exo); // Appelle de la méthode AjouterUnExercice
                 }
-                return;
+                
         }
 
     }

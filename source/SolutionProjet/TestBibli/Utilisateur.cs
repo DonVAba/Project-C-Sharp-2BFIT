@@ -159,44 +159,82 @@ namespace Application
             return $"Prenom : {Prenom} Nom : {Nom} Age : {Age} Taille : {Taille} Poids : {Poids} Identifiant {Identifiant} Mdp : {Mdp}";
         }
 
+        /// <summary>
+        /// Méthode qui renvoie un entier pour comparer l'utilisateur this et l'objet passé en paramètre 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         int IComparable.CompareTo(object obj)
         {
-            if(!(obj is Utilisateur))
+            if(!(obj is Utilisateur)) // Si l'objet passé en pramètre n'est pas un Utilisateur
             {
-                throw new ArgumentException("Error : l'objet à comparer n'est pas un Utilisateur");
+                throw new ArgumentException("Error : l'objet à comparer n'est pas un Utilisateur"); // Envoie d'une Argument Exception
             }
-            Utilisateur user = obj as Utilisateur;
-            return this.CompareTo(user);
+            Utilisateur user = obj as Utilisateur; // Cast de l'objet obj en Utilisation
+            return this.CompareTo(user); // Retourne le retour de la méthode CompareTo recevant un Utilisateur en paramètres 
         }
 
+        /// <summary>
+        /// Méthode qui renvoie un entier pour comparer l'utilisateur this et l'utilisateur passé en paramètre
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public int CompareTo(Utilisateur user)
         {
-            return Identifiant.CompareTo(user.Identifiant);
+            return Identifiant.CompareTo(user.Identifiant); // retourne un entier <0 si l'identifiant de this est plus petit, 0 si il est égal et >0 si il est plus grande, à l'identifiant de l'utilisateur passé en paramètres
         }
 
+        /// <summary>
+        /// Méthode qui rédéfini la méthode Equals 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public override bool Equals(object other)
         {
-            if(!(other is Utilisateur))
+            if(!(other is Utilisateur)) // Si l'object passé en paramètre n'est pas un utilisateur
             {
-                return false;
+                return false; // retourne false
             }
-            return Equals(other as Utilisateur);
+            return Equals(other as Utilisateur); // sinon appelle de la méthode Equals recevant un Utilisateur en paramètre, ici le paramètre  est la variable obj passé en paramètres, qui a été cast en utilisateur
         }
 
-        public bool Equals(Utilisateur user)
+        /// <summary>
+        /// Equals qui reçoit un utilisateur en paramètres
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public bool Equals(Utilisateur user) 
         {
-            return Identifiant.Equals(user.Identifiant);
+            return Identifiant.Equals(user.Identifiant); // retourne 0 si l'identifiant de this est le même que celui de user
         }
 
+        /// <summary>
+        /// Méthode renvoyant un HashCode basé sur l'ientifiant
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return Identifiant.GetHashCode();
         }
 
+        /// <summary>
+        /// Méthode qui redéfini l'opérateur == 
+        /// </summary>
+        /// <param name="u1"></param>
+        /// <param name="u2"></param>
+        /// <returns></returns>
+
         public static bool operator ==(Utilisateur u1,Utilisateur u2)
         {
             return Equals(u1, u2);
         }
+
+        /// <summary>
+        /// Méthode qui rédéfini l'opérateur !=
+        /// </summary>
+        /// <param name="u1"></param>
+        /// <param name="u2"></param>
+        /// <returns></returns>
         public static bool operator !=(Utilisateur u1, Utilisateur u2)
         {
             return !Equals(u1, u2);

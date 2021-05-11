@@ -61,5 +61,19 @@ namespace Application
             return $"Nom : {Nom} ;\nDebutant : {valeurDeb}\nIntermédiaire : {valeurInter}\n Expert : {valeurExpert} ";
         }
 
+        public bool Equals(Exercice ex)
+        {
+            return Nom.Equals(ex.Nom);
+        }
+
+        public override bool Equals(object other)
+        {
+            if (!(other is Exercice))
+            {
+                return false;
+            }
+            return Equals(other as Exercice);
+        }
+
     }
 }

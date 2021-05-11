@@ -5,8 +5,7 @@ using Application;
 
 namespace Management
 {
-    /// CLASSE A MODIFIER : il ne faut pas avoir de données dans une classe manager, elle sert uniquement à délguer les "taches"
-    /// donc en gros à vérifier les objets avec CreatorValidationObject et à appeller les méthodes de la classe Liste
+    
     public static partial class Manager
     {
 
@@ -16,9 +15,14 @@ namespace Management
         /// </summary>
         /// <param name="prog"></param>
         /// <param name="diff"></param>
+        ///<param name="list"> Listes instancié contenant la liste des comptes et des programmes </param>
         public static void LancementProgramme(Programme prog, String diff,Listes l)
         {
-            l.LancementProgramme(prog, diff);
+            if (!CreationObjectValidator.ValidationAjoutProgramme(prog)) // Si le programme passé en paramètres n'est pas valide 
+            {
+                throw new ArgumentException("Error : programme invalide"); // Envoie une exception
+            }
+            l.LancementProgramme(prog, diff); // Appelle la méthode Lancementprogramme de la classe Listes
         }
 
     }

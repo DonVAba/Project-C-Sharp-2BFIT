@@ -75,7 +75,7 @@
             <Button VerticalAlignment="Bottom" Width="120" Style="{StaticResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="InsButton_MouseEnter" MouseLeave="InsButton_MouseLeave">S'INSCRIRE</Button>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
-            <Button  x:Name="CoFlatButton" Content="Déjà un compte ?" FontSize="11" FontStyle="Italic" Foreground="DarkGray"  Style="{StaticResource Flat}"/>
+            <Button  x:Name="insButton" Content="Déjà un compte ?" FontSize="11" FontStyle="Italic" Foreground="DarkGray"  Style="{StaticResource Flat}" Click="ConnexionButton_Click"/>
         </WrapPanel>
     </StackPanel>
 </UserControl>

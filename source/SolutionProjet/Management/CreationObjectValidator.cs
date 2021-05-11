@@ -12,21 +12,21 @@ namespace Management
         /// <returns></returns>
         public static bool ValidationObjet(Object value)
         {
-            if(value is Utilisateur)
+            if(value is Utilisateur) // SI l'objet est un Utilisateur
             {
-                return ValidationAjoutUser(value as Utilisateur);
+                return ValidationAjoutUser(value as Utilisateur); // Appel de la méthode ValidationAjoutUser et retourne la valeur de retour de cette dernière
             }
-            if(value is Programme)
+            if(value is Programme) // Si l'objet est un Programme
             {
-                return ValidationAjoutProgramme(value as Programme);
+                return ValidationAjoutProgramme(value as Programme); // Appel de la méthode ValidationAjoutProgramme et retourne la valeur de retour de cette dernière
             }
-            if (value is Exercice)
+            if (value is Exercice) // Si l'objet est un éxercice
             {
-                return ValidationAjoutExercice(value as Exercice);
+                return ValidationAjoutExercice(value as Exercice);// Appel de la méthode ValidationAjoutExercice et retourne la valeur de retour de cette dernière
             }
-            if (value is Valeur)
+            if (value is Valeur) // si l'objet est une valeur
             {
-                return ValidationAjoutValeur(value as Valeur);
+                return ValidationAjoutValeur(value as Valeur);// Appel de la méthode ValidationAjoutValeur et retourne la valeur de retour de cette dernière
             }
 
             return false;
@@ -38,8 +38,9 @@ namespace Management
         /// <returns></returns>
         public static bool ValidationAjoutUser(Utilisateur user)
         {
+            // La méthode va à chaque fois vérifier si les chaines de caractère ne sont pas null ou des espaces, et si c'est le cas, retourne false
 
-                if (string.IsNullOrWhiteSpace(user.Nom))
+                if (string.IsNullOrWhiteSpace(user.Nom)) 
                 {
                     return false;
                 }
@@ -55,17 +56,14 @@ namespace Management
                 {
                     return false;
                 }
-                if (user.DateNaissance > DateTime.Now)
-                {
-                    return false;
-                }
+                
                     
-                if (user.Poids <= 0 || user.Taille <= 0 || user.Poids >= 300 || user.Taille >= 260)
+                if (user.Poids <= 0 || user.Taille <= 0 || user.Poids >= 300 || user.Taille >= 260) // Vérification de la validité des valeurs de Poids et Taille
                 {
                 return false;
                 }
 
-            return true;
+            return true; // Si il n'y a eu aucun problème, retourne true
 
         }
 
@@ -76,6 +74,7 @@ namespace Management
         /// <returns></returns>
         public static bool ValidationAjoutProgramme(Programme prog)
         {
+            // La méthode va à chaque fois vérifier si les chaines de caractère ne sont pas null ou des espaces, et si c'est le cas, retourne false
             if (string.IsNullOrWhiteSpace(prog.Nom))
             {
                 return false;
@@ -88,15 +87,15 @@ namespace Management
             {
                 return false;
             }
-            foreach(Exercice ex in prog.LesExercices)
+            foreach(Exercice ex in prog.LesExercices) // Pour chasue Exercice de la lkist lesExercices du programme passé en paramètres
             {
-                if (!ValidationAjoutExercice(ex))
+                if (!ValidationAjoutExercice(ex)) // Si l'exercice n'est pas valide
                 {
-                    return false;
+                    return false; // retourne false
                 }
             }
 
-            return true;
+            return true; // Si il n'y a eu aucun problème, retourne true
         }
 
         /// <summary>
@@ -106,6 +105,7 @@ namespace Management
         /// <returns></returns>
         public static bool ValidationAjoutExercice(Exercice ex)
         {
+            // La méthode va à chaque fois vérifier si les chaines de caractère ne sont pas null ou des espaces, et si c'est le cas, retourne false
             if (string.IsNullOrWhiteSpace(ex.Nom))
             {
                 return false;
@@ -114,12 +114,12 @@ namespace Management
             {
                 return false;
             }
-            if(!ValidationAjoutValeur(ex.ValeurDeb) || !ValidationAjoutValeur(ex.ValeurInter) || !ValidationAjoutValeur(ex.ValeurExpert))
+            if(!ValidationAjoutValeur(ex.ValeurDeb) || !ValidationAjoutValeur(ex.ValeurInter) || !ValidationAjoutValeur(ex.ValeurExpert)) // Si les 3 valeurs obligatoires pour l'instanciation d'un Exercice ne sont pas valides
             {
-                return false;
+                return false; // retourne false
             }
 
-            return true;
+            return true; // Si il n'y a eu aucun problème, retourne true
         }
 
         /// <summary>
@@ -129,11 +129,11 @@ namespace Management
         /// <returns></returns>
         public static bool ValidationAjoutValeur(Valeur val)
         {
-            if (val.NbReps <= 0 || val.TpsRepos <= 0 || val.NbSeries <= 0)
+            if (val.NbReps <= 0 || val.TpsRepos <= 0 || val.NbSeries <= 0) // Vérificationd e la validité des entier contenus dans les Valeurs
             {
-                return false;
+                return false; // Retourne false si un ou plusieurs de ces entiers sont <= 0
             }
-            return true;
+            return true; // Si il n'y a eu aucun problème, retourne true
         }
     }
 }

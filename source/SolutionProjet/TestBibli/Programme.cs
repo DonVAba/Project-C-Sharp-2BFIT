@@ -118,15 +118,15 @@ namespace Application
         /// <returns></returns>
         public void SupprimerExercices(Exercice e)
         {
-            foreach (Exercice exo in lesExercices)
+            foreach (Exercice exo in lesExercices) // pour chaque Exercice dans la LinkedList lesExercices
             {
-                if (e.Equals(exo))
+                if (e.Equals(exo)) // si l'exercice a le même nom que e
                 {
-                    lesExercices.Remove(e);
+                    lesExercices.Remove(e); // Suppression de l'exercice
                     return;
                 }
             }
-            throw new Exception("Exercice rentré non trouvé ");
+            throw new Exception("Exercice rentré non trouvé "); // Envoie d'une nouvelle excpetion pour indiquer que l'exercice passé en paramètre n'a pas été trouvé
 
         }
 
@@ -134,16 +134,16 @@ namespace Application
         /// Ajoute un exercice à la liste d'exercice lesExercices
         /// </summary>
         /// <param name="ex"></param>
-        public bool AjouterExercice(Exercice ex)
+        public void AjouterExercice(Exercice ex)
         {
-            if (LesExercices.Contains(ex))
+            if (LesExercices.Contains(ex)) // Si la linkedList lesExercices du programme instancié contient un exercice avec le même nom que celui passé en paramètres
             {
-                throw new Exception("Exercice rentré déjà existant");
+                throw new ArgumentException("Exercice rentré déjà existant"); // Envoie d'une ArgumentException
             }
             else
             {
-                LesExercices.AddLast(ex);
-                return true;
+                LesExercices.AddLast(ex); // sinon ajout de l'exercice à la liste lesExercices du programme instancié
+               
             }
             
         }
