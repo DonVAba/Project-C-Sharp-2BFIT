@@ -17,7 +17,7 @@ namespace test_Manager
 
             Console.WriteLine("\n-------------- PARTIE MANAGEMENT PROGRAMME ---------------");
             Console.WriteLine("Affichage de la liste des programmes");
-            foreach(Programme prog in list.listProgrammes)
+            foreach(Programme prog in list.ListProgrammes)
             {
                 Console.WriteLine(prog);
                 foreach(Exercice ex in prog.LesExercices)
@@ -29,12 +29,12 @@ namespace test_Manager
             Console.WriteLine("\n--------------------");
             Console.WriteLine("Test ajout programme + equals");
             Programme p1 = new Programme("PUSH", "description d'un programmerandom", "chemin image random");
-            foreach(Programme prog in list.listProgrammes)
+            foreach(Programme prog in list.ListProgrammes)
             {
                 Console.WriteLine($"{prog}  " + p1.Equals(prog));
             }
             list.AjouterProgramme(p1);
-            foreach (Programme prog in list.listProgrammes)
+            foreach (Programme prog in list.ListProgrammes)
             {
                 Console.WriteLine($"{prog}");
             }
@@ -49,7 +49,7 @@ namespace test_Manager
             {
                 Console.WriteLine(e.Message);
             }
-            foreach (Programme prog in list.listProgrammes)
+            foreach (Programme prog in list.ListProgrammes)
             {
                 Console.WriteLine($"{prog}");
             }

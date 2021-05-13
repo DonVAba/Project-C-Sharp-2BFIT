@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Homepage.ucuser;
 
 
 namespace Homepage.uctextblock
@@ -37,13 +38,20 @@ namespace Homepage.uctextblock
             }
         }
 
+
+
         public string Valeur
         {
-            set
-            {
-                textvalue.Text = value;            }
+            get { return (string)GetValue(ValeurProperty); }
+            set { SetValue(ValeurProperty, value); }
         }
 
-      
+        // Using a DependencyProperty as the backing store for Valeur.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ValeurProperty =
+            DependencyProperty.Register("Valeur", typeof(string), typeof(defaulttextblockuc), new PropertyMetadata(""));
+
+
+
+
     }
 }

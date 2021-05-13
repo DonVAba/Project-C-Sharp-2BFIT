@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,11 @@ namespace Homepage.ucuser
     /// </summary>
     public partial class UserProgrammeUC : UserControl
     {
+        public Listes List => (App.Current as App).List;
         public UserProgrammeUC()
         {
             InitializeComponent();
+            DataContext = List.ProgrammeChoisi;
         }
 
         private void start_Click(object sender, RoutedEventArgs e)

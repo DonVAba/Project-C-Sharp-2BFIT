@@ -18,7 +18,8 @@ namespace Application
         /// <summary>
         /// Liste de tous les programmes
         /// </summary>
-        public LinkedList<Programme> listProgrammes;
+
+        public LinkedList<Programme> ListProgrammes { get; private set; }
 
         /// <summary>
         /// COnstructeur d'une liste avec des liste déjà inclu
@@ -28,7 +29,7 @@ namespace Application
         public Listes(Dictionary<string, Utilisateur> comptes, LinkedList<Programme> programmes)
         {
             listComptes = new Dictionary<string, Utilisateur>(comptes);
-            listProgrammes = new LinkedList<Programme>(programmes);
+            ListProgrammes = new LinkedList<Programme>(programmes);
         }
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace Application
         public Listes(Dictionary<string, Utilisateur> comptes)
         {
             listComptes = new Dictionary<string, Utilisateur>(comptes);
-            listProgrammes = new LinkedList<Programme>();
+            ListProgrammes = new LinkedList<Programme>();
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace Application
         public Listes(LinkedList<Programme> programmes)
         {
             listComptes = new Dictionary<string, Utilisateur>();
-            listProgrammes = new LinkedList<Programme>(programmes);
+            ListProgrammes = new LinkedList<Programme>(programmes);
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Application
         public Listes()
         {
             listComptes = new Dictionary<string, Utilisateur>();
-            listProgrammes = new LinkedList<Programme>();
+            ListProgrammes = new LinkedList<Programme>();
         }
 
 
@@ -128,13 +129,13 @@ namespace Application
         /// <param name="programme"></param>
         public bool AjouterProgramme(Programme programme)
         {
-            if (listProgrammes.Contains(programme)) // regarde si la liste de compte contient déjà un programme équivalent (avec le même nom)
+            if (ListProgrammes.Contains(programme)) // regarde si la liste de compte contient déjà un programme équivalent (avec le même nom)
             { 
                 return false; // retourne false si un programme a déjà le même nom
             }
             else
             {
-                listProgrammes.AddFirst(programme); //sinon ajoute ce programme à la liste de programme
+                ListProgrammes.AddFirst(programme); //sinon ajoute ce programme à la liste de programme
                 return true; // et retourne true
             }
         }
@@ -145,11 +146,11 @@ namespace Application
         /// <param name="programme"></param>
         public void SupprimerProgramme(Programme programme)
         {
-            foreach (Programme prog in listProgrammes) // pour chaque programme prog dans la liste des programmes
+            foreach (Programme prog in ListProgrammes) // pour chaque programme prog dans la liste des programmes
             {
                 if (programme.Equals(prog)) // si le programme passé en paramètre a le même nom
                 {
-                    listProgrammes.Remove(programme); // suppression du programme
+                    ListProgrammes.Remove(programme); // suppression du programme
                 }
                 else
                 {

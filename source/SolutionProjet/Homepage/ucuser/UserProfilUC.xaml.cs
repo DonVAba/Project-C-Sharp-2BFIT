@@ -25,7 +25,7 @@ namespace Homepage.ucuser
         public UserProfilUC()
         {
             InitializeComponent();
-            DataContext = List;
+            DataContext = List.UtilisateurCourant;
 
         }
 

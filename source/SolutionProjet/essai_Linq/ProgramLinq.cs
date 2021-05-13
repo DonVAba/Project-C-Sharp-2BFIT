@@ -16,7 +16,7 @@ namespace essai_Linq
             Listes listLINQ = stub.ChargeDonnees();
 
             //Affichage des programmes ayant 3 exercices ou plus
-            IEnumerable<Programme> lesPlusDeTrois = listLINQ.listProgrammes.Where(p => p.lesExercices.Count() >= 3);
+            IEnumerable<Programme> lesPlusDeTrois = listLINQ.ListProgrammes.Where(p => p.LesExercices.Count() >= 3);
             foreach(Programme prog in lesPlusDeTrois)
             {
                 Console.WriteLine(prog);

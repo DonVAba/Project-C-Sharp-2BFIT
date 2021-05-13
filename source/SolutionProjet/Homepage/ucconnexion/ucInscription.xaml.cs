@@ -84,16 +84,5 @@ namespace Homepage.ucconnexion
             Navigator.NavigateTo("UC_Connexion");
         }
 
-        public event RoutedEventHandler DejàCrééClick
-        {
-            add
-            {
-                insButton.Click += value;
-            }
-            remove
-            {
-                insButton.Click -= value;
-            }
-        }
     }
 }

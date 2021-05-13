@@ -84,7 +84,7 @@ namespace Homepage.ucconnexion
                 else
                 {
                     List.UtilisateurCourant = List.RechercherUtilisateur(idTextBlock.Text);
-                    Window.GetWindow(this).Close();
+                    //Window.GetWindow(this).Close();
                     MessageBoxResult result = MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
                     if(List.UtilisateurCourant is Admin)
                     {
@@ -102,20 +102,7 @@ namespace Homepage.ucconnexion
             
         }
 
-        /// <summary>
-        /// Event pour le navigateur permettant de renvoyer sur l'UC CreationCompte
-        /// </summary>
-        public event RoutedEventHandler PremièreConnexionClick
-        {
-            add
-            {
-                ConnexionButton.Click += value;
-            }
-            remove
-            {
-                ConnexionButton.Click -= value;
-            }
-        }
+        
 
 
         private void ConnexionButton_MouseEnter(object sender, MouseEventArgs e)

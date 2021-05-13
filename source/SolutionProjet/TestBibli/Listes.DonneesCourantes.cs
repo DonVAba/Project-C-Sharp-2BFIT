@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Application
 {
     // pas à sérialiser
-    public partial class Listes
+    public partial class Listes : INotifyPropertyChanged
     {
         /// <summary>
         /// Utilisateur Connecté
@@ -17,7 +18,23 @@ namespace Application
         /// <summary>
         /// Programme choisi par un utilisateur avant de le lancer
         /// </summary>
-        public Programme ProgrammeChoisi { get; set; }
+        private Programme programmeChoisi;
+        public Programme ProgrammeChoisi { 
+            get => programmeChoisi;
+            set
+            {
+               
+                    programmeChoisi = value;
+                    OnPropertyChanged(nameof(ProgrammeChoisi));
+                
+            } 
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName) 
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+           
 
         /// <summary>
         /// Méthode qui permet le lancement d'un programme dans la classe utilisateur à partir d'un programme et d'une difficulté

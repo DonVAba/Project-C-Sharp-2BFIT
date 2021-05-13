@@ -12,9 +12,8 @@
             <ImageBrush ImageSource="img/imgfond/background_ciel.jpg" Opacity="0.5"/>
         </StackPanel.Background>
 
-        <ContentControl x:Name="ConnexionCC" Margin="20" HorizontalAlignment="Center" Height="369" Width="407">
-            <local:ucConnexion/>
-        </ContentControl>
-        
+        <ContentControl x:Name="ConnexionCC" Margin="20" HorizontalAlignment="Center" Height="369" Width="407" Content="{Binding SelectedUserControl}"/>
+
+
     </StackPanel>
 </Window>

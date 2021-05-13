@@ -18,12 +18,14 @@ namespace Homepage
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        Dictionary<string, UserControl> userControls = new Dictionary<string, UserControl>()
+        private Dictionary<string, UserControl> userControls = new Dictionary<string, UserControl>()
         {
             ["UC_Connexion"] = new ucconnexion.ucConnexion(),
             ["UC_Inscription"] = new ucInscription(),
-            
-        };
+
+        }; 
+
+        public Dictionary<string, UserControl> UserControls { get; set; }
 
         /// <summary>
         /// Méthode permettant de naviguer vers un userControl dont le nom reçu en paramètre
@@ -39,8 +41,8 @@ namespace Homepage
         /// </summary>
         private void InitUserControls()
         {
-            (userControls["UC_Connexion"] as ucconnexion.ucConnexion).PremièreConnexionClick += (sender, args) => SelectedUserControl = userControls["UC_Inscription"];
-            (userControls["UC_Inscription"] as ucInscription).DejàCrééClick += (sender, args) => SelectedUserControl = userControls["UC_Connexion"];
+            //(userControls["UC_Connexion"] as ucconnexion.ucConnexion).PremiereConnexionClick += (sender, args) => SelectedUserControl = userControls["UC_Inscription"];
+            //(userControls["UC_Inscription"] as ucInscription).DejaCreeClick += (sender, args) => SelectedUserControl = userControls["UC_Connexion"];
 
 
             SelectedUserControl = userControls["UC_Connexion"]; //Définit par défault le UserControl sélectionné

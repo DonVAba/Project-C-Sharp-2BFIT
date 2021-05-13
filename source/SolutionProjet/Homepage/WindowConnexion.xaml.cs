@@ -18,11 +18,16 @@ namespace Homepage
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    
     public partial class WindowConnexion : Window
     {
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
+        
         public WindowConnexion()
         {
             InitializeComponent();
+            DataContext = Navigator;
         }
     }
 }

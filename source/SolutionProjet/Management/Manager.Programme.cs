@@ -32,7 +32,7 @@ namespace Management
         /// <param name="programme"></param>
         public static void SupprimerProgramme(Programme programme,Listes l)
         {
-            if (l.listProgrammes.Contains(programme)) // Si la listprogramme de la Listes l passé en paramètre contient un programme avec le même nom
+            if (l.ListProgrammes.Contains(programme)) // Si la listprogramme de la Listes l passé en paramètre contient un programme avec le même nom
             {
                 l.SupprimerProgramme(programme); // Appel de la méthode SupprimerProgramme2
             }
