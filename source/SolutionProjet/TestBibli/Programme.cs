@@ -36,13 +36,8 @@ namespace Application
         /// <summary>
         /// Chemin de l'image associé au programme
         /// </summary>
-        private string cheminImage;
-
-        public string CheminImage
-        {
-            get => cheminImage;
-            set => cheminImage = value;
-        }
+        
+        public string CheminImage { get; set; }
 
         /// <summary>
         /// Liste des exercices contenus dans le programme. 

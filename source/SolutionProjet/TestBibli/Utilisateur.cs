@@ -36,12 +36,14 @@ namespace Application
             {
                 return taille;
             }
-            private set
+            set
             {
-                if (value >50 && value <260)
+                if (value > 50 && value < 260)
                 {
                     taille = value;
                 }
+                else
+                    throw new ArgumentException("Mauvaise taille rentrée");
             }
         }
 
@@ -56,12 +58,14 @@ namespace Application
             {
                 return poids;
             }
-            private set
+            set
             {
                 if (value > 20 && value < 200)
                 {
                     poids = value;
                 }
+                else
+                    throw new ArgumentException("Mauvais poids rentré");
             }
         }
 
@@ -94,15 +98,8 @@ namespace Application
 
         public Difficulte DiffDernierProg { get; set; }
 
-        private string stringDiff;
-        public string StringDiff {
-            get => stringDiff;
-
-            set
-            {
-                stringDiff = DiffDernierProg.ToString();
-            }
-        }
+        
+        
         /// <summary>
         /// Constructeur de la classe utilisateur
         /// </summary>

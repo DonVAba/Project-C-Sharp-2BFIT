@@ -37,7 +37,9 @@ namespace Persistance
             }
             
             Listes list = new Listes(listCompte, programmeStub);
-            
+            list.UtilisateurCourant = list.RechercherUtilisateur("bamartel");
+            list.UtilisateurCourant.DernierProgramme = programmeStub.First();
+            list.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
             return list;
         
     }

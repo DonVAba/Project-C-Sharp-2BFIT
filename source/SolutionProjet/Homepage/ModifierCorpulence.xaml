@@ -9,17 +9,17 @@
     <StackPanel Background="CornflowerBlue">
         <TextBlock Margin="15,15,0,0" FontSize="20" Foreground="White" Text="Taille"></TextBlock>
         <WrapPanel Margin="20">
-            <TextBox Width="200"></TextBox>
+            <TextBox Width="200" x:Name="newTaille"></TextBox>
             <TextBlock Foreground="White" FontSize="20" Margin="10,0,0,0" Text="cm"></TextBlock>
         </WrapPanel>
         <TextBlock Margin="15,0,0,0" FontSize="20" Foreground="White" Text="Poids"></TextBlock>
         <WrapPanel Margin="20">
-        <TextBox Width="200"></TextBox>
+        <TextBox Width="200" x:Name="newPoids"></TextBox>
             <TextBlock  Foreground="White" Text="kg" Margin="10,0,0,0" FontSize="20"></TextBlock>
         </WrapPanel>
         <WrapPanel Margin="20,60,0,0">
             <Button Width="125" Click="CancelButton_Click" FontSize="15" Margin="15,0,0,0" Style="{StaticResource BoutonProg}">ANNULER</Button>
-            <Button Margin="100,0,15,0" Width="125" FontSize="15" Style="{StaticResource BoutonProg}">SAUVEGARDER</Button>
+            <Button x:Name="saveButton" Click="saveButton_Click" Margin="100,0,15,0"  Width="125" FontSize="15" Style="{StaticResource BoutonProg}">SAUVEGARDER</Button>
         </WrapPanel>
     </StackPanel>
 </Window>

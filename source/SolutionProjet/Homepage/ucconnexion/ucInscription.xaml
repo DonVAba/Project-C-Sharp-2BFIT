@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Homepage.ucconnexion"
              mc:Ignorable="d" 
-             d:DesignHeight="420" d:DesignWidth="400">
+             d:DesignHeight="420" d:DesignWidth="400" ScrollViewer.VerticalScrollBarVisibility="Visible">
     <UserControl.Resources>
         <Style x:Key="Flat">
             <Setter Property="Control.Background" Value="{x:Null}" />
@@ -22,23 +22,23 @@
     </UserControl.Resources>
     <StackPanel Background="White">
 
-        <WrapPanel HorizontalAlignment="Center" Margin="20">
+        <WrapPanel HorizontalAlignment="Center" Margin="15">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="NOM :" Foreground="CornflowerBlue" FontSize="15" Width="84" ></TextBlock>
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}" x:Name="nomSignIn" Foreground="CornflowerBlue"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center" Margin="20">
+        <WrapPanel HorizontalAlignment="Center" Margin="15">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
 
             <TextBlock Text="PRENOM :" Foreground="CornflowerBlue" FontSize="15" Width="89" />
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}" x:Name="prenomSignIn" Foreground="CornflowerBlue"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center" Margin="20">
+        <WrapPanel HorizontalAlignment="Center" Margin="15">
             <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
             <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" ></TextBlock>
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}" x:Name="idSignIn" Foreground="CornflowerBlue"/>
             <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
@@ -50,31 +50,30 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <WrapPanel Grid.Column="0" Margin="10"  HorizontalAlignment="Center">
-                    <TextBlock Text="AGE :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="5,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                    <DatePicker Style="{StaticResource DatePickerStyle}" x:Name="naissanceSignIn"/>
                 </WrapPanel>
                 <WrapPanel Grid.Column="1" Margin="10">
                     <TextBlock Text="POIDS :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="5,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="5,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="poidsSignIn"/>
                 </WrapPanel>
                 <WrapPanel Grid.Column="2" Margin="10" HorizontalAlignment="Center">
                     <TextBlock Text="TAILLE :" Foreground="White"/>
-                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="5,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                    <TextBox TextWrapping="NoWrap" Width="50" Height="20" Margin="5,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="tailleSignIn"/>
                 </WrapPanel>
             </Grid>
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
 
-        <WrapPanel HorizontalAlignment="Center" Margin="20" VerticalAlignment="Bottom">
+        <WrapPanel HorizontalAlignment="Center" Margin="15" VerticalAlignment="Bottom">
             <TextBlock Text="MOT DE PASSE : " Foreground="CornflowerBlue" FontSize="13.5" VerticalAlignment="Center"></TextBlock>
-            <PasswordBox  Width="180" Height="20" Style="{StaticResource PassBoxAnimated}"></PasswordBox>
+            <PasswordBox  Width="180" Height="20" Style="{StaticResource PassBoxAnimated}" x:Name="mdpSignIn" Foreground="CornflowerBlue"></PasswordBox>
             
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
         <WrapPanel HorizontalAlignment="Center">
-            <Button VerticalAlignment="Bottom" Width="120" Style="{StaticResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="InsButton_MouseEnter" MouseLeave="InsButton_MouseLeave">S'INSCRIRE</Button>
+            <Button VerticalAlignment="Bottom" Width="120" Style="{StaticResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="InsButton_MouseEnter" MouseLeave="InsButton_MouseLeave" Click="InsButton_Click">S'INSCRIRE</Button>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
+        <WrapPanel HorizontalAlignment="Center" Margin="15">
             <Button  x:Name="insButton" Content="Déjà un compte ?" FontSize="11" FontStyle="Italic" Foreground="DarkGray"  Style="{StaticResource Flat}" Click="ConnexionButton_Click"/>
         </WrapPanel>
     </StackPanel>

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Homepage.uctextblock"
+             xmlns:local="clr-namespace:Homepage"
+             xmlns:userControls="clr-namespace:Homepage.uctextblock"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="658">
     <StackPanel Background="White">
@@ -23,9 +24,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <local:defaulttextblockuc Message="AGE" Valeur="{Binding Age}"/>
-            <local:defaulttextblockuc Grid.Column="1" Message="POIDS" Valeur="{Binding Poids}"/>
-            <local:defaulttextblockuc Grid.Column="2" Message="TAILLE" Valeur="{Binding Taille}"/>
+            <userControls:defaulttextblockuc Message="AGE" Valeur="{Binding Age}"/>
+            <userControls:defaulttextblockuc Grid.Column="1" Message="POIDS" Valeur="{Binding Poids}"/>
+            <userControls:defaulttextblockuc Grid.Column="2" Message="TAILLE" Valeur="{Binding Taille}"/>
         </Grid>
 
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
@@ -41,8 +42,8 @@
 
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <Rectangle Width="250" Height="117" Fill="LightGreen"/>
-            <local:defaulttextblockuc Message="DIFFICULTÉ" Margin="35"/>
+        <Image Source="{Binding DernierProgramme.CheminImage}" Height="30" Width="250" />
+            <userControls:defaulttextblockuc Message="DIFFICULTÉ" Margin="35" Valeur="{Binding DiffDernierProg}"/>
         </WrapPanel>
     </StackPanel>
 </UserControl>

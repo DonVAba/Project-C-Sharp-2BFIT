@@ -84,5 +84,37 @@ namespace Homepage.ucconnexion
             Navigator.NavigateTo("UC_Connexion");
         }
 
+        private void InsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(List.RechercherUtilisateur(idSignIn.Text) != null)
+            {
+                MessageBox.Show("Identifiant déjà utilisé", "Login invalide", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                try
+                {
+                    Utilisateur userTestSignIn = new Utilisateur(nomSignIn.Text, prenomSignIn.Text, naissanceSignIn.SelectedDate ?? DateTime.Now, Int16.Parse(tailleSignIn.Text), float.Parse(poidsSignIn.Text), idSignIn.Text, mdpSignIn.Password);
+                    if (!Management.CreationObjectValidator.ValidationAjoutUser(userTestSignIn))
+                    {
+                        MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        WindowConnexion.GetWindow(this).Close();
+                        MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Manager.AjouterUtilisateurInscription(userTestSignIn, List);
+                        List.UtilisateurCourant = userTestSignIn;
+                        MainWindow mw = new MainWindow();
+                        mw.Show();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
+            }
+        }
     }
 }

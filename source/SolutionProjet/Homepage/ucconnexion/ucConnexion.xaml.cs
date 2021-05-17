@@ -74,18 +74,20 @@ namespace Homepage.ucconnexion
             if(List.RechercherUtilisateur(idTextBlock.Text) == null)
             {
                     MessageBox.Show("Le pseudo est érroné, veuillez réessayer", "Identifiant invalide", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
                 
             }
             else {
                 if (!Manager.VerifierConnexion(idTextBlock.Text, mdpTextBox.Password, List)) //Si les infos entrées dans l'UC ne correspondent pas à un utilisateur de la ListeUtilisateur de GameLib
                 {
                     MessageBox.Show("Le mot de passe est érroné, veuillez réessayer", "Mot de passe invalide", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
                 else
                 {
                     List.UtilisateurCourant = List.RechercherUtilisateur(idTextBlock.Text);
-                    //Window.GetWindow(this).Close();
-                    MessageBoxResult result = MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+                    WindowConnexion.GetWindow(this).Close();
+                    MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
                     if(List.UtilisateurCourant is Admin)
                     {
                         WindowMainAdmin mw = new WindowMainAdmin();
@@ -118,6 +120,16 @@ namespace Homepage.ucconnexion
         private void InscriptionButton_Click(object sender, RoutedEventArgs e)
         {
             Navigator.NavigateTo("UC_Inscription");
+        }
+
+        private void ConnexionButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button b = (Button)sender;
+            var converter = new System.Windows.Media.BrushConverter();
+            var brush = (Brush)converter.ConvertFromString("#FFFFFFFF");
+            var bru = (Brush)converter.ConvertFromString("#FF6495ED");
+            b.Foreground = bru;
+            b.Background = brush;
         }
     }
 }
