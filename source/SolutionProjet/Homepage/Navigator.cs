@@ -41,10 +41,6 @@ namespace Homepage
         /// </summary>
         private void InitUserControls()
         {
-            //(userControls["UC_Connexion"] as ucconnexion.ucConnexion).PremiereConnexionClick += (sender, args) => SelectedUserControl = userControls["UC_Inscription"];
-            //(userControls["UC_Inscription"] as ucInscription).DejaCreeClick += (sender, args) => SelectedUserControl = userControls["UC_Connexion"];
-
-
             SelectedUserControl = userControls["UC_Connexion"]; //Définit par défault le UserControl sélectionné
         }
 
@@ -90,7 +86,7 @@ namespace Homepage
 
 
         /// <summary>
-        /// Méthode qui va tester si la propriété qui l'appelle a changé 
+        /// Méthode qui va informer
         /// </summary>
         /// <param name="propertyName"></param>
         void OnPropertyChanged([CallerMemberName] string propertyName = "")

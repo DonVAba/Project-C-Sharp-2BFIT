@@ -33,9 +33,6 @@
     <Compile Update="ucconnexion\ucInscription.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UCProgrammeListBox\UCProgrammeListBox.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="uctextblock\defaulttextblockuc.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -72,9 +69,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ucconnexion\ucInscription.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UCProgrammeListBox\UCProgrammeListBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="uctextblock\defaulttextblockuc.xaml">

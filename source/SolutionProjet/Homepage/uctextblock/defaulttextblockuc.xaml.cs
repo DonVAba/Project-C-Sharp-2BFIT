@@ -27,7 +27,7 @@ namespace Homepage.uctextblock
         public defaulttextblockuc()
         {
             InitializeComponent();
-            DataContext = List;
+            //DataContext = List;
         }
 
         public string Message

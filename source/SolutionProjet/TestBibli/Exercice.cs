@@ -9,19 +9,16 @@ namespace Application
         /// <summary>
         /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "DEBUTANT"
         /// </summary>
-        private Valeur valeurDeb;
         public Valeur ValeurDeb { get; set; }
 
         /// <summary>
         /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "INTERMEDIAIRE"
         /// </summary>
-        private Valeur valeurInter;
         public Valeur ValeurInter { get; set; }
 
         /// <summary>
         /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "INTERMEDIAIRE"
         /// </summary>
-        private Valeur valeurExpert;
         public Valeur ValeurExpert { get; set; }
 
         /// <summary>
@@ -46,9 +43,9 @@ namespace Application
         public Exercice(string Nom, string cheminImage, Valeur valeurDeb, Valeur valeurInter, Valeur valeurExpert) : base(Nom)
         {
             CheminImage = cheminImage;
-            this.valeurDeb = valeurDeb;
-            this.valeurInter = valeurInter;
-            this.valeurExpert = valeurExpert;
+            this.ValeurDeb = valeurDeb;
+            this.ValeurInter = valeurInter;
+            this.ValeurExpert = valeurExpert;
 
         }
 
@@ -58,7 +55,7 @@ namespace Application
         /// <returns></returns>
         public override string ToString()
         {
-            return $"Nom : {Nom} ;\nDebutant : {valeurDeb}\nIntermédiaire : {valeurInter}\n Expert : {valeurExpert} ";
+            return $"Nom : {Nom} ;\nDebutant : {ValeurDeb}\nIntermédiaire : {ValeurInter}\n Expert : {ValeurExpert} ";
         }
 
         public bool Equals(Exercice ex)
@@ -74,6 +71,8 @@ namespace Application
             }
             return Equals(other as Exercice);
         }
+
+        
 
     }
 }

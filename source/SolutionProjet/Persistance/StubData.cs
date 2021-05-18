@@ -37,9 +37,7 @@ namespace Persistance
             }
             
             Listes list = new Listes(listCompte, programmeStub);
-            list.UtilisateurCourant = list.RechercherUtilisateur("bamartel");
-            list.UtilisateurCourant.DernierProgramme = programmeStub.First();
-            list.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
+            list.ProgrammeChoisi = programmeStub.First();
             return list;
         
     }
@@ -51,10 +49,10 @@ namespace Persistance
         public List<Utilisateur> ChargeListUsers()
         {
             List<Utilisateur> listUser = new List<Utilisateur>() {
-                new Utilisateur("Martel","Baptiste",new DateTime(2003, 1, 30),190,190,"bamartel","mdpDeBamartel"),
-                new Utilisateur("Malea","Bastien",new DateTime(2002, 8, 11),190,190,"bamalea","mdpDeBamalea"),
-                new Utilisateur("Dallet","Simon",new DateTime(2002, 6, 12),190,190,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
-                new Admin("Bouhours","Cecric",new DateTime(1950, 10, 1),190,190,"admin","mdpAdmin")
+                new Utilisateur("Martel","Baptiste",new DateTime(2003, 1, 30),88,190,"bamartel","mdpDeBamartel"),
+                new Utilisateur("Malea","Bastien",new DateTime(2002, 8, 11),88,190,"bamalea","mdpDeBamalea"),
+                new Utilisateur("Dallet","Simon",new DateTime(2002, 6, 12),88,190,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
+                new Admin("Bouhours","Cecric",new DateTime(1950, 10, 1),88,190,"admin","mdpAdmin")
             };
             return listUser;
 
@@ -86,7 +84,7 @@ namespace Persistance
         /// Méthode qui instancie 3 exercices pour chaque programme instancié, les insère dans 3 listes différentes et retourne ces listes
         /// </summary>
         /// <returns></returns>
-        public (LinkedList<Exercice>, LinkedList<Exercice>, LinkedList<Exercice>) ChargeListExercice()
+        private (LinkedList<Exercice>, LinkedList<Exercice>, LinkedList<Exercice>) ChargeListExercice()
         {
             Valeur valDeb = new Valeur(8,4,80);
             Valeur valInter = new Valeur(10, 4,70);

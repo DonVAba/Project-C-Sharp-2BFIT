@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.ComponentModel;
 
 namespace Application
 {
 
-    public class Utilisateur : Nommable, IComparable, IComparable<Utilisateur>, IEquatable<Utilisateur>
+    public class Utilisateur : Nommable, IComparable, IComparable<Utilisateur>, IEquatable<Utilisateur>, INotifyPropertyChanged
     {
        
         /// <summary>
@@ -32,15 +32,13 @@ namespace Application
         private int taille;
         public int Taille
         {
-            get
-            {
-                return taille;
-            }
+            get => taille;
             set
             {
                 if (value > 50 && value < 260)
                 {
                     taille = value;
+                    OnPropertyChanged(nameof(Taille));
                 }
                 else
                     throw new ArgumentException("Mauvaise taille rentrée");
@@ -52,17 +50,19 @@ namespace Application
         /// </summary>
 
         private float poids;
+
+        
+
         public float Poids
         {
-            get
-            {
-                return poids;
-            }
+            get => poids;
+            
             set
             {
                 if (value > 20 && value < 200)
                 {
                     poids = value;
+                    OnPropertyChanged(nameof(Poids));
                 }
                 else
                     throw new ArgumentException("Mauvais poids rentré");
@@ -90,13 +90,38 @@ namespace Application
         /// <summary>
         /// Dernier programme lancé par l'utilisateur
         /// </summary/
-        public Programme DernierProgramme { get; set; }
+        private Programme dernierProgramme;
+        public Programme DernierProgramme 
+        {
+            get => dernierProgramme;
+            set
+            {
+                dernierProgramme = value;
+                if (PropertyChanged != null)
+                {
+                    OnPropertyChanged(nameof(DernierProgramme));
+                }
+
+            }
+        }
 
         /// <summary>
         /// Difficulté du dernier programme effectué
         /// </summary>
+        private Difficulte diffDernierProg;
+        public Difficulte DiffDernierProg 
+        {
+            get => diffDernierProg;
+            set
+            {
+                diffDernierProg = value;
+                if (PropertyChanged != null)
+                {
+                    OnPropertyChanged(nameof(DiffDernierProg));
+                }
 
-        public Difficulte DiffDernierProg { get; set; }
+            }
+        }
 
         
         
@@ -119,6 +144,11 @@ namespace Application
             Identifiant = identifiant;
             Mdp = mdp;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
         /// Méthode qui calcul l'âge de l'utilisateur à partir de sa date de naissance

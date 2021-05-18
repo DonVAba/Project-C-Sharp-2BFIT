@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +27,8 @@ namespace Homepage.ucuser
         public UserProfilUC()
         {
             InitializeComponent();
+            List.UtilisateurCourant.DernierProgramme = List.ListProgrammes.First();
+            List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
             DataContext = List.UtilisateurCourant;
 
         }

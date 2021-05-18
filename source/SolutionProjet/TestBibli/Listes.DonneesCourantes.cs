@@ -5,14 +5,11 @@ using System.Text;
 
 namespace Application
 {
-    // pas à sérialiser
     public partial class Listes : INotifyPropertyChanged
     {
         /// <summary>
         /// Utilisateur Connecté
         /// </summary>
-        private Utilisateur utilisateurCourant;
-
         public Utilisateur UtilisateurCourant { get; set; }
 
         /// <summary>
@@ -23,10 +20,12 @@ namespace Application
             get => programmeChoisi;
             set
             {
-               
                     programmeChoisi = value;
+                if(PropertyChanged != null)
+                {
                     OnPropertyChanged(nameof(ProgrammeChoisi));
-                
+                }
+                    
             } 
         }
 
@@ -44,6 +43,10 @@ namespace Application
         /// <param name="diff"></param>
         public void LancementProgramme(Programme prog, String diff)
         {
+            if (diff == null)
+            {
+                diff = "DEBUTANT";
+            }
             Enum.TryParse(diff, out Difficulte value); // Nouvelle varibale value, qui devient une difficulté au lieu d'une string
             ProgrammeChoisi = prog; // programmeChoisi prend la valeur de prog
             LinkedList<Exercice> list = prog.LesExercices; // Instanciation d'une nouvelle LinkedList d'exercice, qui prend la valeur de celle de prog

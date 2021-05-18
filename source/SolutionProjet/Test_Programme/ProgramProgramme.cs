@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Test_Programme
 {
-    class ProgramProgramme
+     public class ProgramProgramme
     {
         static void Main(string[] args)
         { 

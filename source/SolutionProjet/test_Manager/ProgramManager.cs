@@ -7,7 +7,7 @@ using Management;
 
 namespace test_Manager
 {
-    class ProgramManager
+    public class ProgramManager
     {
         static void Main(string[] args)
         {

@@ -28,6 +28,7 @@ namespace Homepage.ucuser
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
+            Management.Manager.LancementProgramme(List.ProgrammeChoisi, LevelComboBox.SelectedItem as String, List);
             ExerciceWindow ew = new ExerciceWindow();
             ew.Show();
         }

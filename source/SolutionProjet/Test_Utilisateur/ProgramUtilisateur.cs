@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Test_Utilisateur
 {
-    class ProgramUtilisateur
+    public class ProgramUtilisateur
     {
         /// <summary>
         /// Programme de test Utilisateur

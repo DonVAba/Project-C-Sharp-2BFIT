@@ -41,9 +41,9 @@
             </ListView>
             <TextBlock Text="DIFFICULTÉ"  FontSize="15" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
             <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
-                <TextBlock>DÉBUTANT</TextBlock>
-                <TextBlock>INTERMÉDIAIRE</TextBlock>
-                <TextBlock>EXPÉRIMENTÉ</TextBlock>
+                <TextBlock>DEBUTANT</TextBlock>
+                <TextBlock>INTERMEDIAIRE</TextBlock>
+                <TextBlock>EXPERIMENTE</TextBlock>
             </ComboBox>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,10">
