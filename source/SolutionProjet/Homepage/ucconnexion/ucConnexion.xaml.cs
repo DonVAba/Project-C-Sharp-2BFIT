@@ -86,7 +86,7 @@ namespace Homepage.ucconnexion
                 else
                 {
                     List.UtilisateurCourant = List.RechercherUtilisateur(idTextBlock.Text);
-                    WindowConnexion.GetWindow(this).Close();
+                    
                     MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
                     if(List.UtilisateurCourant is Admin)
                     {
@@ -98,6 +98,7 @@ namespace Homepage.ucconnexion
                         MainWindow mw = new MainWindow();
                         mw.Show();
                     }
+                    WindowConnexion.GetWindow(this).Close();
                 }
             }
 

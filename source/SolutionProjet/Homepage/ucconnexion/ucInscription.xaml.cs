@@ -101,12 +101,13 @@ namespace Homepage.ucconnexion
                     }
                     else
                     {
-                        WindowConnexion.GetWindow(this).Close();
+                        
                         MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);
                         Manager.AjouterUtilisateurInscription(userTestSignIn, List);
                         List.UtilisateurCourant = userTestSignIn;
                         MainWindow mw = new MainWindow();
                         mw.Show();
+                        WindowConnexion.GetWindow(this).Close();
                     }
                 }
                 catch (Exception)

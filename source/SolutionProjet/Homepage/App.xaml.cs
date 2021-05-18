@@ -15,7 +15,7 @@ namespace Homepage
     /// </summary>
     public partial class App
     {
-        public Listes List { get; set; } = new Listes();
+        public Listes List { get; set; }
         private StubData stub = new StubData("");
 
         public App()

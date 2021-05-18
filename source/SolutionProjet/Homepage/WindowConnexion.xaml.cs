@@ -24,7 +24,7 @@ namespace Homepage
     public partial class WindowConnexion : Window
     {
         public static Navigator Navigator { get; set; } = Navigator.GetInstance();
-        public Listes List => (App.Current as App).List;
+        
 
         public WindowConnexion()
         {
