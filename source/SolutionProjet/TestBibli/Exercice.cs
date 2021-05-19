@@ -72,7 +72,10 @@ namespace Application
             return Equals(other as Exercice);
         }
 
-        
+        public override int GetHashCode()
+        {
+            return Nom.GetHashCode();
+        }
 
     }
 }

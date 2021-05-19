@@ -15,7 +15,7 @@
                 <Image Source="img/icon/icon.png" Width="20" Height="35"/>
             </Button>
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" ItemsSource="{Binding ListProgrammes}" x:Name="listBoxProg"
-                     SelectionChanged="listBoxProg_SelectionChanged" >
+                     SelectionChanged="listBoxProg_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel Height="60" Width="110" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -33,5 +33,6 @@
             <local:UserProfilUC/>
         </ContentControl>
         
+
     </DockPanel>
 </Window>

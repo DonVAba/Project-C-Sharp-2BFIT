@@ -19,35 +19,27 @@ namespace Homepage
     /// Logique d'interaction pour ExerciceWindow.xaml
     /// </summary>
     /// 
-    public partial class ExerciceWindow : Window, INotifyPropertyChanged
+    public partial class ExerciceWindow : Window
     {
         public Listes List => (App.Current as App).List;
-        public Exercice ExerciceCourant { get; set; }
 
-        public LinkedList<Exercice>.Enumerator Enum { get; set; }
+        public LinkedList<Exercice>.Enumerator exenum = new LinkedList<Exercice>.Enumerator();
 
         public ExerciceWindow()
         {
             InitializeComponent();
-            ExerciceCourant = List.ProgrammeChoisi.LesExercices.First();
-            DataContext = ExerciceCourant;
-            Enum = List.ProgrammeChoisi.LesExercices.GetEnumerator();
-            Enum.MoveNext();
+            DataContext = List;
+            exenum = List.ProgrammeChoisi.LesExercices.GetEnumerator();
+            exenum.MoveNext();
+            List.ExerciceCourant = exenum.Current;
 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(string propertyName)
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
         private void nextExButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Enum.MoveNext())
+            if (exenum.MoveNext())
             {
-                ExerciceCourant = Enum.Current;
-                DataContext = ExerciceCourant;
-                OnPropertyChanged("ExerciceCourant");
+                List.ExerciceCourant = exenum.Current;
             }
             else
             {

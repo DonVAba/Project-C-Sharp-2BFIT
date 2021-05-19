@@ -20,12 +20,26 @@ namespace Application
             get => programmeChoisi;
             set
             {
-                    programmeChoisi = value;
-                if(PropertyChanged != null)
+                if(programmeChoisi != value)
                 {
-                    OnPropertyChanged(nameof(ProgrammeChoisi));
+                    programmeChoisi = value;
+                    OnPropertyChanged("ProgrammeChoisi");
                 }
                     
+            } 
+        }
+
+        public Exercice exerciceCourant;
+
+        public Exercice ExerciceCourant { 
+            get => exerciceCourant;
+            set
+            {
+                if(exerciceCourant != value)
+                {
+                    exerciceCourant = value;
+                    OnPropertyChanged("ExerciceCourant");
+                }
             } 
         }
 
@@ -43,10 +57,7 @@ namespace Application
         /// <param name="diff"></param>
         public void LancementProgramme(Programme prog, String diff)
         {
-            if (diff == null)
-            {
-                diff = "DEBUTANT";
-            }
+            
             Enum.TryParse(diff, out Difficulte value); // Nouvelle varibale value, qui devient une difficulté au lieu d'une string
             ProgrammeChoisi = prog; // programmeChoisi prend la valeur de prog
             LinkedList<Exercice> list = prog.LesExercices; // Instanciation d'une nouvelle LinkedList d'exercice, qui prend la valeur de celle de prog

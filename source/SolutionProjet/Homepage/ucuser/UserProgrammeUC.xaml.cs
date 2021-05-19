@@ -23,12 +23,26 @@ namespace Homepage.ucuser
         public UserProgrammeUC()
         {
             InitializeComponent();
-            DataContext = List.ProgrammeChoisi;
+            DataContext = List;
         }
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            Management.Manager.LancementProgramme(List.ProgrammeChoisi, LevelComboBox.SelectedItem as String, List);
+            string diff = "";
+            int index = LevelComboBox.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    diff = "DEBUTANT";
+                    break;
+                case 1:
+                    diff = "INTERMEDIAIRE";
+                    break;
+                case 2:
+                    diff = "EXPERT";
+                    break;
+            }
+            Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
             ExerciceWindow ew = new ExerciceWindow();
             ew.Show();
         }

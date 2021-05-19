@@ -28,7 +28,7 @@ namespace Application
             get => nbExercices;
             set
             {
-                value = LesExercices.Count();
+                nbExercices = LesExercices.Count();
             }
             
         }

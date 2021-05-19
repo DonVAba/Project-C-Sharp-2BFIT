@@ -25,7 +25,7 @@ namespace Homepage
     {
 
         public Listes List => (App.Current as App).List;
-        public Programme ProgrammeCourant { get; set; }
+
         private UserProgrammeUC ucProg;
         private UserProfilUC ucProfil;
         public MainWindow()
@@ -57,16 +57,11 @@ namespace Homepage
             MainWindowContentControl.Content = InitUserControlProfil();
         }
 
-        private void MWProgramButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindowContentControl.Content = InitUserControlProg();
-        }
 
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MainWindowContentControl.Content = InitUserControlProg();
             List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
-            
         }
     }
 }

@@ -96,10 +96,10 @@ namespace Application
             get => dernierProgramme;
             set
             {
-                dernierProgramme = value;
-                if (PropertyChanged != null)
+                if (dernierProgramme != value)
                 {
-                    OnPropertyChanged(nameof(DernierProgramme));
+                    dernierProgramme = value;
+                    OnPropertyChanged("DernierProgramme");
                 }
 
             }
@@ -114,10 +114,10 @@ namespace Application
             get => diffDernierProg;
             set
             {
-                diffDernierProg = value;
-                if (PropertyChanged != null)
+                if (diffDernierProg != value)
                 {
-                    OnPropertyChanged(nameof(DiffDernierProg));
+                    diffDernierProg = value;
+                    OnPropertyChanged("DiffDernierProg");
                 }
 
             }

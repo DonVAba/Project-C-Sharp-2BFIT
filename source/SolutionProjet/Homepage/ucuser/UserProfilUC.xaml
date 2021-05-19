@@ -42,7 +42,7 @@
 
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <Image Source="{Binding DernierProgramme.CheminImage}" Height="30" Width="250" />
+            <TextBlock Background="LightSkyBlue" Width="120" TextWrapping="WrapWithOverflow" Height="20" Text="{Binding DernierProgramme.Nom}" Foreground="White" TextAlignment="Center"></TextBlock>
             <userControls:defaulttextblockuc Message="DIFFICULTÉ" Margin="35" Valeur="{Binding DiffDernierProg}"/>
         </WrapPanel>
     </StackPanel>
