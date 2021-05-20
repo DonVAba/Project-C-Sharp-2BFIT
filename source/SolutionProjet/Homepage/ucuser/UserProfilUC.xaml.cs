@@ -27,8 +27,8 @@ namespace Homepage.ucuser
         public UserProfilUC()
         {
             InitializeComponent();
-            List.UtilisateurCourant.DernierProgramme = List.ListProgrammes.First();
-            List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
+            //List.UtilisateurCourant.DernierProgramme = List.ListProgrammes.First();
+            //List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
             DataContext = List.UtilisateurCourant;
 
         }

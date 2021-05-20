@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Images\Images.csproj" />
+    <ProjectReference Include="..\Image\Image.csproj" />
     <ProjectReference Include="..\Management\Management.csproj" />
     <ProjectReference Include="..\Persistance\Persistance.csproj" />
     <ProjectReference Include="..\TestBibli\Application.csproj" />

@@ -12,7 +12,7 @@
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Click="MWButtonProfile_Click" Background="SkyBlue" BorderBrush="CornflowerBlue" BorderThickness="2">
-                <Image Source="Images;Component/img/icon/icon.png" Width="20" Height="35"/>
+                <Image Source="/Image;Component/img/icon/icon.png" Width="20" Height="35"/>
             </Button>
             <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" ItemsSource="{Binding ListProgrammes}" x:Name="listBoxProg"
                      SelectionChanged="listBoxProg_SelectionChanged">

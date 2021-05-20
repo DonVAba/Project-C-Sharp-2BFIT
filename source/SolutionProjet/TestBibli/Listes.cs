@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Application;
 
@@ -8,7 +9,7 @@ namespace Application
     /// <summary>
     /// Classe qui sera sérializable
     /// </summary>
-    public partial class Listes
+    public partial class Listes : INotifyPropertyChanged
     {
         /// <summary>
         /// Dictionnaire contenant en clé les identifiants des utilisateurs et en valeur, leur mot de passe
@@ -19,7 +20,15 @@ namespace Application
         /// Liste de tous les programmes
         /// </summary>
 
-        public LinkedList<Programme> ListProgrammes { get; private set; }
+        private LinkedList<Programme> listProgrammes;
+        public LinkedList<Programme> ListProgrammes { 
+            get => listProgrammes; 
+            set
+            {
+                listProgrammes = value;
+                OnPropertyChanged("ListProgrammes");
+            }
+        }
 
         /// <summary>
         /// COnstructeur d'une liste avec des liste déjà inclu

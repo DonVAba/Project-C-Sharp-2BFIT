@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Application;
+using Persistance;
 
 namespace Homepage.ucadmin
 {
@@ -18,12 +21,16 @@ namespace Homepage.ucadmin
     /// </summary>
     public partial class AdminProfilUC : UserControl
     {
+        public Listes List => (App.Current as App).List;
         public AdminProfilUC()
         {
             InitializeComponent();
+            //List.UtilisateurCourant.DernierProgramme = List.ListProgrammes.First();
+            List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
+            DataContext = List.UtilisateurCourant;
         }
 
-        private void ModifierButton_Click(object sender, RoutedEventArgs e)
+        private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
             ModifierCorpulence mdc = new ModifierCorpulence();
             mdc.Show();

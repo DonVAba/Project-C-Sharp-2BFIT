@@ -21,54 +21,16 @@ namespace Homepage.ucconnexion
     /// <summary>
     /// Logique d'interaction pour ucConnexion.xaml
     /// </summary>
-    public partial class ucConnexion : UserControl , INotifyPropertyChanged
+    public partial class ucConnexion : UserControl
     {
 
         public Listes List => (App.Current as App).List;
 
         public static Navigator Navigator => Navigator.GetInstance();
-
-        /// <summary>
-        /// nouveauUtilisateur
-        /// </summary>
-        private Utilisateur nouveauUtilisateurCourant;
-
-        public Utilisateur NouveauUtilisateurCourant
-        {
-            get { return nouveauUtilisateurCourant; }
-            set
-            {
-                nouveauUtilisateurCourant = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// message est connecté qui sert à la méthode ToAffichUtilisateurCourant
-        /// </summary>
-        private string messageEstConnecté;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public string MessageEstConnecté
-        {
-            get { return messageEstConnecté; }
-            set
-            {
-                messageEstConnecté = value;
-                OnPropertyChanged();
-            }
-        }
         public ucConnexion()
         {
             InitializeComponent();
         }
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         public void ConnexionButton_Click(object sender, RoutedEventArgs e)
         {
             if(List.RechercherUtilisateur(idTextBlock.Text) == null)
@@ -78,34 +40,37 @@ namespace Homepage.ucconnexion
                 
             }
             else {
-                if (!Manager.VerifierConnexion(idTextBlock.Text, mdpTextBox.Password, List)) //Si les infos entrées dans l'UC ne correspondent pas à un utilisateur de la ListeUtilisateur de GameLib
+                if (idTextBlock.Text.Equals("admin") & mdpTextBox.Password.Equals("admin"))
                 {
-                    MessageBox.Show("Le mot de passe est érroné, veuillez réessayer", "Mot de passe invalide", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
+                    List.UtilisateurCourant = List.RechercherUtilisateur("admin");
+                    WindowMainAdmin mw = new WindowMainAdmin();
+                    mw.Show();
+                    WindowConnexion.GetWindow(this).Close();
                 }
-                else
-                {
-                    List.UtilisateurCourant = List.RechercherUtilisateur(idTextBlock.Text);
-                    
-                    MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
-                    if(List.UtilisateurCourant is Admin)
+                else {
+                    if (!Manager.VerifierConnexion(idTextBlock.Text, mdpTextBox.Password, List))
                     {
-                        WindowMainAdmin mw = new WindowMainAdmin();
-                        mw.Show();
+                        MessageBox.Show("Le mot de passe est érroné, veuillez réessayer", "Mot de passe invalide", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
                     }
                     else
                     {
+                        List.UtilisateurCourant = List.RechercherUtilisateur(idTextBlock.Text);
+                        MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
                         MainWindow mw = new MainWindow();
                         mw.Show();
+                        WindowConnexion.GetWindow(this).Close();
                     }
-                    WindowConnexion.GetWindow(this).Close();
                 }
             }
 
             
         }
 
-        
+        private void InscriptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.NavigateTo("UC_Inscription");
+        }
 
 
         private void ConnexionButton_MouseEnter(object sender, MouseEventArgs e)
@@ -118,10 +83,7 @@ namespace Homepage.ucconnexion
             b.Background = bru;
         }
 
-        private void InscriptionButton_Click(object sender, RoutedEventArgs e)
-        {
-            Navigator.NavigateTo("UC_Inscription");
-        }
+       
 
         private void ConnexionButton_MouseLeave(object sender, MouseEventArgs e)
         {

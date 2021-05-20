@@ -45,6 +45,7 @@ namespace Homepage.ucuser
             Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
             ExerciceWindow ew = new ExerciceWindow();
             ew.Show();
+            MainWindow.GetWindow(this).Close();
         }
     }
 }

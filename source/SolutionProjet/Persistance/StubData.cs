@@ -37,7 +37,7 @@ namespace Persistance
             }
             
             Listes list = new Listes(listCompte, programmeStub);
-            list.ProgrammeChoisi = programmeStub.First();
+            //list.ProgrammeChoisi = programmeStub.First();
             return list;
         
     }
@@ -52,7 +52,7 @@ namespace Persistance
                 new Utilisateur("Martel","Baptiste",new DateTime(2003, 1, 30),88,190,"bamartel","mdpDeBamartel"),
                 new Utilisateur("Malea","Bastien",new DateTime(2002, 8, 11),88,190,"bamalea","mdpDeBamalea"),
                 new Utilisateur("Dallet","Simon",new DateTime(2002, 6, 12),88,190,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
-                new Admin("Bouhours","Cecric",new DateTime(1950, 10, 1),88,190,"admin","mdpAdmin")
+                new Utilisateur("Bouhours","Cecric",new DateTime(1950, 10, 1),88,190,"admin","admin")
             };
             return listUser;
 
@@ -66,9 +66,9 @@ namespace Persistance
         {
             
             (LinkedList<Exercice> listExercicePull, LinkedList<Exercice> listExercicePush, LinkedList<Exercice> listExerciceJambes) = ChargeListExercice();
-            Programme push = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules  azeazeazeeeeeeeeeeeeeeeeeezazeaze", "/Images;Component/img/imgfond/background_ciel.jpg");
-            Programme pull = new Programme("PULL", "Programme qui fait travailler le dos et les biceps azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaz", "/Images;Component/img/imgfond/background_ciel.jpg");
-            Programme jambes = new Programme("JAMBES", "Programme qui fait travailler les quadriceps et ischios azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeez", "/Images;Component/img/imgfond/background_ciel.jpg");
+            Programme push = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules  azeazeazeeeeeeeeeeeeeeeeeezazeaze", "/Image;Component/img/imgfond/background_ciel.jpg");
+            Programme pull = new Programme("PULL", "Programme qui fait travailler le dos et les biceps azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaz", "/Image;Component/img/imgfond/background_ciel.jpg");
+            Programme jambes = new Programme("JAMBES", "Programme qui fait travailler les quadriceps et ischios azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeez", "/Image;Component/img/imgfond/background_ciel.jpg");
             LinkedList<Programme> programmeStub = new LinkedList<Programme>();
             programmeStub.AddLast(pull);
             programmeStub.AddLast(push);
@@ -93,18 +93,18 @@ namespace Persistance
             LinkedList<Exercice> listExercicePull = new LinkedList<Exercice>();
             LinkedList<Exercice> listExercicePush = new LinkedList<Exercice>();
             LinkedList<Exercice> listExerciceJambes = new LinkedList<Exercice>();
-            listExercicePull.AddLast(new Exercice("Traction", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePull.AddLast( new Exercice("Traction australienne", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePull.AddLast(new Exercice("Rowing", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePull.AddLast(new Exercice("Traction", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePull.AddLast( new Exercice("Traction australienne", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePull.AddLast(new Exercice("Rowing", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
 
-            listExercicePush.AddLast(new Exercice("Dips", "/Images;Component/img/imgExercice/dips.png", valDeb, valInter, valExpert));
-            listExercicePush.AddLast(new Exercice("Pompes surelevees", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePush.AddLast(new Exercice("Gainage", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePush.AddLast(new Exercice("Dips", "/Image;Component/img/imgExercice/dips.png", valDeb, valInter, valExpert));
+            listExercicePush.AddLast(new Exercice("Pompes surelevees", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePush.AddLast(new Exercice("Gainage", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
 
-            listExerciceJambes.AddLast(new Exercice("Squats", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExerciceJambes.AddLast(new Exercice("hip trust", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExerciceJambes.AddLast(new Exercice("fentes avant ", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExerciceJambes.AddLast(new Exercice("fentes arrière ", "/Images;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExerciceJambes.AddLast(new Exercice("Squats", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExerciceJambes.AddLast(new Exercice("hip trust", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExerciceJambes.AddLast(new Exercice("fentes avant ", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExerciceJambes.AddLast(new Exercice("fentes arrière ", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
 
             return (listExercicePull, listExercicePush, listExerciceJambes);
 

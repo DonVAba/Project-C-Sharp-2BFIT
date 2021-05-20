@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage.ucconnexion"
         mc:Ignorable="d"
-        Title="Connexion" Height="450" Width="450" MinHeight="450" MinWidth="450">
+        Title="Connexion" Height="550" Width="450" MinHeight="450" MinWidth="450">
 
     <StackPanel>
         <StackPanel.Background>
-            <ImageBrush ImageSource="/Images;Component/img/imgfond/background_ciel.jpg" Opacity="0.5"/>
+            <ImageBrush ImageSource= "/Image;Component/img/imgfond/background_ciel.jpg" Opacity="0.5"/>
         </StackPanel.Background>
 
-        <ContentControl x:Name="ConnexionCC" Margin="20" HorizontalAlignment="Center" Height="369" Width="407" Content="{Binding SelectedUserControl}"/>
+        <ContentControl x:Name="ConnexionCC" Margin="20" HorizontalAlignment="Center" Height="469" Width="407" Content="{Binding SelectedUserControl}"/>
 
 
     </StackPanel>

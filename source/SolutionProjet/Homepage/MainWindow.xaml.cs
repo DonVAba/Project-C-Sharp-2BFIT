@@ -25,12 +25,14 @@ namespace Homepage
     {
 
         public Listes List => (App.Current as App).List;
+        private UserControl selectedUserControl = new UserControl();
 
         private UserProgrammeUC ucProg;
         private UserProfilUC ucProfil;
         public MainWindow()
         {
             InitializeComponent();
+            selectedUserControl = InitUserControlProfil();
             DataContext = List;
         }
 
@@ -62,6 +64,16 @@ namespace Homepage
         {
             MainWindowContentControl.Content = InitUserControlProg();
             List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
+        }
+
+        private void UserProfilUC_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (selectedUserControl is UserProfilUC)
+            {
+                selectedUserControl = InitUserControlProg();
+            }
+            else
+                selectedUserControl = ucProfil;
         }
     }
 }

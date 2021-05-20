@@ -14,7 +14,7 @@
         <StackPanel VerticalAlignment="Center" Grid.Column="0">
             <Label Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">EXERCICES</Label>
             <StackPanel Background="White" Height="300" Margin="40,0,40,30">
-                <TextBlock Background="LightSkyBlue" Width="222" TextWrapping="WrapWithOverflow" Height="20" Margin="20" HorizontalAlignment="Center" Text="{Binding ExerciceCourant.Nom}" Foreground="White"></TextBlock>
+                <TextBlock Background="LightSkyBlue" Width="222" TextWrapping="WrapWithOverflow" Height="20" Margin="20" HorizontalAlignment="Center" Text="{Binding ExerciceCourant.Nom}" Foreground="White" TextAlignment="Center"></TextBlock>
                 <Image Margin="20" Height="200" VerticalAlignment="Top" Source="{Binding ExerciceCourant.CheminImage}"></Image>
             </StackPanel>
         </StackPanel>

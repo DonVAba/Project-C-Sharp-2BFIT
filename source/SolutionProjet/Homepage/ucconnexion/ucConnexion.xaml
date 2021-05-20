@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Homepage.ucconnexion"
              mc:Ignorable="d" 
-             d:DesignHeight="390" d:DesignWidth="400">
+             d:DesignHeight="490" d:DesignWidth="400">
     <UserControl.Resources>
         <Style x:Key="Flat">
             <Setter Property="Control.Background" Value="{x:Null}" />
@@ -21,7 +21,7 @@
         </Style>
     </UserControl.Resources>
     <StackPanel Background="White">
-        <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,20">
+        <WrapPanel HorizontalAlignment="Center" Margin="0,100,0,20">
                 <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" VerticalAlignment="Center"/>
             <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"  Foreground="CornflowerBlue" x:Name="idTextBlock"/>
             </WrapPanel>

@@ -43,8 +43,10 @@ namespace Homepage
             }
             else
             {
-                MessageBox.Show("Bravo ! Vous avez terminé le programmes !", "Programme terminé", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Bravo ! Vous avez terminé le programme !", "Programme terminé", MessageBoxButton.OK, MessageBoxImage.Information);
+                MainWindow.GetWindow(new MainWindow()).Show();
                 ExerciceWindow.GetWindow(this).Close();
+                
             }
 
             
