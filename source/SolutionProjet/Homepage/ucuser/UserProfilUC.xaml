@@ -32,7 +32,7 @@
         <WrapPanel Grid.Column="2" HorizontalAlignment="Center">
             <Border CornerRadius="5" BorderBrush="SkyBlue" BorderThickness="1">
                 <Button x:Name="ButtonModifierCorpulence" Click="ButtonModifierCorpulence_Click" Background="White">
-                    <Image Source="../img/icon/editicon2.png" Width="40"/>
+                    <Image Source="/Images;Component/img/icon/editicon2.png" Width="40"/>
                 </Button>
             </Border>
         </WrapPanel>

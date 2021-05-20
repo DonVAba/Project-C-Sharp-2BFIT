@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "essai_Linq", "essai_Linq\es
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test_fonctionnels", "test_fonctionnels", "{F0B0DF2D-EA7F-4A41-88A3-60E6FC7DCFF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images", "Images\Images.csproj", "{90C239A6-08A2-4FB3-ADAA-F846F4DB9E2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{D6DAD684-B225-47F2-9E1D-564F23128662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6DAD684-B225-47F2-9E1D-564F23128662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6DAD684-B225-47F2-9E1D-564F23128662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C239A6-08A2-4FB3-ADAA-F846F4DB9E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C239A6-08A2-4FB3-ADAA-F846F4DB9E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C239A6-08A2-4FB3-ADAA-F846F4DB9E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C239A6-08A2-4FB3-ADAA-F846F4DB9E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

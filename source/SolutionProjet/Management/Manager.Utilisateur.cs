@@ -25,8 +25,6 @@ namespace Management
             else
             {
                 l.AjouterUtilisateurInscription(user);
-
-
             }
         }
 

@@ -23,23 +23,23 @@
     <StackPanel Background="White">
 
         <WrapPanel HorizontalAlignment="Center" Margin="15">
-            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+           
             <TextBlock Text="NOM :" Foreground="CornflowerBlue" FontSize="15" Width="84" ></TextBlock>
             <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}" x:Name="nomSignIn" Foreground="CornflowerBlue"/>
-            <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+            
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="15">
-            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+           
 
             <TextBlock Text="PRENOM :" Foreground="CornflowerBlue" FontSize="15" Width="89" />
             <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}" x:Name="prenomSignIn" Foreground="CornflowerBlue"/>
-            <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+           
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="15">
-            <!--J'ai fais un wrap panel pour L'identifiant et le password si jamais y a une structure mieux adapté je les connais pas encore toute-->
+            
             <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" ></TextBlock>
             <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}" x:Name="idSignIn" Foreground="CornflowerBlue"/>
-            <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+           
         </WrapPanel>
         <WrapPanel Height="20"></WrapPanel>
         <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">

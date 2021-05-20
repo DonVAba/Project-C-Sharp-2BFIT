@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Homepage" xmlns:vsm="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
-             StartupUri="WindowConnexion.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="Button" x:Key="BoutonProg">
             <Setter Property="Background" Value="Azure"/>
