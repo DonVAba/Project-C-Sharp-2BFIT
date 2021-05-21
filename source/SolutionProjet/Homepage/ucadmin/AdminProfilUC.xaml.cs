@@ -33,7 +33,7 @@ namespace Homepage.ucadmin
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
             ModifierCorpulence mdc = new ModifierCorpulence();
-            mdc.Show();
+            mdc.ShowDialog();
         }
     }
 }

@@ -47,4 +47,8 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="img\imgProgramme\" />
+  </ItemGroup>
+
 </Project>

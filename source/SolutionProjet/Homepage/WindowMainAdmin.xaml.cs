@@ -37,7 +37,6 @@ namespace Homepage
             List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
         }
 
-
         private void MWButtonProfile_Click(object sender, RoutedEventArgs e)
         {
             MainWindowContentControl.Content = new AdminProfilUC();
@@ -64,7 +63,7 @@ namespace Homepage
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
             AjouterProgramme ap = new AjouterProgramme();
-            ap.Show();
+            ap.ShowDialog();
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Persistance;
 
 namespace Homepage.ucadmin
 {
@@ -45,16 +46,25 @@ namespace Homepage.ucadmin
             }
             Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
             ExerciceWindow ew = new ExerciceWindow();
-            ew.Show();
+            ew.ShowDialog();
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void Delete_Click_Programme(object sender, RoutedEventArgs e)
         {
             Programme prog = List.ProgrammeChoisi;
             List.ListProgrammes.Remove(prog);
             List.ProgrammeChoisi = List.ListProgrammes.First();
-            
-            
         }
+
+        private void Delete_Click_Exercice(object sender, RoutedEventArgs e)
+        { 
+           Exercice exo = List.ExerciceCourant; // J'arrive pas a récup l'exercice courant, j'ai que la valeur null 
+        }
+
+        /*private void Button_Modif_Programme(object sender, RoutedEventArgs e)
+        {
+            ModifierProgramme mdc = new ModifierProgramme();
+            mdc.Show();
+        }*/
     }
 }

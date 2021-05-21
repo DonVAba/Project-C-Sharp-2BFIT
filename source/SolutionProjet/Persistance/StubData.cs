@@ -52,7 +52,7 @@ namespace Persistance
                 new Utilisateur("Martel","Baptiste",new DateTime(2003, 1, 30),88,190,"bamartel","mdpDeBamartel"),
                 new Utilisateur("Malea","Bastien",new DateTime(2002, 8, 11),88,190,"bamalea","mdpDeBamalea"),
                 new Utilisateur("Dallet","Simon",new DateTime(2002, 6, 12),88,190,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
-                new Utilisateur("Bouhours","Cecric",new DateTime(1950, 10, 1),88,190,"admin","admin")
+                new Utilisateur("Bouhours","Cedric",new DateTime(1950, 10, 1),88,190,"admin","admin")
             };
             return listUser;
 
