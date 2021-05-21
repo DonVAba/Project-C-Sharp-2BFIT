@@ -21,7 +21,7 @@
     <Compile Update="ExerciceWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ModifierProgramme.xaml.cs">
+    <Compile Update="ModifWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ucadmin\AdminProfilUC.xaml.cs">
@@ -36,6 +36,12 @@
     <Compile Update="ucconnexion\ucInscription.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ucmodification\UCModifCorpulence.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucmodification\UCModifProg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="uctextblock\defaulttextblockuc.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +52,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ucuser\UserProgrammeUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucWindowAjout\UCExercice.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ucWindowAjout\UCProgramme.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WindowMainAdmin.xaml.cs">
@@ -62,7 +74,7 @@
     <Page Update="ExerciceWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ModifierProgramme.xaml">
+    <Page Update="ModifWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ucadmin\AdminProfilUC.xaml">
@@ -77,6 +89,12 @@
     <Page Update="ucconnexion\ucInscription.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ucmodification\UCModifCorpulence.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ucmodification\UCModifProg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="uctextblock\defaulttextblockuc.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -89,10 +107,13 @@
     <Page Update="ucuser\UserProgrammeUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="WindowConnexion.xaml">
+    <Page Update="ucWindowAjout\UCExercice.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ModifierCorpulence.xaml">
+    <Page Update="ucWindowAjout\UCProgramme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowConnexion.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

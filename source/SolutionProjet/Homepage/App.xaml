@@ -141,6 +141,7 @@
         
         <Style TargetType="TextBox" x:Key="TextBoxAnimated">
             <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="FontSize" Value="13"/>
             <Setter Property="Template" >
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">

@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
 using Persistance;
+using Homepage.ucmodification;
 
 namespace Homepage.ucadmin
 {
@@ -22,6 +23,7 @@ namespace Homepage.ucadmin
     public partial class AdminProfilUC : UserControl
     {
         public Listes List => (App.Current as App).List;
+        private UCModifCorpulence ucm = new UCModifCorpulence();
         public AdminProfilUC()
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace Homepage.ucadmin
 
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
-            ModifierCorpulence mdc = new ModifierCorpulence();
+            ModifWindow mdc = new ModifWindow(ucm);
             mdc.ShowDialog();
         }
     }

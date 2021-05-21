@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage.ucconnexion"
         mc:Ignorable="d"
-        Title="Connexion" Height="550" Width="450" MinHeight="450" MinWidth="450">
+        Title="Connexion" Height="550" Width="450" MinHeight="450" MinWidth="450"
+        WindowStartupLocation="CenterScreen">
 
     <StackPanel>
         <StackPanel.Background>

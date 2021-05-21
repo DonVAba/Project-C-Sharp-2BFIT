@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Persistance;
+using Homepage.ucmodification;
 
 namespace Homepage.ucadmin
 {
@@ -22,6 +23,7 @@ namespace Homepage.ucadmin
     public partial class ExercicePageUCAdmin : UserControl
     {
         public Listes List => (App.Current as App).List;
+        private UCModifProg ucmp = new UCModifProg(); 
         public ExercicePageUCAdmin()
         {
             InitializeComponent();
@@ -57,14 +59,20 @@ namespace Homepage.ucadmin
         }
 
         private void Delete_Click_Exercice(object sender, RoutedEventArgs e)
-        { 
-           Exercice exo = List.ExerciceCourant; // J'arrive pas a récup l'exercice courant, j'ai que la valeur null 
+        {
+            List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice; //à voir si le changement d'élément s'effectue avant le delete ou après
+            List.ProgrammeChoisi.SupprimerExercices(List.ExerciceCourant);
         }
 
-        /*private void Button_Modif_Programme(object sender, RoutedEventArgs e)
+        private void Button_Modif_Programme(object sender, RoutedEventArgs e)
         {
-            ModifierProgramme mdc = new ModifierProgramme();
-            mdc.Show();
-        }*/
+            ModifWindow mdc = new ModifWindow(ucmp);
+            mdc.ShowDialog();
+        }
+
+        private void exerciceListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice;
+        }
     }
 }

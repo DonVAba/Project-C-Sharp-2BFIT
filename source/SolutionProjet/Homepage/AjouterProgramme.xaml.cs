@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -9,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Homepage.ucWindowAjout;
 
 namespace Homepage
 {
@@ -17,30 +19,15 @@ namespace Homepage
     /// </summary>
     public partial class AjouterProgramme : Window
     {
+        public Listes List => (App.Current as App).List;
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
+
         public AjouterProgramme()
         {
             InitializeComponent();
+            DataContext = Navigator;
+            Navigator.NavigateTo("UC_AjoutProg");
         }
 
-        private void ImportImageButton_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.InitialDirectory = @"C:\Users\Public\Pictures";
-            dialog.FileName = "Images";
-            dialog.DefaultExt = ".jpg | .png | .gif";
-
-            bool? result = dialog.ShowDialog();
-
-            if(result == true)
-            {
-                string filename = dialog.FileName;
-                CheminFichierExo.Text = filename;
-            }
-        }
-
-        private void Cancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-        }
     }
 }

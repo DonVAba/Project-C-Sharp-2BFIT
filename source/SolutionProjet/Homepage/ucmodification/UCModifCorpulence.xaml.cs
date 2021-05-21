@@ -1,9 +1,7 @@
 ﻿using Application;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,15 +12,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Homepage
+namespace Homepage.ucmodification
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour UCModifCorpulence.xaml
     /// </summary>
-    public partial class ModifierCorpulence : Window
+    public partial class UCModifCorpulence : UserControl
     {
         public Listes List => (App.Current as App).List;
-        public ModifierCorpulence()
+        public UCModifCorpulence()
         {
             InitializeComponent();
             DataContext = List;
@@ -30,17 +28,27 @@ namespace Homepage
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-           
+            Window.GetWindow(this).Close();
+
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                List.UtilisateurCourant.Taille = Int16.Parse(newTaille.Text);
-                List.UtilisateurCourant.Poids = float.Parse(newPoids.Text);
-                Close();
+                if (string.IsNullOrWhiteSpace(newTaille.Text))
+                {
+
+                }
+                else
+                    List.UtilisateurCourant.Taille = Int16.Parse(newTaille.Text);
+                if (string.IsNullOrWhiteSpace(newPoids.Text))
+                {
+
+                }
+                else
+                    List.UtilisateurCourant.Poids = float.Parse(newPoids.Text);
+                Window.GetWindow(this).Close();
             }
             catch (Exception)
             {

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Homepage.ucWindowAjout.UCProgramme"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Homepage.ucWindowAjout"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="530">
+    <Border BorderThickness="5" BorderBrush="White" Style="{StaticResource BorderStyle1}">
+        <StackPanel>
+            <WrapPanel HorizontalAlignment="Center" Margin="30">
+                <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
+                <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0"/>
+                <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" Margin="30">
+
+                <TextBlock Text="DESCRIPTION :" Foreground="White" FontSize="15" ></TextBlock>
+                <TextBox TextWrapping="NoWrap" Width="280" Height="50"  Margin="17,0,0,0"/>
+
+            </WrapPanel>
+
+            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid Background="White" Width="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <WrapPanel Margin="10"  HorizontalAlignment="Center" Background="White">
+                        <Button Height="20" Width="40" Click="ImportImageButton_Click" Margin="10" Background="White">
+                            <Image Source="Image;Component/img/icon/icon_import_image.png"/>
+                        </Button>
+                        <TextBlock Text="NOMBRE D'EXERCICES :" Foreground="CornflowerBlue" Margin="10"/>
+                        <TextBox TextWrapping="NoWrap" MinWidth="50" Height="20" Margin="20,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                    </WrapPanel>
+
+                </Grid>
+                
+            </WrapPanel>
+            <Button Margin="20" Style="{StaticResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" x:Name="nextStepButton" Click="nextStepButton_Click"/>
+        </StackPanel>
+    </Border>
+</UserControl>

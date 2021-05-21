@@ -155,7 +155,7 @@ namespace Application
         /// </summary>
         /// <param name="dateNaissance">Date de naissance de l'utilisateur</param>
         /// <returns>Age de l'utilisateur</returns>
-        public int CalculAge(DateTime dateNaissance)
+        private int CalculAge(DateTime dateNaissance)
         {
             DateTime now = DateTime.Today;
             int age = now.Year - dateNaissance.Year;

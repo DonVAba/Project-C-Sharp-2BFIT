@@ -51,7 +51,7 @@ namespace Homepage
             return ucProg;
         }
 
-        public AdminProfilUC InitUserControlProfil()
+        private AdminProfilUC InitUserControlProfil()
         {
             if (ucProfil == null)
             {

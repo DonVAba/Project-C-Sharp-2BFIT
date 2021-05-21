@@ -32,8 +32,8 @@
 
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <ListView Background="Beige" Height="150" Width="240" ItemsSource="{Binding ProgrammeChoisi.LesExercices}">
-                <ListView.ItemTemplate>
+            <ListBox Background="Beige" Height="150" Width="240" ItemsSource="{Binding ProgrammeChoisi.LesExercices}" x:Name="exerciceListBox" SelectionChanged="exerciceListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <DockPanel VerticalAlignment="Center">
                             <Ellipse Width="40" Height="40" DockPanel.Dock="Left">
@@ -49,8 +49,8 @@
                             </WrapPanel>
                         </DockPanel>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <TextBlock Text="DIFFICULTÉ"  FontSize="15" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
             <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
                 <TextBlock>DEBUTANT</TextBlock>

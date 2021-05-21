@@ -20,7 +20,7 @@ namespace Application
         /// Liste de tous les programmes
         /// </summary>
 
-        private LinkedList<Programme> listProgrammes;
+        private LinkedList<Programme> listProgrammes; // ObservableCollection pour changer la propriété
         public LinkedList<Programme> ListProgrammes { 
             get => listProgrammes; 
             set

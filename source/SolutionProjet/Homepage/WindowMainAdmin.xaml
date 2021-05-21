@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Homepage"
         xmlns:local1="clr-namespace:Homepage.ucadmin"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="540" MinWidth="800" Height="540" Width="800">
+        Title="Page d'accueil" MinHeight="540" MinWidth="800" Height="540" Width="800"
+        WindowStartupLocation="CenterScreen">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Click="MWButtonProfile_Click" Background="SkyBlue" BorderBrush="CornflowerBlue" BorderThickness="2">

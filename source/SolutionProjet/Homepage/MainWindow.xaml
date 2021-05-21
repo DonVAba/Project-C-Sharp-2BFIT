@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage.ucuser"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="500" MinWidth="800" Height="470" Width="800">
+        Title="Page d'accueil" MinHeight="500" MinWidth="800" Height="470" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         
     </Window.Resources>
@@ -29,9 +30,7 @@
                
             </ListBox>
         </StackPanel>
-        <ContentControl x:Name="MainWindowContentControl">
-            <local:UserProfilUC Loaded="UserProfilUC_Loaded"/>
-        </ContentControl>
+        <ContentControl x:Name="MainWindowContentControl" Loaded="UserProfilUC_Loaded"/>
 
     </DockPanel>
 </Window>

@@ -1,9 +1,7 @@
 ﻿using Application;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,15 +12,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Homepage
+namespace Homepage.ucmodification
 {
     /// <summary>
-    /// Logique d'interaction pour ModifierProgramme.xaml
+    /// Logique d'interaction pour UCModifProg.xaml
     /// </summary>
-    public partial class ModifierProgramme : Page
+    public partial class UCModifProg : UserControl
     {
         public Listes List => (App.Current as App).List;
-        public ModifierProgramme()
+        public UCModifProg()
         {
             InitializeComponent();
             DataContext = List;
@@ -34,7 +32,7 @@ namespace Homepage
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
     }
 }

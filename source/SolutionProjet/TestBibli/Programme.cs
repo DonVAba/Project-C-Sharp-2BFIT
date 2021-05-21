@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 namespace Application
 {
-    public class Programme : Nommable/*, IEquatable<Programme>*/
+    public class Programme : Nommable, INotifyPropertyChanged
     {
         
 
@@ -43,7 +44,25 @@ namespace Application
         /// Liste des exercices contenus dans le programme. 
         /// </summary>
 
-        public LinkedList<Exercice> LesExercices { get; set; }
+        private LinkedList<Exercice> lesExercices; // ObservableCollection pour changer la propriété
+        public LinkedList<Exercice> LesExercices 
+        {
+            get => lesExercices;
+            set
+            {
+                if(lesExercices != value)
+                {
+                    lesExercices = value;
+                    OnPropertyChanged("LesExercices");
+                }
+            } 
+        }
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
         /// <summary>
@@ -77,33 +96,21 @@ namespace Application
         /// </summary>
         /// <param name="other">Programme à comparer</param>
         /// <returns></returns>
-        //public bool Equals(Programme other)
-        //{
-        //    return this.Nom.Equals(other.Nom);
-        //}
+        public bool Equals(Programme other)
+        {
+            return this.Nom.Equals(other.Nom);
+        }
 
-        /// <summary>
-        /// Méthode qui vérifie que l'objet passé en paramètre est un programme et qui appelle la méthode Equals avec un Programme passé en paramètres
-        /// </summary>
-        /// <param name="value">Objet à comparer</param>
-        /// <returns></returns>
-        //public override bool Equals(Object value)
-        //{
-        //    /*if(!(value is Programme))
-        //    {
-        //        throw new ArgumentException("Error : l'objet passé en paramètre n'est pas un programme");
-        //    }*/
-        //    return Equals(value as Programme);
-        //}
+       
 
         /// <summary>
         /// Méthode renvoyant le HashCode du programme instancié
         /// </summary>
         /// <returns></returns>
-        //public override int GetHashCode()
-        //{
-        //    return Nom.GetHashCode();
-        //}
+        public override int GetHashCode()
+        {
+            return Nom.GetHashCode();
+        }
 
         /// <summary>
         /// Méthode qui supprime un exercice, je l'ai ajouté je me suis dit si on ajoute un exo ca serait plus logique si on peut les supprimer aussi
@@ -117,6 +124,7 @@ namespace Application
                 if (e.Equals(exo)) // si l'exercice a le même nom que e
                 {
                     LesExercices.Remove(e); // Suppression de l'exercice
+                    OnPropertyChanged("LesExercices");
                     return;
                 }
             }

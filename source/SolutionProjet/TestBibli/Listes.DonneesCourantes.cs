@@ -29,8 +29,10 @@ namespace Application
             } 
         }
 
-        public Exercice exerciceCourant;
-
+        /// <summary>
+        /// Exercice choisi dans la liste, ou exercice entrain d'être affiché lors du déroulement d'un programme
+        /// </summary>
+        private Exercice exerciceCourant;
         public Exercice ExerciceCourant { 
             get => exerciceCourant;
             set

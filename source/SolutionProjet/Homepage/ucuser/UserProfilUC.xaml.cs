@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
 using Persistance;
+using Homepage.ucmodification;
 
 namespace Homepage.ucuser
 {
@@ -23,6 +24,7 @@ namespace Homepage.ucuser
     public partial class UserProfilUC : UserControl
     {
         public Listes List => (App.Current as App).List;
+        private UCModifCorpulence ucm = new UCModifCorpulence();
         
         public UserProfilUC()
         {
@@ -35,8 +37,8 @@ namespace Homepage.ucuser
 
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
-            ModifierCorpulence mc = new ModifierCorpulence();
-            mc.Show();
+            ModifWindow mw = new ModifWindow(ucm);
+            mw.ShowDialog();
         }
     }
 }
