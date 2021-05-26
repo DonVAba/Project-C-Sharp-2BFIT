@@ -28,7 +28,7 @@ namespace Homepage.ucadmin
         {
             InitializeComponent();
             //List.UtilisateurCourant.DernierProgramme = List.ListProgrammes.First();
-            List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
+            //List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
             DataContext = List.UtilisateurCourant;
         }
 

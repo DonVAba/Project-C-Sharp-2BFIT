@@ -23,7 +23,8 @@ namespace Homepage.ucadmin
     public partial class ExercicePageUCAdmin : UserControl
     {
         public Listes List => (App.Current as App).List;
-        private UCModifProg ucmp = new UCModifProg(); 
+        private UCModifProg ucmp = new UCModifProg();
+        private Navigator Navigator = Navigator.GetInstance();
         public ExercicePageUCAdmin()
         {
             InitializeComponent();
@@ -55,12 +56,16 @@ namespace Homepage.ucadmin
         {
             Programme prog = List.ProgrammeChoisi;
             List.ListProgrammes.Remove(prog);
+            if (List.ListProgrammes.Count() == 0)
+            {
+                Navigator.NavigateTo("UC_ProfilAdmin");
+                return;
+            }
             List.ProgrammeChoisi = List.ListProgrammes.First();
         }
 
         private void Delete_Click_Exercice(object sender, RoutedEventArgs e)
         {
-            List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice; //à voir si le changement d'élément s'effectue avant le delete ou après
             List.ProgrammeChoisi.SupprimerExercices(List.ExerciceCourant);
         }
 

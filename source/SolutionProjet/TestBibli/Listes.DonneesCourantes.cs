@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 
@@ -62,7 +63,7 @@ namespace Application
             
             Enum.TryParse(diff, out Difficulte value); // Nouvelle varibale value, qui devient une difficulté au lieu d'une string
             ProgrammeChoisi = prog; // programmeChoisi prend la valeur de prog
-            LinkedList<Exercice> list = prog.LesExercices; // Instanciation d'une nouvelle LinkedList d'exercice, qui prend la valeur de celle de prog
+            ObservableCollection<Exercice> list = prog.LesExercices; // Instanciation d'une nouvelle LinkedList d'exercice, qui prend la valeur de celle de prog
             foreach (Exercice ex in list) // pour chaque exercice dans list
             {
                 if (diff.ToString().Equals("DEBUTANT")) //Si la difficulté est "DEBUTANT"

@@ -44,6 +44,7 @@ namespace Homepage.ucconnexion
                 {
                     List.UtilisateurCourant = List.RechercherUtilisateur("admin");
                     WindowMainAdmin mw = new WindowMainAdmin();
+                    Navigator.NavigateTo("UC_ProfilAdmin");
                     mw.Show();
                     WindowConnexion.GetWindow(this).Close();
                 }

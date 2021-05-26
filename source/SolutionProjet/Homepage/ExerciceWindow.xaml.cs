@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,7 @@ namespace Homepage
     {
         public Listes List => (App.Current as App).List;
 
-        public LinkedList<Exercice>.Enumerator exenum = new LinkedList<Exercice>.Enumerator();
+        public IEnumerator<Exercice> exenum;
 
         public ExerciceWindow()
         {

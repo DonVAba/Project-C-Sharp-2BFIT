@@ -32,8 +32,8 @@
 
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <ListBox Background="Beige" Height="150" Width="240" ItemsSource="{Binding ProgrammeChoisi.LesExercices}" x:Name="exerciceListBox" SelectionChanged="exerciceListBox_SelectionChanged">
-                <ListBox.ItemTemplate>
+            <ListBox Background="Beige" Height="150" Width="240" ItemsSource="{Binding ProgrammeChoisi.LesExercices}" x:Name="exerciceListBox" SelectedItem="{Binding ExerciceCourant}">
+                <ListBox.ItemTemplate >
                     <DataTemplate>
                         <DockPanel VerticalAlignment="Center">
                             <Ellipse Width="40" Height="40" DockPanel.Dock="Left">
@@ -43,9 +43,9 @@
                             </Ellipse>
                             <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
                                 <TextBlock Text="{Binding Nom}" FontWeight="Bold"/>
-                                <Button Height="20" Width="20" BorderThickness="0" Background="Transparent" Click="Delete_Click_Exercice">
-                                <Image Source="/Image;Component/img/icon/deleteicon.png"/>
-                            </Button>
+                                <Button Height="20" Width="20" BorderThickness="0" Background="Transparent" Click="Delete_Click_Exercice" x:Name="DeleteButton">
+                                    <Image Source="/Image;Component/img/icon/deleteicon.png"/>
+                                </Button>
                             </WrapPanel>
                         </DockPanel>
                     </DataTemplate>

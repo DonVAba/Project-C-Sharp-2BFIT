@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using Application;
 
@@ -20,13 +22,12 @@ namespace Application
         /// Liste de tous les programmes
         /// </summary>
 
-        private LinkedList<Programme> listProgrammes; // ObservableCollection pour changer la propriété
-        public LinkedList<Programme> ListProgrammes { 
+        private ObservableCollection<Programme> listProgrammes; // ObservableCollection pour changer la propriété
+        public ObservableCollection<Programme> ListProgrammes { 
             get => listProgrammes; 
             set
             {
                 listProgrammes = value;
-                OnPropertyChanged("ListProgrammes");
             }
         }
 
@@ -35,10 +36,10 @@ namespace Application
         /// </summary>
         /// <param name="comptes"></param>
         /// <param name="programmes"></param>
-        public Listes(Dictionary<string, Utilisateur> comptes, LinkedList<Programme> programmes)
+        public Listes(Dictionary<string, Utilisateur> comptes, ObservableCollection<Programme> programmes)
         {
             listComptes = new Dictionary<string, Utilisateur>(comptes);
-            ListProgrammes = new LinkedList<Programme>(programmes);
+            ListProgrammes = new ObservableCollection<Programme>(programmes);
         }
 
         /// <summary>
@@ -47,16 +48,16 @@ namespace Application
         public Listes(Dictionary<string, Utilisateur> comptes)
         {
             listComptes = new Dictionary<string, Utilisateur>(comptes);
-            ListProgrammes = new LinkedList<Programme>();
+            ListProgrammes = new ObservableCollection<Programme>();
         }
 
         /// <summary>
         /// Constructeur de Listes avec uniquement une liste de programme en paramètre
         /// </summary>
-        public Listes(LinkedList<Programme> programmes)
+        public Listes(ObservableCollection<Programme> programmes)
         {
             listComptes = new Dictionary<string, Utilisateur>();
-            ListProgrammes = new LinkedList<Programme>(programmes);
+            ListProgrammes = new ObservableCollection<Programme>(programmes);
         }
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Application
         public Listes()
         {
             listComptes = new Dictionary<string, Utilisateur>();
-            ListProgrammes = new LinkedList<Programme>();
+            ListProgrammes = new ObservableCollection<Programme>();
         }
 
 
@@ -144,7 +145,7 @@ namespace Application
             }
             else
             {
-                ListProgrammes.AddFirst(programme); //sinon ajoute ce programme à la liste de programme
+                ListProgrammes.Add(programme); //sinon ajoute ce programme à la liste de programme
                 return true; // et retourne true
             }
         }
@@ -178,7 +179,7 @@ namespace Application
             ProgrammeChoisi = prog; // ProgrammeChoisi prend la valeur de prog
             if (ProgrammeChoisi.LesExercices is null) // Si sa liste d'exercice est nulle (ce qui n'est normalement pas censé arriver)
             {
-                ProgrammeChoisi.LesExercices = new LinkedList<Exercice>(); // on instancie sa liste d'exercice
+                ProgrammeChoisi.LesExercices = new ObservableCollection<Exercice>(); // on instancie sa liste d'exercice
             }
 
             ProgrammeChoisi.AjouterExercice(ex); // on ajoute l'exercice à la liste lesExercices de ProgrammeChoisi en appelant la méthode AjouterExercice de la classe programme

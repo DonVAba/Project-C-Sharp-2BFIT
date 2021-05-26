@@ -3320,7 +3320,7 @@
 											"top": 1094,
 											"width": 514.1220703125,
 											"height": 13,
-											"text": "+ChargeListUser(): List<Utilisateur>",
+											"text": "-ChargeListUser(): List<Utilisateur>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3337,7 +3337,7 @@
 											"top": 1109,
 											"width": 514.1220703125,
 											"height": 13,
-											"text": "+ChargeListprogramme(): LinkedList<Programme>",
+											"text": "-ChargeListprogramme(): LinkedList<Programme>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3354,7 +3354,7 @@
 											"top": 1124,
 											"width": 514.1220703125,
 											"height": 13,
-											"text": "+ChargeListExercice(): LinkedList<Exercice>;LinkedList<Exercice>;LinkedList<Exercice>",
+											"text": "-ChargeListExercice(): LinkedList<Exercice>;LinkedList<Exercice>;LinkedList<Exercice>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -8990,6 +8990,7 @@
 								"$ref": "AAAAAAF5UBxEcWf0yZE="
 							},
 							"name": "ChargeListUser",
+							"visibility": "private",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -9009,6 +9010,7 @@
 								"$ref": "AAAAAAF5UBxEcWf0yZE="
 							},
 							"name": "ChargeListprogramme",
+							"visibility": "private",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -9028,6 +9030,7 @@
 								"$ref": "AAAAAAF5UBxEcWf0yZE="
 							},
 							"name": "ChargeListExercice",
+							"visibility": "private",
 							"parameters": [
 								{
 									"_type": "UMLParameter",

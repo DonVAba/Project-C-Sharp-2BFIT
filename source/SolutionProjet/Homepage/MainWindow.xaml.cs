@@ -25,6 +25,7 @@ namespace Homepage
     {
 
         public Listes List => (App.Current as App).List;
+        
 
         private UserControl selectedUserControl = new UserControl();
         private UserProgrammeUC ucProg;

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Application;
 using Persistance;
+using System.Collections.ObjectModel;
 
 namespace Homepage
 {
@@ -22,13 +23,14 @@ namespace Homepage
     public partial class WindowMainAdmin : Window
     {
         public Listes List => (App.Current as App).List;
+        private Navigator Navigator = Navigator.GetInstance();
 
         private ExercicePageUCAdmin ucProg;
-        private AdminProfilUC ucProfil;
+        public AdminProfilUC ucProfil;
         public WindowMainAdmin()
         {
             InitializeComponent();
-            DataContext = List;
+            //DataContext = List;
         }
 
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,7 +41,7 @@ namespace Homepage
 
         private void MWButtonProfile_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowContentControl.Content = new AdminProfilUC();
+            MainWindowContentControl.Content = InitUserControlProfil();
         }
 
         private ExercicePageUCAdmin InitUserControlProg()

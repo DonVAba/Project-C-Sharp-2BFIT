@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -44,8 +45,8 @@ namespace Application
         /// Liste des exercices contenus dans le programme. 
         /// </summary>
 
-        private LinkedList<Exercice> lesExercices; // ObservableCollection pour changer la propriété
-        public LinkedList<Exercice> LesExercices 
+        private ObservableCollection<Exercice> lesExercices; // ObservableCollection pour changer la propriété
+        public ObservableCollection<Exercice> LesExercices 
         {
             get => lesExercices;
             set
@@ -53,7 +54,7 @@ namespace Application
                 if(lesExercices != value)
                 {
                     lesExercices = value;
-                    OnPropertyChanged("LesExercices");
+                    //OnPropertyChanged("LesExercices");
                 }
             } 
         }
@@ -77,7 +78,7 @@ namespace Application
         {
             Description = description;
             CheminImage = cheminImage;
-            LesExercices = new LinkedList<Exercice>();
+            LesExercices = new ObservableCollection<Exercice>();
         }
 
         
@@ -124,7 +125,6 @@ namespace Application
                 if (e.Equals(exo)) // si l'exercice a le même nom que e
                 {
                     LesExercices.Remove(e); // Suppression de l'exercice
-                    OnPropertyChanged("LesExercices");
                     return;
                 }
             }
@@ -144,7 +144,7 @@ namespace Application
             }
             else
             {
-                LesExercices.AddLast(ex); // sinon ajout de l'exercice à la liste lesExercices du programme instancié
+                LesExercices.Add(ex); // sinon ajout de l'exercice à la liste lesExercices du programme instancié
                
             }
             

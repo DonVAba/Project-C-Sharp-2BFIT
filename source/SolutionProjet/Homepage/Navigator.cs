@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using Homepage.ucconnexion;
 using Homepage.ucWindowAjout;
+using Homepage.ucadmin;
 
 namespace Homepage
 {
@@ -24,7 +25,9 @@ namespace Homepage
             ["UC_Connexion"] = new ucconnexion.ucConnexion(),
             ["UC_Inscription"] = new ucInscription(),
             ["UC_AjoutExercice"] = new UCExercice(),
-            ["UC_AjoutProg"] = new UCProgramme()
+            ["UC_AjoutProg"] = new UCProgramme(),
+            ["UC_ProfilAdmin"] = new AdminProfilUC(),
+            ["UC_ProgAdmin"] = new ExercicePageUCAdmin()
 
         }; 
 

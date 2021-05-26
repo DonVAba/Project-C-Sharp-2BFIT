@@ -2,6 +2,7 @@
 using Persistance;
 using Application;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Test_Utilisateur
 {
@@ -58,10 +59,10 @@ namespace Test_Utilisateur
             //On créer un programme en lui ajoutant une liste d'exercice, on lance 2 fois la méthode LancerProgramme à un même utilisateur pour observer
             //si les variables DernierProgramme et DiffDernierProg ont bien été modifié.
             Programme programme = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules", "chemin image programme PUSH");
-            var listExo = new LinkedList<Exercice>();
-            listExo.AddLast(new Exercice("Traction", "chemin img traction", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60)));
+            var listExo = new ObservableCollection<Exercice>();
+            listExo.Add(new Exercice("Traction", "chemin img traction", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60)));
             Exercice e = new Exercice("Test", "chemin test", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60));
-            listExo.AddLast(e);
+            listExo.Add(e);
             programme.LesExercices = listExo;
             Programme programme2 = new Programme("Test", "Testtest", "test chemin")
             {

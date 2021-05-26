@@ -2,6 +2,7 @@
 using Persistance;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Test_Programme
 {
@@ -10,7 +11,7 @@ namespace Test_Programme
         static void Main(string[] args)
         { 
             StubData stub = new StubData("");
-            LinkedList<Programme> listProg = stub.ChargeListprogramme();
+            ObservableCollection<Programme> listProg = stub.ChargeListprogramme();
 
 
             //A ameliorer l'affichage est pas super propre
@@ -58,10 +59,10 @@ namespace Test_Programme
             Console.WriteLine("Supprimer exercice");
 
             //Création d'un nouveau programme avec deux exercice
-            LinkedList<Exercice> listExo = new LinkedList<Exercice>();
-            listExo.AddLast(new Exercice("Traction", "chemin img traction", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60)));
+            ObservableCollection<Exercice> listExo = new ObservableCollection<Exercice>();
+            listExo.Add(new Exercice("Traction", "chemin img traction", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60)));
             Exercice e = new Exercice("Test", "chemin test", new Valeur(8, 4, 80), new Valeur(10, 4, 70), new Valeur(12, 4, 60));
-            listExo.AddLast(e);
+            listExo.Add(e);
             prog.LesExercices = listExo;
             foreach(Exercice exercice in prog.LesExercices)
             {
