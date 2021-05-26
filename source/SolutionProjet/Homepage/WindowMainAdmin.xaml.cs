@@ -23,14 +23,14 @@ namespace Homepage
     public partial class WindowMainAdmin : Window
     {
         public Listes List => (App.Current as App).List;
-        private Navigator Navigator = Navigator.GetInstance();
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
 
         private ExercicePageUCAdmin ucProg;
         public AdminProfilUC ucProfil;
         public WindowMainAdmin()
         {
             InitializeComponent();
-            //DataContext = List;
+            DataContext = List;
         }
 
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Application
 {
-    public abstract class Nommable
+    public abstract class Nommable : INotifyPropertyChanged
     {
 
         /// <summary>
@@ -14,12 +15,25 @@ namespace Application
         public string Nom
         {
             get => nom;
-            set => nom = value;
+            set 
+            { 
+                if(nom != value)
+                {
+                    nom = value;
+                    OnPropertyChanged("Nom");
+                }
+            }
+
         }
         public override string ToString()
         {
             return $" {Nom}";
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
         /// Constructeur de classe nommable

@@ -25,7 +25,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Height="20" Width="40" Click="ImportImageButton_Click">
-                <Image Source="Image;Component/img/icon/icon_import_image.png"/>
+                <Image Source="/Image;Component/img/icon/icon_import_image.png"/>
             </Button>
             <TextBlock Grid.Column="1" TextWrapping="NoWrap" Background="Beige" Width="90" HorizontalAlignment="Center" x:Name="CheminFichierExo"/>
 

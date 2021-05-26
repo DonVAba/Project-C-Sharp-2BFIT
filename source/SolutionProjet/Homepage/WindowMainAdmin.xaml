@@ -7,7 +7,7 @@
         xmlns:local1="clr-namespace:Homepage.ucadmin"
         mc:Ignorable="d"
         Title="Page d'accueil" MinHeight="540" MinWidth="800" Height="540" Width="800"
-        WindowStartupLocation="CenterScreen" x:Name="WindowAdmin" DataContext="{Binding List}">
+        WindowStartupLocation="CenterScreen" x:Name="WindowAdmin" >
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="CornflowerBlue">
             <Button Click="MWButtonProfile_Click" Background="SkyBlue" BorderBrush="CornflowerBlue" BorderThickness="2">
@@ -35,6 +35,8 @@
                 </WrapPanel>
             </Button>
         </StackPanel>
-        <ContentControl x:Name="MainWindowContentControl" DataContext="{Binding Navigator}" Content="{Binding SelectedUserControl}"/>
+        <ContentControl x:Name="MainWindowContentControl">
+            <local1:AdminProfilUC/>
+        </ContentControl>
     </DockPanel>
 </Window>

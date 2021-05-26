@@ -46,8 +46,16 @@ namespace Homepage
             else
             {
                 MessageBox.Show("Bravo ! Vous avez terminé le programme !", "Programme terminé", MessageBoxButton.OK, MessageBoxImage.Information);
-                MainWindow.GetWindow(new MainWindow()).Show();
-                ExerciceWindow.GetWindow(this).Close();
+                if (List.UtilisateurCourant.Identifiant.Equals("admin"))
+                {
+                    WindowMainAdmin.GetWindow(new WindowMainAdmin()).Show();
+                }
+                else 
+                {
+                    MainWindow.GetWindow(new MainWindow()).Show();
+                    ExerciceWindow.GetWindow(this).Close();
+                }
+                
                 
             }
 

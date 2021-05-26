@@ -27,12 +27,26 @@ namespace Homepage.ucmodification
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            ///Close();
+            Window.GetWindow(this).Close();
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
+           if (string.IsNullOrWhiteSpace(newName.Text))
+           {
 
+           }
+           else
+                List.ProgrammeChoisi.Nom = newName.Text;
+           if (string.IsNullOrWhiteSpace(newDesc.Text))
+           {
+
+           }
+           else
+                List.ProgrammeChoisi.Description = newDesc.Text;
+           Window.GetWindow(this).Close();
+            
         }
     }
+    
 }

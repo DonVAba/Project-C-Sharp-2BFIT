@@ -9,15 +9,23 @@ namespace Application
 {
     public class Programme : Nommable, INotifyPropertyChanged
     {
-        
+
 
         /// <summary>
         /// Description du programme
         /// </summary>
+        private string description;
         public string Description
         {
-            get;
-            private set;
+            get => description;
+            set 
+            { 
+                if(description != value)
+                {
+                    description = value;
+                    OnPropertyChanged("Description");
+                }
+            }
         }
 
         /// <summary>
@@ -59,11 +67,6 @@ namespace Application
             } 
         }
 
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string propertyName)
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
         /// <summary>

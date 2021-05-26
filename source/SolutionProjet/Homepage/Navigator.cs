@@ -26,8 +26,7 @@ namespace Homepage
             ["UC_Inscription"] = new ucInscription(),
             ["UC_AjoutExercice"] = new UCExercice(),
             ["UC_AjoutProg"] = new UCProgramme(),
-            ["UC_ProfilAdmin"] = new AdminProfilUC(),
-            ["UC_ProgAdmin"] = new ExercicePageUCAdmin()
+            ["UC_ProfilAdmin"] = new AdminProfilUC()
 
         }; 
 

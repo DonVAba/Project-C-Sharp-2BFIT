@@ -20,7 +20,7 @@
 
         <WrapPanel HorizontalAlignment="Center" Margin="20,10,0,0">
             <Border CornerRadius="5" BorderBrush="SkyBlue" BorderThickness="1">
-                <Button x:Name="ButtonModifierCorpulence"  Background="White">
+                <Button x:Name="ButtonModifProg" Click="Button_Modif_Programme" Background="Transparent">
                     <Image Source="/Image;Component/img/icon/editicon2.png" Width="40"/>
                 </Button>
             </Border>

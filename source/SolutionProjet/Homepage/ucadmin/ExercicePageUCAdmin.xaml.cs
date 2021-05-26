@@ -24,7 +24,7 @@ namespace Homepage.ucadmin
     {
         public Listes List => (App.Current as App).List;
         private UCModifProg ucmp = new UCModifProg();
-        private Navigator Navigator = Navigator.GetInstance();
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
         public ExercicePageUCAdmin()
         {
             InitializeComponent();
@@ -33,6 +33,11 @@ namespace Homepage.ucadmin
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
+            if (List.ProgrammeChoisi.LesExercices.Count == 0)
+            {
+                MessageBox.Show("Programme sans exercices !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             string diff = "";
             int index = LevelComboBox.SelectedIndex;
             switch (index)
@@ -49,7 +54,8 @@ namespace Homepage.ucadmin
             }
             Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
             ExerciceWindow ew = new ExerciceWindow();
-            ew.ShowDialog();
+            MainWindow.GetWindow(this).Close();
+            ew.Show();
         }
 
         private void Delete_Click_Programme(object sender, RoutedEventArgs e)
@@ -58,7 +64,6 @@ namespace Homepage.ucadmin
             List.ListProgrammes.Remove(prog);
             if (List.ListProgrammes.Count() == 0)
             {
-                Navigator.NavigateTo("UC_ProfilAdmin");
                 return;
             }
             List.ProgrammeChoisi = List.ListProgrammes.First();
@@ -79,5 +84,6 @@ namespace Homepage.ucadmin
         {
             List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice;
         }
+
     }
 }

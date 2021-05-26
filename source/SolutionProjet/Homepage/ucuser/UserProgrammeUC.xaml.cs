@@ -28,6 +28,11 @@ namespace Homepage.ucuser
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
+            if(List.ProgrammeChoisi.LesExercices.Count == 0)
+            {
+                MessageBox.Show("Programme sans exercices !","Erreur",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
             string diff = "";
             int index = LevelComboBox.SelectedIndex;
             switch (index)
@@ -44,8 +49,9 @@ namespace Homepage.ucuser
             }
             Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
             ExerciceWindow ew = new ExerciceWindow();
-            ew.Show();
             MainWindow.GetWindow(this).Close();
+            ew.Show();
+            
         }
     }
 }

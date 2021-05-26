@@ -19,7 +19,7 @@ namespace Homepage.ucWindowAjout
     public partial class UCProgramme : UserControl
     {
 
-        public static Navigator Navigator => Navigator.GetInstance();
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
         public UCProgramme()
         {
             InitializeComponent();

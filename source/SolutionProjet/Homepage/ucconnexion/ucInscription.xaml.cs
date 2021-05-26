@@ -23,7 +23,7 @@ namespace Homepage.ucconnexion
     {
         public Listes List => (App.Current as App).List;
 
-        public static Navigator Navigator => Navigator.GetInstance();
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
 
         /// <summary>
         /// nouveauUtilisateur

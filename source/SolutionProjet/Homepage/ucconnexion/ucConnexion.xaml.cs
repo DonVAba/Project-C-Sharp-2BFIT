@@ -26,7 +26,7 @@ namespace Homepage.ucconnexion
 
         public Listes List => (App.Current as App).List;
 
-        public static Navigator Navigator => Navigator.GetInstance();
+        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
         public ucConnexion()
         {
             InitializeComponent();
@@ -44,7 +44,6 @@ namespace Homepage.ucconnexion
                 {
                     List.UtilisateurCourant = List.RechercherUtilisateur("admin");
                     WindowMainAdmin mw = new WindowMainAdmin();
-                    Navigator.NavigateTo("UC_ProfilAdmin");
                     mw.Show();
                     WindowConnexion.GetWindow(this).Close();
                 }
