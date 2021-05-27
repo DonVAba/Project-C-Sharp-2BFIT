@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Application;
 
 namespace Homepage.ucWindowAjout
 {
@@ -23,7 +24,7 @@ namespace Homepage.ucWindowAjout
         public UCProgramme()
         {
             InitializeComponent();
-            //Navigator.NavigateTo
+            DataContext = Navigator;
         }
 
         private void ImportImageButton_Click(object sender, RoutedEventArgs e)
@@ -41,8 +42,26 @@ namespace Homepage.ucWindowAjout
             }
         }
 
-        private void nextStepButton_Click(object sender, RoutedEventArgs e)
+        private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
+            /*
+             try
+            {
+                if (string.IsNullOrWhiteSpace(newNom.Nom))
+                {
+
+                }
+                else
+                    
+                if(string.IsNullOrWhiteSpace)
+                Navigator.NavigateTo("UC_AjoutExercice");  // J'aurais besoin que tu m'expliques pour le navigator, il me semblait que ça marchait mercredi pourtant 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Mauvaises valeurs rentrées, veuillez reesayer", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+            */
             Navigator.NavigateTo("UC_AjoutExercice");
         }
     }

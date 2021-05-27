@@ -62,10 +62,13 @@ namespace Homepage.ucadmin
         {
             Programme prog = List.ProgrammeChoisi;
             List.ListProgrammes.Remove(prog);
+            MessageBox.Show("Programme supprimé avec succés", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
             if (List.ListProgrammes.Count() == 0)
-            {
+            { 
+                Navigator.NavigateTo("UC_ProfilAdmin");  // Reviens pas sur la page d'accueil je me rappel plus comment on avait fait ça mercredi
                 return;
             }
+            
             List.ProgrammeChoisi = List.ListProgrammes.First();
         }
 

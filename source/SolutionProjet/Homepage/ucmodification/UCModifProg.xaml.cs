@@ -30,22 +30,28 @@ namespace Homepage.ucmodification
             Window.GetWindow(this).Close();
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        private void saveButton_Click(object sender, RoutedEventArgs e) //Pb : même si valeur fausse, update dans la window 
         {
-           if (string.IsNullOrWhiteSpace(newName.Text))
-           {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(newName.Text))
+                { 
 
-           }
-           else
-                List.ProgrammeChoisi.Nom = newName.Text;
-           if (string.IsNullOrWhiteSpace(newDesc.Text))
-           {
-
-           }
-           else
-                List.ProgrammeChoisi.Description = newDesc.Text;
-           Window.GetWindow(this).Close();
-            
+                }
+                else
+                    List.ProgrammeChoisi.Nom = newName.Text;
+                if (string.IsNullOrWhiteSpace(newDesc.Text))
+                {
+                    
+                }
+                else
+                    List.ProgrammeChoisi.Description = newDesc.Text;
+                Window.GetWindow(this).Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Mauvaises valeurs rentrées, veuillez reesayer", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
     

@@ -11,7 +11,7 @@
             <WrapPanel HorizontalAlignment="Center" Margin="30">
                 <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
                 <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0"/>
-                <!-- NoWrap ca permet de continuer d'écrire du texte sur la droite sans revenir a la ligne et deformer la textBox-->
+               
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="30">
 
@@ -36,7 +36,7 @@
                 </Grid>
                 
             </WrapPanel>
-            <Button Margin="20" Style="{StaticResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" x:Name="nextStepButton" Click="nextStepButton_Click"/>
+            <Button Margin="20" Style="{StaticResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" x:Name="nextStepButton" Click="NextStepButton_Click"/>
         </StackPanel>
     </Border>
 </UserControl>

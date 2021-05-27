@@ -27,7 +27,6 @@ namespace Homepage
             ["UC_AjoutExercice"] = new UCExercice(),
             ["UC_AjoutProg"] = new UCProgramme(),
             ["UC_ProfilAdmin"] = new AdminProfilUC()
-
         }; 
 
         public Dictionary<string, UserControl> UserControls { get; set; }

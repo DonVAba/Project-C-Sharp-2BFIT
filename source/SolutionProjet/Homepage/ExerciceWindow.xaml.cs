@@ -49,6 +49,7 @@ namespace Homepage
                 if (List.UtilisateurCourant.Identifiant.Equals("admin"))
                 {
                     WindowMainAdmin.GetWindow(new WindowMainAdmin()).Show();
+                    ExerciceWindow.GetWindow(this).Close();
                 }
                 else 
                 {

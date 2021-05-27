@@ -131,7 +131,7 @@ namespace Application
                     return;
                 }
             }
-            throw new Exception("Exercice rentré non trouvé "); // Envoie d'une nouvelle excpetion pour indiquer que l'exercice passé en paramètre n'a pas été trouvé
+            throw new Exception("Exercice rentré non trouvé "); // Envoie d'une nouvelle exception pour indiquer que l'exercice passé en paramètre n'a pas été trouvé
 
         }
 
