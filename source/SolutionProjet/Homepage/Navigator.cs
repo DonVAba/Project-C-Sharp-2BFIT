@@ -15,10 +15,6 @@ namespace Homepage
     public class Navigator : INotifyPropertyChanged
     {
 
-        /// <summary>
-        /// Evenement qui permet de signaler à la vue par un évenement qu'une propriété a changé
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private Dictionary<string, UserControl> userControls = new Dictionary<string, UserControl>()
         {
@@ -26,10 +22,10 @@ namespace Homepage
             ["UC_Inscription"] = new ucInscription(),
             ["UC_AjoutExercice"] = new UCExercice(),
             ["UC_AjoutProg"] = new UCProgramme(),
-            ["UC_ProfilAdmin"] = new AdminProfilUC()
+            ["UC_ProfilAdmin"] = new AdminProfilUC(),
+            ["UC_ProgAdmin"] = new ExercicePageUCAdmin()
         }; 
 
-        public Dictionary<string, UserControl> UserControls { get; set; }
 
         /// <summary>
         /// Méthode permettant de naviguer vers un userControl dont le nom reçu en paramètre
@@ -82,18 +78,23 @@ namespace Homepage
         {
             get => selectedUserControl;
             set
-            {
-                selectedUserControl = value;
-                OnPropertyChanged();
+            { 
+               selectedUserControl = value;
+               OnPropertyChanged("SelectedUserControl");  
             }
         }
 
 
         /// <summary>
+        /// Evenement qui permet de signaler à la vue par un évenement qu'une propriété a changé
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
         /// Méthode qui va informer
         /// </summary>
         /// <param name="propertyName"></param>
-        void OnPropertyChanged([CallerMemberName] string propertyName = "")
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedUserControl)));
+        void OnPropertyChanged(string propertyName)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage.uctextblock"
         mc:Ignorable="d"
-         Title="Ajouter un programme" d:DesignHeight="350" d:DesignWidth="530" MaxHeight="350" MaxWidth="530">
-    <StackPanel>
+         Title="Ajouter un programme" d:DesignHeight="350" d:DesignWidth="530" MaxHeight="350" MaxWidth="530"
+        WindowStartupLocation="CenterScreen">
+    <Border Style="{StaticResource BorderStyle1}">
+        <StackPanel>
         <ContentControl x:Name="AddWindowContentControl" Content="{Binding SelectedUserControl}"/>
     </StackPanel>
+    </Border>
 </Window>

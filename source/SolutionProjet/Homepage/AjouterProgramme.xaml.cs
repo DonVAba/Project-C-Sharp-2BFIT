@@ -20,7 +20,7 @@ namespace Homepage
     public partial class AjouterProgramme : Window
     {
         public Listes List => (App.Current as App).List;
-        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
+        public Navigator Navigator { get; set; } = Navigator.GetInstance();
 
         public AjouterProgramme()
         {

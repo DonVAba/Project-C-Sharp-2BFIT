@@ -26,7 +26,7 @@ namespace Homepage.ucconnexion
 
         public Listes List => (App.Current as App).List;
 
-        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
+        public Navigator Navigator { get; set; } = Navigator.GetInstance();
         public ucConnexion()
         {
             InitializeComponent();

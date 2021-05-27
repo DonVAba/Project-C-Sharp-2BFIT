@@ -40,8 +40,6 @@ namespace Application
                     taille = value;
                     OnPropertyChanged(nameof(Taille));
                 }
-                else
-                    throw new ArgumentException("Mauvaise taille rentrée");
             }
         }
 
@@ -64,8 +62,6 @@ namespace Application
                     poids = value;
                     OnPropertyChanged(nameof(Poids));
                 }
-                else
-                    throw new ArgumentException("Mauvais poids rentré");
             }
         }
 

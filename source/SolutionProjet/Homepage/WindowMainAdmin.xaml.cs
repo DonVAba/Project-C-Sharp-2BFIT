@@ -23,14 +23,15 @@ namespace Homepage
     public partial class WindowMainAdmin : Window
     {
         public Listes List => (App.Current as App).List;
-        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
+        public Navigator Navigator { get; set; } = Navigator.GetInstance();
 
         private ExercicePageUCAdmin ucProg;
-        public AdminProfilUC ucProfil;
+        private AdminProfilUC ucProfil;
         public WindowMainAdmin()
         {
             InitializeComponent();
-            DataContext = List;
+            MainWindowContentControl.Content = InitUserControlProfil();
+            DataContext = this;
         }
 
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,7 +45,7 @@ namespace Homepage
             MainWindowContentControl.Content = InitUserControlProfil();
         }
 
-        private ExercicePageUCAdmin InitUserControlProg()
+        public ExercicePageUCAdmin InitUserControlProg()
         {
             if (ucProg == null)
             {
@@ -53,7 +54,7 @@ namespace Homepage
             return ucProg;
         }
 
-        private AdminProfilUC InitUserControlProfil()
+        public AdminProfilUC InitUserControlProfil()
         {
             if (ucProfil == null)
             {

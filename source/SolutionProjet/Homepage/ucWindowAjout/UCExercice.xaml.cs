@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,13 @@ namespace Homepage.ucWindowAjout
     /// </summary>
     public partial class UCExercice : UserControl
     {
+        public Navigator Navigator { get; set; } = Navigator.GetInstance();
+
+        public Listes List => (App.Current as App).List;
         public UCExercice()
         {
             InitializeComponent();
+            DataContext = List;
         }
 
         private void ImportImageButton_Click(object sender, RoutedEventArgs e)

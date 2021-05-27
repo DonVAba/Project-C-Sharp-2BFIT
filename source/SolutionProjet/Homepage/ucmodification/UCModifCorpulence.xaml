@@ -9,12 +9,12 @@
     <StackPanel>
         <TextBlock Margin="15,15,0,0" FontSize="20" Foreground="White" Text="Taille"></TextBlock>
         <WrapPanel Margin="20">
-            <TextBox Width="200" x:Name="newTaille"></TextBox>
+            <TextBox Width="200" x:Name="newTaille" Text="{Binding Taille}"></TextBox>
             <TextBlock Foreground="White" FontSize="20" Margin="10,0,0,0" Text="cm"></TextBlock>
         </WrapPanel>
         <TextBlock Margin="15,0,0,0" FontSize="20" Foreground="White" Text="Poids"></TextBlock>
         <WrapPanel Margin="20">
-            <TextBox Width="200" x:Name="newPoids"></TextBox>
+            <TextBox Width="200" x:Name="newPoids" Text="{Binding Poids}"></TextBox>
             <TextBlock  Foreground="White" Text="kg" Margin="10,0,0,0" FontSize="20"></TextBlock>
         </WrapPanel>
         <WrapPanel Margin="20,60,0,0">

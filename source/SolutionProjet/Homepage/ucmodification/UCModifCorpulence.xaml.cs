@@ -23,7 +23,7 @@ namespace Homepage.ucmodification
         public UCModifCorpulence()
         {
             InitializeComponent();
-            DataContext = List;
+            DataContext = List.UtilisateurCourant;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -36,18 +36,14 @@ namespace Homepage.ucmodification
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(newTaille.Text))
+                if (!string.IsNullOrWhiteSpace(newTaille.Text))
                 {
-
-                }
-                else
                     List.UtilisateurCourant.Taille = Int16.Parse(newTaille.Text);
-                if (string.IsNullOrWhiteSpace(newPoids.Text))
-                {
-
                 }
-                else
+                if (!string.IsNullOrWhiteSpace(newPoids.Text))
+                {
                     List.UtilisateurCourant.Poids = float.Parse(newPoids.Text);
+                }
                 Window.GetWindow(this).Close();
             }
             catch (Exception)

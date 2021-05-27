@@ -22,14 +22,11 @@ namespace Homepage
     /// 
     
     public partial class WindowConnexion : Window
-    {
-        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
-        
-
+    {      
         public WindowConnexion()
         {
             InitializeComponent();
-            DataContext = Navigator;
+            ConnexionCC.DataContext = Navigator.GetInstance();
         }
     }
 }

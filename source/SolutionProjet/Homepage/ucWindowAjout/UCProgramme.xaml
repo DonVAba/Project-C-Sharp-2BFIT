@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:Homepage.ucWindowAjout"
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="530">
-    <Border BorderThickness="5" BorderBrush="White" Style="{StaticResource BorderStyle1}">
+    
         <StackPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="30">
                 <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
-                <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0"/>
+                <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0" x:Name="nomProg"/>
                
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="30">
 
                 <TextBlock Text="DESCRIPTION :" Foreground="White" FontSize="15" ></TextBlock>
-                <TextBox TextWrapping="NoWrap" Width="280" Height="50"  Margin="17,0,0,0"/>
+                <TextBox TextWrapping="NoWrap" Width="280" Height="50"  Margin="17,0,0,0" x:Name="descProg"/>
 
             </WrapPanel>
 
@@ -30,13 +30,13 @@
                             <Image Source="/Image;Component/img/icon/icon_import_image.png"/>
                         </Button>
                         <TextBlock Text="NOMBRE D'EXERCICES :" Foreground="CornflowerBlue" Margin="10"/>
-                        <TextBox TextWrapping="NoWrap" MinWidth="50" Height="20" Margin="20,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                        <TextBox TextWrapping="NoWrap" MinWidth="50" Height="20" Margin="20,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="nbExos"/>
                     </WrapPanel>
 
                 </Grid>
                 
             </WrapPanel>
-            <Button Margin="20" Style="{StaticResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" x:Name="nextStepButton" Click="NextStepButton_Click"/>
+            <Button Margin="20" Style="{StaticResource ButtonStyle1}" Content="SUIVANT" x:Name="nextStepButton" Click="NextStepButton_Click"/>
         </StackPanel>
-    </Border>
+    
 </UserControl>

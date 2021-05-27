@@ -20,11 +20,13 @@ namespace Homepage.ucWindowAjout
     public partial class UCProgramme : UserControl
     {
 
-        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
+        public Navigator Navigator { get; set; } = Navigator.GetInstance();
+
+        public Listes List => (App.Current as App).List;
         public UCProgramme()
         {
             InitializeComponent();
-            DataContext = Navigator;
+            DataContext = List;
         }
 
         private void ImportImageButton_Click(object sender, RoutedEventArgs e)
@@ -44,25 +46,17 @@ namespace Homepage.ucWindowAjout
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
-            /*
-             try
+            if (string.IsNullOrWhiteSpace(nomProg.Text) || string.IsNullOrWhiteSpace(descProg.Text) || string.IsNullOrWhiteSpace(nbExos.Text))
             {
-                if (string.IsNullOrWhiteSpace(newNom.Nom))
-                {
+                MessageBox.Show("Mauvaises valeurs rentrées, veuillez réessayer", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else 
+            {
+                Navigator.NavigateTo("UC_AjoutExercice");
+            }
 
-                }
-                else
-                    
-                if(string.IsNullOrWhiteSpace)
-                Navigator.NavigateTo("UC_AjoutExercice");  // J'aurais besoin que tu m'expliques pour le navigator, il me semblait que ça marchait mercredi pourtant 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Mauvaises valeurs rentrées, veuillez reesayer", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            
-            */
-            Navigator.NavigateTo("UC_AjoutExercice");
+
+
         }
     }
 }

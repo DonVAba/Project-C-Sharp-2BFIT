@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Homepage.uctextblock"
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="530">
-    <Border BorderThickness="5" BorderBrush="White" Style="{StaticResource BorderStyle1}">
+    
         <Grid HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -54,5 +54,5 @@
 
         </Grid>
         
-    </Border>
+   
 </UserControl>
