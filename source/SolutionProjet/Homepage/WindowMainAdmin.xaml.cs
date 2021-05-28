@@ -42,7 +42,7 @@ namespace Homepage
 
         private void MWButtonProfile_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowContentControl.Content = InitUserControlProfil();
+            MainWindowContentControl.Content = InitUserControlProfil(); // Lorsqu'on clique sur le bouton, on revient sur le UserControl MainWindowContentControl
         }
 
         public ExercicePageUCAdmin InitUserControlProg()
@@ -62,7 +62,11 @@ namespace Homepage
             }
             return ucProfil;
         }
-
+        /// <summary>
+        /// Méthode qui ouvre une nouvelle fenêtre AjouterProgramme après l'avoir instancié
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
             AjouterProgramme ap = new AjouterProgramme();

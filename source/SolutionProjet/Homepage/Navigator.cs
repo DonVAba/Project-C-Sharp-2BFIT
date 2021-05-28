@@ -15,7 +15,6 @@ namespace Homepage
     public class Navigator : INotifyPropertyChanged
     {
 
-
         private Dictionary<string, UserControl> userControls = new Dictionary<string, UserControl>()
         {
             ["UC_Connexion"] = new ucconnexion.ucConnexion(),
