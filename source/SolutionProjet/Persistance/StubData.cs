@@ -38,7 +38,6 @@ namespace Persistance
             }
             
             Listes list = new Listes(listCompte, programmeStub);
-            //list.ProgrammeChoisi = programmeStub.First();
             return list;
         
     }

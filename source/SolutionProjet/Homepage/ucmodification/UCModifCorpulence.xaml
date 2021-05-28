@@ -18,8 +18,8 @@
             <TextBlock  Foreground="White" Text="kg" Margin="10,0,0,0" FontSize="20"></TextBlock>
         </WrapPanel>
         <WrapPanel Margin="20,60,0,0">
-            <Button Width="125" Click="CancelButton_Click" FontSize="15" Margin="15,0,0,0" Style="{StaticResource BoutonProg}">ANNULER</Button>
-            <Button x:Name="saveButton" Click="saveButton_Click" Margin="100,0,15,0"  Width="125" FontSize="15" Style="{StaticResource BoutonProg}">SAUVEGARDER</Button>
+            <Button Width="125" Click="CancelButton_Click" FontSize="15" Margin="15,0,0,0" Style="{DynamicResource BoutonProg}">ANNULER</Button>
+            <Button x:Name="saveButton" Click="saveButton_Click" Margin="100,0,15,0"  Width="125" FontSize="15" Style="{DynamicResource BoutonProg}">SAUVEGARDER</Button>
         </WrapPanel>
     </StackPanel>
 </UserControl>

@@ -23,10 +23,8 @@ namespace Homepage.ucconnexion
     /// </summary>
     public partial class ucConnexion : UserControl
     {
-
+        public Navigator Nav => (App.Current as App).Navigator;
         public Listes List => (App.Current as App).List;
-
-        public Navigator Navigator { get; set; } = Navigator.GetInstance();
         public ucConnexion()
         {
             InitializeComponent();
@@ -69,7 +67,7 @@ namespace Homepage.ucconnexion
 
         private void InscriptionButton_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.NavigateTo("UC_Inscription");
+            Nav.NavigateTo("UC_Inscription");
         }
 
 

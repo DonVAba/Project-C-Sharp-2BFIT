@@ -10,13 +10,13 @@
         <StackPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="30">
                 <TextBlock Text="NOM :" Foreground="White" FontSize="15" ></TextBlock>
-                <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0" x:Name="nomProg"/>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="20"  Margin="59,0,0,0" x:Name="nomProg" />
                
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="30">
 
                 <TextBlock Text="DESCRIPTION :" Foreground="White" FontSize="15" ></TextBlock>
-                <TextBox TextWrapping="NoWrap" Width="280" Height="50"  Margin="17,0,0,0" x:Name="descProg"/>
+            <TextBox TextWrapping="NoWrap" Width="280" Height="50"  Margin="17,0,0,0" x:Name="descProg"/>
 
             </WrapPanel>
 
@@ -36,7 +36,7 @@
                 </Grid>
                 
             </WrapPanel>
-            <Button Margin="20" Style="{StaticResource ButtonStyle1}" Content="SUIVANT" x:Name="nextStepButton" Click="NextStepButton_Click"/>
+        <Button Margin="20" Style="{DynamicResource ButtonStyle1}" Content="SUIVANT" x:Name="nextStepButton" Click="NextStepButton_Click"/>
         </StackPanel>
     
 </UserControl>

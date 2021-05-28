@@ -23,19 +23,19 @@
     <StackPanel Background="White">
         <WrapPanel HorizontalAlignment="Center" Margin="0,100,0,20">
                 <TextBlock Text="IDENTIFIANT :" Foreground="CornflowerBlue" FontSize="15" VerticalAlignment="Center"/>
-            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{StaticResource TextBoxAnimated}"  Foreground="CornflowerBlue" x:Name="idTextBlock"/>
+            <TextBox TextWrapping="NoWrap" Width="250" Height="20"  Margin="17,0,0,0" Style="{DynamicResource TextBoxAnimated}"  Foreground="CornflowerBlue" x:Name="idTextBlock"/>
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,20">
                 <TextBlock Text="MOT DE PASSE : " Foreground="CornflowerBlue" FontSize="15" VerticalAlignment="Center"/>
-            <PasswordBox  Width="250" Height="20" Style="{StaticResource PassBoxAnimated}" Foreground="CornflowerBlue"  x:Name="mdpTextBox"/>
+            <PasswordBox  Width="250" Height="20" Style="{DynamicResource PassBoxAnimated}" Foreground="CornflowerBlue"  x:Name="mdpTextBox"/>
 
             </WrapPanel>
             <WrapPanel HorizontalAlignment="Center" Margin="0,50,0,0">
-            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="CONNEXION" FontSize="15" Style="{StaticResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="ConnexionButton_MouseEnter" MouseLeave="ConnexionButton_MouseLeave"/>
+            <Button x:Name="ConnexionButton" Click="ConnexionButton_Click" Content="CONNEXION" FontSize="15" Style="{DynamicResource ButtonStyle1}" BorderBrush="CornflowerBlue" BorderThickness="1" MouseEnter="ConnexionButton_MouseEnter" MouseLeave="ConnexionButton_MouseLeave"/>
  
             </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,30,0,0">
-            <Button  x:Name="InscriptionButton" Content="Première connexion ?" FontSize="11" FontStyle="Italic" Foreground="DarkGray"  Style="{StaticResource Flat}" Click="InscriptionButton_Click"/>
+            <Button  x:Name="InscriptionButton" Content="Première connexion ?" FontSize="11" FontStyle="Italic" Foreground="DarkGray"  Style="{DynamicResource Flat}" Click="InscriptionButton_Click"/>
         </WrapPanel>
                
         </StackPanel>

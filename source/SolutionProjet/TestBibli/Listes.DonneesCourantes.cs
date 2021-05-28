@@ -30,6 +30,9 @@ namespace Application
             } 
         }
 
+        public Programme NouveauProg { get; set; }
+        public Exercice NouvelExo { get; set; }
+
         /// <summary>
         /// Exercice choisi dans la liste, ou exercice entrain d'être affiché lors du déroulement d'un programme
         /// </summary>

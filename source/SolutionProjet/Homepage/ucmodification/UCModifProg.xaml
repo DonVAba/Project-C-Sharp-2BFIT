@@ -12,8 +12,8 @@
         <TextBlock Margin="15,15,0,0" FontSize="20" Foreground="White" Text="Description"></TextBlock>
         <TextBox  Margin="10" Height="58" Width="395" x:Name="newDesc"/>
         <WrapPanel Margin="20,40,0,0">
-            <Button Width="125" Click="CancelButton_Click" FontSize="15" Margin="15,0,0,0" Style="{StaticResource BoutonProg}">ANNULER</Button>
-            <Button x:Name="saveButton" Click="saveButton_Click" Margin="100,0,15,0"  Width="125" FontSize="15" Style="{StaticResource BoutonProg}">SAUVEGARDER</Button>
+            <Button Width="125" Click="CancelButton_Click" FontSize="15" Margin="15,0,0,0" Style="{DynamicResource BoutonProg}">ANNULER</Button>
+            <Button x:Name="saveButton" Click="saveButton_Click" Margin="100,0,15,0"  Width="125" FontSize="15" Style="{DynamicResource BoutonProg}">SAUVEGARDER</Button>
         </WrapPanel>
     </StackPanel>
 </UserControl>

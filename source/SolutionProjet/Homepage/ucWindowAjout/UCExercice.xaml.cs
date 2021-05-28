@@ -17,10 +17,7 @@ namespace Homepage.ucWindowAjout
     /// <summary>
     /// Logique d'interaction pour UCExercice.xaml
     /// </summary>
-    public partial class UCExercice : UserControl
-    {
-        public Navigator Navigator { get; set; } = Navigator.GetInstance();
-
+    public partial class UCExercice : UserControl {
         public Listes List => (App.Current as App).List;
         public UCExercice()
         {

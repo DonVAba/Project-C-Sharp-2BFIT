@@ -19,9 +19,7 @@ namespace Homepage.ucWindowAjout
     /// </summary>
     public partial class UCProgramme : UserControl
     {
-
-        public Navigator Navigator { get; set; } = Navigator.GetInstance();
-
+        public Navigator Nav => (App.Current as App).Navigator;
         public Listes List => (App.Current as App).List;
         public UCProgramme()
         {
@@ -52,7 +50,9 @@ namespace Homepage.ucWindowAjout
             }
             else 
             {
-                Navigator.NavigateTo("UC_AjoutExercice");
+                List.NouveauProg = new Programme(nomProg.Text, descProg.Text, "/Image;Component/img/imgfond/background_ciel.jpg");
+                
+                Nav.NavigateTo("UC_AjoutExercice");
             }
 
 

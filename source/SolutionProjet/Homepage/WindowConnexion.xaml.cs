@@ -22,11 +22,12 @@ namespace Homepage
     /// 
     
     public partial class WindowConnexion : Window
-    {      
+    {
+        public Navigator Nav => (App.Current as App).Navigator;
         public WindowConnexion()
         {
             InitializeComponent();
-            ConnexionCC.DataContext = Navigator.GetInstance();
+            ConnexionCC.DataContext = Nav;
         }
     }
 }

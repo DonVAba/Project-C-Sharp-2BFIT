@@ -24,7 +24,6 @@ namespace Homepage.ucadmin
     {
         public Listes List => (App.Current as App).List;
         private UCModifProg ucmp = new UCModifProg();
-        public static Navigator Navigator { get; set; } = Navigator.GetInstance();
         public ExercicePageUCAdmin()
         {
             InitializeComponent();

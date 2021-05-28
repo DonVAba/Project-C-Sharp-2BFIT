@@ -19,14 +19,14 @@ namespace Homepage
     /// </summary>
     public partial class AjouterProgramme : Window
     {
+        public Navigator Nav => (App.Current as App).Navigator;
         public Listes List => (App.Current as App).List;
-        public Navigator Navigator { get; set; } = Navigator.GetInstance();
 
         public AjouterProgramme()
         {
             InitializeComponent();
-            DataContext = Navigator;
-            Navigator.NavigateTo("UC_AjoutProg");
+            DataContext = Nav;
+            Nav.NavigateTo("UC_AjoutProg");
         }
 
     }

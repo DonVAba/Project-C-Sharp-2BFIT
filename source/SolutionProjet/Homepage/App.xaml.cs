@@ -16,12 +16,14 @@ namespace Homepage
     public partial class App
     {
         public Listes List { get; set; }
-        private StubData stub = new StubData("");
+        public Navigator Navigator { get; set; }
+        private DataLoad stub = new StubData("");
 
         public App()
         {
             List = stub.ChargeDonnees();
-        }  
+            Navigator = Navigator.GetInstance();
+    }  
 
     }
 }

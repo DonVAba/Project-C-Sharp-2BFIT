@@ -14,7 +14,10 @@ namespace Homepage
 {
     public class Navigator : INotifyPropertyChanged
     {
-
+        /// <summary>
+        /// Dictionnaire contenant en clé le nom des userControl et donc les userControl en value
+        /// Il va nous permettre d'uniquement passé le nom attribué aux UserControls en paramètres de la méthode NavigateTo
+        /// </summary>
         private Dictionary<string, UserControl> userControls = new Dictionary<string, UserControl>()
         {
             ["UC_Connexion"] = new ucconnexion.ucConnexion(),

@@ -22,8 +22,7 @@ namespace Homepage.ucconnexion
     public partial class ucInscription : UserControl
     {
         public Listes List => (App.Current as App).List;
-
-        public Navigator Navigator { get; set; } = Navigator.GetInstance();
+        public Navigator Nav => (App.Current as App).Navigator;
 
         /// <summary>
         /// nouveauUtilisateur
@@ -81,7 +80,7 @@ namespace Homepage.ucconnexion
 
         public void ConnexionButton_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.NavigateTo("UC_Connexion");
+            Nav.NavigateTo("UC_Connexion");
         }
 
         private void InsButton_Click(object sender, RoutedEventArgs e)

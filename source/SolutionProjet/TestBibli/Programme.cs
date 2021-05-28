@@ -29,18 +29,29 @@ namespace Application
         }
 
         /// <summary>
-        /// Nombre d'exercice d'un programme (à moitié facultatif car il va êtr affiché)
+        /// Nombre d'exercice d'un programme (à moitié facultatif car il va être affiché)
         /// </summary>
         private int nbExercices;
-
-        public int NbExercices
+        /*public int NbExercices
         {
-            get => nbExercices;
-            set
-            {
-                nbExercices = LesExercices.Count();
-            }
+            get;
+            set;
             
+        }*/
+
+        public void SetNbExercices()
+        {
+            nbExercices = LesExercices.Count();
+        }
+
+        public void SetNbExercices(int value)
+        {
+            nbExercices = value;
+        }
+
+        public int GetNbExercices()
+        {
+            return nbExercices;
         }
 
         /// <summary>
@@ -62,7 +73,6 @@ namespace Application
                 if(lesExercices != value)
                 {
                     lesExercices = value;
-                    //OnPropertyChanged("LesExercices");
                 }
             } 
         }
@@ -73,7 +83,6 @@ namespace Application
         /// Constructeur de la classe Programme
         /// </summary>
         /// <param name="description"></param>
-        /// <param name="nbExercices"></param>
         /// <param name="cheminImage"></param>
         /// <param name="nom"></param>
         /// <param name="diff">Difficulté du programme qui va être converti en énum Difficulté</param>

@@ -23,7 +23,6 @@ namespace Homepage
     public partial class WindowMainAdmin : Window
     {
         public Listes List => (App.Current as App).List;
-        public Navigator Navigator { get; set; } = Navigator.GetInstance();
 
         private ExercicePageUCAdmin ucProg;
         private AdminProfilUC ucProfil;

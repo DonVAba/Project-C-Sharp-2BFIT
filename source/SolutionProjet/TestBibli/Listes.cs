@@ -23,7 +23,8 @@ namespace Application
         /// </summary>
 
         private ObservableCollection<Programme> listProgrammes; // ObservableCollection pour changer la propriété
-        public ObservableCollection<Programme> ListProgrammes { 
+        public ObservableCollection<Programme> ListProgrammes 
+        { 
             get => listProgrammes; 
             set
             {
