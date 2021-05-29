@@ -23,9 +23,9 @@ namespace Homepage
     /// 
     public partial class ExerciceWindow : Window
     {
-        public Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).List;
 
-        public IEnumerator<Exercice> exenum;
+        private IEnumerator<Exercice> exenum;
 
         public ExerciceWindow()
         {

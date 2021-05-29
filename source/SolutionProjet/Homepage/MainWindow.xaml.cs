@@ -24,7 +24,7 @@ namespace Homepage
     public partial class MainWindow : Window
     {
 
-        public Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).List;
         
 
         private UserControl selectedUserControl = new UserControl();
@@ -49,7 +49,7 @@ namespace Homepage
             return ucProg;
         }
 
-        public UserProfilUC InitUserControlProfil()
+        private UserProfilUC InitUserControlProfil()
         {
             if(ucProfil == null)
             {

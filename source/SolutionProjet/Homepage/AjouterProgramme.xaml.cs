@@ -19,8 +19,8 @@ namespace Homepage
     /// </summary>
     public partial class AjouterProgramme : Window
     {
-        public Navigator Nav => (App.Current as App).Navigator;
-        public Listes List => (App.Current as App).List;
+        private Navigator Nav => (App.Current as App).Navigator;
+        private Listes List => (App.Current as App).List;
 
         public AjouterProgramme()
         {
