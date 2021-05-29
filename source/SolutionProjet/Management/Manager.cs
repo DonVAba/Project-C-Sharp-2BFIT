@@ -6,7 +6,7 @@ using Application;
 namespace Management
 {
     
-    public static partial class Manager
+    public partial class Manager
     {
 
         /// <summary>

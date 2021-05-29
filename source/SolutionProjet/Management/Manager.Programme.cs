@@ -6,7 +6,7 @@ using Application;
 namespace Management
 {
 
-    public static partial class Manager
+    public partial class Manager
     {
         ///Paramètre passé à toutes les méthodes 
         ///<param name="list"> Listes instancié contenant la liste des comptes et des programmes </param>
