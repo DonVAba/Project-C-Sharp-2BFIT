@@ -1,4 +1,5 @@
 ﻿using Application;
+using Homepage.uctextblock;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,6 +45,8 @@ namespace Homepage.ucWindowAjout
 
         private void nextExo_Click(object sender, RoutedEventArgs e)
         {
+            //Faut trouver un moyen de recuperer toutes les textbox de notre UC 
+
             if (i == List.NouveauProg.GetNbExercices())
             {
                 i = 0;
@@ -62,11 +65,31 @@ namespace Homepage.ucWindowAjout
             i++;
             ResetTextBox();
 
+
         }
 
         private void ResetTextBox() 
         {
-            
+
+            //Alternative pour l'instant, c'est pas très propre, en dessous c'est une piste je chercherai plus la dessus
+            seriesdeb.Valeur = 0;
+            repdeb.Valeur = 0;
+            tpsreposdeb.Valeur = 0;
+            seriesint.Valeur = 0;
+            repint.Valeur = 0;
+            tpsreposint.Valeur = 0;
+            seriesexp.Valeur = 0;
+            repexp.Valeur = 0;
+            tpsreposexp.Valeur = 0;
+
+            /* for (int i=0;i< VisualTreeHelper.GetChildrenCount(this); i++)
+             {
+                 var tmp =VisualTreeHelper.GetChild(this,i);
+                 if(tmp is textblocajoutprogramme)
+                 {
+                     (tmp as textblocajoutprogramme).Message = string.Empty;
+                 }
+             }*/
         }
     }
 }

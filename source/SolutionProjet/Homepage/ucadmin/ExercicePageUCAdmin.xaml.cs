@@ -84,10 +84,14 @@ namespace Homepage.ucadmin
             mdc.ShowDialog();
         }
 
-        private void exerciceListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ExerciceListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice;
         }
 
+        /*private void AjouterButton_Click(object sender, SelectionChangedEventArgs e)
+        {
+
+        }*/
     }
 }

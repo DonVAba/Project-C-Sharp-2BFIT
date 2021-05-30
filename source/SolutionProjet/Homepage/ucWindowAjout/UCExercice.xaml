@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="530">
     
-        <Grid HorizontalAlignment="Center">
+        <Grid HorizontalAlignment="Center" x:Name="textbox">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>

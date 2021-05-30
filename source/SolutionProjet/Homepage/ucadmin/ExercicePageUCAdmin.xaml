@@ -32,25 +32,33 @@
 
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <ListBox Background="Beige" Height="150" Width="240" ItemsSource="{Binding ProgrammeChoisi.LesExercices}" x:Name="exerciceListBox" SelectedItem="{Binding ExerciceCourant}">
-                <ListBox.ItemTemplate >
-                    <DataTemplate>
-                        <DockPanel VerticalAlignment="Center">
-                            <Ellipse Width="40" Height="40" DockPanel.Dock="Left">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="{Binding CheminImage}" Stretch="Uniform"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                            <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
-                                <TextBlock Text="{Binding Nom}" FontWeight="Bold"/>
-                                <Button Height="20" Width="20" BorderThickness="0" Background="Transparent" Click="Delete_Click_Exercice" x:Name="DeleteButton">
-                                    <Image Source="/Image;Component/img/icon/deleteicon.png"/>
-                                </Button>
-                            </WrapPanel>
-                        </DockPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <StackPanel>
+            <ListBox Background="Beige" Height="125" Width="240" ItemsSource="{Binding ProgrammeChoisi.LesExercices}" x:Name="ExerciceListBox" SelectedItem="{Binding ExerciceCourant}">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+                            <DockPanel VerticalAlignment="Center">
+                                <Ellipse Width="40" Height="40" DockPanel.Dock="Left">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding CheminImage}" Stretch="Uniform"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Nom}" FontWeight="Bold"/>
+                                    <Button Height="20" Width="20" BorderThickness="0" Background="Transparent" Click="Delete_Click_Exercice" x:Name="DeleteButton">
+                                        <Image Source="/Image;Component/img/icon/deleteicon.png"/>
+                                    </Button>
+                                </WrapPanel>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button x:Name="AjouterButton"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" Background="White" BorderBrush="CornflowerBlue">
+                    <WrapPanel>
+                        <Image Source="/Image;Component/img/icon/addicon.png" Width="20" VerticalAlignment="Top"/>
+                        <Label FontFamily="Arial" FontWeight="Bold" Foreground="RoyalBlue" VerticalAlignment="Center">AJOUTER</Label>
+                    </WrapPanel>
+                </Button>
+            </StackPanel>
             <TextBlock Text="DIFFICULTÉ"  FontSize="15" FontWeight="Bold"  Margin="50,0" VerticalAlignment="Center"/>
             <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectedIndex="0" Height="20" x:Name="LevelComboBox">
                 <TextBlock>DEBUTANT</TextBlock>
@@ -59,8 +67,8 @@
             </ComboBox>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,0">
-            <Button Content="COMMENCER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="#FF7EBCF0" x:Name="start" Click="start_Click"/>
-            <Button Content="SUPPRIMER" HorizontalAlignment="Center" Margin="20" Width="190" Height="40" FontWeight="Bold" Background="Red" Foreground="White" x:Name="Delete" Click="Delete_Click_Programme"/>
+            <Button Content="COMMENCER" HorizontalAlignment="Center" Margin="20,5,15,13" Width="190" Height="40" FontWeight="Bold" Background="#FF7EBCF0" x:Name="start" Click="start_Click"/>
+            <Button Content="SUPPRIMER" HorizontalAlignment="Center" Margin="20,5,15,13" Width="190" Height="40" FontWeight="Bold" Background="Red" Foreground="White" x:Name="Delete" Click="Delete_Click_Programme"/>
         </WrapPanel>
     </StackPanel>
 </UserControl>

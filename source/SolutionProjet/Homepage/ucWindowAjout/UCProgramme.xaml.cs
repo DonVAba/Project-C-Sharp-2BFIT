@@ -57,7 +57,7 @@ namespace Homepage.ucWindowAjout
                     Nav.NavigateTo("UC_AjoutExercice");
                 }
                 else
-                    MessageBox.Show("Nombre d'exercice rentré incorrec", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Nombre d'exercice rentrés incorrect", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
 
 
             }
