@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using Homepage.ucconnexion;
 using Homepage.ucWindowAjout;
 using Homepage.ucadmin;
+using Homepage.ucuser;
 
 namespace Homepage
 {
@@ -25,7 +26,9 @@ namespace Homepage
             ["UC_AjoutExercice"] = new UCExercice(),
             ["UC_AjoutProg"] = new UCProgramme(),
             ["UC_ProfilAdmin"] = new AdminProfilUC(),
-            ["UC_ProgAdmin"] = new ExercicePageUCAdmin()
+            ["UC_ProgAdmin"] = new ExercicePageUCAdmin(),
+            ["UC_ProfilUser"] = new UserProfilUC(),
+            ["UC_ProgUser"] = new UserProgrammeUC()
         }; 
 
 

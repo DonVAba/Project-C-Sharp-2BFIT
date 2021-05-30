@@ -25,6 +25,7 @@ namespace Homepage
     {
 
         private Listes List => (App.Current as App).List;
+
         
 
         private UserControl selectedUserControl = new UserControl();

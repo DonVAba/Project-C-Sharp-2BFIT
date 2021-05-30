@@ -32,12 +32,12 @@ namespace Application
         /// Nombre d'exercice d'un programme (à moitié facultatif car il va être affiché)
         /// </summary>
         private int nbExercices;
-        /*public int NbExercices
+        public int NbExercices
         {
             get;
             set;
             
-        }*/
+        }
 
         public void SetNbExercices()
         {
@@ -73,6 +73,7 @@ namespace Application
                 if(lesExercices != value)
                 {
                     lesExercices = value;
+                    SetNbExercices();
                 }
             } 
         }

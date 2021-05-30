@@ -32,25 +32,25 @@
 
             <WrapPanel Grid.Column="2">
                 <TextBlock Text="NOM :" Foreground="White"/>
-            <TextBox TextWrapping="NoWrap" Width="100" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2"/>
+                <TextBox TextWrapping="NoWrap" Width="100" Height="20" Margin="10,0,0,0" BorderBrush="CornflowerBlue" BorderThickness="2" x:Name="nomNewExo"/>
             </WrapPanel>
 
             <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="10">DÉBUTANT</TextBlock>
-            <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="2"/>
-            <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="2" Grid.Column="1"/>
-            <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="2" Grid.Column="2"/>
+            <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="2" x:Name="seriesdeb"/>
+            <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="2" Grid.Column="1" x:Name="repdeb"/>
+            <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="2" Grid.Column="2" x:Name="tpsreposdeb"/>
 
             <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="10">INTERMÉDIAIRE</TextBlock>
-            <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="4"/>
-            <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="4" Grid.Column="1"/>
-            <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="4" Grid.Column="2"/>
+            <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="4" x:Name="seriesint"/>
+            <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="4" Grid.Column="1" x:Name="repint"/>
+            <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="4" Grid.Column="2" x:Name="tpsreposint"/>
 
             <TextBlock Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Margin="10">EXPERT</TextBlock>
-            <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="6"/>
-            <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="6" Grid.Column="1"/>
-            <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="6" Grid.Column="2"/>
+            <local:textblocajoutprogramme Message="NB SERIES :" Grid.Row="6" x:Name="seriesexp"/>
+            <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="6" Grid.Column="1" x:Name="repexp"/>
+            <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="6" Grid.Column="2" x:Name="tpsreposexp"/>
 
-        <Button Margin="20" Style="{DynamicResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" Grid.Column="1" Grid.Row="7"/>
+        <Button Margin="20" Style="{DynamicResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" Grid.Column="1" Grid.Row="7" x:Name="nextExo" Click="nextExo_Click"/>
 
         </Grid>
         

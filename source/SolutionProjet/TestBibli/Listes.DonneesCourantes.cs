@@ -17,7 +17,8 @@ namespace Application
         /// Programme choisi par un utilisateur avant de le lancer
         /// </summary>
         private Programme programmeChoisi;
-        public Programme ProgrammeChoisi { 
+        public Programme ProgrammeChoisi 
+        { 
             get => programmeChoisi;
             set
             {
@@ -29,8 +30,16 @@ namespace Application
                     
             } 
         }
-
+        /// <summary>
+        /// Programme qui va être ajouté
+        /// </summary>
+        private Programme nouveauProg;
         public Programme NouveauProg { get; set; }
+
+        /// <summary>
+        /// Exercice qui va être ajouté
+        /// </summary>
+        private Exercice nouvelExo;
         public Exercice NouvelExo { get; set; }
 
         /// <summary>

@@ -50,9 +50,16 @@ namespace Homepage.ucWindowAjout
             }
             else 
             {
-                List.NouveauProg = new Programme(nomProg.Text, descProg.Text, "/Image;Component/img/imgfond/background_ciel.jpg");
-                
-                Nav.NavigateTo("UC_AjoutExercice");
+                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, "/Image;Component/img/imgfond/background_ciel.jpg");
+                if(Int32.TryParse(nbExos.Text, out int value)) 
+                {
+                    List.NouveauProg.SetNbExercices(value);
+                    Nav.NavigateTo("UC_AjoutExercice");
+                }
+                else
+                    MessageBox.Show("Nombre d'exercice rentré incorrec", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+
+
             }
 
 

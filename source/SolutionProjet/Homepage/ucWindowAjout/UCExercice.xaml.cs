@@ -18,7 +18,8 @@ namespace Homepage.ucWindowAjout
     /// Logique d'interaction pour UCExercice.xaml
     /// </summary>
     public partial class UCExercice : UserControl {
-        public Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).List;
+        private static int i = 0;
         public UCExercice()
         {
             InitializeComponent();
@@ -39,6 +40,33 @@ namespace Homepage.ucWindowAjout
                 string filename = dialog.FileName;
                 CheminFichierExo.Text = filename;
             }
+        }
+
+        private void nextExo_Click(object sender, RoutedEventArgs e)
+        {
+            if (i == List.NouveauProg.GetNbExercices())
+            {
+                i = 0;
+                List.ListProgrammes.Add(List.NouveauProg);
+                Window.GetWindow(this).Close();
+            }
+            else 
+            {
+                List.NouveauProg.LesExercices.Add(
+                new Exercice(nomNewExo.Text, "/ Image; Component / img / imgfond / background_ciel.jpg",
+                    new Valeur(seriesdeb.Valeur, repdeb.Valeur, tpsreposdeb.Valeur),
+                    new Valeur(seriesint.Valeur, repint.Valeur, tpsreposint.Valeur),
+                    new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur)));
+            }
+            
+            i++;
+            ResetTextBox();
+
+        }
+
+        private void ResetTextBox() 
+        {
+            
         }
     }
 }

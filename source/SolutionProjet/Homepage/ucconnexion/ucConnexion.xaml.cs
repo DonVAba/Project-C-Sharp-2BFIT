@@ -55,9 +55,11 @@ namespace Homepage.ucconnexion
                     {
                         List.UtilisateurCourant = List.RechercherUtilisateur(idTextBlock.Text);
                         MessageBox.Show("Bienvenue sur votre application 2BFIT, vous êtes connecté", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+                        WindowConnexion.GetWindow(this).Hide();
                         MainWindow mw = new MainWindow();
+                       
                         mw.Show();
-                        WindowConnexion.GetWindow(this).Close();
+                        
                     }
                 }
             }

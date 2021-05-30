@@ -30,5 +30,19 @@ namespace Homepage.uctextblock
                 textblock.Text = value;
             }
         }
+
+
+
+        public int Valeur
+        {
+            get { return (int)GetValue(ValeurProperty); }
+            set { SetValue(ValeurProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Valeur.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ValeurProperty =
+            DependencyProperty.Register("Valeur", typeof(int), typeof(textblocajoutprogramme), new PropertyMetadata(0));
+
+
     }
 }
