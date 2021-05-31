@@ -69,6 +69,7 @@ namespace Homepage
         private void AjouterButton_Click(object sender, RoutedEventArgs e)
         {
             AjouterProgramme ap = new AjouterProgramme();
+            
             ap.ShowDialog();
         }
     }

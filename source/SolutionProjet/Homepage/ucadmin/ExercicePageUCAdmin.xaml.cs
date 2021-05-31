@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Persistance;
 using Homepage.ucmodification;
+using Homepage.ucadmin;
+using Homepage.ucuser;
 
 namespace Homepage.ucadmin
 {
@@ -24,6 +26,7 @@ namespace Homepage.ucadmin
     {
         public Listes List => (App.Current as App).List;
         private UCModifProg ucmp = new UCModifProg();
+        public Navigator Nav => (App.Current as App).Navigator;
         public ExercicePageUCAdmin()
         {
             InitializeComponent();
@@ -66,7 +69,7 @@ namespace Homepage.ucadmin
             {
                 WindowMainAdmin aw = Window.GetWindow(this) as WindowMainAdmin;
                 aw.MainWindowContentControl.Content = aw.InitUserControlProfil();
-                //Navigator.NavigateTo("UC_ProfilAdmin");  // Reviens pas sur la page d'accueil je me rappel plus comment on avait fait ça mercredi
+                
                 return;
             }
             
@@ -89,9 +92,11 @@ namespace Homepage.ucadmin
             List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice;
         }
 
-        /*private void AjouterButton_Click(object sender, SelectionChangedEventArgs e)
+        private void AjouterExercice(object sender, RoutedEventArgs e)
         {
+            AjouterExercice ex = new AjouterExercice();
+            
+        }
 
-        }*/
     }
 }
