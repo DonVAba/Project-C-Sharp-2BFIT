@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Application
 {
+    [DataContract]
     public class Programme : Nommable, INotifyPropertyChanged
     {
 
@@ -15,6 +17,8 @@ namespace Application
         /// Description du programme
         /// </summary>
         private string description;
+
+        [DataMember(EmitDefaultValue = false, Order = 0)]
         public string Description
         {
             get => description;
@@ -57,7 +61,8 @@ namespace Application
         /// <summary>
         /// Chemin de l'image associé au programme
         /// </summary>
-        
+
+        [DataMember(EmitDefaultValue = false, Order = 2)]
         public string CheminImage { get; set; }
 
         /// <summary>
@@ -65,6 +70,9 @@ namespace Application
         /// </summary>
 
         private ObservableCollection<Exercice> lesExercices; // ObservableCollection pour changer la propriété
+
+        [DataMember(EmitDefaultValue = false, Order = 3)]
+
         public ObservableCollection<Exercice> LesExercices 
         {
             get => lesExercices;

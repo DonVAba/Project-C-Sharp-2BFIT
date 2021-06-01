@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Application
 {
+    [DataContract]
     public abstract class Nommable : INotifyPropertyChanged
     {
-
+        
         /// <summary>
         /// Nom associé à un utilisateur, programme ou exercice
         /// </summary>
         private string nom;
+        [DataMember(EmitDefaultValue = false, Order = 0)]
         public string Nom
         {
             get => nom;

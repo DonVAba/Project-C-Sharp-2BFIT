@@ -4,26 +4,28 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Application;
 
-namespace Persistance
+namespace PersistanceData
 {
-    public class StubData : DataLoad
+    public class StubData
     {
+
         /// <summary>
         /// Méthode de chargement de données qui appelle les autres méthodes de chargement pour retourner les données nécessaires
         /// au bon déroulement de l'application
         /// </summary>
         /// <returns></returns>
-        /// 
-        public StubData(string chemin) : base(chemin)
-        {
 
+        private string filepath;
+        public StubData(string chemin)
+        {
+            filepath = chemin;
         }
-        public override Listes ChargeDonnees()
+        public Listes ChargeDonnees()
         {
             ObservableCollection<Programme> programmeStub = ChargeListprogramme();
             List<Utilisateur> listUsers = ChargeListUsers();
             Dictionary<String, Utilisateur> listCompte = new Dictionary<String, Utilisateur>();
-            foreach(Utilisateur user in listUsers)
+            foreach (Utilisateur user in listUsers)
             {
                 try
                 {
@@ -36,11 +38,11 @@ namespace Persistance
 
 
             }
-            
+
             Listes list = new Listes(listCompte, programmeStub);
             return list;
-        
-    }
+
+        }
 
         /// <summary>
         /// Méthode qui instancie 3 utilisateurs et 1 admin et qui retourne une liste contenant ces utilisateurs 
@@ -51,7 +53,6 @@ namespace Persistance
             List<Utilisateur> listUser = new List<Utilisateur>() {
                 new Utilisateur("Martel","Baptiste",new DateTime(2003, 1, 30),188,90,"bamartel","mdpDeBamartel"),
                 new Utilisateur("Malea","Bastien",new DateTime(2002, 8, 11),188,90,"bamalea","mdpDeBamalea"),
-                new Utilisateur("Dallet","Simon",new DateTime(2002, 6, 12),188,90,"bamalea","mdpDeSimon"), // même identifiant fait exprès pour les tests du equals et de l'inscription
                 new Utilisateur("Bouhours","Cedric",new DateTime(1985, 10, 1),188,90,"admin","admin")
             };
             return listUser;
@@ -64,7 +65,7 @@ namespace Persistance
         /// <returns></returns>
         public ObservableCollection<Programme> ChargeListprogramme()
         {
-            
+
             (ObservableCollection<Exercice> listExercicePull, ObservableCollection<Exercice> listExercicePush, ObservableCollection<Exercice> listExerciceJambes) = ChargeListExercice();
             Programme push = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules  azeazeazeeeeeeeeeeeeeeeeeezazeaze", "/Image;Component/img/imgfond/background_ciel.jpg");
             Programme pull = new Programme("PULL", "Programme qui fait travailler le dos et les biceps azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaz", "/Image;Component/img/imgfond/background_ciel.jpg");
@@ -77,7 +78,7 @@ namespace Persistance
             pull.LesExercices = listExercicePull;
             jambes.LesExercices = listExerciceJambes;
             return programmeStub;
-            
+
         }
 
         /// <summary>
@@ -86,15 +87,15 @@ namespace Persistance
         /// <returns></returns>
         private (ObservableCollection<Exercice>, ObservableCollection<Exercice>, ObservableCollection<Exercice>) ChargeListExercice()
         {
-            Valeur valDeb = new Valeur(8,4,80);
-            Valeur valInter = new Valeur(10, 4,70);
-            Valeur valExpert = new Valeur(12,4,60);
+            Valeur valDeb = new Valeur(8, 4, 80);
+            Valeur valInter = new Valeur(10, 4, 70);
+            Valeur valExpert = new Valeur(12, 4, 60);
 
             ObservableCollection<Exercice> listExercicePull = new ObservableCollection<Exercice>();
             ObservableCollection<Exercice> listExercicePush = new ObservableCollection<Exercice>();
             ObservableCollection<Exercice> listExerciceJambes = new ObservableCollection<Exercice>();
             listExercicePull.Add(new Exercice("Traction", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePull.Add( new Exercice("Traction australienne", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePull.Add(new Exercice("Traction australienne", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
             listExercicePull.Add(new Exercice("Rowing", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
 
             listExercicePush.Add(new Exercice("Dips", "/Image;Component/img/imgExercice/dips.png", valDeb, valInter, valExpert));
@@ -109,5 +110,6 @@ namespace Persistance
             return (listExercicePull, listExercicePush, listExerciceJambes);
 
         }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Persistance;
+using PersistanceData;
 using Application;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using Management;
 
 namespace essai_Linq
 {
-    class ProgramLinq
+    public class ProgramLinq
     {
         static void Main(string[] args)
         {

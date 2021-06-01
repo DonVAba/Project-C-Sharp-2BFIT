@@ -12,7 +12,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
-using Persistance;
 using Homepage.ucmodification;
 
 namespace Homepage.ucadmin

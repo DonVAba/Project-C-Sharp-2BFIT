@@ -33,7 +33,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Image\Image.csproj" />
     <ProjectReference Include="..\Management\Management.csproj" />
-    <ProjectReference Include="..\Persistance\Persistance.csproj" />
+    <ProjectReference Include="..\PersistanceData\PersistanceData.csproj" />
     <ProjectReference Include="..\TestBibli\Application.csproj" />
   </ItemGroup>
 

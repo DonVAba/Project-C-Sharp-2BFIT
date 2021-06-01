@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="img\imgProgramme\**" />
+    <EmbeddedResource Remove="img\imgProgramme\**" />
+    <None Remove="img\imgProgramme\**" />
+    <Page Remove="img\imgProgramme\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="img\icon\addicon.png" />
     <None Remove="img\icon\deleteicon.png" />
     <None Remove="img\icon\edit-icon.png" />
@@ -45,10 +52,6 @@
     <Resource Include="img\imgfond\background_ciel.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="img\imgProgramme\" />
   </ItemGroup>
 
 </Project>

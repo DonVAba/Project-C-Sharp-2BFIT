@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Application;
-using Persistance;
 using System.Collections.ObjectModel;
 
 namespace Homepage

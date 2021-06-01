@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Application
 {
+    [DataContract]
     public class Valeur
     {
         /// <summary>
         /// Nombre de séries d'un exercice
         /// </summary>
         private int nbSeries;
+        [DataMember(EmitDefaultValue = false, Order = 0)]
         public int NbSeries
         {
             get
@@ -29,6 +32,7 @@ namespace Application
         /// Nombre de répétitions par séries
         /// </summary>
         private int nbReps;
+        [DataMember(EmitDefaultValue = false, Order = 1)]
         public int NbReps
         {
             get
@@ -48,6 +52,7 @@ namespace Application
         /// Temps de repos entre deux séries
         /// </summary>
         private int tpsRepos;
+        [DataMember(EmitDefaultValue = false, Order = 2)]
         public int TpsRepos
         {
             get

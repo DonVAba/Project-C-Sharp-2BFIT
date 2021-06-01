@@ -6,7 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Application;
-using Persistance;
+using PersistanceData;
+using Management;
 
 namespace Homepage
 {
@@ -16,12 +17,14 @@ namespace Homepage
     public partial class App
     {
         public Listes List { get; set; }
-        public Navigator Navigator { get; set; }
-        private DataLoad stub = new StubData("");
+        public Manager LeManager { get; private set; } = new Manager(new DataContract());
+        public Navigator Navigator { get; private set; }
+        private StubData stub = new StubData("");
 
         public App()
         {
-            List = stub.ChargeDonnees();
+            LeManager.ChargeDonnees();
+            List = LeManager.CurrentList;
             Navigator = Navigator.GetInstance();
     }  
 

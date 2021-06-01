@@ -11,7 +11,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
-using Persistance;
 using Management;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
