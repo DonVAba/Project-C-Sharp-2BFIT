@@ -1,5 +1,6 @@
 ﻿using Application;
 using Homepage.uctextblock;
+using Management;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Homepage.ucWindowAjout
     /// Logique d'interaction pour UCExercice.xaml
     /// </summary>
     public partial class UCExercice : UserControl {
-        private Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
         private static int i = 0;
         public UCExercice()
         {

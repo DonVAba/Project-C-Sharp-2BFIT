@@ -13,14 +13,14 @@ namespace Application
     /// Classe qui sera sérializable
     /// </summary>
     
-    [DataContract]
+    
     public partial class Listes : INotifyPropertyChanged
     {
         /// <summary>
         /// Dictionnaire contenant en clé les identifiants des utilisateurs et en valeur, leur mot de passe
         /// </summary>
         
-        [DataMember(EmitDefaultValue = false, Order = 0)]
+        
         public Dictionary<string, Utilisateur> listComptes;
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Application
         /// </summary>
 
         private ObservableCollection<Programme> listProgrammes; // ObservableCollection pour changer la propriété
-        [DataMember(EmitDefaultValue = false, Order = 1)]
+        
         public ObservableCollection<Programme> ListProgrammes 
         { 
             get => listProgrammes; 

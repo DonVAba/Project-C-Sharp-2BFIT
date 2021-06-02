@@ -5,21 +5,18 @@ using System.Runtime.Serialization;
 
 namespace Application
 {
-    [DataContract]
     public class Utilisateur : Nommable, IComparable, IComparable<Utilisateur>, IEquatable<Utilisateur>, INotifyPropertyChanged
     {
        
         /// <summary>
         /// Prenom de l'utilisateur
         /// </summary>
-        [DataMember(EmitDefaultValue = false, Order = 0)]
         public string Prenom
         {
             get;
             private set;
         }
 
-        [DataMember(EmitDefaultValue = false, Order = 3)]
         public DateTime DateNaissance { get; set; }
 
         /// <summary>
@@ -32,8 +29,6 @@ namespace Application
         /// </summary>
 
         private int taille;
-
-        [DataMember(EmitDefaultValue = false, Order = 5)]
         public int Taille
         {
             get => taille;
@@ -52,8 +47,6 @@ namespace Application
         /// </summary>
 
         private float poids;
-
-        [DataMember(EmitDefaultValue = false, Order = 4)]
         public float Poids
         {
             get => poids;
@@ -71,8 +64,6 @@ namespace Application
         /// <summary>
         /// Identifiant de l'utilisateur
         /// </summary>
-
-        [DataMember(EmitDefaultValue = false, Order = 1)]
         public string Identifiant
         {
             get;
@@ -82,8 +73,6 @@ namespace Application
         /// <summary>
         /// Mot de passe de l'utilisateur
         /// </summary>
-
-        [DataMember(EmitDefaultValue = false, Order = 2)]
         public string Mdp
         {
             get;
@@ -94,8 +83,6 @@ namespace Application
         /// Dernier programme lancé par l'utilisateur
         /// </summary/
         private Programme dernierProgramme;
-
-        [DataMember(EmitDefaultValue = false, Order = 6)]
         public Programme DernierProgramme 
         {
             get => dernierProgramme;
@@ -114,8 +101,6 @@ namespace Application
         /// Difficulté du dernier programme effectué
         /// </summary>
         private Difficulte diffDernierProg;
-
-        [DataMember(EmitDefaultValue = false, Order = 7)]
         public Difficulte DiffDernierProg 
         {
             get => diffDernierProg;

@@ -19,7 +19,7 @@ namespace Homepage.ucmodification
     /// </summary>
     public partial class UCModifCorpulence : UserControl
     {
-        public Listes List => (App.Current as App).List;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
         public UCModifCorpulence()
         {
             InitializeComponent();

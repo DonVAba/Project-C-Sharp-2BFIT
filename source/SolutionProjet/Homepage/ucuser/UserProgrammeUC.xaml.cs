@@ -1,4 +1,5 @@
 ﻿using Application;
+using Management;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,8 @@ namespace Homepage.ucuser
     /// </summary>
     public partial class UserProgrammeUC : UserControl
     {
-        public Listes List => (App.Current as App).List;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
+        public Manager Manager => (App.Current as App).LeManager;
         public UserProgrammeUC()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace Homepage.ucuser
                     diff = "EXPERT";
                     break;
             }
-            Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
+            Manager.LancementProgramme(List.ProgrammeChoisi, diff);
             ExerciceWindow ew = new ExerciceWindow();
             MainWindow.GetWindow(this).Close();
             ew.Show();

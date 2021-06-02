@@ -7,7 +7,7 @@ namespace PersistanceData
 {
     public interface IDataManager
     {
-        DataToPersist ChargeDonnees();
+        Listes ChargeDonnees();
         void SauvegardeDonnees(Listes list);
     }
 }

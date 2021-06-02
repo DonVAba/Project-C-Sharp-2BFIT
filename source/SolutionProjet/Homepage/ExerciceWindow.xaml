@@ -21,13 +21,13 @@
         </StackPanel>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,68,0,0">
             <WrapPanel Margin="20">
-                <local:defaulttextblockuc Message="NOMBRE DE SERIES :" Valeur="{Binding ExerciceCourant.ValeurCourante.NbSeries}" Foreground="Red"/>
+                <local:defaulttextblockuc Message="NOMBRE DE SERIES :" Valeur="{Binding ExerciceCourant.ValeurCourante.NbSeries}" Foreground="White"/>
             </WrapPanel>
             <WrapPanel Margin="20">
-                <local:defaulttextblockuc Message="NOMBRE DE REPETITIONS :" Valeur="{Binding ExerciceCourant.ValeurCourante.NbReps}" Foreground="Red"/>
+                <local:defaulttextblockuc Message="NOMBRE DE REPETITIONS :" Valeur="{Binding ExerciceCourant.ValeurCourante.NbReps}" Foreground="White"/>
             </WrapPanel>
             <WrapPanel Margin="20">
-                <local:defaulttextblockuc Message="TEMPS DE REPOS :" Valeur="{Binding ExerciceCourant.ValeurCourante.TpsRepos}" Foreground="Red"/>
+                <local:defaulttextblockuc Message="TEMPS DE REPOS :" Valeur="{Binding ExerciceCourant.ValeurCourante.TpsRepos}" Foreground="White"/>
             </WrapPanel>
             <Button HorizontalAlignment="Center" Style="{StaticResource BoutonProg}" Margin="0,90,0,0" Height="40" Width="80" BorderThickness="3" BorderBrush="DeepSkyBlue" VerticalAlignment="Bottom"
                     x:Name="nextExButton" Click="nextExButton_Click">SUIVANT</Button>

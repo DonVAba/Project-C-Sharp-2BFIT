@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homepage.ucuser"
         mc:Ignorable="d"
-        Title="Page d'accueil" MinHeight="500" MinWidth="800" Height="470" Width="800"
+        Title="Page d'accueil" MinHeight="640" MinWidth="900" Height="640" Width="900"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         
@@ -15,15 +15,15 @@
             <Button Click="MWButtonProfile_Click" Background="SkyBlue" BorderBrush="CornflowerBlue" BorderThickness="2">
                 <Image Source="/Image;Component/img/icon/icon.png" Width="20" Height="35"/>
             </Button>
-            <ListBox Width="146" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="412" ItemsSource="{Binding ListProgrammes}" x:Name="listBoxProg"
+            <ListBox Width="186" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="505" ItemsSource="{Binding ListProgrammes}" x:Name="listBoxProg"
                      SelectionChanged="listBoxProg_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <WrapPanel Height="60" Width="110" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <WrapPanel Height="100" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <WrapPanel.Background>
                                 <ImageBrush ImageSource="{Binding CheminImage}"/>
                             </WrapPanel.Background>
-                            <TextBlock Text="{Binding Nom}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="Red" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Nom}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="Red" FontWeight="Bold" Visibility="Hidden"/>
                         </WrapPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

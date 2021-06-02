@@ -16,7 +16,7 @@ namespace Management
         /// Méthode d'ajout d'un utilisateur dans la list d'utilisateur, et dans la liste de compte
         /// </summary>
         /// <param name="user"></param>
-        public static void AjouterUtilisateurInscription(Utilisateur user,Listes l)
+        public void AjouterUtilisateurInscription(Utilisateur user)
         {
             if (user == null || !CreationObjectValidator.ValidationAjoutUser(user))
             {
@@ -24,7 +24,7 @@ namespace Management
             }
             else
             {
-                l.AjouterUtilisateurInscription(user);
+                CurrentList.AjouterUtilisateurInscription(user);
             }
         }
 
@@ -34,9 +34,9 @@ namespace Management
         /// <param name="login"> Login rentré</param>
         /// <param name="mdp"> Mot de passe rentré </param>
         /// <returns></returns>
-        public static bool VerifierConnexion(String login, String mdp,Listes l)
+        public bool VerifierConnexion(String login, String mdp)
         {
-            Utilisateur user = l.RechercherUtilisateur(login);
+            Utilisateur user = CurrentList.RechercherUtilisateur(login);
             if (user == null)
             {
                 throw new ArgumentException("Error : ce login n'appartient à aucun utilisateur");

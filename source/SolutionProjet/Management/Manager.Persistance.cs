@@ -14,7 +14,10 @@ namespace Management
         /// </summary>
         public IDataManager Persistance { get; set; }
 
-        public Listes CurrentList { get; set; }
+        public Listes CurrentList { get; set; } = new Listes();
+
+        internal List<Utilisateur> LesUsers { get; set; } = new List<Utilisateur>();
+        internal ObservableCollection<Programme> LesProg { get; set; } = new ObservableCollection<Programme>();
 
         /// <summary>
         /// Méthode permettant de charger les données de l'application
@@ -22,17 +25,18 @@ namespace Management
         public void ChargeDonnees()
         {
             var data = Persistance.ChargeDonnees();
-            Listes list = new Listes();
-            foreach (var user in data.ListeUtilisateurs)
+            CurrentList = data;
+
+            /*LesUsers = data.ListeUtilisateurs.ToPOCOs();
+            foreach (var user in LesUsers)
             {
-                list.listComptes.Add(user.Identifiant, user);
+                CurrentList.listComptes.Add(user.Identifiant, user);
             }
-            foreach ( var prog in data.ListeProgramme)
+            LesProg = (ObservableCollection<Programme>)data.ListeProgramme.ToPOCOs();
+            foreach ( var prog in LesProg)
             {
-                prog.LesExercices = new ObservableCollection<Exercice>();
-                list.ListProgrammes.Add(prog);
-            }
-            CurrentList = list;
+                CurrentList.ListProgrammes.Add(prog);
+            }*/
         }
 
         public void SauvegardeDonnees()

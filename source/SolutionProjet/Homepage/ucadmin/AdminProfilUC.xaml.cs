@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
 using Homepage.ucmodification;
+using Management;
 
 namespace Homepage.ucadmin
 {
@@ -21,7 +22,8 @@ namespace Homepage.ucadmin
     /// </summary>
     public partial class AdminProfilUC : UserControl
     {
-        public Listes List => (App.Current as App).List;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
+        
         private UCModifCorpulence ucm = new UCModifCorpulence();
         public AdminProfilUC()
         {

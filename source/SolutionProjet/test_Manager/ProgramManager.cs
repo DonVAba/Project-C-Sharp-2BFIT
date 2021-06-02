@@ -13,6 +13,8 @@ namespace test_Manager
         {
             StubData stub = new StubData("");
             Listes list = stub.ChargeDonnees();
+            Manager manager = new Manager(list);
+            
             
 
             Console.WriteLine("\n-------------- PARTIE MANAGEMENT PROGRAMME ---------------");
@@ -33,7 +35,7 @@ namespace test_Manager
             {
                 Console.WriteLine($"{prog}  " + p1.Equals(prog));
             }
-            list.AjouterProgramme(p1);
+            manager.AjouterProgramme(p1);
             foreach (Programme prog in list.ListProgrammes)
             {
                 Console.WriteLine($"{prog}");
@@ -43,7 +45,7 @@ namespace test_Manager
             Console.WriteLine("Test suppression programme");
             try
             {
-                Manager.SupprimerProgramme(p1,list);
+                manager.SupprimerProgramme(p1);
             }
             catch (Exception e)
             {
@@ -62,7 +64,7 @@ namespace test_Manager
             
             try
             {
-                Manager.AjouterListExerciceALaCreationDunProgramme(p1, listExercice,list);
+                manager.AjouterListExerciceALaCreationDunProgramme(p1, listExercice);
                 Console.WriteLine("True si ProgrammeChoisi a été mis à jour");
                 Console.WriteLine(list.ProgrammeChoisi.Equals(p1)); 
                 foreach(Exercice ex in p1.LesExercices)
@@ -94,7 +96,7 @@ namespace test_Manager
             //Test avec un utilisateur correct
             try
             {
-                Manager.AjouterUtilisateurInscription(u1,list);
+                manager.AjouterUtilisateurInscription(u1);
                 foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
@@ -109,7 +111,7 @@ namespace test_Manager
             //Test avec un utilisateur null
             try
             {
-                Manager.AjouterUtilisateurInscription(null,list);
+                manager.AjouterUtilisateurInscription(null);
                 foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
@@ -124,7 +126,7 @@ namespace test_Manager
             //Test quand l'utilisateur existe déjà
             try
             {
-                Manager.AjouterUtilisateurInscription(u1,list);
+                manager.AjouterUtilisateurInscription(u1);
                 foreach (KeyValuePair<String, Utilisateur> compte in list.listComptes)
                 {
                     Console.WriteLine($"Login = {compte.Key}\n Utilisateur ={compte.Value}\n ");
@@ -179,7 +181,7 @@ namespace test_Manager
             try
             {
                 Console.WriteLine("1");
-                Manager.LancementProgramme(p1, "DEBUTANT",list);
+                manager.LancementProgramme(p1, "DEBUTANT");
                 Console.WriteLine(list.ProgrammeChoisi);
                 Console.WriteLine("\n" + list.UtilisateurCourant.DernierProgramme + "\n" + list.UtilisateurCourant.DiffDernierProg);
             }

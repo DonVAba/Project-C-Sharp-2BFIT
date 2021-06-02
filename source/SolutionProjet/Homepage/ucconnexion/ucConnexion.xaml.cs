@@ -23,7 +23,8 @@ namespace Homepage.ucconnexion
     public partial class ucConnexion : UserControl
     {
         public Navigator Nav => (App.Current as App).Navigator;
-        public Listes List => (App.Current as App).List;
+        public Manager Manager => (App.Current as App).LeManager;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
         public ucConnexion()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace Homepage.ucconnexion
                     WindowConnexion.GetWindow(this).Close();
                 }
                 else {
-                    if (!Manager.VerifierConnexion(idTextBlock.Text, mdpTextBox.Password, List))
+                    if (!Manager.VerifierConnexion(idTextBlock.Text, mdpTextBox.Password))
                     {
                         MessageBox.Show("Le mot de passe est érroné, veuillez réessayer", "Mot de passe invalide", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;

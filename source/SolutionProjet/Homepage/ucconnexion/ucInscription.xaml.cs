@@ -20,7 +20,8 @@ namespace Homepage.ucconnexion
     /// </summary>
     public partial class ucInscription : UserControl
     {
-        public Listes List => (App.Current as App).List;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
+        public Manager Manager => (App.Current as App).LeManager;
         public Navigator Nav => (App.Current as App).Navigator;
 
         /// <summary>
@@ -35,21 +36,6 @@ namespace Homepage.ucconnexion
             {
                 nouveauUtilisateurCourant = value;
                 //OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// message est connecté qui sert à la méthode ToAffichUtilisateurCourant
-        /// </summary>
-        private string messageEstInscrit;
-
-        public string MessageEstInscrit
-        {
-            get { return messageEstInscrit; }
-            set
-            {
-                messageEstInscrit = value;
-                // OnPropertyChanged();
             }
         }
         public ucInscription()
@@ -93,7 +79,7 @@ namespace Homepage.ucconnexion
                 try
                 {
                     Utilisateur userTestSignIn = new Utilisateur(nomSignIn.Text, prenomSignIn.Text, naissanceSignIn.SelectedDate ?? DateTime.Now, Int16.Parse(tailleSignIn.Text), float.Parse(poidsSignIn.Text), idSignIn.Text, mdpSignIn.Password);
-                    if (!Management.CreationObjectValidator.ValidationAjoutUser(userTestSignIn))
+                    if (!CreationObjectValidator.ValidationAjoutUser(userTestSignIn))
                     {
                         MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
@@ -101,7 +87,7 @@ namespace Homepage.ucconnexion
                     {
                         
                         MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);
-                        Manager.AjouterUtilisateurInscription(userTestSignIn, List);
+                        Manager.AjouterUtilisateurInscription(userTestSignIn);
                         List.UtilisateurCourant = userTestSignIn;
                         MainWindow mw = new MainWindow();
                         mw.Show();

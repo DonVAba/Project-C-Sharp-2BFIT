@@ -6,7 +6,7 @@ using Application;
 
 namespace PersistanceData
 {
-    public class StubData
+    public class StubData : IDataManager
     {
 
         /// <summary>
@@ -36,11 +36,10 @@ namespace PersistanceData
                     Console.WriteLine(e.Message);
                 }
 
-
+            
             }
 
-            Listes list = new Listes(listCompte, programmeStub);
-            return list;
+            return new Listes(listCompte,programmeStub);
 
         }
 
@@ -67,9 +66,9 @@ namespace PersistanceData
         {
 
             (ObservableCollection<Exercice> listExercicePull, ObservableCollection<Exercice> listExercicePush, ObservableCollection<Exercice> listExerciceJambes) = ChargeListExercice();
-            Programme push = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules  azeazeazeeeeeeeeeeeeeeeeeezazeaze", "/Image;Component/img/imgfond/background_ciel.jpg");
-            Programme pull = new Programme("PULL", "Programme qui fait travailler le dos et les biceps azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeaz", "/Image;Component/img/imgfond/background_ciel.jpg");
-            Programme jambes = new Programme("JAMBES", "Programme qui fait travailler les quadriceps et ischios azeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeez", "/Image;Component/img/imgfond/background_ciel.jpg");
+            Programme push = new Programme("PUSH", "Programme qui fait travailler les pectoraux,triceps et épaules", "/Image;Component/img/imgprogramme/progpush.jpg");
+            Programme pull = new Programme("PULL", "Programme qui fait travailler le dos et les biceps", "/Image;Component/img/imgprogramme/progpull.jpg");
+            Programme jambes = new Programme("JAMBES", "Programme qui fait travailler les quadriceps et ischios", "/Image;Component/img/imgprogramme/progjambes.jpg");
             ObservableCollection<Programme> programmeStub = new ObservableCollection<Programme>();
             programmeStub.Add(pull);
             programmeStub.Add(push);
@@ -88,28 +87,37 @@ namespace PersistanceData
         private (ObservableCollection<Exercice>, ObservableCollection<Exercice>, ObservableCollection<Exercice>) ChargeListExercice()
         {
             Valeur valDeb = new Valeur(8, 4, 80);
+            Valeur valDeb2 = new Valeur(6, 4, 80);
+
             Valeur valInter = new Valeur(10, 4, 70);
+            Valeur valInter2 = new Valeur(9, 5, 70);
+
             Valeur valExpert = new Valeur(12, 4, 60);
+            Valeur valExpert2 = new Valeur(10, 5, 60);
 
             ObservableCollection<Exercice> listExercicePull = new ObservableCollection<Exercice>();
             ObservableCollection<Exercice> listExercicePush = new ObservableCollection<Exercice>();
             ObservableCollection<Exercice> listExerciceJambes = new ObservableCollection<Exercice>();
-            listExercicePull.Add(new Exercice("Traction", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePull.Add(new Exercice("Traction australienne", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePull.Add(new Exercice("Rowing", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePull.Add(new Exercice("Superman", "/Image;Component/img/imgExercice/exsuperman.jpg", valDeb, valInter, valExpert));
+            listExercicePull.Add(new Exercice("Variante Superman", "/Image;Component/img/imgExercice/exsuperman2.jpg", valDeb2, valInter2, valExpert2));
+            listExercicePull.Add(new Exercice("Rowing", "/Image;Component/img/imgExercice/extractionaustra.jpg", valDeb, valInter, valExpert));
 
             listExercicePush.Add(new Exercice("Dips", "/Image;Component/img/imgExercice/dips.png", valDeb, valInter, valExpert));
-            listExercicePush.Add(new Exercice("Pompes surelevees", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExercicePush.Add(new Exercice("Gainage", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExercicePush.Add(new Exercice("Pompes surelevees", "/Image;Component/img/imgExercice/expompessur.jpg", valDeb2, valInter2, valExpert2));
+            listExercicePush.Add(new Exercice("Gainage", "/Image;Component/img/imgExercice/exgainage.jpg", valDeb, valInter, valExpert));
 
-            listExerciceJambes.Add(new Exercice("Squats", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExerciceJambes.Add(new Exercice("hip trust", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExerciceJambes.Add(new Exercice("fentes avant ", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
-            listExerciceJambes.Add(new Exercice("fentes arrière ", "/Image;Component/img/imgfond/background_ciel.jpg", valDeb, valInter, valExpert));
+            listExerciceJambes.Add(new Exercice("Squats", "/Image;Component/img/imgExercice/exsquat.jpg", valDeb2, valInter2, valExpert2));
+            listExerciceJambes.Add(new Exercice("Hip Trust", "/Image;Component/img/imgExercice/exhiptrust.jpg", valDeb, valInter, valExpert));
+            listExerciceJambes.Add(new Exercice("Fentes avant", "/Image;Component/img/imgExercice/exfentesavant.jpg", valDeb2, valInter2, valExpert2));
+            listExerciceJambes.Add(new Exercice("Alternative Squat", "/Image;Component/img/imgExercice/exsquatcote.jpg", valDeb, valInter, valExpert));
 
             return (listExercicePull, listExercicePush, listExerciceJambes);
 
         }
 
+        public void SauvegardeDonnees(Listes list)
+        {
+            return;
+        }
     }
 }

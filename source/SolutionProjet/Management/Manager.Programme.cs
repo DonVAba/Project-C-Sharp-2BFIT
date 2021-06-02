@@ -15,11 +15,11 @@ namespace Management
         /// Methode qui ajoute un programme
         /// </summary>
         /// <param name="programme"></param>
-        public static void AjouterProgramme(Programme programme,Listes l)
+        public void AjouterProgramme(Programme programme)
         {
             if (CreationObjectValidator.ValidationAjoutProgramme(programme)) // Si le programme passé en paramètres est valide
             {
-                l.AjouterProgramme(programme); // Appelle de la méthode AjouterProgramme de la classe Listes
+                CurrentList.AjouterProgramme(programme); // Appelle de la méthode AjouterProgramme de la classe Listes
             }
             else
             {
@@ -30,11 +30,11 @@ namespace Management
         /// Methode pour supprimer un programme en parcourant toute la liste de programme 
         /// </summary>
         /// <param name="programme"></param>
-        public static void SupprimerProgramme(Programme programme,Listes l)
+        public void SupprimerProgramme(Programme programme)
         {
-            if (l.ListProgrammes.Contains(programme)) // Si la listprogramme de la Listes l passé en paramètre contient un programme avec le même nom
+            if (CurrentList.ListProgrammes.Contains(programme)) // Si la listprogramme de la Listes l passé en paramètre contient un programme avec le même nom
             {
-                l.SupprimerProgramme(programme); // Appel de la méthode SupprimerProgramme2
+                CurrentList.SupprimerProgramme(programme); // Appel de la méthode SupprimerProgramme2
             }
             else
                 throw new ArgumentException("Error : program you want delete not found");// sinon envoie une ArgumentException
@@ -45,11 +45,11 @@ namespace Management
         /// </summary>
         /// <param name="prog"></param>
         /// <param name="ex"></param>
-        public static void AjouterUnExercice(Programme prog, Exercice ex,Listes l)
+        public void AjouterUnExercice(Programme prog, Exercice ex)
         {
             if (CreationObjectValidator.ValidationAjoutExercice(ex)) // Si l'exercice passé en paramètres est valide
             {
-                l.AjouterUnExercice(prog, ex); // Appel de la méthode AjouterUnExercice
+                CurrentList.AjouterUnExercice(prog, ex); // Appel de la méthode AjouterUnExercice
             }
             else
                 throw new ArgumentException("Error : exercice you want add to prog.lesExercices is non-valid"); // sinon envoie une ArgumentException
@@ -63,11 +63,11 @@ namespace Management
         /// </summary>
         /// <param name="prog">programme choisi</param>
         /// <param name="listEx">Liste dex exercices rentrés dans la vue</param>
-        public static void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx,Listes l)
+        public void AjouterListExerciceALaCreationDunProgramme(Programme prog, LinkedList<Exercice> listEx)
         {
             if (CreationObjectValidator.ValidationAjoutProgramme(prog))// Si le programme passé en paramètres est valide
             {
-                l.AjouterListExerciceALaCreationDunProgramme(prog, listEx); // Appel de la méthode AjouterListExerciceALaCreationDunProgramme dde la classe Liste
+                CurrentList.AjouterListExerciceALaCreationDunProgramme(prog, listEx); // Appel de la méthode AjouterListExerciceALaCreationDunProgramme dde la classe Liste
 
             }
             else throw new ArgumentException("Error : programme incorrect");// sinon envoie une ArgumentException

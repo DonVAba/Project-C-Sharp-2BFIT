@@ -17,8 +17,6 @@ namespace Application
         /// Description du programme
         /// </summary>
         private string description;
-
-        [DataMember(EmitDefaultValue = false, Order = 0)]
         public string Description
         {
             get => description;
@@ -38,8 +36,11 @@ namespace Application
         private int nbExercices;
         public int NbExercices
         {
-            get;
-            set;
+            get => nbExercices;
+            set 
+            {
+                nbExercices = LesExercices.Count();
+            }
             
         }
 
@@ -61,8 +62,6 @@ namespace Application
         /// <summary>
         /// Chemin de l'image associé au programme
         /// </summary>
-
-        [DataMember(EmitDefaultValue = false, Order = 2)]
         public string CheminImage { get; set; }
 
         /// <summary>
@@ -70,8 +69,6 @@ namespace Application
         /// </summary>
 
         private ObservableCollection<Exercice> lesExercices; // ObservableCollection pour changer la propriété
-
-        [DataMember(EmitDefaultValue = false, Order = 3)]
 
         public ObservableCollection<Exercice> LesExercices 
         {

@@ -5,6 +5,8 @@ using Application;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace PersistanceData
 {
@@ -14,47 +16,66 @@ namespace PersistanceData
 
         public string FileName { get; set; } = "2bfitData.xml";
 
-        string PersFile => Path.Combine(FilePath,FileName);
-        public DataToPersist ChargeDonnees()
+        private string PersFile => Path.Combine(FilePath,FileName);
+
+        internal List<Utilisateur> LUser { get; set; } = new List<Utilisateur>();
+        internal List<Programme> LProg { get; set; } = new List<Programme>();
+
+        /// <summary>
+        /// Propriété qui va serialiser et deserialiser les données dans le fichier voulu, on lui demande de garder les references (ListeFavoris d'un utilisateur)
+        /// </summary>
+        private DataContractSerializer Serializer { get; set; } = new DataContractSerializer(typeof(ListesDTO),
+                                                 new DataContractSerializerSettings()
+                                                 {
+                                                     PreserveObjectReferences = true
+                                                 });
+        public Listes ChargeDonnees()
         {
             if (!File.Exists(PersFile))
             {
                 throw new FileNotFoundException("Error : fichier de persistance inexistant");
             }
-            var serializer = new DataContractSerializer(typeof(DataToPersist));
+            
             using(Stream stream = File.OpenRead(PersFile))
             {
-                var data = serializer.ReadObject(stream) as DataToPersist;
-                return data;
+                var data = Serializer.ReadObject(stream) as ListesDTO;
+                return data.ToPOCO();
+
+                /*Dictionary<String, Utilisateur> dictionnaryComptes = new Dictionary<String, Utilisateur>();
+                foreach (var user in data.ListComptes)
+                {
+                    dictionnaryComptes.Add(user.ToPOCO().Identifiant,user.ToPOCO());
+                }
+                return new Listes(dictionnaryComptes, data.ListProgrammes.ToPOCOs());*/
             }
             
         }
 
         public void SauvegardeDonnees(Listes list)
         {
-
-            var data = new DataToPersist
-            {
-                ListeProgramme = list.ListProgrammes
-            };
-            foreach (var kvp in list.listComptes)
-            {
-                data.ListeUtilisateurs.Add(kvp.Value);
-            }
-
-            var serializer = new DataContractSerializer(typeof(DataToPersist));
-
             if (!Directory.Exists(FilePath))
             {
                 Directory.CreateDirectory(FilePath);
             }
 
+            var data = list.ToDTO();
+            /*foreach(var prog in list.ListProgrammes)
+            {
+                data.ListProgrammes.Add(prog.ToDTO());
+            }
+                    
+            
+            foreach (var kvp in list.listComptes)
+            {
+                data.ListComptes.Add(kvp.Value.ToDTO());
+            }*/
+            
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(PersFile))
             {
                 using (XmlWriter writer = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(writer, data);
+                    Serializer.WriteObject(writer, data);
                 }
             }
         }

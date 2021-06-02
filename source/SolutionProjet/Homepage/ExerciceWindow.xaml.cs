@@ -23,7 +23,7 @@ namespace Homepage
     /// 
     public partial class ExerciceWindow : Window
     {
-        private Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
 
         private IEnumerator<Exercice> exenum;
 

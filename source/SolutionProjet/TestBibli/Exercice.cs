@@ -5,25 +5,21 @@ using System.Text;
 
 namespace Application
 {
-    [DataContract]
     public class Exercice : Nommable
     {
         /// <summary>
         /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "DEBUTANT"
         /// </summary>
-       [DataMember(EmitDefaultValue = false, Order = 1)]
         public Valeur ValeurDeb { get; set; }
 
         /// <summary>
         /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "INTERMEDIAIRE"
         /// </summary>
-        [DataMember(EmitDefaultValue = false, Order = 2)]
         public Valeur ValeurInter { get; set; }
 
         /// <summary>
         /// Valeur d'un exerice (Temps de repos, Nombre de séries, répétitions, si la difficulté choisie est "INTERMEDIAIRE"
         /// </summary>
-        [DataMember(EmitDefaultValue = false, Order = 3)]
         public Valeur ValeurExpert { get; set; }
 
         /// <summary>
@@ -35,7 +31,6 @@ namespace Application
         /// <summary>
         /// Chemin de l'image associé à l'exercice
         /// </summary>
-        [DataMember(EmitDefaultValue = false, Order = 0)]
         public string CheminImage { get; set; }
 
         /// <summary>

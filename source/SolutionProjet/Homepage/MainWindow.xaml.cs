@@ -23,7 +23,7 @@ namespace Homepage
     public partial class MainWindow : Window
     {
 
-        private Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
 
         
 

@@ -47,7 +47,7 @@ namespace Homepage.uctextblock
 
         // Using a DependencyProperty as the backing store for Valeur.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ValeurProperty =
-            DependencyProperty.Register("Valeur", typeof(string), typeof(defaulttextblockuc), new PropertyMetadata("A113"));
+            DependencyProperty.Register("Valeur", typeof(string), typeof(defaulttextblockuc), new PropertyMetadata("0"));
 
 
 

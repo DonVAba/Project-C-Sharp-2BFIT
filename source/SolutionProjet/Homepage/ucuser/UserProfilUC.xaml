@@ -6,19 +6,19 @@
              xmlns:local="clr-namespace:Homepage"
              xmlns:userControls="clr-namespace:Homepage.uctextblock"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="658">
+             d:DesignHeight="640" d:DesignWidth="658">
     <StackPanel Background="White">
         
-        <WrapPanel  MinHeight="50" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
+        <WrapPanel  MinHeight="60" HorizontalAlignment="Center" Margin="0,10,0,15" Width="auto">
             <TextBlock Padding="10" Text="NOM" FontSize="15" FontWeight="Bold" Margin="42,0"/>
             <TextBlock Background="LightSkyBlue" Width="100" TextWrapping="WrapWithOverflow" Height="20" Text="{Binding Nom}" Foreground="White" TextAlignment="Center"></TextBlock>
         </WrapPanel>
-        <WrapPanel MinHeight="50" HorizontalAlignment="Center" Width="Auto">
+        <WrapPanel MinHeight="60" HorizontalAlignment="Center" Width="Auto">
             <TextBlock Text="PRENOM" FontWeight="Bold"  FontSize="15" Margin="40,0"/>
             <TextBlock Background="LightSkyBlue" Width="120" TextWrapping="WrapWithOverflow" Height="20" Text="{Binding Prenom}" Foreground="White" TextAlignment="Center"></TextBlock>
         </WrapPanel>
 
-        <Grid Margin="20">
+        <Grid Margin="30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -36,13 +36,13 @@
                 </Button>
             </Border>
         </WrapPanel>
-        <WrapPanel Grid.Column="1" Margin="30" Height="33" Width="565">
+        <WrapPanel Grid.Column="1" Margin="40" Height="33" Width="565">
             <TextBlock Text="DERNIER PROGRAMME EFFECTUÉ" FontWeight="Bold" FontSize="17" Width="287"/>
         </WrapPanel>
 
 
         <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
-            <TextBlock Background="LightSkyBlue" Width="120" TextWrapping="WrapWithOverflow" Height="20" Text="{Binding DernierProgramme.Nom}" Foreground="White" TextAlignment="Center"></TextBlock>
+            <Image Height="140" Width="250" Source="{Binding DernierProgramme.CheminImage}" x:Name="ImageLastProg"/>
             <userControls:defaulttextblockuc Message="DIFFICULTÉ" Margin="35" Valeur="{Binding DiffDernierProg}"/>
         </WrapPanel>
     </StackPanel>

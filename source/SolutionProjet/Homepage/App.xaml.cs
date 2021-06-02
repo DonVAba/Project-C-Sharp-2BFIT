@@ -17,16 +17,24 @@ namespace Homepage
     public partial class App
     {
         public Listes List { get; set; }
-        public Manager LeManager { get; private set; } = new Manager(new DataContract());
+        public Manager LeManager { get; private set; } = new Manager();
         public Navigator Navigator { get; private set; }
         private StubData stub = new StubData("");
 
         public App()
         {
+            /*
             LeManager.ChargeDonnees();
             List = LeManager.CurrentList;
+            Navigator = Navigator.GetInstance();*/
+
+            LeManager.CurrentList = stub.ChargeDonnees();
             Navigator = Navigator.GetInstance();
-    }  
+            LeManager.Persistance = new DataContract();
+            LeManager.SauvegardeDonnees();
+            LeManager.ChargeDonnees();
+            
+        }  
 
     }
 }

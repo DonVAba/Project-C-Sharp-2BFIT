@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Homepage.ucmodification;
 using Homepage.ucadmin;
 using Homepage.ucuser;
+using Management;
 
 namespace Homepage.ucadmin
 {
@@ -23,7 +24,8 @@ namespace Homepage.ucadmin
     /// </summary>
     public partial class ExercicePageUCAdmin : UserControl
     {
-        public Listes List => (App.Current as App).List;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
+        public Manager Manager => (App.Current as App).LeManager;
         private UCModifProg ucmp = new UCModifProg();
         public Navigator Nav => (App.Current as App).Navigator;
         public ExercicePageUCAdmin()
@@ -53,7 +55,7 @@ namespace Homepage.ucadmin
                     diff = "EXPERT";
                     break;
             }
-            Management.Manager.LancementProgramme(List.ProgrammeChoisi, diff, List);
+            Manager.LancementProgramme(List.ProgrammeChoisi, diff);
             ExerciceWindow ew = new ExerciceWindow();
             MainWindow.GetWindow(this).Close();
             ew.Show();
@@ -62,7 +64,7 @@ namespace Homepage.ucadmin
         private void Delete_Click_Programme(object sender, RoutedEventArgs e)
         {
             Programme prog = List.ProgrammeChoisi;
-            List.ListProgrammes.Remove(prog);
+            Manager.SupprimerProgramme(prog);
             MessageBox.Show("Programme supprimé avec succés", "Validation", MessageBoxButton.OK, MessageBoxImage.Information);
             if (List.ListProgrammes.Count() == 0)
             {

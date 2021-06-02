@@ -20,7 +20,7 @@ namespace Homepage
     public partial class AjouterExercice : Page
     {
         private Navigator Nav => (App.Current as App).Navigator;
-        private Listes List => (App.Current as App).List;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
 
         public AjouterExercice()
         {

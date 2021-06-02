@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
+using Management;
 
 namespace Homepage.ucWindowAjout
 {
@@ -20,7 +21,7 @@ namespace Homepage.ucWindowAjout
     public partial class UCProgramme : UserControl
     {
         public Navigator Nav => (App.Current as App).Navigator;
-        public Listes List => (App.Current as App).List;
+        public Listes List => (App.Current as App).LeManager.CurrentList;
         public UCProgramme()
         {
             InitializeComponent();

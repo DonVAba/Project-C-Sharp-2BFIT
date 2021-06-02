@@ -9,14 +9,15 @@ namespace test_DataContract
     {
         static void Main(string[] args)
         {
-            /*
+            
             var manager = new Manager(new StubData("").ChargeDonnees());
             manager.Persistance = new DataContract();
-            manager.SauvegardeDonnees();*/
-
-            var manager = new Manager(new DataContract());
             manager.ChargeDonnees();
             manager.SauvegardeDonnees();
+
+            /*var manager = new Manager(new DataContract());
+            manager.ChargeDonnees();
+            manager.SauvegardeDonnees();*/
 
 
         }
