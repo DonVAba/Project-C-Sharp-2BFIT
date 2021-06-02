@@ -85,7 +85,11 @@ namespace Homepage.ucadmin
         private void Button_Modif_Programme(object sender, RoutedEventArgs e)
         {
             ModifWindow mdc = new ModifWindow(ucmp);
+
             mdc.ShowDialog();
+            
+
+
         }
 
         private void ExerciceListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,10 +97,8 @@ namespace Homepage.ucadmin
             List.ExerciceCourant = (sender as ListBox).SelectedItem as Exercice;
         }
 
-        private void AjouterExercice(object sender, RoutedEventArgs e)
-        {
-            AjouterExercice ex = new AjouterExercice();
-            
+        private void AjouterExercices(object sender, RoutedEventArgs e)
+        { 
         }
 
     }

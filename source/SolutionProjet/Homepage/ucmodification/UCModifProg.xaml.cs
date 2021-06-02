@@ -1,6 +1,7 @@
 ﻿using Application;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,7 +31,7 @@ namespace Homepage.ucmodification
             Window.GetWindow(this).Close();
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e) //Pb : même si valeur fausse, update dans la window 
+        private void saveButton_Click(object sender, RoutedEventArgs e) //pb : même si valeur fausse, update dans la window 
         {
           if (!string.IsNullOrWhiteSpace(newName.Text))
           {
@@ -41,7 +42,8 @@ namespace Homepage.ucmodification
           {
              List.ProgrammeChoisi.Description = newDesc.Text;
           }
-          Window.GetWindow(this).Close();
+           
+            Window.GetWindow(this).Close();
         }
      }
  }

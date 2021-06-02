@@ -52,7 +52,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button x:Name="AjouterButton"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Background="White" BorderBrush="CornflowerBlue" Click="AjouterExercice">
+                <Button x:Name="AjouterButton"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Background="White" BorderBrush="CornflowerBlue" Click="AjouterExercices">
                     <WrapPanel>
                         <Image Source="/Image;Component/img/icon/addicon.png" Width="20" VerticalAlignment="Top"/>
                         <Label FontFamily="Arial" FontWeight="Bold" Foreground="RoyalBlue" VerticalAlignment="Center">AJOUTER EXERCICE</Label>

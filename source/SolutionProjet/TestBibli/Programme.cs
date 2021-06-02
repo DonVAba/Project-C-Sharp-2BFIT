@@ -120,16 +120,6 @@ namespace Application
             return this.Nom.Equals(other.Nom);
         }
 
-       
-
-        /// <summary>
-        /// Méthode renvoyant le HashCode du programme instancié
-        /// </summary>
-        /// <returns></returns>
-        public override int GetHashCode()
-        {
-            return Nom.GetHashCode();
-        }
 
         /// <summary>
         /// Méthode qui supprime un exercice, je l'ai ajouté je me suis dit si on ajoute un exo ca serait plus logique si on peut les supprimer aussi
@@ -138,15 +128,11 @@ namespace Application
         /// <returns></returns>
         public void SupprimerExercices(Exercice e)
         {
-            foreach (Exercice exo in LesExercices) // pour chaque Exercice dans la LinkedList lesExercices
-            {
-                if (e.Equals(exo)) // si l'exercice a le même nom que e
-                {
-                    LesExercices.Remove(e); // Suppression de l'exercice
-                    return;
-                }
-            }
-            throw new Exception("Exercice rentré non trouvé "); // Envoie d'une nouvelle exception pour indiquer que l'exercice passé en paramètre n'a pas été trouvé
+
+            if (LesExercices.Contains(e))
+                LesExercices.Remove(e);// Suppression de l'exercice
+            else 
+                throw new Exception("Exercice rentré non trouvé "); // Envoie d'une nouvelle exception pour indiquer que l'exercice passé en paramètre n'a pas été trouvé
 
         }
 

@@ -163,17 +163,7 @@ namespace Application
         /// <param name="programme"></param>
         public void SupprimerProgramme(Programme programme)
         {
-            foreach (Programme prog in ListProgrammes) // pour chaque programme prog dans la liste des programmes
-            {
-                if (programme.Equals(prog)) // si le programme passé en paramètre a le même nom
-                {
-                    ListProgrammes.Remove(programme); // suppression du programme
-                }
-                else
-                {
-                    throw new ArgumentException("Programm not found"); // sinon on envoie une nouvelle Exception qui dit que le prorgramme n'a pas été trouvé
-                }
-            }
+            ListProgrammes.Remove(programme);
         }
 
         /// <summary>

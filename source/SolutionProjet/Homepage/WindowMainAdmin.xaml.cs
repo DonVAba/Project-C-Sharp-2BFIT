@@ -35,6 +35,7 @@ namespace Homepage
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MainWindowContentControl.Content = InitUserControlProg();
+            if((sender as ListBox).SelectedItem!=List.ProgrammeChoisi)
             List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
         }
 

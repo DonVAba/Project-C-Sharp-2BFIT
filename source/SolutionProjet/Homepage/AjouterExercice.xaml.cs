@@ -17,7 +17,7 @@ namespace Homepage
     /// <summary>
     /// Logique d'interaction pour AjouterExercice.xaml
     /// </summary>
-    public partial class AjouterExercice : Page
+    public partial class AjouterExercice : Window
     {
         private Navigator Nav => (App.Current as App).Navigator;
         private Listes List => (App.Current as App).LeManager.CurrentList;

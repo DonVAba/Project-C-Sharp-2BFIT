@@ -1,15 +1,15 @@
-﻿<Page x:Class="Homepage.AjouterExercice"
+﻿<Window x:Class="Homepage.AjouterExercice"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Homepage"
       mc:Ignorable="d" 
-      Title="Ajouter un exercice" d:DesignHeight="350" d:DesignWidth="530" MaxHeight="350" MaxWidth="530">
+      Title="Ajouter un exercice" d:DesignHeight="350" d:DesignWidth="530" MaxHeight="350" MaxWidth="530" WindowStartupLocation="CenterOwner">
 
     <Border Style="{StaticResource BorderStyle1}">
         <StackPanel>
             <ContentControl x:Name="AddWindowContentControl" Content="{Binding SelectedUserControl}"/>
         </StackPanel>
     </Border>
-</Page>
+</Window>
