@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -28,19 +30,35 @@ namespace Homepage.ucWindowAjout
             DataContext = List;
         }
 
-        private void ImportImageButton_Click(object sender, RoutedEventArgs e)
+        private void ImportImageButton_Click(object sender, RoutedEventArgs e) // A Modifier
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.InitialDirectory = @"C:\Users\Public\Pictures";
             dialog.FileName = "Images";
             dialog.DefaultExt = ".jpg | .png | .gif";
 
+            string filename = "";
             bool? result = dialog.ShowDialog();
-
             if (result == true)
             {
-                string filename = dialog.FileName;
+                
+                string strRegex = @"/?([a-Z]*[0-9]*)*/{1}";
+                Regex regEx = new Regex(strRegex);
+                if (regEx.IsMatch(dialog.FileName))
+                {
+                    regEx.Split(dialog.FileName);
+                    filename = "/img/imgprogramme/" + dialog.FileName;
+                }
+                var bitmap = new BitmapImage(new Uri(filename));
+                var encoder = new JpegBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(bitmap));
+                encoder.QualityLevel = 100;
+                using (var stream = new FileStream("", FileMode.Create))
+                {
+                    encoder.Save(stream);
+                }
             }
+            
         }
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)

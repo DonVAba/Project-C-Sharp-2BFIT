@@ -89,6 +89,7 @@ namespace Homepage.ucconnexion
                         
                         MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);
                         Manager.AjouterUtilisateurInscription(userTestSignIn);
+                        Manager.SauvegardeDonnees();
                         List.UtilisateurCourant = userTestSignIn;
                         MainWindow mw = new MainWindow();
                         mw.Show();

@@ -59,6 +59,7 @@ namespace Homepage.ucadmin
                     break;
             }
             Manager.LancementProgramme(List.ProgrammeChoisi, diff);//Appel de la methode LancementProgramme de Manager avec paramètre le programmeChoisi et la diff
+            Manager.SauvegardeDonnees();
             ExerciceWindow ew = new ExerciceWindow(); //Instancie une nouvelle fenêtre ExerciceWindow
             MainWindow.GetWindow(this).Close();//Ferme la window ExercicePageUCAdmin.xaml.cs
             ew.Show();//Ouvre notre window ExerciceWindow 
@@ -78,7 +79,7 @@ namespace Homepage.ucadmin
                 WindowMainAdmin aw = Window.GetWindow(this) as WindowMainAdmin;
                 aw.MainWindowContentControl.Content = aw.InitUserControlProfil();
             }
-            
+            Manager.SauvegardeDonnees();
             List.ProgrammeChoisi = List.ListProgrammes.First(); //Si la liste de programme != 0, le programme choisit = au premier programme dans la ListProgramme
         }
         /// <summary>
@@ -88,7 +89,8 @@ namespace Homepage.ucadmin
         /// <param name="e"></param>
         private void Delete_Click_Exercice(object sender, RoutedEventArgs e)
         {
-            List.ProgrammeChoisi.SupprimerExercices(List.ExerciceCourant);//Appel de la méthode SupprimerExerices de Programme avec en paramètre l'exerciceCourant 
+            List.ProgrammeChoisi.SupprimerExercices(List.ExerciceCourant);//Appel de la méthode SupprimerExerices de Programme avec en paramètre l'exerciceCourant
+            Manager.SauvegardeDonnees();
         }
         /// <summary>
         /// Méthode qui ouvre une nouvelle fenêtre ModifWindow après l'avoir instancié

@@ -1,4 +1,5 @@
 ﻿using Application;
+using Management;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace Homepage.ucmodification
     public partial class UCModifProg : UserControl
     {
         public Listes List => (App.Current as App).LeManager.CurrentList;
+        public Manager Manager => (App.Current as App).LeManager;
         public UCModifProg()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace Homepage.ucmodification
           {
              List.ProgrammeChoisi.Description = newDesc.Text;
           }
-           
+            Manager.SauvegardeDonnees();
             Window.GetWindow(this).Close();
         }
      }

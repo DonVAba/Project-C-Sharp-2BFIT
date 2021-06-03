@@ -50,6 +50,7 @@ namespace Homepage.ucuser
                     break;
             }
             Manager.LancementProgramme(List.ProgrammeChoisi, diff);
+            Manager.SauvegardeDonnees();
             ExerciceWindow ew = new ExerciceWindow();
             MainWindow.GetWindow(this).Close();
             ew.Show();

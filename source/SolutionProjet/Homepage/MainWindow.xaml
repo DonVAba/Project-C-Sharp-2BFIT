@@ -15,7 +15,7 @@
             <Button Click="MWButtonProfile_Click" Background="SkyBlue" BorderBrush="CornflowerBlue" BorderThickness="2">
                 <Image Source="/Image;Component/img/icon/icon.png" Width="20" Height="35"/>
             </Button>
-            <ListBox Width="186" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="505" ItemsSource="{Binding ListProgrammes}" x:Name="listBoxProg"
+            <ListBox Width="186" Background="CornflowerBlue" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="583" ItemsSource="{Binding ListProgrammes}" x:Name="listBoxProg"
                      SelectionChanged="listBoxProg_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

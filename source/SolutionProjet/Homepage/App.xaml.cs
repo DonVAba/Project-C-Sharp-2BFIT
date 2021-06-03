@@ -28,12 +28,16 @@ namespace Homepage
             List = LeManager.CurrentList;
             Navigator = Navigator.GetInstance();*/
 
-            LeManager.CurrentList = stub.ChargeDonnees();
+            /*LeManager.CurrentList = stub.ChargeDonnees();
             Navigator = Navigator.GetInstance();
             LeManager.Persistance = new DataContract();
             LeManager.SauvegardeDonnees();
+            LeManager.ChargeDonnees();*/
+
+            LeManager.Persistance = new DataContract();
             LeManager.ChargeDonnees();
-            
+            Navigator = Navigator.GetInstance();
+
         }  
 
     }

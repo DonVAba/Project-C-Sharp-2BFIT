@@ -1,4 +1,5 @@
 ﻿using Application;
+using Management;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Homepage.ucmodification
     public partial class UCModifCorpulence : UserControl
     {
         public Listes List => (App.Current as App).LeManager.CurrentList;
+        public Manager Manager => (App.Current as App).LeManager;
         public UCModifCorpulence()
         {
             InitializeComponent();
@@ -44,6 +46,7 @@ namespace Homepage.ucmodification
                 {
                     List.UtilisateurCourant.Poids = float.Parse(newPoids.Text);
                 }
+                Manager.SauvegardeDonnees();
                 Window.GetWindow(this).Close();
             }
             catch (Exception)

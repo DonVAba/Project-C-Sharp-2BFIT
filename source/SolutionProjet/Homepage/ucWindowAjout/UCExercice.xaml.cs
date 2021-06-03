@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
+using System.Windows.Media.Imaging;
 
 namespace Homepage.ucWindowAjout
 {
@@ -21,6 +23,7 @@ namespace Homepage.ucWindowAjout
     /// </summary>
     public partial class UCExercice : UserControl {
         private Listes List => (App.Current as App).LeManager.CurrentList;
+        private Manager Manager => (App.Current as App).LeManager;
         private static int i = 0;
         public UCExercice()
         {
@@ -33,14 +36,16 @@ namespace Homepage.ucWindowAjout
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.InitialDirectory = @"C:\Users\Public\Pictures";
             dialog.FileName = "Images";
-            dialog.DefaultExt = ".jpg | .png | .gif";
+            dialog.DefaultExt = ".jpg | .png";
 
             bool? result = dialog.ShowDialog();
 
             if (result == true)
             {
                 string filename = dialog.FileName;
-                CheminFichierExo.Text = filename;
+                BitmapImage bw = new BitmapImage();
+                bw.UriSource = new Uri(filename);
+                
             }
         }
 
@@ -52,6 +57,7 @@ namespace Homepage.ucWindowAjout
             {
                 i = 0;
                 List.ListProgrammes.Add(List.NouveauProg);
+                Manager.SauvegardeDonnees();
                 Window.GetWindow(this).Close();
             }
             else 

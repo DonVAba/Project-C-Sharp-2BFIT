@@ -12,7 +12,7 @@ namespace PersistanceData
 {
     public class DataContract : IDataManager
     {
-        public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML");
+        public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "../../../../2bfit_bin//XML");
 
         public string FileName { get; set; } = "2bfitData.xml";
 
@@ -40,13 +40,6 @@ namespace PersistanceData
             {
                 var data = Serializer.ReadObject(stream) as ListesDTO;
                 return data.ToPOCO();
-
-                /*Dictionary<String, Utilisateur> dictionnaryComptes = new Dictionary<String, Utilisateur>();
-                foreach (var user in data.ListComptes)
-                {
-                    dictionnaryComptes.Add(user.ToPOCO().Identifiant,user.ToPOCO());
-                }
-                return new Listes(dictionnaryComptes, data.ListProgrammes.ToPOCOs());*/
             }
             
         }
@@ -59,16 +52,6 @@ namespace PersistanceData
             }
 
             var data = list.ToDTO();
-            /*foreach(var prog in list.ListProgrammes)
-            {
-                data.ListProgrammes.Add(prog.ToDTO());
-            }
-                    
-            
-            foreach (var kvp in list.listComptes)
-            {
-                data.ListComptes.Add(kvp.Value.ToDTO());
-            }*/
             
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(PersFile))
