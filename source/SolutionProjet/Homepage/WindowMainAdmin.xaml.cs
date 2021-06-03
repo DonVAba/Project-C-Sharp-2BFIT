@@ -21,7 +21,7 @@ namespace Homepage
     /// </summary>
     public partial class WindowMainAdmin : Window
     {
-        public Listes List => (App.Current as App).LeManager.CurrentList;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
 
         private ExercicePageUCAdmin ucProg;
         private AdminProfilUC ucProfil;

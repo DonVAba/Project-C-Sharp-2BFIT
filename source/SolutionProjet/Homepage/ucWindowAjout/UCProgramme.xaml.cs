@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Application;
+using Homepage.converters;
 using Management;
 
 namespace Homepage.ucWindowAjout
@@ -22,8 +23,11 @@ namespace Homepage.ucWindowAjout
     /// </summary>
     public partial class UCProgramme : UserControl
     {
-        public Navigator Nav => (App.Current as App).Navigator;
-        public Listes List => (App.Current as App).LeManager.CurrentList;
+        private Navigator Nav => (App.Current as App).Navigator;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
+        private bool isLoadedImage;
+        private string imagesPath = System.IO.Path.Combine(StringToImage.FilePath, "/imgprogramme/");
+        private string nomimage;
         public UCProgramme()
         {
             InitializeComponent();
@@ -35,41 +39,42 @@ namespace Homepage.ucWindowAjout
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.InitialDirectory = @"C:\Users\Public\Pictures";
             dialog.FileName = "Images";
-            dialog.DefaultExt = ".jpg | .png | .gif";
+            dialog.DefaultExt = ".jpg | .png";
 
-            string filename = "";
             bool? result = dialog.ShowDialog();
             if (result == true)
             {
-                
-                string strRegex = @"/?([a-Z]*[0-9]*)*/{1}";
-                Regex regEx = new Regex(strRegex);
-                if (regEx.IsMatch(dialog.FileName))
+
+                FileInfo fi = new FileInfo(dialog.FileName);
+                string file = fi.Name;
+                int i = 0;
+                while (File.Exists(System.IO.Path.Combine(imagesPath, file)))
                 {
-                    regEx.Split(dialog.FileName);
-                    filename = "/img/imgprogramme/" + dialog.FileName;
+                    file = $"{fi.Name.Remove(fi.Name.LastIndexOf('.'))}_{i}.{fi.Extension}";
                 }
-                var bitmap = new BitmapImage(new Uri(filename));
-                var encoder = new JpegBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create(bitmap));
-                encoder.QualityLevel = 100;
-                using (var stream = new FileStream("", FileMode.Create))
-                {
-                    encoder.Save(stream);
-                }
+                nomimage = file;
+                File.Copy(dialog.FileName, System.IO.Path.Combine(imagesPath, file));
+                isLoadedImage = true;
             }
+            else
+                isLoadedImage = false;
             
         }
 
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!isLoadedImage)
+            {
+                MessageBox.Show("Erreur : image pas chargée", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             if (string.IsNullOrWhiteSpace(nomProg.Text) || string.IsNullOrWhiteSpace(descProg.Text) || string.IsNullOrWhiteSpace(nbExos.Text))
             {
                 MessageBox.Show("Mauvaises valeurs rentrées, veuillez réessayer", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else 
             {
-                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, "/Image;Component/img/imgfond/background_ciel.jpg");
+                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, System.IO.Path.Combine(imagesPath,nomimage));
                 if(Int32.TryParse(nbExos.Text, out int value)) 
                 {
                     List.NouveauProg.SetNbExercices(value);

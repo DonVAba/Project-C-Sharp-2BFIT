@@ -20,7 +20,6 @@ namespace Homepage
     public partial class AjouterProgramme : Window
     {
         private Navigator Nav => (App.Current as App).Navigator;
-        private Listes List => (App.Current as App).LeManager.CurrentList;
 
         public AjouterProgramme()
         {

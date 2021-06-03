@@ -16,8 +16,6 @@ namespace Management
 
         public Listes CurrentList { get; set; } = new Listes();
 
-        internal List<Utilisateur> LesUsers { get; set; } = new List<Utilisateur>();
-        internal ObservableCollection<Programme> LesProg { get; set; } = new ObservableCollection<Programme>();
 
         /// <summary>
         /// Méthode permettant de charger les données de l'application
@@ -27,18 +25,11 @@ namespace Management
             var data = Persistance.ChargeDonnees();
             CurrentList = data;
 
-            /*LesUsers = data.ListeUtilisateurs.ToPOCOs();
-            foreach (var user in LesUsers)
-            {
-                CurrentList.listComptes.Add(user.Identifiant, user);
-            }
-            LesProg = (ObservableCollection<Programme>)data.ListeProgramme.ToPOCOs();
-            foreach ( var prog in LesProg)
-            {
-                CurrentList.ListProgrammes.Add(prog);
-            }*/
         }
 
+        /// <summary>
+        /// Méthode permettant de sauvegarder les données
+        /// </summary>
         public void SauvegardeDonnees()
         {
             Persistance.SauvegardeDonnees(CurrentList);

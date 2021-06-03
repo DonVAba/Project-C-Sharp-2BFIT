@@ -18,8 +18,6 @@ namespace PersistanceData
 
         private string PersFile => Path.Combine(FilePath,FileName);
 
-        internal List<Utilisateur> LUser { get; set; } = new List<Utilisateur>();
-        internal List<Programme> LProg { get; set; } = new List<Programme>();
 
         /// <summary>
         /// Propriété qui va serialiser et deserialiser les données dans le fichier voulu, on lui demande de garder les references (ListeFavoris d'un utilisateur)

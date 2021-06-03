@@ -113,7 +113,11 @@ namespace Homepage.ucadmin
         }
 
         private void AjouterExercices(object sender, RoutedEventArgs e)
-        { 
+        {
+            List.NouveauProg = List.ProgrammeChoisi;
+            List.NouveauProg.NbExercices = 1;
+            AjouterExercice w = new AjouterExercice();
+            w.ShowDialog();
         }
 
     }

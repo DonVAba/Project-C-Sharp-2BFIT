@@ -14,7 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
-using System.Windows.Media.Imaging;
+using System.IO;
+using Homepage.converters;
 
 namespace Homepage.ucWindowAjout
 {
@@ -24,7 +25,11 @@ namespace Homepage.ucWindowAjout
     public partial class UCExercice : UserControl {
         private Listes List => (App.Current as App).LeManager.CurrentList;
         private Manager Manager => (App.Current as App).LeManager;
+
         private static int i = 0;
+        private bool isLoadedImage;
+        private string ImagesPath { get; set; }  = StringToImage.FilePath;
+        private string Nomimage { get; set; }
         public UCExercice()
         {
             InitializeComponent();
@@ -42,31 +47,48 @@ namespace Homepage.ucWindowAjout
 
             if (result == true)
             {
-                string filename = dialog.FileName;
-                BitmapImage bw = new BitmapImage();
-                bw.UriSource = new Uri(filename);
-                
+                FileInfo fi = new FileInfo(dialog.FileName);
+                string file = fi.Name;
+                int i = 0;
+                while (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
+                {
+                    file = $"{fi.Name.Remove(fi.Name.LastIndexOf('.'))}_{i}.{fi.Extension}";
+                }
+                Nomimage = file;
+                File.Copy(file,System.IO.Path.Combine(ImagesPath, Nomimage));
+                isLoadedImage = true;
             }
+            else
+                isLoadedImage = false;
         }
 
         private void nextExo_Click(object sender, RoutedEventArgs e)
         {
-            //Faut trouver un moyen de recuperer toutes les textbox de notre UC 
+            if (!isLoadedImage)
+            {
+                MessageBox.Show("Erreur : image non importé","Erreur", MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
 
             if (i == List.NouveauProg.GetNbExercices())
             {
                 i = 0;
-                List.ListProgrammes.Add(List.NouveauProg);
+                if (List.ProgrammeChoisi != List.NouveauProg)
+                {
+                    List.ListProgrammes.Add(List.NouveauProg);
+                    Window.GetWindow(this).Close();
+                }
                 Manager.SauvegardeDonnees();
-                Window.GetWindow(this).Close();
+                return;
+
             }
             else 
             {
                 List.NouveauProg.LesExercices.Add(
-                new Exercice(nomNewExo.Text, "/ Image; Component / img / imgfond / background_ciel.jpg",
+                new Exercice(nomNewExo.Text, System.IO.Path.Combine(ImagesPath,Nomimage),
                     new Valeur(seriesdeb.Valeur, repdeb.Valeur, tpsreposdeb.Valeur),
                     new Valeur(seriesint.Valeur, repint.Valeur, tpsreposint.Valeur),
-                    new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur)));
+                    new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur))); ;
             }
             
             i++;
