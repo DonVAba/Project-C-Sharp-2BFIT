@@ -28,11 +28,13 @@ namespace Homepage.ucadmin
         public AdminProfilUC()
         {
             InitializeComponent();
-            //List.UtilisateurCourant.DernierProgramme = List.ListProgrammes.First();
-            //List.UtilisateurCourant.DiffDernierProg = Difficulte.DEBUTANT;
-            DataContext = List.UtilisateurCourant;
+            DataContext = List.UtilisateurCourant;  // Set du DataContext sur L'utilisateur courant pour la page profil
         }
-
+        /// <summary>
+        /// Méthode qui ouvre une nouvelle fenêtre ModifWindow après l'avoir instancié
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
             ModifWindow mdc = new ModifWindow(ucm);

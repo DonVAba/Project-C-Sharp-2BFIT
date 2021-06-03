@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\icon\addicon.png" />
+    <None Remove="img\icon\edit-icon.png" />
+    <None Remove="img\icon\editicon2.png" />
+    <None Remove="img\icon\icon.png" />
+    <None Remove="img\icon\icon_import_image.png" />
+    <None Remove="img\imgfond\backgroundConnexion.jpg" />
+    <None Remove="img\imgfond\background_ciel.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\icon\addicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\edit-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\editicon2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\icon\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\imgfond\backgroundConnexion.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\imgfond\background_ciel.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\icon\icon_import_image.png" />
+  </ItemGroup>
+
+</Project>

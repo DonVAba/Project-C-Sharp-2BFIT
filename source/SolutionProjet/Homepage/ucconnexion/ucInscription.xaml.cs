@@ -38,6 +38,7 @@ namespace Homepage.ucconnexion
                 //OnPropertyChanged();
             }
         }
+
         public ucInscription()
         {
             InitializeComponent();

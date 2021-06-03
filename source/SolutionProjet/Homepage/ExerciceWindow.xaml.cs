@@ -36,7 +36,11 @@ namespace Homepage
             List.ExerciceCourant = exenum.Current;
 
         }
-
+        /// <summary>
+        /// Méthode 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nextExButton_Click(object sender, RoutedEventArgs e)
         {
             if (exenum.MoveNext())

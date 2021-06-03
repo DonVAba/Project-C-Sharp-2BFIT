@@ -14,7 +14,7 @@ namespace Application
         public Utilisateur UtilisateurCourant { get; set; }
 
         /// <summary>
-        /// Programme choisi par un utilisateur avant de le lancer
+        /// Programme séléctionné par un utilisateur avant de le lancer
         /// </summary>
         private Programme programmeChoisi;
         public Programme ProgrammeChoisi 

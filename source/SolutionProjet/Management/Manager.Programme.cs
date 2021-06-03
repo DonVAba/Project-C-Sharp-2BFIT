@@ -23,7 +23,7 @@ namespace Management
             }
             else
             {
-                throw new Exception("Non valid program"); // Sinon envoi une exception
+                throw new Exception("Programme non valide"); // Sinon envoi une exception
             }
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Management
         {
             if (CurrentList.ListProgrammes.Contains(programme)) // Si la listprogramme de la Listes l passé en paramètre contient un programme avec le même nom
             {
-                CurrentList.SupprimerProgramme(programme); // Appel de la méthode SupprimerProgramme2
+                CurrentList.SupprimerProgramme(programme); // Appel de la méthode SupprimerProgramme de Liste
             }
             else
                 throw new ArgumentException("Error : program you want delete not found");// sinon envoie une ArgumentException
@@ -67,10 +67,10 @@ namespace Management
         {
             if (CreationObjectValidator.ValidationAjoutProgramme(prog))// Si le programme passé en paramètres est valide
             {
-                CurrentList.AjouterListExerciceALaCreationDunProgramme(prog, listEx); // Appel de la méthode AjouterListExerciceALaCreationDunProgramme dde la classe Liste
+                CurrentList.AjouterListExerciceALaCreationDunProgramme(prog, listEx); // Appel de la méthode AjouterListExerciceALaCreationDunProgramme de la classe Liste
 
             }
-            else throw new ArgumentException("Error : programme incorrect");// sinon envoie une ArgumentException
+            else throw new ArgumentException("Erreur : programme incorrect");// sinon envoie une ArgumentException
         }
 
         

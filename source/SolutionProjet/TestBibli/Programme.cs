@@ -31,7 +31,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Nombre d'exercice d'un programme (à moitié facultatif car il va être affiché)
+        /// Nombre d'exercice d'un programme 
         /// </summary>
         private int nbExercices;
         public int NbExercices
@@ -122,34 +122,33 @@ namespace Application
 
 
         /// <summary>
-        /// Méthode qui supprime un exercice, je l'ai ajouté je me suis dit si on ajoute un exo ca serait plus logique si on peut les supprimer aussi
+        /// Méthode qui supprime un exercice
         /// </summary>
-        /// <param name="e"></param>
+        /// <param name="e"> Exercice courant</param>
         /// <returns></returns>
         public void SupprimerExercices(Exercice e)
         {
 
-            if (LesExercices.Contains(e))
-                LesExercices.Remove(e);// Suppression de l'exercice
+            if (LesExercices.Contains(e))//Vérification que l'ObservableCollection contient l'exercice courant 
+                LesExercices.Remove(e);// Suppression de l'exercice courant 
             else 
-                throw new Exception("Exercice rentré non trouvé "); // Envoie d'une nouvelle exception pour indiquer que l'exercice passé en paramètre n'a pas été trouvé
+                throw new Exception("Exercice rentré non trouvé "); //Exception si l'exercice n'est pas trouvé
 
         }
 
         /// <summary>
-        /// Ajoute un exercice à la liste d'exercice lesExercices
+        /// Ajoute un exercice à l'ObservableCollection<Exercice> lesExercices
         /// </summary>
         /// <param name="ex"></param>
         public void AjouterExercice(Exercice ex)
         {
-            if (LesExercices.Contains(ex)) // Si la linkedList lesExercices du programme instancié contient un exercice avec le même nom que celui passé en paramètres
+            if (LesExercices.Contains(ex)) // Vérification que l'ObservableCollection lesExercices contient déjà l'exercice
             {
                 throw new ArgumentException("Exercice rentré déjà existant"); // Envoie d'une ArgumentException
             }
             else
             {
-                LesExercices.Add(ex); // sinon ajout de l'exercice à la liste lesExercices du programme instancié
-               
+                LesExercices.Add(ex); // Ajout de l'exercice dans l'ObservableCollection lesExercices
             }
             
         }

@@ -27,7 +27,7 @@ namespace Homepage
         public WindowConnexion()
         {
             InitializeComponent();
-            ConnexionCC.DataContext = Nav;
+            ConnexionCC.DataContext = Nav;    //Set le dataContext sur notre Navigator 
         }
     }
 }

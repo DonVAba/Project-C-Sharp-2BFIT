@@ -8,12 +8,7 @@ using System.Text;
 using Application;
 
 namespace Application
-{
-    /// <summary>
-    /// Classe qui sera sérializable
-    /// </summary>
-    
-    
+{  
     public partial class Listes : INotifyPropertyChanged
     {
         /// <summary>
@@ -39,7 +34,7 @@ namespace Application
         }
 
         /// <summary>
-        /// COnstructeur d'une liste avec des liste déjà inclu
+        /// Constructeur d'une liste avec des liste déjà inclu
         /// </summary>
         /// <param name="comptes"></param>
         /// <param name="programmes"></param>
@@ -50,7 +45,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Constructeur de Listes avec uniquement un ditcionnaire de compte en paramètres
+        /// Constructeur de Listes avec uniquement un dictionnaire de compte en paramètres
         /// </summary>
         public Listes(Dictionary<string, Utilisateur> comptes)
         {
@@ -59,7 +54,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Constructeur de Listes avec uniquement une liste de programme en paramètre
+        /// Constructeur de Listes avec uniquement une ObservaleCollection de programme en paramètre
         /// </summary>
         public Listes(ObservableCollection<Programme> programmes)
         {
@@ -88,7 +83,7 @@ namespace Application
         /// <returns>Null si le login ne correspond à aucun utilisateur sinon l'utilisateur</returns>
         public Utilisateur RechercherUtilisateur(string login)
         {
-            if (listComptes.ContainsKey(login)) // regarde si la liste de compte contient le login
+            if (listComptes.ContainsKey(login)) // Vérification que la liste contient le login
             {
                 listComptes.TryGetValue(login, out Utilisateur value); // si le login est effectivement présent, on récupère l'utilisateur associé dans l'attribut value
                 return value; // retourne cette utilisateur
@@ -163,7 +158,11 @@ namespace Application
         /// <param name="programme"></param>
         public void SupprimerProgramme(Programme programme)
         {
-            ListProgrammes.Remove(programme);
+            if (ListProgrammes.Contains(programme))//Vérification que l'ObservableCollection contient le programmeChoisi
+                ListProgrammes.Remove(programme);//Suppression du programme choisi de l'ObservableCollection
+            else
+                throw new Exception("Programme non trouvé "); //Exception si le programme n'est pas trouvé
+            
         }
 
         /// <summary>

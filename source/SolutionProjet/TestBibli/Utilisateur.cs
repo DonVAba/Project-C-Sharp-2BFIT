@@ -166,7 +166,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Méthode renvoyant une forme écrite d'un utilisateur
+        /// Méthode renvoyant le profil d'un utilisateur
         /// </summary>
         /// <returns></returns>
         public override string ToString()
@@ -185,7 +185,7 @@ namespace Application
             {
                 throw new ArgumentException("Error : l'objet à comparer n'est pas un Utilisateur"); // Envoie d'une Argument Exception
             }
-            Utilisateur user = obj as Utilisateur; // Cast de l'objet obj en Utilisation
+            Utilisateur user = obj as Utilisateur; // Cast de l'objet obj en Utilisateur
             return this.CompareTo(user); // Retourne le retour de la méthode CompareTo recevant un Utilisateur en paramètres 
         }
 
@@ -196,7 +196,7 @@ namespace Application
         /// <returns></returns>
         public int CompareTo(Utilisateur user)
         {
-            return Identifiant.CompareTo(user.Identifiant); // retourne un entier <0 si l'identifiant de this est plus petit, 0 si il est égal et >0 si il est plus grande, à l'identifiant de l'utilisateur passé en paramètres
+            return Identifiant.CompareTo(user.Identifiant); // retourne un entier <0 si l'identifiant de this est plus petit, 0 si il est égal et >0 si il est plus grand, à l'identifiant de l'utilisateur passé en paramètres
         }
 
         /// <summary>
