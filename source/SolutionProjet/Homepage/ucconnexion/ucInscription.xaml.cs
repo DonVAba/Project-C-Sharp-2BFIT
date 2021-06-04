@@ -43,7 +43,11 @@ namespace Homepage.ucconnexion
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Méthode qui change le background du bouton lorsque sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InsButton_MouseEnter(object sender, MouseEventArgs e)
         {
             Button b = (Button)sender;
@@ -53,7 +57,11 @@ namespace Homepage.ucconnexion
             b.Foreground = brush;
             b.Background = bru;
         }
-
+        /// <summary>
+        /// Méthode qui change l'aspect du bouton lorsqu'il n'est plus survolé par la souris 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InsButton_MouseLeave(object sender, MouseEventArgs e)
         {
             Button b = (Button)sender;
@@ -64,32 +72,41 @@ namespace Homepage.ucconnexion
             b.Background = brush;
         }
 
+        /// <summary>
+        /// Méthode qui permet de naviguer au UC "UC_Connexion" via la méthode NavigateTo du Navigator 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ConnexionButton_Click(object sender, RoutedEventArgs e)
         {
             Nav.NavigateTo("UC_Connexion");
         }
-
+        /// <summary>
+        /// Méthode qui vérifie que les données rentrées sont correctes quand on clique sur le bouton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InsButton_Click(object sender, RoutedEventArgs e)
         {
-            if(List.RechercherUtilisateur(idSignIn.Text) != null)
+            if(List.RechercherUtilisateur(idSignIn.Text) != null)//Vérification que l'utilisateur n'existe pa déjà avec la méthode RechercheUtilisateur de Liste
             {
-                MessageBox.Show("Identifiant déjà utilisé", "Login invalide", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Identifiant déjà utilisé", "Login invalide", MessageBoxButton.OK, MessageBoxImage.Error);//Affichage MessageBox pour l'utilisateur
             }
-            else
+            else//Sinon, création d'un nouvel utilisateur 
             {
                 try
                 {
                     Utilisateur userTestSignIn = new Utilisateur(nomSignIn.Text, prenomSignIn.Text, naissanceSignIn.SelectedDate ?? DateTime.Now, Int16.Parse(tailleSignIn.Text), float.Parse(poidsSignIn.Text), idSignIn.Text, mdpSignIn.Password);
-                    if (!CreationObjectValidator.ValidationAjoutUser(userTestSignIn))
+                    if (!CreationObjectValidator.ValidationAjoutUser(userTestSignIn))//Vérification que les données du nouvel utilsateur sont valides
                     {
-                        MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);//Affichage MessageBox
                     }
-                    else
+                    else//Si les données sont valides, on ajoute le nouvel utilisateur
                     {
                         
-                        MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);
-                        Manager.AjouterUtilisateurInscription(userTestSignIn);
-                        Manager.SauvegardeDonnees();
+                        MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);//Affichage MessageBox
+                        Manager.AjouterUtilisateurInscription(userTestSignIn);//Appel de la méthode AjouterUtilisateur de Manager 
+                        Manager.SauvegardeDonnees();//Appel de la méthode SauvegardeDonnes du Manager pour sauvegarder
                         List.UtilisateurCourant = userTestSignIn;
                         MainWindow mw = new MainWindow();
                         mw.Show();

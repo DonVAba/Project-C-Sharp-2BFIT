@@ -50,7 +50,7 @@
             <local:textblocajoutprogramme Message="NB REPS :" Grid.Row="6" Grid.Column="1" x:Name="repexp"/>
             <local:textblocajoutprogramme Message="TPS REPOS :" Grid.Row="6" Grid.Column="2" x:Name="tpsreposexp"/>
 
-        <Button Margin="20" Style="{DynamicResource ButtonStyle1}" Content="SUIVANT" Foreground="DodgerBlue" Background="White" Grid.Column="1" Grid.Row="7" x:Name="nextExo" Click="nextExo_Click"/>
+        <Button Margin="20,30" Style="{DynamicResource ButtonStyle1}" Width="100" Content="SUIVANT"  Grid.Column="1" Grid.Row="7" x:Name="nextExo" Click="nextExo_Click"/>
 
         </Grid>
         

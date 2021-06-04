@@ -96,7 +96,7 @@ namespace Homepage.ucconnexion
 
        
         /// <summary>
-        /// Change l'aspect du bouton quand la souris n'est plus dessus
+        /// Méthode qui change l'aspect du bouton quand la souris n'est plus dessus
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

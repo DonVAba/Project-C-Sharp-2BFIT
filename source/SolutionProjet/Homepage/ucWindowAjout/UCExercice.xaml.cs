@@ -75,7 +75,6 @@ namespace Homepage.ucWindowAjout
             if (!isLoadedImage)
             {
                 MessageBox.Show("Erreur : image non importé","Erreur", MessageBoxButton.OK,MessageBoxImage.Error);
-                return;
             }
 
             if (i == List.NouveauProg.GetNbExercices())
@@ -95,20 +94,24 @@ namespace Homepage.ucWindowAjout
                     finally
                     {
                         Window.GetWindow(this).Close();
-                        
                     }
-                    return;
                 }
-                
-
             }
             else 
             {
-                List.NouveauProg.LesExercices.Add(
-                new Exercice(nomNewExo.Text, System.IO.Path.Combine(ImagesPath,Nomimage),
-                    new Valeur(seriesdeb.Valeur, repdeb.Valeur, tpsreposdeb.Valeur),
-                    new Valeur(seriesint.Valeur, repint.Valeur, tpsreposint.Valeur),
-                    new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur))); ;
+                try
+                {
+                    List.NouveauProg.LesExercices.Add(
+                        new Exercice(nomNewExo.Text, System.IO.Path.Combine(ImagesPath, Nomimage),
+                        new Valeur(seriesdeb.Valeur, repdeb.Valeur, tpsreposdeb.Valeur),
+                        new Valeur(seriesint.Valeur, repint.Valeur, tpsreposint.Valeur),
+                        new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur))); 
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erreur : image non importé", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
             }
             
             i++;
