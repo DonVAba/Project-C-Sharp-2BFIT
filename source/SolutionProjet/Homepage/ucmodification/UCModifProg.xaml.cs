@@ -28,24 +28,42 @@ namespace Homepage.ucmodification
             InitializeComponent();
             DataContext = List;
         }
+        /// <summary>
+        /// Méthode qui ferme UCModifProg quand on clique sur le bouton annuler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).Close();
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e) //pb : même si valeur fausse, update dans la window 
+        /// <summary>
+        /// Méthode qui sauvegarde les nouvelles données rentrées après avoir cliquer sur le bouton sauvegarder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveButton_Click(object sender, RoutedEventArgs e) 
         {
-          if (!string.IsNullOrWhiteSpace(newName.Text))
-          {
-                List.ProgrammeChoisi.Nom = newName.Text;
-          }
-                    
-          if (!string.IsNullOrWhiteSpace(newDesc.Text))
-          {
-             List.ProgrammeChoisi.Description = newDesc.Text;
-          }
-            Manager.SauvegardeDonnees();
-            Window.GetWindow(this).Close();
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(newName.Text))//Vérification que le nom n'est pas nul
+                {
+                    List.ProgrammeChoisi.Nom = newName.Text;//Set le nom
+                }
+
+                if (!string.IsNullOrWhiteSpace(newDesc.Text))//Vérification que la description n'est pas nulle 
+                {
+                    List.ProgrammeChoisi.Description = newDesc.Text;//Set la description 
+                }
+                Manager.SauvegardeDonnees();//Appel de la méthode SauvegardeDonnes du Manager
+                Window.GetWindow(this).Close();//Ferme la window 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Mauvaises valeurs rentrées, veuillez réessayer", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+          
         }
      }
  }

@@ -69,7 +69,7 @@ namespace Homepage.ucWindowAjout
             else
                 isLoadedImage = false;
         }
-
+     
         private void nextExo_Click(object sender, RoutedEventArgs e)
         {
             if (!isLoadedImage)

@@ -33,7 +33,11 @@ namespace Homepage.ucuser
             DataContext = List.UtilisateurCourant;
 
         }
-
+        /// <summary>
+        /// Méthode qui ouvre une nouvelle ModifWindow après l'avoir instancié 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonModifierCorpulence_Click(object sender, RoutedEventArgs e)
         {
             ModifWindow mw = new ModifWindow(ucm);

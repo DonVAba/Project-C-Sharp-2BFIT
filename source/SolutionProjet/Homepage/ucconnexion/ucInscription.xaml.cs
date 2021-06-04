@@ -107,15 +107,15 @@ namespace Homepage.ucconnexion
                         MessageBox.Show("Bienvenue sur votre application 2BFIT", "Inscription réussie", MessageBoxButton.OK, MessageBoxImage.Information);//Affichage MessageBox
                         Manager.AjouterUtilisateurInscription(userTestSignIn);//Appel de la méthode AjouterUtilisateur de Manager 
                         Manager.SauvegardeDonnees();//Appel de la méthode SauvegardeDonnes du Manager pour sauvegarder
-                        List.UtilisateurCourant = userTestSignIn;
-                        MainWindow mw = new MainWindow();
+                        List.UtilisateurCourant = userTestSignIn;//Set l'utilisateur courant sur le nouvel utilisateur crée
+                        MainWindow mw = new MainWindow();//instancie une nouvelle MainWindow puis l'ouvre en fermant la WindowConnexion
                         mw.Show();
                         WindowConnexion.GetWindow(this).Close();
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Paramètres rentrés invalides", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);//Affichage MessageBox
                 }
                 
             }

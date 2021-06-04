@@ -296,8 +296,8 @@
       </LesExercices>
     </ProgrammeDTO>
     <ProgrammeDTO z:Id="97">
-      <Nom z:Id="98">qqsdqs</Nom>
-      <Description z:Id="99">sdqsdqqsd</Description>
+      <Nom z:Id="98">123</Nom>
+      <Description z:Id="99">123</Description>
       <CheminImage z:Id="100">/Image;Component/img/imgprogramme/progjambes.jpg</CheminImage>
       <LesExercices z:Id="101" z:Size="4">
         <ExerciceDTO z:Id="102">

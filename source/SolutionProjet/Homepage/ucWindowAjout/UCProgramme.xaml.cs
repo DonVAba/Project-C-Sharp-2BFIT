@@ -48,11 +48,11 @@ namespace Homepage.ucWindowAjout
                 FileInfo fi = new FileInfo(dialog.FileName);
                 string file = fi.Name;
                 int i = 0;
-                while (!Directory.Exists(ImagesPath))
+                if (!Directory.Exists(ImagesPath))
                 {
                     Directory.CreateDirectory(ImagesPath);
                 }
-                while (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
+                if (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
                 {
                     file = $"{file.Remove(file.LastIndexOf('.'))}_{i}.{fi.Extension}";
                 }
@@ -64,13 +64,16 @@ namespace Homepage.ucWindowAjout
                 isLoadedImage = false;
             
         }
-
+        /// <summary>
+        /// Méthode qui navigue sur l'UC "UC_AjoutExercice" après vérification que les valeurs et l'image rentrées sont bonnes 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextStepButton_Click(object sender, RoutedEventArgs e)
         {
             if (!isLoadedImage)
             {
                 MessageBox.Show("Erreur : image pas chargée", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
             }
             if (string.IsNullOrWhiteSpace(nomProg.Text) || string.IsNullOrWhiteSpace(descProg.Text) || string.IsNullOrWhiteSpace(nbExos.Text))
             {
@@ -78,11 +81,11 @@ namespace Homepage.ucWindowAjout
             }
             else 
             {
-                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, System.IO.Path.Combine(ImagesPath,Nomimage));
+                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, System.IO.Path.Combine(ImagesPath,Nomimage));//Set du nouveau programme avec les données rentrées  
                 if(Int32.TryParse(nbExos.Text, out int value)) 
                 {
                     List.NouveauProg.SetNbExercices(value);
-                    Nav.NavigateTo("UC_AjoutExercice");
+                    Nav.NavigateTo("UC_AjoutExercice");//Navigation vers l'UC 
                 }
                 else
                     MessageBox.Show("Nombre d'exercice rentrés incorrect", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);

@@ -27,17 +27,21 @@ namespace Homepage.ucuser
             InitializeComponent();
             DataContext = List;
         }
-
+        /// <summary>
+        /// Méthode qui ouvre une nouvelle fenêtre ExerciceWindow après avoir sélectionné une difficulté 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            if(List.ProgrammeChoisi.LesExercices.Count == 0)
+            if(List.ProgrammeChoisi.LesExercices.Count == 0)//Vérification que le programme Choisi n'est pas 0 exercice
             {
                 MessageBox.Show("Programme sans exercices !","Erreur",MessageBoxButton.OK,MessageBoxImage.Error);
                 return;
             }
-            string diff = "";
-            int index = LevelComboBox.SelectedIndex;
-            switch (index)
+            string diff = "";//Instancie une variable diff de type string (diff= difficulté)
+            int index = LevelComboBox.SelectedIndex;// Instancie une variable index selon l'item Selectionné dans la comboBox
+            switch (index)//Selon la valeur de l'index, diff va prendre une valeur différentes
             {
                 case 0:
                     diff = "DEBUTANT";
@@ -49,9 +53,9 @@ namespace Homepage.ucuser
                     diff = "EXPERT";
                     break;
             }
-            Manager.LancementProgramme(List.ProgrammeChoisi, diff);
+            Manager.LancementProgramme(List.ProgrammeChoisi, diff);//Appel de la methode LancementProgramme de Manager avec paramètre le programmeChoisi et la diff
             Manager.SauvegardeDonnees();
-            ExerciceWindow ew = new ExerciceWindow();
+            ExerciceWindow ew = new ExerciceWindow();//Instancie une nouvelle fenêtre ExerciceWindow, ferme UserProgrammeUC et ouvre l'exerciceWindow
             MainWindow.GetWindow(this).Close();
             ew.Show();
             

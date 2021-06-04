@@ -37,25 +37,25 @@ namespace Homepage
 
         }
         /// <summary>
-        /// Méthode 
+        /// Méthode qui ouvre la fenêtre exerciceWindow suivante après avoir cliqué sur le bouton
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void nextExButton_Click(object sender, RoutedEventArgs e)
         {
-            if (exenum.MoveNext())
+            if (exenum.MoveNext())//Vérifie qu'il y a un exerice suivant 
             {
-                List.ExerciceCourant = exenum.Current;
+                List.ExerciceCourant = exenum.Current;//set l'exericeCourant 
             }
             else
             {
                 MessageBox.Show("Bravo ! Vous avez terminé le programme !", "Programme terminé", MessageBoxButton.OK, MessageBoxImage.Information);
-                if (List.UtilisateurCourant.Identifiant.Equals("admin"))
+                if (List.UtilisateurCourant.Identifiant.Equals("admin"))//Si l'utilisateurCourant est admin ouvre WindowMainAdmin
                 {
                     WindowMainAdmin.GetWindow(new WindowMainAdmin()).Show();
                     ExerciceWindow.GetWindow(this).Close();
                 }
-                else 
+                else //Sinon ouvre la MainWindow pour un utilisateur 
                 {
                     MainWindow.GetWindow(new MainWindow()).Show();
                     ExerciceWindow.GetWindow(this).Close();

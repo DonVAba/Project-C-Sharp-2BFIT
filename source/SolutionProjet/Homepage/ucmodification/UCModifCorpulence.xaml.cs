@@ -27,24 +27,32 @@ namespace Homepage.ucmodification
             InitializeComponent();
             DataContext = List.UtilisateurCourant;
         }
-
+        /// <summary>
+        /// Méthode qui ferme UCModifCorpulence quand on clique sur le bouton annuler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).Close();
 
         }
-
+        /// <summary>
+        /// Méthode qui sauvegarde les nouvelles données rentrées quand on clique sur le bouton sauvegarder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (!string.IsNullOrWhiteSpace(newTaille.Text))
+                if (!string.IsNullOrWhiteSpace(newTaille.Text))//Vérification que la taille n'est pas nulle 
                 {
-                    List.UtilisateurCourant.Taille = Int16.Parse(newTaille.Text);
+                    List.UtilisateurCourant.Taille = Int16.Parse(newTaille.Text);//Set la taille de l'utilisateur courant 
                 }
-                if (!string.IsNullOrWhiteSpace(newPoids.Text))
+                if (!string.IsNullOrWhiteSpace(newPoids.Text))//Vérification que le poids n'est pas nul
                 {
-                    List.UtilisateurCourant.Poids = float.Parse(newPoids.Text);
+                    List.UtilisateurCourant.Poids = float.Parse(newPoids.Text);//Set le poids de l'utilisateur courant 
                 }
                 Manager.SauvegardeDonnees();
                 Window.GetWindow(this).Close();

@@ -63,11 +63,16 @@ namespace Homepage
             MainWindowContentControl.Content = InitUserControlProfil();
         }
 
-
+        /// <summary>
+        /// Méthode qui change le Programme selectionné quand la séléction change dans la listbox 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MainWindowContentControl.Content = InitUserControlProg();
-            List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
+            if ((sender as ListBox).SelectedItem != List.ProgrammeChoisi)
+                List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
         }
 
         private void UserProfilUC_Loaded(object sender, RoutedEventArgs e)

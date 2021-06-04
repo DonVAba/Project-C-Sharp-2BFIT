@@ -31,12 +31,16 @@ namespace Homepage
             MainWindowContentControl.Content = InitUserControlProfil();
             DataContext = List;
         }
-
+        /// <summary>
+        /// Méthode qui change le programmeChoisi selon l'item selectionné dans la listbox 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MainWindowContentControl.Content = InitUserControlProg();
             if((sender as ListBox).SelectedItem!=List.ProgrammeChoisi)
-            List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
+                List.ProgrammeChoisi = (sender as ListBox).SelectedItem as Programme;
         }
 
         private void MWButtonProfile_Click(object sender, RoutedEventArgs e)
