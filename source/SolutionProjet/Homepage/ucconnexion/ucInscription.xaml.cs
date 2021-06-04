@@ -20,9 +20,9 @@ namespace Homepage.ucconnexion
     /// </summary>
     public partial class ucInscription : UserControl
     {
-        public Listes List => (App.Current as App).LeManager.CurrentList;
-        public Manager Manager => (App.Current as App).LeManager;
-        public Navigator Nav => (App.Current as App).Navigator;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
+        private Manager Manager => (App.Current as App).LeManager;
+        private Navigator Nav => (App.Current as App).Navigator;
 
         /// <summary>
         /// nouveauUtilisateur

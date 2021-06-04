@@ -27,7 +27,7 @@ namespace Homepage.ucadmin
         public Listes List => (App.Current as App).LeManager.CurrentList;
         public Manager Manager => (App.Current as App).LeManager;
         private UCModifProg ucmp = new UCModifProg();
-        public Navigator Nav => (App.Current as App).Navigator;
+        
         public ExercicePageUCAdmin()
         {
             InitializeComponent();

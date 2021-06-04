@@ -22,9 +22,9 @@ namespace Homepage.ucconnexion
     /// </summary>
     public partial class ucConnexion : UserControl
     {
-        public Navigator Nav => (App.Current as App).Navigator;
-        public Manager Manager => (App.Current as App).LeManager;
-        public Listes List => (App.Current as App).LeManager.CurrentList;
+        private Navigator Nav => (App.Current as App).Navigator;
+        private Manager Manager => (App.Current as App).LeManager;
+        private Listes List => (App.Current as App).LeManager.CurrentList;
         public ucConnexion()
         {
             InitializeComponent();
