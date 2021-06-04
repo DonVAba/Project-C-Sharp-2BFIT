@@ -9,18 +9,15 @@ namespace Homepage.converters
 {
     public class StringToImage : IValueConverter
     {
-        public static string FilePath { get; set; }
+        public string FilePath { get; set; } = Directory.GetCurrentDirectory();
 
-        static StringToImage()
-        {
-            FilePath = Directory.GetCurrentDirectory();
-        }
+        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string nomImage = value as string;
             if (string.IsNullOrWhiteSpace(nomImage)) return null;
             string cheminImage = Path.Combine(FilePath, nomImage);
-            return new Uri(cheminImage, UriKind.Relative);
+            return new Uri(cheminImage, UriKind.RelativeOrAbsolute);
 
         }
 

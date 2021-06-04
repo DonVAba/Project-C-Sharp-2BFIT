@@ -26,9 +26,11 @@ namespace Homepage.ucWindowAjout
         private Listes List => (App.Current as App).LeManager.CurrentList;
         private Manager Manager => (App.Current as App).LeManager;
 
-        private static int i = 0;
+        private int i = 0;
         private bool isLoadedImage;
-        private string ImagesPath { get; set; }  = StringToImage.FilePath;
+
+
+        private string ImagesPath { get; set; }  = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\..\\2bfit_bin/img//imgExercice");
         private string Nomimage { get; set; }
         public UCExercice()
         {
@@ -49,14 +51,20 @@ namespace Homepage.ucWindowAjout
             {
                 FileInfo fi = new FileInfo(dialog.FileName);
                 string file = fi.Name;
-                int i = 0;
+                int index = 0;
+                while(!Directory.Exists(ImagesPath))
+                {
+                    Directory.CreateDirectory(ImagesPath);
+                }
                 while (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
                 {
-                    file = $"{fi.Name.Remove(fi.Name.LastIndexOf('.'))}_{i}.{fi.Extension}";
+                    file = $"{file.Remove(file.LastIndexOf('.'))}_{index}.{fi.Extension}";
+                    index++;
                 }
+                File.Copy(dialog.FileName, System.IO.Path.Combine(ImagesPath, file));
                 Nomimage = file;
-                File.Copy(file,System.IO.Path.Combine(ImagesPath, Nomimage));
                 isLoadedImage = true;
+                
             }
             else
                 isLoadedImage = false;
@@ -75,11 +83,23 @@ namespace Homepage.ucWindowAjout
                 i = 0;
                 if (List.ProgrammeChoisi != List.NouveauProg)
                 {
-                    List.ListProgrammes.Add(List.NouveauProg);
-                    Window.GetWindow(this).Close();
+                    try
+                    {
+                        Manager.AjouterProgramme(List.NouveauProg);
+                        Manager.SauvegardeDonnees();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Erreur : image non importé", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    finally
+                    {
+                        Window.GetWindow(this).Close();
+                        
+                    }
+                    return;
                 }
-                Manager.SauvegardeDonnees();
-                return;
+                
 
             }
             else 
@@ -116,7 +136,7 @@ namespace Homepage.ucWindowAjout
                  var tmp =VisualTreeHelper.GetChild(this,i);
                  if(tmp is textblocajoutprogramme)
                  {
-                     (tmp as textblocajoutprogramme).Message = string.Empty;
+                     (tmp as textblocajoutprogramme).Valeur = 0;
                  }
              }*/
         }

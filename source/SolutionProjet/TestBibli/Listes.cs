@@ -159,7 +159,17 @@ namespace Application
         public void SupprimerProgramme(Programme programme)
         {
             if (ListProgrammes.Contains(programme))//Vérification que l'ObservableCollection contient le programmeChoisi
+            {
+                foreach(var kvp in listComptes)
+                {
+                    Utilisateur u = kvp.Value;
+                    if(u.DernierProgramme == programme)
+                    {
+                        u.DernierProgramme = null;
+                    }
+                }
                 ListProgrammes.Remove(programme);//Suppression du programme choisi de l'ObservableCollection
+            } 
             else
                 throw new Exception("Programme non trouvé "); //Exception si le programme n'est pas trouvé
             

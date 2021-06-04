@@ -26,8 +26,8 @@ namespace Homepage.ucWindowAjout
         private Navigator Nav => (App.Current as App).Navigator;
         private Listes List => (App.Current as App).LeManager.CurrentList;
         private bool isLoadedImage;
-        private string imagesPath = System.IO.Path.Combine(StringToImage.FilePath, "/imgprogramme/");
-        private string nomimage;
+        private string ImagesPath { get; set; } = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\..\\2bfit_bin/img//imgprogramme");
+        private string Nomimage { get; set; }
         public UCProgramme()
         {
             InitializeComponent();
@@ -48,12 +48,16 @@ namespace Homepage.ucWindowAjout
                 FileInfo fi = new FileInfo(dialog.FileName);
                 string file = fi.Name;
                 int i = 0;
-                while (File.Exists(System.IO.Path.Combine(imagesPath, file)))
+                while (!Directory.Exists(ImagesPath))
                 {
-                    file = $"{fi.Name.Remove(fi.Name.LastIndexOf('.'))}_{i}.{fi.Extension}";
+                    Directory.CreateDirectory(ImagesPath);
                 }
-                nomimage = file;
-                File.Copy(dialog.FileName, System.IO.Path.Combine(imagesPath, file));
+                while (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
+                {
+                    file = $"{file.Remove(file.LastIndexOf('.'))}_{i}.{fi.Extension}";
+                }
+                File.Copy(dialog.FileName, System.IO.Path.Combine(ImagesPath, file));
+                Nomimage = file;
                 isLoadedImage = true;
             }
             else
@@ -74,7 +78,7 @@ namespace Homepage.ucWindowAjout
             }
             else 
             {
-                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, System.IO.Path.Combine(imagesPath,nomimage));
+                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, System.IO.Path.Combine(ImagesPath,Nomimage));
                 if(Int32.TryParse(nbExos.Text, out int value)) 
                 {
                     List.NouveauProg.SetNbExercices(value);

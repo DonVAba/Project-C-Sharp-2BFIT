@@ -29,7 +29,7 @@ namespace Homepage
         {
             InitializeComponent();
             MainWindowContentControl.Content = InitUserControlProfil();
-            DataContext = this;
+            DataContext = List;
         }
 
         private void listBoxProg_SelectionChanged(object sender, SelectionChangedEventArgs e)
