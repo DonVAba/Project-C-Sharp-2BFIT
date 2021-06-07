@@ -8,81 +8,82 @@
       <DateNaissance>2003-01-30T00:00:00</DateNaissance>
       <Taille>187</Taille>
       <Poids>90</Poids>
-      <Mdp z:Id="7">mdpDeBamartel</Mdp>
-    </UtilisateurDTO>
-    <UtilisateurDTO z:Id="8">
-      <Identifiant z:Id="9">bamalea</Identifiant>
-      <Nom z:Id="10">Malea</Nom>
-      <Prenom z:Id="11">Bastien</Prenom>
-      <DateNaissance>2002-08-11T00:00:00</DateNaissance>
-      <Taille>188</Taille>
-      <Poids>90</Poids>
-      <Mdp z:Id="12">mdpDeBamalea</Mdp>
-    </UtilisateurDTO>
-    <UtilisateurDTO z:Id="13">
-      <Identifiant z:Id="14">admin</Identifiant>
-      <Nom z:Id="15">Bouhours</Nom>
-      <Prenom z:Id="16">Cedric</Prenom>
-      <DateNaissance>1985-10-01T00:00:00</DateNaissance>
-      <Taille>188</Taille>
-      <Poids>90</Poids>
-      <DernierProgramme z:Id="17">
-        <Nom z:Id="18">PUSH</Nom>
-        <Description z:Id="19">Programme qui fait travailler les pectoraux, triceps/biceps et les épaules</Description>
-        <CheminImage z:Id="20">/Image;Component/img/imgprogramme/progpush.jpg</CheminImage>
-        <LesExercices z:Id="21" z:Size="3">
-          <ExerciceDTO z:Id="22">
-            <Nom z:Id="23">Dips</Nom>
-            <CheminImage z:Id="24">/Image;Component/img/imgExercice/dips.png</CheminImage>
-            <ValeurDeb z:Id="25">
+      <DernierProgramme z:Id="7">
+        <Nom z:Id="8">123</Nom>
+        <Description z:Id="9">123</Description>
+        <CheminImage z:Id="10">/Image;Component/img/imgprogramme/progjambes.jpg</CheminImage>
+        <LesExercices z:Id="11" z:Size="4">
+          <ExerciceDTO z:Id="12">
+            <Nom z:Id="13">Squats</Nom>
+            <CheminImage z:Id="14">/Image;Component/img/imgExercice/exsquat.jpg</CheminImage>
+            <ValeurDeb z:Id="15">
+              <NbSeries>6</NbSeries>
+              <NbReps>4</NbReps>
+              <TpsRepos>80</TpsRepos>
+            </ValeurDeb>
+            <ValeurInter z:Id="16">
+              <NbSeries>9</NbSeries>
+              <NbReps>5</NbReps>
+              <TpsRepos>70</TpsRepos>
+            </ValeurInter>
+            <ValeurExpert z:Id="17">
+              <NbSeries>10</NbSeries>
+              <NbReps>5</NbReps>
+              <TpsRepos>60</TpsRepos>
+            </ValeurExpert>
+          </ExerciceDTO>
+          <ExerciceDTO z:Id="18">
+            <Nom z:Id="19">Hip Trust</Nom>
+            <CheminImage z:Id="20">/Image;Component/img/imgExercice/exhiptrust.jpg</CheminImage>
+            <ValeurDeb z:Id="21">
               <NbSeries>8</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>80</TpsRepos>
             </ValeurDeb>
-            <ValeurInter z:Id="26">
+            <ValeurInter z:Id="22">
               <NbSeries>10</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>70</TpsRepos>
             </ValeurInter>
-            <ValeurExpert z:Id="27">
+            <ValeurExpert z:Id="23">
               <NbSeries>12</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>60</TpsRepos>
             </ValeurExpert>
           </ExerciceDTO>
-          <ExerciceDTO z:Id="28">
-            <Nom z:Id="29">Pompes surelevees</Nom>
-            <CheminImage z:Id="30">/Image;Component/img/imgExercice/expompessur.jpg</CheminImage>
-            <ValeurDeb z:Id="31">
+          <ExerciceDTO z:Id="24">
+            <Nom z:Id="25">Fentes avant</Nom>
+            <CheminImage z:Id="26">/Image;Component/img/imgExercice/exfentesavant.jpg</CheminImage>
+            <ValeurDeb z:Id="27">
               <NbSeries>6</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>80</TpsRepos>
             </ValeurDeb>
-            <ValeurInter z:Id="32">
+            <ValeurInter z:Id="28">
               <NbSeries>9</NbSeries>
               <NbReps>5</NbReps>
               <TpsRepos>70</TpsRepos>
             </ValeurInter>
-            <ValeurExpert z:Id="33">
+            <ValeurExpert z:Id="29">
               <NbSeries>10</NbSeries>
               <NbReps>5</NbReps>
               <TpsRepos>60</TpsRepos>
             </ValeurExpert>
           </ExerciceDTO>
-          <ExerciceDTO z:Id="34">
-            <Nom z:Id="35">Gainage</Nom>
-            <CheminImage z:Id="36">/Image;Component/img/imgExercice/exgainage.jpg</CheminImage>
-            <ValeurDeb z:Id="37">
+          <ExerciceDTO z:Id="30">
+            <Nom z:Id="31">Alternative Squat</Nom>
+            <CheminImage z:Id="32">/Image;Component/img/imgExercice/exsquatcote.jpg</CheminImage>
+            <ValeurDeb z:Id="33">
               <NbSeries>8</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>80</TpsRepos>
             </ValeurDeb>
-            <ValeurInter z:Id="38">
+            <ValeurInter z:Id="34">
               <NbSeries>10</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>70</TpsRepos>
             </ValeurInter>
-            <ValeurExpert z:Id="39">
+            <ValeurExpert z:Id="35">
               <NbSeries>12</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>60</TpsRepos>
@@ -90,72 +91,90 @@
           </ExerciceDTO>
         </LesExercices>
       </DernierProgramme>
-      <Mdp z:Ref="14" i:nil="true" />
+      <Mdp z:Id="36">mdpDeBamartel</Mdp>
     </UtilisateurDTO>
-    <UtilisateurDTO z:Id="40">
-      <Identifiant z:Id="41">sidallet</Identifiant>
-      <Nom z:Id="42">Simon</Nom>
-      <Prenom z:Id="43">Dallet</Prenom>
+    <UtilisateurDTO z:Id="37">
+      <Identifiant z:Id="38">bamalea</Identifiant>
+      <Nom z:Id="39">Malea</Nom>
+      <Prenom z:Id="40">Bastien</Prenom>
+      <DateNaissance>2002-08-11T00:00:00</DateNaissance>
+      <Taille>188</Taille>
+      <Poids>90</Poids>
+      <Mdp z:Id="41">mdpDeBamalea</Mdp>
+    </UtilisateurDTO>
+    <UtilisateurDTO z:Id="42">
+      <Identifiant z:Id="43">admin</Identifiant>
+      <Nom z:Id="44">Bouhours</Nom>
+      <Prenom z:Id="45">Cedric</Prenom>
+      <DateNaissance>1985-10-01T00:00:00</DateNaissance>
+      <Taille>189</Taille>
+      <Poids>90</Poids>
+      <Mdp z:Ref="43" i:nil="true" />
+    </UtilisateurDTO>
+    <UtilisateurDTO z:Id="46">
+      <Identifiant z:Id="47">sidallet</Identifiant>
+      <Nom z:Id="48">Simon</Nom>
+      <Prenom z:Id="49">Dallet</Prenom>
       <DateNaissance>2002-06-15T00:00:00</DateNaissance>
       <Taille>175</Taille>
       <Poids>78</Poids>
-      <DernierProgramme z:Id="44">
-        <Nom z:Id="45">PULL</Nom>
-        <Description z:Id="46">Programme qui fait travailler le dos et les biceps</Description>
-        <CheminImage z:Id="47">/Image;Component/img/imgprogramme/progpull.jpg</CheminImage>
-        <LesExercices z:Id="48" z:Size="3">
-          <ExerciceDTO z:Id="49">
-            <Nom z:Id="50">Superman</Nom>
-            <CheminImage z:Id="51">/Image;Component/img/imgExercice/exsuperman.jpg</CheminImage>
-            <ValeurDeb z:Id="52">
-              <NbSeries>8</NbSeries>
-              <NbReps>4</NbReps>
-              <TpsRepos>80</TpsRepos>
-            </ValeurDeb>
-            <ValeurInter z:Id="53">
-              <NbSeries>10</NbSeries>
-              <NbReps>4</NbReps>
-              <TpsRepos>70</TpsRepos>
-            </ValeurInter>
-            <ValeurExpert z:Id="54">
-              <NbSeries>12</NbSeries>
-              <NbReps>4</NbReps>
-              <TpsRepos>60</TpsRepos>
-            </ValeurExpert>
-          </ExerciceDTO>
+      <DernierProgramme z:Id="50">
+        <Nom z:Id="51">PULL</Nom>
+        <Description z:Id="52">Programme qui fait travailler le dos et les biceps</Description>
+        <CheminImage z:Id="53">/Image;Component/img/imgprogramme/progpull.jpg</CheminImage>
+        <LesExercices z:Id="54" z:Size="3">
           <ExerciceDTO z:Id="55">
-            <Nom z:Id="56">Variante Superman</Nom>
-            <CheminImage z:Id="57">/Image;Component/img/imgExercice/exsuperman2.jpg</CheminImage>
+            <Nom z:Id="56">Superman</Nom>
+            <CheminImage z:Id="57">/Image;Component/img/imgExercice/exsuperman.jpg</CheminImage>
             <ValeurDeb z:Id="58">
-              <NbSeries>6</NbSeries>
+              <NbSeries>8</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>80</TpsRepos>
             </ValeurDeb>
             <ValeurInter z:Id="59">
+              <NbSeries>10</NbSeries>
+              <NbReps>4</NbReps>
+              <TpsRepos>70</TpsRepos>
+            </ValeurInter>
+            <ValeurExpert z:Id="60">
+              <NbSeries>12</NbSeries>
+              <NbReps>4</NbReps>
+              <TpsRepos>60</TpsRepos>
+            </ValeurExpert>
+          </ExerciceDTO>
+          <ExerciceDTO z:Id="61">
+            <Nom z:Id="62">Variante Superman</Nom>
+            <CheminImage z:Id="63">/Image;Component/img/imgExercice/exsuperman2.jpg</CheminImage>
+            <ValeurDeb z:Id="64">
+              <NbSeries>6</NbSeries>
+              <NbReps>4</NbReps>
+              <TpsRepos>80</TpsRepos>
+            </ValeurDeb>
+            <ValeurInter z:Id="65">
               <NbSeries>9</NbSeries>
               <NbReps>5</NbReps>
               <TpsRepos>70</TpsRepos>
             </ValeurInter>
-            <ValeurExpert z:Id="60">
+            <ValeurExpert z:Id="66">
               <NbSeries>10</NbSeries>
               <NbReps>5</NbReps>
               <TpsRepos>60</TpsRepos>
             </ValeurExpert>
           </ExerciceDTO>
-          <ExerciceDTO z:Id="61">
-            <Nom z:Id="62">Rowing</Nom>
-            <CheminImage z:Id="63">/Image;Component/img/imgExercice/extractionaustra.jpg</CheminImage>
-            <ValeurDeb z:Id="64">
+          <ExerciceDTO z:Id="67">
+            <Nom z:Id="68">Rowing</Nom>
+            <CheminImage z:Id="69">/Image;Component/img/imgExercice/extractionaustra.jpg</CheminImage>
+            <ValeurDeb z:Id="70">
               <NbSeries>8</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>80</TpsRepos>
             </ValeurDeb>
-            <ValeurInter z:Id="65">
+            <ValeurInter z:Id="71">
               <NbSeries>10</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>70</TpsRepos>
             </ValeurInter>
-            <ValeurExpert z:Id="66">
+            <ValeurExpert z:Id="72">
               <NbSeries>12</NbSeries>
               <NbReps>4</NbReps>
               <TpsRepos>60</TpsRepos>
@@ -163,82 +182,56 @@
           </ExerciceDTO>
         </LesExercices>
       </DernierProgramme>
-      <Mdp z:Id="67">mdpDeSidallet</Mdp>
+      <Mdp z:Id="73">mdpDeSidallet</Mdp>
     </UtilisateurDTO>
   </ListComptes>
-  <ListProgrammes z:Id="68" z:Size="3">
-    <ProgrammeDTO z:Id="69">
-      <Nom z:Ref="45" i:nil="true" />
-      <Description z:Ref="46" i:nil="true" />
-      <CheminImage z:Ref="47" i:nil="true" />
-      <LesExercices z:Id="70" z:Size="3">
-        <ExerciceDTO z:Id="71">
-          <Nom z:Ref="50" i:nil="true" />
-          <CheminImage z:Ref="51" i:nil="true" />
-          <ValeurDeb z:Id="72">
+  <ListProgrammes z:Id="74" z:Size="3">
+    <ProgrammeDTO z:Id="75">
+      <Nom z:Ref="51" i:nil="true" />
+      <Description z:Ref="52" i:nil="true" />
+      <CheminImage z:Ref="53" i:nil="true" />
+      <LesExercices z:Id="76" z:Size="3">
+        <ExerciceDTO z:Id="77">
+          <Nom z:Ref="56" i:nil="true" />
+          <CheminImage z:Ref="57" i:nil="true" />
+          <ValeurDeb z:Id="78">
             <NbSeries>8</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>80</TpsRepos>
           </ValeurDeb>
-          <ValeurInter z:Id="73">
+          <ValeurInter z:Id="79">
             <NbSeries>10</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>70</TpsRepos>
           </ValeurInter>
-          <ValeurExpert z:Id="74">
+          <ValeurExpert z:Id="80">
             <NbSeries>12</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>60</TpsRepos>
           </ValeurExpert>
         </ExerciceDTO>
-        <ExerciceDTO z:Id="75">
-          <Nom z:Ref="56" i:nil="true" />
-          <CheminImage z:Ref="57" i:nil="true" />
-          <ValeurDeb z:Id="76">
+        <ExerciceDTO z:Id="81">
+          <Nom z:Ref="62" i:nil="true" />
+          <CheminImage z:Ref="63" i:nil="true" />
+          <ValeurDeb z:Id="82">
             <NbSeries>6</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>80</TpsRepos>
           </ValeurDeb>
-          <ValeurInter z:Id="77">
+          <ValeurInter z:Id="83">
             <NbSeries>9</NbSeries>
             <NbReps>5</NbReps>
             <TpsRepos>70</TpsRepos>
           </ValeurInter>
-          <ValeurExpert z:Id="78">
+          <ValeurExpert z:Id="84">
             <NbSeries>10</NbSeries>
             <NbReps>5</NbReps>
             <TpsRepos>60</TpsRepos>
           </ValeurExpert>
         </ExerciceDTO>
-        <ExerciceDTO z:Id="79">
-          <Nom z:Ref="62" i:nil="true" />
-          <CheminImage z:Ref="63" i:nil="true" />
-          <ValeurDeb z:Id="80">
-            <NbSeries>8</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>80</TpsRepos>
-          </ValeurDeb>
-          <ValeurInter z:Id="81">
-            <NbSeries>10</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>70</TpsRepos>
-          </ValeurInter>
-          <ValeurExpert z:Id="82">
-            <NbSeries>12</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>60</TpsRepos>
-          </ValeurExpert>
-        </ExerciceDTO>
-      </LesExercices>
-    </ProgrammeDTO>
-    <ProgrammeDTO z:Id="83">
-      <Nom z:Ref="18" i:nil="true" />
-      <Description z:Ref="19" i:nil="true" />
-      <CheminImage z:Ref="20" i:nil="true" />
-      <LesExercices z:Id="84" z:Size="3">
         <ExerciceDTO z:Id="85">
-          <Nom z:Ref="23" i:nil="true" />
-          <CheminImage z:Ref="24" i:nil="true" />
+          <Nom z:Ref="68" i:nil="true" />
+          <CheminImage z:Ref="69" i:nil="true" />
           <ValeurDeb z:Id="86">
             <NbSeries>8</NbSeries>
             <NbReps>4</NbReps>
@@ -255,39 +248,65 @@
             <TpsRepos>60</TpsRepos>
           </ValeurExpert>
         </ExerciceDTO>
-        <ExerciceDTO z:Id="89">
-          <Nom z:Ref="29" i:nil="true" />
-          <CheminImage z:Ref="30" i:nil="true" />
-          <ValeurDeb z:Id="90">
+      </LesExercices>
+    </ProgrammeDTO>
+    <ProgrammeDTO z:Id="89">
+      <Nom z:Id="90">PUSH</Nom>
+      <Description z:Id="91">Programme qui fait travailler les pectoraux, triceps/biceps et les épaules</Description>
+      <CheminImage z:Id="92">/Image;Component/img/imgprogramme/progpush.jpg</CheminImage>
+      <LesExercices z:Id="93" z:Size="3">
+        <ExerciceDTO z:Id="94">
+          <Nom z:Id="95">Dips</Nom>
+          <CheminImage z:Id="96">/Image;Component/img/imgExercice/dips.png</CheminImage>
+          <ValeurDeb z:Id="97">
+            <NbSeries>8</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="98">
+            <NbSeries>10</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="99">
+            <NbSeries>12</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+        <ExerciceDTO z:Id="100">
+          <Nom z:Id="101">Pompes surelevees</Nom>
+          <CheminImage z:Id="102">/Image;Component/img/imgExercice/expompessur.jpg</CheminImage>
+          <ValeurDeb z:Id="103">
             <NbSeries>6</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>80</TpsRepos>
           </ValeurDeb>
-          <ValeurInter z:Id="91">
+          <ValeurInter z:Id="104">
             <NbSeries>9</NbSeries>
             <NbReps>5</NbReps>
             <TpsRepos>70</TpsRepos>
           </ValeurInter>
-          <ValeurExpert z:Id="92">
+          <ValeurExpert z:Id="105">
             <NbSeries>10</NbSeries>
             <NbReps>5</NbReps>
             <TpsRepos>60</TpsRepos>
           </ValeurExpert>
         </ExerciceDTO>
-        <ExerciceDTO z:Id="93">
-          <Nom z:Ref="35" i:nil="true" />
-          <CheminImage z:Ref="36" i:nil="true" />
-          <ValeurDeb z:Id="94">
+        <ExerciceDTO z:Id="106">
+          <Nom z:Id="107">Gainage</Nom>
+          <CheminImage z:Id="108">/Image;Component/img/imgExercice/exgainage.jpg</CheminImage>
+          <ValeurDeb z:Id="109">
             <NbSeries>8</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>80</TpsRepos>
           </ValeurDeb>
-          <ValeurInter z:Id="95">
+          <ValeurInter z:Id="110">
             <NbSeries>10</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>70</TpsRepos>
           </ValeurInter>
-          <ValeurExpert z:Id="96">
+          <ValeurExpert z:Id="111">
             <NbSeries>12</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>60</TpsRepos>
@@ -295,52 +314,14 @@
         </ExerciceDTO>
       </LesExercices>
     </ProgrammeDTO>
-    <ProgrammeDTO z:Id="97">
-      <Nom z:Id="98">123</Nom>
-      <Description z:Id="99">123</Description>
-      <CheminImage z:Id="100">/Image;Component/img/imgprogramme/progjambes.jpg</CheminImage>
-      <LesExercices z:Id="101" z:Size="4">
-        <ExerciceDTO z:Id="102">
-          <Nom z:Id="103">Squats</Nom>
-          <CheminImage z:Id="104">/Image;Component/img/imgExercice/exsquat.jpg</CheminImage>
-          <ValeurDeb z:Id="105">
-            <NbSeries>6</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>80</TpsRepos>
-          </ValeurDeb>
-          <ValeurInter z:Id="106">
-            <NbSeries>9</NbSeries>
-            <NbReps>5</NbReps>
-            <TpsRepos>70</TpsRepos>
-          </ValeurInter>
-          <ValeurExpert z:Id="107">
-            <NbSeries>10</NbSeries>
-            <NbReps>5</NbReps>
-            <TpsRepos>60</TpsRepos>
-          </ValeurExpert>
-        </ExerciceDTO>
-        <ExerciceDTO z:Id="108">
-          <Nom z:Id="109">Hip Trust</Nom>
-          <CheminImage z:Id="110">/Image;Component/img/imgExercice/exhiptrust.jpg</CheminImage>
-          <ValeurDeb z:Id="111">
-            <NbSeries>8</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>80</TpsRepos>
-          </ValeurDeb>
-          <ValeurInter z:Id="112">
-            <NbSeries>10</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>70</TpsRepos>
-          </ValeurInter>
-          <ValeurExpert z:Id="113">
-            <NbSeries>12</NbSeries>
-            <NbReps>4</NbReps>
-            <TpsRepos>60</TpsRepos>
-          </ValeurExpert>
-        </ExerciceDTO>
-        <ExerciceDTO z:Id="114">
-          <Nom z:Id="115">Fentes avant</Nom>
-          <CheminImage z:Id="116">/Image;Component/img/imgExercice/exfentesavant.jpg</CheminImage>
+    <ProgrammeDTO z:Id="112">
+      <Nom z:Id="113">JAMBES</Nom>
+      <Description z:Id="114">Programme destiné au travail des quadriceps et des ischios</Description>
+      <CheminImage z:Ref="10" i:nil="true" />
+      <LesExercices z:Id="115" z:Size="4">
+        <ExerciceDTO z:Id="116">
+          <Nom z:Ref="13" i:nil="true" />
+          <CheminImage z:Ref="14" i:nil="true" />
           <ValeurDeb z:Id="117">
             <NbSeries>6</NbSeries>
             <NbReps>4</NbReps>
@@ -358,19 +339,57 @@
           </ValeurExpert>
         </ExerciceDTO>
         <ExerciceDTO z:Id="120">
-          <Nom z:Id="121">Alternative Squat</Nom>
-          <CheminImage z:Id="122">/Image;Component/img/imgExercice/exsquatcote.jpg</CheminImage>
-          <ValeurDeb z:Id="123">
+          <Nom z:Ref="19" i:nil="true" />
+          <CheminImage z:Ref="20" i:nil="true" />
+          <ValeurDeb z:Id="121">
             <NbSeries>8</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>80</TpsRepos>
           </ValeurDeb>
-          <ValeurInter z:Id="124">
+          <ValeurInter z:Id="122">
             <NbSeries>10</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>70</TpsRepos>
           </ValeurInter>
-          <ValeurExpert z:Id="125">
+          <ValeurExpert z:Id="123">
+            <NbSeries>12</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+        <ExerciceDTO z:Id="124">
+          <Nom z:Ref="25" i:nil="true" />
+          <CheminImage z:Ref="26" i:nil="true" />
+          <ValeurDeb z:Id="125">
+            <NbSeries>6</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="126">
+            <NbSeries>9</NbSeries>
+            <NbReps>5</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="127">
+            <NbSeries>10</NbSeries>
+            <NbReps>5</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+        <ExerciceDTO z:Id="128">
+          <Nom z:Ref="31" i:nil="true" />
+          <CheminImage z:Ref="32" i:nil="true" />
+          <ValeurDeb z:Id="129">
+            <NbSeries>8</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="130">
+            <NbSeries>10</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="131">
             <NbSeries>12</NbSeries>
             <NbReps>4</NbReps>
             <TpsRepos>60</TpsRepos>

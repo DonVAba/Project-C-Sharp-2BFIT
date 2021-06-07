@@ -40,9 +40,10 @@ namespace Homepage.ucadmin
         /// <param name="e"></param>
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            if (List.ProgrammeChoisi.LesExercices.Count == 0)//Vérification que le programme Choisi n'est pas 0 exercice 
+            if (List.ProgrammeChoisi.LesExercices.Count == 0)//Vérification que le programme Choisi n'ai pas 0 exercice 
             {
                 MessageBox.Show("Programme sans exercices !", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error); //Affichage d'une messageBox pour l'utilisateur 
+                return; 
             }
             string diff = ""; //Instancie une variable diff de type string (diff= difficulté)
             int index = LevelComboBox.SelectedIndex; // Instancie une variable index selon l'item Selectionné dans la comboBox 

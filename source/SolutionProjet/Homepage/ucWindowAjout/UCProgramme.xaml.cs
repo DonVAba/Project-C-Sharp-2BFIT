@@ -26,15 +26,14 @@ namespace Homepage.ucWindowAjout
         private Navigator Nav => (App.Current as App).Navigator;
         private Listes List => (App.Current as App).LeManager.CurrentList;
         private bool isLoadedImage;
-        private string ImagesPath { get; set; } = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\..\\2bfit_bin/img//imgprogramme");
-        private string Nomimage { get; set; }
+        private string ImagesPath { get; set; }
         public UCProgramme()
         {
             InitializeComponent();
             DataContext = List;
         }
 
-        private void ImportImageButton_Click(object sender, RoutedEventArgs e) // A Modifier
+        private void ImportImageButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.InitialDirectory = @"C:\Users\Public\Pictures";
@@ -44,20 +43,7 @@ namespace Homepage.ucWindowAjout
             bool? result = dialog.ShowDialog();
             if (result == true)
             {
-
-                FileInfo fi = new FileInfo(dialog.FileName);
-                string file = fi.Name;
-                int i = 0;
-                if (!Directory.Exists(ImagesPath))
-                {
-                    Directory.CreateDirectory(ImagesPath);
-                }
-                if (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
-                {
-                    file = $"{file.Remove(file.LastIndexOf('.'))}_{i}.{fi.Extension}";
-                }
-                File.Copy(dialog.FileName, System.IO.Path.Combine(ImagesPath, file));
-                Nomimage = file;
+                ImagesPath = dialog.FileName;
                 isLoadedImage = true;
             }
             else
@@ -74,6 +60,7 @@ namespace Homepage.ucWindowAjout
             if (!isLoadedImage)
             {
                 MessageBox.Show("Erreur : image pas chargée", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
             if (string.IsNullOrWhiteSpace(nomProg.Text) || string.IsNullOrWhiteSpace(descProg.Text) || string.IsNullOrWhiteSpace(nbExos.Text))
             {
@@ -81,11 +68,19 @@ namespace Homepage.ucWindowAjout
             }
             else 
             {
-                List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, System.IO.Path.Combine(ImagesPath,Nomimage));//Set du nouveau programme avec les données rentrées  
                 if(Int32.TryParse(nbExos.Text, out int value)) 
                 {
-                    List.NouveauProg.SetNbExercices(value);
-                    Nav.NavigateTo("UC_AjoutExercice");//Navigation vers l'UC 
+                    if(value <= 0)
+                    {
+                        MessageBox.Show("Mauvaises nombres d'exercices, veuillez réessayer", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        List.NouveauProg = new Programme(nomProg.Text.ToUpper(), descProg.Text, ImagesPath);//Set du nouveau programme avec les données rentrées  
+                        List.NouveauProg.SetNbExercices(value);
+                        Nav.NavigateTo("UC_AjoutExercice");//Navigation vers l'UC 
+                    }
+                    
                 }
                 else
                     MessageBox.Show("Nombre d'exercice rentrés incorrect", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);

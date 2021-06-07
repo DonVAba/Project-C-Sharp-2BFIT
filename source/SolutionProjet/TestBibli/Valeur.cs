@@ -19,10 +19,12 @@ namespace Application
             }
             set
             {
-                if (value>0)
+                if (value > 0)
                 {
                     nbSeries = value;
                 }
+                else
+                    throw new Exception("Erreur : valeur incorrecte");
             }
         }
 
@@ -42,6 +44,8 @@ namespace Application
                 {
                     nbReps = value;
                 }
+                else
+                    throw new Exception("Erreur : valeur incorrecte");
             }
         }
 
@@ -61,6 +65,8 @@ namespace Application
                 {
                     tpsRepos = value;
                 }
+                else
+                    throw new Exception("Erreur : valeur incorrecte");
             }
         }
 

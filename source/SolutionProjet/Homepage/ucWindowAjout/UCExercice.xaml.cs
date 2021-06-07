@@ -26,12 +26,9 @@ namespace Homepage.ucWindowAjout
         private Listes List => (App.Current as App).LeManager.CurrentList;
         private Manager Manager => (App.Current as App).LeManager;
 
-        private int i = 0;
+        private static int i = 0;
         private bool isLoadedImage;
-
-
-        private string ImagesPath { get; set; }  = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\..\\..\\2bfit_bin/img//imgExercice");
-        private string Nomimage { get; set; }
+        private string ImagesPath { get; set; }
         public UCExercice()
         {
             InitializeComponent();
@@ -49,22 +46,8 @@ namespace Homepage.ucWindowAjout
 
             if (result == true)
             {
-                FileInfo fi = new FileInfo(dialog.FileName);
-                string file = fi.Name;
-                int index = 0;
-                while(!Directory.Exists(ImagesPath))
-                {
-                    Directory.CreateDirectory(ImagesPath);
-                }
-                while (File.Exists(System.IO.Path.Combine(ImagesPath, file)))
-                {
-                    file = $"{file.Remove(file.LastIndexOf('.'))}_{index}.{fi.Extension}";
-                    index++;
-                }
-                File.Copy(dialog.FileName, System.IO.Path.Combine(ImagesPath, file));
-                Nomimage = file;
+                ImagesPath = dialog.FileName;
                 isLoadedImage = true;
-                
             }
             else
                 isLoadedImage = false;
@@ -75,6 +58,25 @@ namespace Homepage.ucWindowAjout
             if (!isLoadedImage)
             {
                 MessageBox.Show("Erreur : image non importé","Erreur", MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+
+            if (i != List.NouveauProg.GetNbExercices())
+            {
+                try
+                {
+                    List.NouveauProg.LesExercices.Add(
+                        new Exercice(nomNewExo.Text, ImagesPath,
+                        new Valeur(seriesdeb.Valeur, repdeb.Valeur, tpsreposdeb.Valeur),
+                        new Valeur(seriesint.Valeur, repint.Valeur, tpsreposint.Valeur),
+                        new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur)));
+                    i++;
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erreur : valeurs incorrectes", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
             if (i == List.NouveauProg.GetNbExercices())
@@ -89,7 +91,7 @@ namespace Homepage.ucWindowAjout
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Erreur : image non importé", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Erreur : Programme non valide", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     finally
                     {
@@ -97,26 +99,8 @@ namespace Homepage.ucWindowAjout
                     }
                 }
             }
-            else 
-            {
-                try
-                {
-                    List.NouveauProg.LesExercices.Add(
-                        new Exercice(nomNewExo.Text, System.IO.Path.Combine(ImagesPath, Nomimage),
-                        new Valeur(seriesdeb.Valeur, repdeb.Valeur, tpsreposdeb.Valeur),
-                        new Valeur(seriesint.Valeur, repint.Valeur, tpsreposint.Valeur),
-                        new Valeur(seriesexp.Valeur, repexp.Valeur, tpsreposexp.Valeur))); 
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Erreur : image non importé", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                
-            }
-            
-            i++;
-            ResetTextBox();
 
+            ResetTextBox();
 
         }
 
