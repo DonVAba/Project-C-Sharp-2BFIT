@@ -162,7 +162,84 @@
       <Nom z:Id="65">JAMBES</Nom>
       <Description z:Id="66">Programme qui fait travailler les quadriceps et ischios</Description>
       <CheminImage z:Id="67">/Image;Component/img/imgprogramme/progjambes.jpg</CheminImage>
-      <LesExercices z:Id="68" z:Size="0" />
+      <LesExercices z:Id="68" z:Size="4">
+        <ExerciceDTO z:Id="69">
+          <Nom z:Id="70">Squats</Nom>
+          <CheminImage z:Id="71">/Image;Component/img/imgExercice/exsquat.jpg</CheminImage>
+          <ValeurDeb z:Id="72">
+            <NbSeries>6</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="73">
+            <NbSeries>9</NbSeries>
+            <NbReps>5</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="74">
+            <NbSeries>10</NbSeries>
+            <NbReps>5</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+        <ExerciceDTO z:Id="75">
+          <Nom z:Id="76">Hip Trust</Nom>
+          <CheminImage z:Id="77">/Image;Component/img/imgExercice/exhiptrust.jpg</CheminImage>
+          <ValeurDeb z:Id="78">
+            <NbSeries>8</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="79">
+            <NbSeries>10</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="80">
+            <NbSeries>12</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+        <ExerciceDTO z:Id="81">
+          <Nom z:Id="82">Fentes avant</Nom>
+          <CheminImage z:Id="83">/Image;Component/img/imgExercice/exfentesavant.jpg</CheminImage>
+          <ValeurDeb z:Id="84">
+            <NbSeries>6</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="85">
+            <NbSeries>9</NbSeries>
+            <NbReps>5</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="86">
+            <NbSeries>10</NbSeries>
+            <NbReps>5</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+        <ExerciceDTO z:Id="87">
+          <Nom z:Id="88">Alternative Squat</Nom>
+          <CheminImage z:Id="89">/Image;Component/img/imgExercice/exsquatcote.jpg</CheminImage>
+          <ValeurDeb z:Id="90">
+            <NbSeries>8</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>80</TpsRepos>
+          </ValeurDeb>
+          <ValeurInter z:Id="91">
+            <NbSeries>10</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>70</TpsRepos>
+          </ValeurInter>
+          <ValeurExpert z:Id="92">
+            <NbSeries>12</NbSeries>
+            <NbReps>4</NbReps>
+            <TpsRepos>60</TpsRepos>
+          </ValeurExpert>
+        </ExerciceDTO>
+      </LesExercices>
     </ProgrammeDTO>
   </ListProgrammes>
 </ListesDTO>

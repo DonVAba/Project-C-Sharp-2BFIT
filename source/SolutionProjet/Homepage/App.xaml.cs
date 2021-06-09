@@ -23,8 +23,11 @@ namespace Homepage
 
         public App()
         {
-            LeManager.Persistance = new DataContract();
+            LeManager.Persistance = new StubData("");
+            
             LeManager.ChargeDonnees();
+            LeManager.Persistance = new DataContract();
+            LeManager.SauvegardeDonnees();
             Navigator = Navigator.GetInstance();
 
         }  

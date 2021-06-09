@@ -153,7 +153,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Methode pour suppr un programme en parcourant toute la liste de programme 
+        /// Methode pour supprimer un programme en parcourant toute la liste de programme 
         /// </summary>
         /// <param name="programme"></param>
         public void SupprimerProgramme(Programme programme)
@@ -163,7 +163,7 @@ namespace Application
                 foreach(var kvp in listComptes)
                 {
                     Utilisateur u = kvp.Value;
-                    if(u.DernierProgramme == programme)
+                    if(u.DernierProgramme == programme)//Si le dernier programme de l'utilisateur est le programme souhaitant être supprimé on passe dernierprogramme a null.
                     {
                         u.DernierProgramme = null;
                     }
