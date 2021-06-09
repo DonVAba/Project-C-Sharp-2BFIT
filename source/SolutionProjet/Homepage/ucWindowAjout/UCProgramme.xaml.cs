@@ -33,6 +33,11 @@ namespace Homepage.ucWindowAjout
             DataContext = List;
         }
 
+        /// <summary>
+        /// Méthode permattant de définir le cheminImage d'un programme via un FileDialog
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ImportImageButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();

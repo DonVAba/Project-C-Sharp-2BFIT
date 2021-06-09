@@ -59,20 +59,22 @@ namespace Application
             return $"Nom : {Nom} ;\nDebutant : {ValeurDeb}\nIntermédiaire : {ValeurInter}\n Expert : {ValeurExpert} ";
         }
 
+
+        /// <summary>
+        /// Méthode de comparaison d'un exercice, le seul facteur d'égalité étant le Nom
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
         public bool Equals(Exercice ex)
         {
             return Nom.Equals(ex.Nom);
         }
 
-        public override bool Equals(object other)
-        {
-            if (!(other is Exercice))
-            {
-                return false;
-            }
-            return Equals(other as Exercice);
-        }
 
+        /// <summary>
+        /// Méthode renvoyant un HashCode d'un exercice, la seule variable prise en comtpe étant le Nom
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return Nom.GetHashCode();

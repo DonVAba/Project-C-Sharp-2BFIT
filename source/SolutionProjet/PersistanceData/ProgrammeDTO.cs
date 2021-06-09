@@ -10,6 +10,8 @@ using Application;
 namespace PersistanceData
 {
     [DataContract]
+
+    /// Classe sérialisable et miroir de la classe programme
     public class ProgrammeDTO
     {
         [DataMember(EmitDefaultValue = false, Order = 0)]
@@ -28,8 +30,17 @@ namespace PersistanceData
 
     }
 
+    /// <summary>
+    /// Classe d'extension contenant les méthodes permettant de passer un objet DTO en POCO et inversement
+    /// </summary>
     public static class ProgrammeExtensions
     {
+
+        /// <summary>
+        /// Transforme un ProgrammeDTO en ProgrammePOCO  pour la désérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static Programme ToPOCO(this ProgrammeDTO dto)
         {
             if(dto != null)
@@ -45,6 +56,11 @@ namespace PersistanceData
             return null;
         }
 
+        /// <summary>
+        /// Transforme une collection de ProgrammeDTO en collection de ProgrammePOCO  pour la désérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static ObservableCollection<Programme> ToPOCOs(this ObservableCollection<ProgrammeDTO> dtos)
         {
             ObservableCollection<Programme> pocos = new ObservableCollection<Programme>();
@@ -55,6 +71,12 @@ namespace PersistanceData
             return pocos;
         }
 
+
+        /// <summary>
+        /// Transforme un ProgrammePOCO en ProgrammeDTO pour la sérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static ProgrammeDTO ToDTO(this Programme poco)
         {
             if(poco != null)
@@ -70,8 +92,12 @@ namespace PersistanceData
             return null;
            
         }
-            
 
+        /// <summary>
+        /// Transforme une collection de ProgrammePOCO en collection de ProgrammeDTO pour la désérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static ObservableCollection<ProgrammeDTO> ToDTOs(this ObservableCollection<Programme> pocos)
         {
             ObservableCollection<ProgrammeDTO> dtos = new ObservableCollection<ProgrammeDTO>();

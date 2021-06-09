@@ -7,6 +7,8 @@ using Application;
 namespace PersistanceData
 {
     [DataContract]
+
+    // Classe sérialisable et miroir de la classe Valeur
     public class ValeurDTO
     {
         [DataMember(EmitDefaultValue = false, Order = 0)]
@@ -18,7 +20,11 @@ namespace PersistanceData
         [DataMember(EmitDefaultValue = false, Order = 2)]
         public int TpsRepos { get; set; }
     }
-        public static class ValeurExtensions
+
+    /// <summary>
+    /// Classe d'extension contenant les méthodes permettant de passer un objet DTO en POCO et inversement
+    /// </summary>
+    public static class ValeurExtensions
         {
             public static Valeur ToPOCO(this ValeurDTO dto)
             {

@@ -27,6 +27,12 @@ namespace PersistanceData
                                                  {
                                                      PreserveObjectReferences = true
                                                  });
+
+
+    /// <summary>
+    /// méthode chargant une ListeDTO et renvoyant une ListePOCO
+    /// </summary>
+    /// <returns></returns>
         public Listes ChargeDonnees()
         {
             if (!File.Exists(PersFile))
@@ -42,6 +48,10 @@ namespace PersistanceData
             
         }
 
+        /// <summary>
+        /// méthode recevant une ListePOCO et sauvegardant une ListeDTO
+        /// </summary>
+        /// <returns></returns>
         public void SauvegardeDonnees(Listes list)
         {
             if (!Directory.Exists(FilePath))

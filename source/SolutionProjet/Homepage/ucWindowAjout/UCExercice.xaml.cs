@@ -90,10 +90,10 @@ namespace Homepage.ucWindowAjout
 
             if (i == List.NouveauProg.NbExercices)// Lorsque i est égale au nombre d'exercice, on ajoute le programme a la liste dans Manager
             {
-                i = 0;
-                if (List.ProgrammeChoisi != List.NouveauProg)
+                i = 0; // reset de la valeur de i
+                if (List.ProgrammeChoisi != List.NouveauProg) // Pour diffénrecier l'ajout d'exercice quand on ajout un nouveau programme de l'ajout d'exercice simple sur un programme
                 {
-                    try
+                    try // ajout du programme et sauvegarde des données
                     {
                         Manager.AjouterProgramme(List.NouveauProg);
                         Manager.SauvegardeDonnees();
@@ -108,8 +108,8 @@ namespace Homepage.ucWindowAjout
                     }
                 }
             }
-
-            ResetTextBox();
+                                                
+            ResetTextBox(); // Remise à zéro des text box v
 
         }
         /// <summary>
@@ -128,9 +128,5 @@ namespace Homepage.ucWindowAjout
             tpsreposexp.Valeur = 0;
         }
         
-        private void FermerFenetre_Click(object sender, RoutedEventArgs e)
-        {
-            Window.GetWindow(this).Close();
-        }
     }
 }

@@ -8,6 +8,8 @@ using Application;
 namespace PersistanceData
 {
     [DataContract]
+
+    // Classe sérialisable et miroir de la classe Utilisateur
     public class UtilisateurDTO
     {
 
@@ -39,8 +41,17 @@ namespace PersistanceData
         public Difficulte DiffDernierProg { get; set; }
     }
 
+    /// <summary>
+    /// Classe d'extension contenant les méthodes permettant de passer un objet DTO en POCO et inversement
+    /// </summary>
     public static class UtilisateurExtensions
     {
+
+        /// <summary>
+        /// Transforme un UtilisateurDTO en UtilisateurPOCO pour la désérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static Utilisateur ToPOCO(this UtilisateurDTO dto)
         {
             var user = new Utilisateur(dto.Nom,dto.Prenom,dto.DateNaissance,dto.Taille,dto.Poids,dto.Identifiant,dto.Mdp);
@@ -49,9 +60,20 @@ namespace PersistanceData
             return user;
         }
 
+        /// <summary>
+        /// Transforme une list d'UtilisateurDTO en list d'UtilisateurPOCO pour la désérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static List<Utilisateur> ToPOCOs(this List<UtilisateurDTO> dtos)
             => dtos.Select(user => user.ToPOCO()).ToList();
 
+
+        /// <summary>
+        /// Transforme un UtilisateurPOCO en UtilisateurDTO pour la sérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static UtilisateurDTO ToDTO(this Utilisateur poco)
             => new UtilisateurDTO
             {
@@ -66,6 +88,11 @@ namespace PersistanceData
                 DiffDernierProg = poco.DiffDernierProg
             };
 
+        /// <summary>
+        /// Transforme une list d'UtilisateurPOCO en list d'UtilisateurDTO pour la sérialisation
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static List<UtilisateurDTO> ToDTOs(this List<Utilisateur> pocos)
             => pocos.Select(user => user.ToDTO()).ToList();
     }

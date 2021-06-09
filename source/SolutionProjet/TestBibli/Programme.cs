@@ -38,17 +38,22 @@ namespace Application
         {
             get => nbExercices;
             set 
-            {
-                nbExercices = LesExercices.Count();
+            { 
+                nbExercices = LesExercices.Count(); // par défaut, le nombre d'exercice est le nombre d'élémments présent dans la liste
             }
             
         }
 
-        public void SetNbExercices()
+        public void SetNbExercices() 
         {
             nbExercices = LesExercices.Count();
         }
 
+        /// <summary>
+        /// Permet de définir le nobre d'exercice avec une valeur passé en paramètres
+        /// Est utilie pour l'ajout d'un programme
+        /// </summary>
+        /// <param name="value"></param>
         public void SetNbExercices(int value)
         {
             nbExercices = value;
