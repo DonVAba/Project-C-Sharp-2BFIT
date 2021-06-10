@@ -80,8 +80,12 @@ namespace Homepage.ucadmin
                 WindowMainAdmin aw = Window.GetWindow(this) as WindowMainAdmin;
                 aw.MainWindowContentControl.Content = aw.InitUserControlProfil();
             }
+            else
+            {
+                List.ProgrammeChoisi = List.ListProgrammes.First(); //Si la liste de programme != 0, le programme choisit = au premier programme dans la ListProgramme
+            }
             Manager.SauvegardeDonnees();
-            List.ProgrammeChoisi = List.ListProgrammes.First(); //Si la liste de programme != 0, le programme choisit = au premier programme dans la ListProgramme
+           
         }
         /// <summary>
         /// Méthode qui appelle la methode SupprimerExercices de Listes après avoir cliqué sur le bouton "ButtonModifProg"

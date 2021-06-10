@@ -127,6 +127,11 @@ namespace Homepage.ucWindowAjout
             repexp.Valeur = 0;
             tpsreposexp.Valeur = 0;
         }
-        
+
+        private void FermerFenetre_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).Close();
+        }
+
     }
 }
