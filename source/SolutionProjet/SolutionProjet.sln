@@ -25,11 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test_fonctionnels", "test_f
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Image", "Image\Image.csproj", "{FC3732B7-2C1E-4D06-B09F-1056569AC7B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistanceData", "PersistanceData\PersistanceData.csproj", "{E866D51B-53D7-4494-BC95-5928E690ACDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistanceData", "PersistanceData\PersistanceData.csproj", "{E866D51B-53D7-4494-BC95-5928E690ACDC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test_persistance", "test_persistance", "{6AD0DC2C-917B-433B-8293-1E9E5AC9E734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_DataContract", "test_DataContract\test_DataContract.csproj", "{DA13C450-3D0A-4438-87B3-E43136175B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test_DataContract", "test_DataContract\test_DataContract.csproj", "{DA13C450-3D0A-4438-87B3-E43136175B07}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "2BFIT_Setup", "2BFIT_Setup\2BFIT_Setup.vdproj", "{6A5841BF-7981-409E-9DEC-5524063C4A96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,8 @@ Global
 		{DA13C450-3D0A-4438-87B3-E43136175B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA13C450-3D0A-4438-87B3-E43136175B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA13C450-3D0A-4438-87B3-E43136175B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5841BF-7981-409E-9DEC-5524063C4A96}.Debug|Any CPU.ActiveCfg = Debug
+		{6A5841BF-7981-409E-9DEC-5524063C4A96}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

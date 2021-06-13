@@ -5,6 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Homepage</ActiveDebugProfile>
+    <_LastSelectedProfileId>C:\Users\utilisateur\Desktop\iut\COURS\projet_s2\source\SolutionProjet\Homepage\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">

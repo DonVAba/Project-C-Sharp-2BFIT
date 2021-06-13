@@ -12,7 +12,7 @@ namespace PersistanceData
 {
     public class DataContract : IDataManager
     {
-        public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "../../../../2bfit_bin//XML");
+        public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "2bfit_bin//XML");
 
         public string FileName { get; set; } = "2bfitData.xml";
 
