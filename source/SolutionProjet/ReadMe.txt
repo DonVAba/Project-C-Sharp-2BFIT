@@ -18,11 +18,15 @@ Dans cette application, vous devrez créer un compte pour pouvoir lancer des pro
 Pour tester l'application en tant qu'administrateur vous devrez vous connecter sous le pseudo "admin" avec le mot de passe "admin",
 Vous pourrez enfin tester l'ajout de programme, d'exercice et la suppression de ces deux derniers.
 
+WARNING : il est possible que vous ayez un problème de lancement du
+au fait qu'il ne trouve pas les fichiers de persistance, il vous faudra donc d'abord replacer le fichier aux bons endroits
+avant de lancer l'application
+
 Vous pouvez vérifier la persistance du projet en regardant le fichier 2bfitData.XML se trouvant dans le dossier
 2bfit_bin\XML si vous avez utilisez la première solution. 
 
 Dans les deux derniers cas, il faut ouvrir le fichier  situé dans le répertoire courant + \2bfit_bin\XML. 
 2bfitData.XML
-Nous vous souhaitons une bonne découverte de notre application GameLib. 
+Nous vous souhaitons une bonne découverte de notre application 2BFit. 
 
 L'équipe 2bfit.
