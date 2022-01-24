@@ -29,4 +29,6 @@ Dans les deux derniers cas, il faut ouvrir le fichier  situé dans le répertoir
 2bfitData.XML
 Nous vous souhaitons une bonne découverte de notre application 2BFit. 
 
+NB : Le dossier de classes modèles est le dossier TestBibli
+
 L'équipe 2bfit.
